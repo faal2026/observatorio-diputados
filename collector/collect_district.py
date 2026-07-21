@@ -68,9 +68,10 @@ METHODS = {
 }
 
 DETAIL_METHODS = {
-    "motions": ("WSLegislativo.asmx/retornarProyectoLey", "prmProyectoLeyId"),
-    "agreements": ("WSProyectosAcuerdo.asmx/retornarProyectoAcuerdo", "prmProyectoAcuerdoId"),
-    "resolutions": ("WSProyectosResolucion.asmx/retornarProyectoResolucion", "prmProyectoResolucionId"),
+    # El servicio legislativo busca mociones por número de boletín, no por Id.
+    "motions": ("WSLegislativo.asmx/retornarProyectoLey", "prmNumeroBoletin", "bulletin"),
+    "agreements": ("WSProyectosAcuerdo.asmx/retornarProyectoAcuerdo", "prmProyectoAcuerdoId", "id"),
+    "resolutions": ("WSProyectosResolucion.asmx/retornarProyectoResolucion", "prmProyectoResolucionId", "id"),
 }
 
 
@@ -108,9 +109,12 @@ def method_url(name: str, year: int | None = None) -> str:
     return f"{OPEN_DATA}/{path}{query}"
 
 
-def project_detail_url(name: str, project_id: str) -> str:
-    path, parameter_name = DETAIL_METHODS[name]
-    return f"{OPEN_DATA}/{path}?{urlencode({parameter_name: project_id})}"
+def project_detail_url(name: str, project: dict[str, Any]) -> str:
+    path, parameter_name, project_key = DETAIL_METHODS[name]
+    project_value = project.get(project_key)
+    if not project_value:
+        raise ValueError(f"No hay {project_key} para consultar el detalle de {name}.")
+    return f"{OPEN_DATA}/{path}?{urlencode({parameter_name: project_value})}"
 
 
 def child_text(element: ET.Element, name: str) -> str | None:
@@ -193,6 +197,7 @@ def parse_projects(xml_text: str, element_name: str) -> list[dict[str, Any]]:
         projects.append(
             {
                 "id": child_text(node, "Id"),
+                "bulletin": child_text(node, "NumeroBoletin"),
                 "date": descendant_text(node, ("FechaIngreso", "Fecha")),
                 "state": descendant_text(node, ("Estado", "Adminisible", "Admisible")),
                 "authors_text": flatten(authors) if authors is not None else "",
@@ -217,10 +222,9 @@ def hydrate_authors(
     """Completa los autores que no vienen expandidos en la respuesta anual."""
     hydrated: list[dict[str, Any]] = []
     for project in projects:
-        project_id = project.get("id")
-        if not project_id:
+        if not project.get("id"):
             continue
-        detail = parse_projects(request_text(project_detail_url(source_name, project_id), delay=delay), element_name)
+        detail = parse_projects(request_text(project_detail_url(source_name, project), delay=delay), element_name)
         if not detail:
             continue
         hydrated.append(detail[0])
