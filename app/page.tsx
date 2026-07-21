@@ -17,6 +17,7 @@ const metricLabels: Record<Metric, { label: string; unit: string; activity?: Act
 
 const sources = [
   "Datos Abiertos Legislativos: identidad, actividad legislativa y asistencia.",
+  "Fichas oficiales vigentes: comisiones actuales de cada diputado(a).",
   "Fichas de transparencia: gastos, asesorías, pasajes y personal de apoyo.",
   "Transparencia Activa: dieta parlamentaria vigente.",
 ];
@@ -35,11 +36,12 @@ type DistrictSummary = {
   availability: string;
   activity?: { motions: MonthlyActivity; agreements: MonthlyActivity; resolutions: MonthlyActivity };
   attendance?: { average_percentage: number | null; deputies_with_classified_records: number };
+  commissions?: { snapshot_retrieved_at?: string; snapshot_applied_to?: string[] };
   diet?: { monthly_gross_per_deputy_clp: number; monthly_gross_district_clp: number; valid_from: string; source_url: string; note: string };
 };
 
 type DeputyRecord = {
-  profile: { id: string; name: string; district: string; region: string; period: string };
+  profile: { id: string; name: string; district: string; region: string; period: string; commissions_source_url?: string };
   activity: {
     motions_by_month_and_state: Record<string, Record<string, number>>;
     agreements_by_month_and_state: Record<string, Record<string, number>>;
@@ -193,7 +195,7 @@ export default function Home() {
           <label><span>Diputado(a)</span><select value={deputy} onChange={(event) => setDeputy(event.target.value)} disabled={!district}><option value="">Seleccionar diputado(a)</option>{summary.deputies.map((item) => <option key={item.id}>{item.name}</option>)}</select></label>
         </div>
 
-        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Disponibilidad</h4><p>Actividad legislativa y asistencia disponibles. Comisiones, oficios y transparencia se completarán al validar sus fuentes oficiales mensuales.</p></div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
+        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Disponibilidad</h4><p>Actividad legislativa, asistencia y comisiones disponibles. Oficios y transparencia se incorporarán al validar sus fuentes oficiales mensuales.</p></div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
 
         <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.length ? detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord?.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.resolutions_by_month_and_state[month]} /></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>) : <tr><td colSpan={10}>Elige un diputado(a) para ver los meses publicados.</td></tr>}</tbody></table></div>
       </section>

@@ -90,6 +90,30 @@ DIET_2026 = {
     "note": "Monto bruto mensual vigente para diputadas y diputados sin funciones de presidencia o vicepresidencia.",
 }
 
+# El servicio abierto de comisiones está respondiendo sin integrantes para el
+# período 2026-2030. Mientras se regulariza, se conserva un respaldo mínimo y
+# verificable desde las fichas públicas vigentes de cada integrante del piloto.
+# Solo se usa si el servicio no entrega una comisión para esa persona; nunca
+# reemplaza una respuesta poblada de Datos Abiertos.
+COMMISSION_SNAPSHOT_2026 = {
+    "retrieved_at": "2026-07-21",
+    "source": "Fichas públicas vigentes de la Cámara de Diputadas y Diputados",
+    "memberships": {
+        "1165": ["Salud", "Hacienda"],
+        "1190": ["De Derechos Humanos y Pueblos Originarios", "Seguridad Ciudadana"],
+        "1217": ["Hacienda", "Vivienda, Desarrollo Urbano y Bienes Nacionales"],
+        "1256": ["Vivienda, Desarrollo Urbano y Bienes Nacionales", "Seguridad Ciudadana", "De Personas Mayores y Discapacidad"],
+        "1188": ["Constitución, Legislación, Justicia y Reglamento", "Defensa Nacional"],
+        "1234": ["Gobierno Interior, Nacionalidad, Ciudadanía y Regionalización", "Vivienda, Desarrollo Urbano y Bienes Nacionales"],
+        "1210": ["Desarrollo Social, Superación de la Pobreza y Planificación", "Medio Ambiente y Recursos Naturales"],
+        "1200": ["Cultura, Artes y Comunicaciones", "Deportes y Recreación"],
+    },
+    "source_urls": {
+        deputy_id: f"https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId={deputy_id}"
+        for deputy_id in ("1165", "1190", "1217", "1256", "1188", "1234", "1210", "1200")
+    },
+}
+
 
 def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
@@ -221,6 +245,7 @@ def profile_from_roster(deputy: dict[str, str]) -> dict[str, Any]:
         "party": None,
         "bench": None,
         "source_url": PROFILE_URL.format(deputy_id=deputy["id"]),
+        "commissions_source_url": f"https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId={deputy['id']}",
         "territory_source_url": DISTRICT_8_ROSTER_SOURCE,
     }
 
@@ -568,6 +593,11 @@ def collect(args: argparse.Namespace) -> None:
 
     commissions_xml = request_text(urls["commissions"], delay=args.delay)
     commissions_by_deputy, commission_failures = hydrate_commissions(commissions_xml, delay=args.delay, workers=workers)
+    snapshot_applied_to: list[str] = []
+    for deputy_id, names in COMMISSION_SNAPSHOT_2026["memberships"].items():
+        if not commissions_by_deputy.get(deputy_id):
+            commissions_by_deputy[deputy_id] = names
+            snapshot_applied_to.append(deputy_id)
     annual_sessions = request_text(urls["sessions"], delay=args.delay)
     attendance_by_deputy, attendance_failures = hydrate_attendance(parse_session_ids(annual_sessions), delay=args.delay, workers=workers)
 
@@ -612,7 +642,13 @@ def collect(args: argparse.Namespace) -> None:
             "deputies_with_classified_records": len(attendance_percentages),
             "session_detail_failures": attendance_failures,
         },
-        "commissions": {"detail_failures": commission_failures},
+        "commissions": {
+            "detail_failures": commission_failures,
+            "snapshot_retrieved_at": COMMISSION_SNAPSHOT_2026["retrieved_at"],
+            "snapshot_applied_to": snapshot_applied_to,
+            "source": COMMISSION_SNAPSHOT_2026["source"],
+            "source_urls": COMMISSION_SNAPSHOT_2026["source_urls"],
+        },
         "diet": {
             **DIET_2026,
             "monthly_gross_district_clp": DIET_2026["monthly_gross_per_deputy_clp"] * len(deputy_records),
