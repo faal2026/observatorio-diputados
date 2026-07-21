@@ -48,7 +48,7 @@ type DistrictSummary = {
   activity?: { motions: MonthlyActivity; agreements: MonthlyActivity; resolutions: MonthlyActivity };
   attendance?: { average_percentage: number | null; deputies_with_classified_records: number };
   commissions?: { snapshot_retrieved_at?: string; snapshot_applied_to?: string[] };
-  transparency?: { personnel_support?: MonthlyMoney; personnel_support_metadata?: { availability: string; label?: string; methodology?: string } };
+  transparency?: { personnel_support?: MonthlyMoney; personnel_support_metadata?: { availability: string; label?: string; methodology?: string; source_url?: string; snapshot_retrieved_at?: string; coverage?: string; reason?: string } };
   diet?: { monthly_gross_per_deputy_clp: number; monthly_gross_district_clp: number; valid_from: string; source_url: string; note: string };
 };
 
@@ -61,7 +61,7 @@ type DeputyRecord = {
   };
   commissions?: string[];
   attendance?: { sessions_recorded: number; present: number; not_present: number; unclassified: number; percentage: number | null; by_type: Record<string, number> };
-  transparency: { availability: string; personnel_support?: { by_month: Record<string, number>; contracts_count: number }; personnel_support_metadata?: { label?: string; methodology?: string } };
+  transparency: { availability: string; personnel_support?: { by_month: Record<string, number>; contracts_count: number }; personnel_support_metadata?: { availability?: string; label?: string; methodology?: string; source_url?: string; snapshot_retrieved_at?: string; coverage?: string; reason?: string } };
 };
 
 const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
@@ -154,7 +154,8 @@ export default function Home() {
     ? `${activity.total} registros legislativos en los meses publicados del piloto.`
     : money?.latest_amount != null
       ? `${money.methodology ?? "Monto mensual publicado."} Último mes: ${labelMonth(money.latest_month ?? "2026-01")}.`
-    : `La serie de ${selected.label.toLocaleLowerCase("es-CL")} se incorporará al terminar la fase de transparencia.`;
+      : `La serie de ${selected.label.toLocaleLowerCase("es-CL")} se incorporará al terminar la fase de transparencia.`;
+  const personnelMetadata = summary.transparency?.personnel_support_metadata;
 
   return (
     <main>
@@ -194,6 +195,7 @@ export default function Home() {
                 <div className="chart-axis">{series.map(([month, value]) => <span key={month}>{labelMonth(month)}<b>{value}</b></span>)}</div>
               </div>
             ) : <div className="chart-placeholder" role="img" aria-label="Serie pendiente de publicación"><span>Sin serie publicada aún</span></div>}
+            {selected.transparency && personnelMetadata?.source_url ? <p className="source-note">{personnelMetadata.availability === "published_snapshot" ? "Respaldo de" : "Fuente:"} <a href={personnelMetadata.source_url} target="_blank" rel="noreferrer">directorio oficial de personal de apoyo</a>{personnelMetadata.snapshot_retrieved_at ? ` · corte ${personnelMetadata.snapshot_retrieved_at}` : ""}. {personnelMetadata.methodology}</p> : null}
           </article>
         </div>
       </section>
@@ -211,7 +213,7 @@ export default function Home() {
           <label><span>Diputado(a)</span><select value={deputy} onChange={(event) => setDeputy(event.target.value)} disabled={!district}><option value="">Seleccionar diputado(a)</option>{summary.deputies.map((item) => <option key={item.id}>{item.name}</option>)}</select></label>
         </div>
 
-        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Disponibilidad</h4><p>Actividad legislativa, asistencia y comisiones disponibles. Oficios y transparencia se incorporarán al validar sus fuentes oficiales mensuales.</p></div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
+        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Transparencia disponible</h4>{deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido.</p> : <p>Personal de apoyo pendiente de publicación. Oficios, gastos operacionales, asesorías y pasajes se incorporarán al validar sus fuentes mensuales.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
 
         <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.length ? detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord?.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.resolutions_by_month_and_state[month]} /></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>{deputyRecord?.transparency.personnel_support?.by_month[month] != null ? currency.format(deputyRecord.transparency.personnel_support.by_month[month]) : "—"}</td></tr>) : <tr><td colSpan={10}>Elige un diputado(a) para ver los meses publicados.</td></tr>}</tbody></table></div>
       </section>

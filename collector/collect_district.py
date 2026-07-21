@@ -129,6 +129,27 @@ PERSONNEL_DIRECTORY_IDENTIFIERS = {
     "1200": ("contreras", "cristian"),
 }
 
+# Respaldo verificable del directorio público de personal de apoyo, consultado
+# el 21 de julio de 2026. La Cámara bloquea actualmente las peticiones que
+# provienen de GitHub Actions (HTTP 403), por lo que este corte evita publicar
+# una tabla vacía mientras se restituye el acceso automatizado. Son
+# remuneraciones de contratos vigentes, no gastos rendidos.
+PERSONNEL_SUPPORT_SNAPSHOT_2026_07 = {
+    "retrieved_at": "2026-07-21",
+    "source_url": PERSONNEL_SUPPORT_URL,
+    "coverage": "2026-03 a 2026-07",
+    "records": {
+        "1165": {"contracts_count": 7, "by_month": {"2026-03": 8_728_545, "2026-04": 8_728_545, "2026-05": 8_728_545, "2026-06": 9_598_545, "2026-07": 9_598_545}},
+        "1190": {"contracts_count": 6, "by_month": {"2026-03": 9_631_716, "2026-04": 9_631_716, "2026-05": 9_631_716, "2026-06": 9_631_716, "2026-07": 9_631_716}},
+        "1217": {"contracts_count": 5, "by_month": {"2026-03": 5_200_000, "2026-04": 5_200_000, "2026-05": 5_200_000, "2026-06": 7_200_000, "2026-07": 7_200_000}},
+        "1256": {"contracts_count": 7, "by_month": {"2026-03": 10_900_000, "2026-04": 10_900_000, "2026-05": 10_900_000, "2026-06": 10_900_000, "2026-07": 10_900_000}},
+        "1188": {"contracts_count": 8, "by_month": {"2026-03": 10_250_000, "2026-04": 11_250_000, "2026-05": 11_250_000, "2026-06": 11_250_000, "2026-07": 11_250_000}},
+        "1234": {"contracts_count": 7, "by_month": {"2026-03": 2_600_000, "2026-04": 4_612_000, "2026-05": 5_941_333, "2026-06": 6_885_286, "2026-07": 6_885_286}},
+        "1210": {"contracts_count": 7, "by_month": {"2026-03": 13_260_738, "2026-04": 13_260_738, "2026-05": 13_260_738, "2026-06": 13_260_738, "2026-07": 10_460_738}},
+        "1200": {"contracts_count": 8, "by_month": {"2026-03": 6_179_273, "2026-04": 6_179_273, "2026-05": 8_879_273, "2026-06": 10_079_273, "2026-07": 10_079_273}},
+    },
+}
+
 
 def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
@@ -290,8 +311,9 @@ def parse_personnel_support(html: str, *, through: datetime) -> dict[str, dict[s
 
     result: dict[str, dict[str, Any]] = {}
     first_month = datetime(through.year, 3, 1)
+    last_month = datetime(through.year, through.month, 1)
     month = first_month
-    while month <= through.replace(day=1):
+    while month <= last_month:
         month_key = month.strftime("%Y-%m")
         month_end = month.replace(day=calendar.monthrange(month.year, month.month)[1])
         for deputy_id, contracts in records.items():
@@ -307,7 +329,15 @@ def collect_personnel_support(*, through: datetime) -> tuple[dict[str, dict[str,
         html = request_text(PERSONNEL_SUPPORT_URL, delay=0.2)
         records = parse_personnel_support(html, through=through)
     except RuntimeError as error:
-        return {}, {"availability": "unavailable", "reason": str(error), "source_url": PERSONNEL_SUPPORT_URL}
+        return PERSONNEL_SUPPORT_SNAPSHOT_2026_07["records"], {
+            "availability": "published_snapshot",
+            "label": "Remuneración mensual de contratos vigentes de personal de apoyo",
+            "source_url": PERSONNEL_SUPPORT_URL,
+            "snapshot_retrieved_at": PERSONNEL_SUPPORT_SNAPSHOT_2026_07["retrieved_at"],
+            "coverage": PERSONNEL_SUPPORT_SNAPSHOT_2026_07["coverage"],
+            "reason": f"Acceso automático temporalmente bloqueado: {error}",
+            "methodology": "Respaldo trazable de la publicación oficial; suma remuneraciones de contratos vigentes y no equivale a gasto rendido.",
+        }
     if not records:
         return {}, {"availability": "unavailable", "reason": "El directorio publicado no entregó filas identificables para el Distrito 8.", "source_url": PERSONNEL_SUPPORT_URL}
     return records, {
