@@ -3,17 +3,18 @@
 import { useEffect, useMemo, useState } from "react";
 import districtSummary from "../data/generated/distrito-8-summary.json";
 
-type Metric = "gastos" | "asesorias" | "pasajes" | "personal" | "mociones" | "resoluciones";
-type ActivityName = "motions" | "resolutions";
-type TransparencyName = "personnel_support";
+type Metric = "gastos" | "asesorias" | "pasajes" | "personal" | "mociones" | "resoluciones" | "oficios";
+type ActivityName = "motions" | "resolutions" | "offices";
+type TransparencyName = "operational_expenses" | "external_advisories" | "flights" | "personnel_support";
 
 const metricLabels: Record<Metric, { label: string; unit: string; activity?: ActivityName; transparency?: TransparencyName }> = {
-  gastos: { label: "Gastos operacionales", unit: "CLP por mes" },
-  asesorias: { label: "Asesorías externas", unit: "CLP por mes" },
-  pasajes: { label: "Pasajes aéreos", unit: "CLP por mes" },
+  gastos: { label: "Gastos operacionales", unit: "CLP por mes", transparency: "operational_expenses" },
+  asesorias: { label: "Asesorías externas", unit: "CLP por mes", transparency: "external_advisories" },
+  pasajes: { label: "Pasajes aéreos", unit: "CLP por mes", transparency: "flights" },
   personal: { label: "Personal de apoyo", unit: "CLP por mes", transparency: "personnel_support" },
   mociones: { label: "Mociones", unit: "Número por mes", activity: "motions" },
   resoluciones: { label: "Resoluciones", unit: "Número por mes", activity: "resolutions" },
+  oficios: { label: "Oficios enviados", unit: "Número por mes", activity: "offices" },
 };
 
 const sources = [
@@ -45,10 +46,10 @@ type DistrictSummary = {
   retrieved_at: string;
   deputies: { id: string; name: string }[];
   availability: string;
-  activity?: { motions: MonthlyActivity; agreements: MonthlyActivity; resolutions: MonthlyActivity };
+  activity?: { motions: MonthlyActivity; agreements: MonthlyActivity; resolutions: MonthlyActivity; offices: MonthlyActivity };
   attendance?: { average_percentage: number | null; deputies_with_classified_records: number };
   commissions?: { snapshot_retrieved_at?: string; snapshot_applied_to?: string[] };
-  transparency?: { personnel_support?: MonthlyMoney; personnel_support_metadata?: { availability: string; label?: string; methodology?: string; source_url?: string; snapshot_retrieved_at?: string; coverage?: string; reason?: string } };
+  transparency?: Partial<Record<TransparencyName, MonthlyMoney>> & { personnel_support_metadata?: { availability: string; label?: string; methodology?: string; source_url?: string; snapshot_retrieved_at?: string; coverage?: string; reason?: string } };
   diet?: { monthly_gross_per_deputy_clp: number; monthly_gross_district_clp: number; valid_from: string; source_url: string; note: string };
 };
 
@@ -58,10 +59,11 @@ type DeputyRecord = {
     motions_by_month_and_state: Record<string, Record<string, number>>;
     agreements_by_month_and_state: Record<string, Record<string, number>>;
     resolutions_by_month_and_state: Record<string, Record<string, number>>;
+    offices_by_month: Record<string, number>;
   };
   commissions?: string[];
   attendance?: { sessions_recorded: number; present: number; not_present: number; unclassified: number; percentage: number | null; by_type: Record<string, number> };
-  transparency: { availability: string; personnel_support?: { by_month: Record<string, number>; contracts_count: number }; personnel_support_metadata?: { availability?: string; label?: string; methodology?: string; source_url?: string; snapshot_retrieved_at?: string; coverage?: string; reason?: string } };
+  transparency: { availability: string; personnel_support?: { by_month: Record<string, number>; contracts_count: number }; operational_expenses?: MonthlyMoney; external_advisories?: MonthlyMoney; flights?: MonthlyMoney; personnel_support_metadata?: { availability?: string; label?: string; methodology?: string; source_url?: string; snapshot_retrieved_at?: string; coverage?: string; reason?: string } };
 };
 
 const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
@@ -141,7 +143,11 @@ export default function Home() {
       ...Object.keys(deputyRecord.activity.motions_by_month_and_state),
       ...Object.keys(deputyRecord.activity.agreements_by_month_and_state),
       ...Object.keys(deputyRecord.activity.resolutions_by_month_and_state),
+      ...Object.keys(deputyRecord.activity.offices_by_month),
       ...Object.keys(deputyRecord.transparency.personnel_support?.by_month ?? {}),
+      ...Object.keys(deputyRecord.transparency.operational_expenses?.by_month ?? {}),
+      ...Object.keys(deputyRecord.transparency.external_advisories?.by_month ?? {}),
+      ...Object.keys(deputyRecord.transparency.flights?.by_month ?? {}),
     ]);
     return [...months].sort().reverse();
   }, [deputyRecord]);
@@ -213,9 +219,9 @@ export default function Home() {
           <label><span>Diputado(a)</span><select value={deputy} onChange={(event) => setDeputy(event.target.value)} disabled={!district}><option value="">Seleccionar diputado(a)</option>{summary.deputies.map((item) => <option key={item.id}>{item.name}</option>)}</select></label>
         </div>
 
-        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Transparencia disponible</h4>{deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido.</p> : <p>Personal de apoyo pendiente de publicación. Oficios, gastos operacionales, asesorías y pasajes se incorporarán al validar sus fuentes mensuales.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
+        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Cobertura de transparencia</h4>{deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido. Gastos, asesorías y pasajes quedarán como “sin publicación” hasta que la Cámara libere esos meses.</p> : <p>La Cámara aún no publica transparencia mensual para esta nómina. El tablero conservará esos meses como pendientes, nunca como $0.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
 
-        <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.length ? detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord?.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.resolutions_by_month_and_state[month]} /></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>{deputyRecord?.transparency.personnel_support?.by_month[month] != null ? currency.format(deputyRecord.transparency.personnel_support.by_month[month]) : "—"}</td></tr>) : <tr><td colSpan={10}>Elige un diputado(a) para ver los meses publicados.</td></tr>}</tbody></table></div>
+        <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.length ? detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord?.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.resolutions_by_month_and_state[month]} /></td><td>{deputyRecord?.activity.offices_by_month[month] ?? "—"}</td><td>—</td><td>{MoneyCell(deputyRecord?.transparency.operational_expenses?.by_month[month])}</td><td>{MoneyCell(deputyRecord?.transparency.external_advisories?.by_month[month])}</td><td>{MoneyCell(deputyRecord?.transparency.flights?.by_month[month])}</td><td>{MoneyCell(deputyRecord?.transparency.personnel_support?.by_month[month])}</td></tr>) : <tr><td colSpan={10}>Elige un diputado(a) para ver los meses publicados.</td></tr>}</tbody></table></div>
       </section>
 
       <section className="methodology" aria-labelledby="methodology-title"><p className="eyebrow">Trazabilidad</p><h2 id="methodology-title">Cómo leer este tablero</h2><ul>{sources.map((source) => <li key={source}>{source}</li>)}</ul></section>
@@ -225,4 +231,8 @@ export default function Home() {
 
 function MetricCard({ label, value, detail }: { label: string; value: string; detail: string }) {
   return <article className="metric-card"><span>{label}</span><strong>{value}</strong><small>{detail}</small></article>;
+}
+
+function MoneyCell(value: number | undefined) {
+  return value == null ? "—" : currency.format(value);
 }

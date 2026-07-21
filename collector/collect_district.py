@@ -42,6 +42,11 @@ OPEN_DATA = "https://opendata.camara.cl/camaradiputados/WServices"
 PROFILE_URL = "https://www.camara.cl/diputados/detalle/personaldepoyo.aspx?prmId={deputy_id}"
 DISTRICT_8_ROSTER_SOURCE = "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=8"
 PERSONNEL_SUPPORT_URL = "https://www.camara.cl/transparencia/personalapoyogral.aspx"
+TRANSPARENCY_SOURCES = {
+    "operational_expenses": "https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId={deputy_id}",
+    "external_advisories": "https://www.camara.cl/diputados/detalle/asesoriasexternas.aspx?prmId={deputy_id}",
+    "flights": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId={deputy_id}",
+}
 
 # Se usan nombre y apellido para no confundir homónimos al cruzar la nómina
 # distrital con los identificadores oficiales de Datos Abiertos.
@@ -418,6 +423,18 @@ def parse_projects(xml_text: str, element_name: str) -> list[dict[str, Any]]:
                 "state": descendant_text(node, ("Estado", "Adminisible", "Admisible")),
                 "authors_text": flatten(authors) if authors is not None else "",
                 "author_ids": author_ids,
+                # Las resoluciones publican oficios enviados en su detalle.
+                # Se conservan para no depender de una segunda fuente bloqueada.
+                "offices": [
+                    {
+                        "id": child_text(office, "Id") or child_text(office, "Numero") or "",
+                        "date": child_text(office, "FechaDespacho") or child_text(office, "FechaEntrega"),
+                    }
+                    for container in node.iter()
+                    if local_name(container.tag) == "OficiosEnviados"
+                    for office in container.iter()
+                    if local_name(office.tag) == "Oficio"
+                ],
                 "source": flatten(node),
             }
         )
@@ -447,8 +464,9 @@ def hydrate_authors(
         if not project_id:
             continue
         cached = author_cache.get(project_id)
-        if cached:
-            hydrated.append({**project, "author_ids": cached.get("author_ids", []), "authors_text": cached.get("authors_text", "")})
+        cache_has_offices = source_name != "resolutions" or "offices" in cached
+        if cached and cache_has_offices:
+            hydrated.append({**project, "author_ids": cached.get("author_ids", []), "authors_text": cached.get("authors_text", ""), "offices": cached.get("offices", [])})
             continue
         pending.append(project)
 
@@ -461,7 +479,7 @@ def hydrate_authors(
         if not detail:
             return None, {"id": str(project["id"]), "url": detail_url, "reason": "El detalle no entregó un proyecto."}
         detailed_project = detail[0]
-        merged = {**project, "author_ids": detailed_project["author_ids"], "authors_text": detailed_project["authors_text"]}
+        merged = {**project, "author_ids": detailed_project["author_ids"], "authors_text": detailed_project["authors_text"], "offices": detailed_project.get("offices", [])}
         return merged, None
 
     if pending:
@@ -477,6 +495,7 @@ def hydrate_authors(
                     author_cache[project_id] = {
                         "author_ids": hydrated_project["author_ids"],
                         "authors_text": hydrated_project["authors_text"],
+                        "offices": hydrated_project.get("offices", []),
                     }
                     hydrated.append(hydrated_project)
 
@@ -505,6 +524,41 @@ def summarize_projects(projects: list[dict[str, Any]], deputy_id: str) -> dict[s
             state = project["state"] or "Sin estado publicado"
             result[month][state] += 1
     return {month: dict(counts) for month, counts in sorted(result.items())}
+
+
+def summarize_offices(projects: list[dict[str, Any]], deputy_id: str) -> dict[str, int]:
+    """Cuenta oficios enviados en resoluciones cofirmadas por cada diputado/a.
+
+    El alcance es explícito: no pretende contar oficios de otras iniciativas ni
+    respuestas recibidas; usa los oficios enviados que Datos Abiertos publica
+    dentro de las resoluciones.
+    """
+    result: Counter[str] = Counter()
+    for project in projects:
+        if not is_author(project, deputy_id):
+            continue
+        seen: set[tuple[str, str]] = set()
+        for office in project.get("offices", []):
+            month = month_key(office.get("date"))
+            office_key = (str(office.get("id") or ""), str(office.get("date") or ""))
+            if month and office_key not in seen:
+                result[month] += 1
+                seen.add(office_key)
+    return dict(sorted(result.items()))
+
+
+def empty_monthly_money(*, source_url: str, label: str) -> dict[str, Any]:
+    """Representa datos pendientes sin transformarlos en montos $0."""
+    return {
+        "by_month": {},
+        "latest_month": None,
+        "latest_amount": None,
+        "average_monthly": None,
+        "median_monthly": None,
+        "months_with_records": 0,
+        "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+        "metadata": {"availability": "not_published", "label": label, "source_url": source_url},
+    }
 
 
 def parse_commissions(xml_text: str) -> dict[str, list[str]]:
@@ -687,6 +741,23 @@ def summarize_district_activity(deputy_records: list[dict[str, Any]], activity_k
     }
 
 
+def summarize_monthly_field(deputy_records: list[dict[str, Any]], field: str) -> dict[str, Any]:
+    """Agrega una serie numérica ya resumida en cada ficha individual."""
+    by_month: Counter[str] = Counter()
+    for record in deputy_records:
+        by_month.update(record["activity"].get(field, {}))
+    series = dict(sorted(by_month.items()))
+    total = sum(series.values())
+    months_with_records = len(series)
+    return {
+        "by_month": series,
+        "total": total,
+        "months_with_records": months_with_records,
+        "average_per_deputy_per_month": total / (len(deputy_records) * months_with_records) if deputy_records and months_with_records else None,
+        "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos.",
+    }
+
+
 def summarize_personnel_support(deputy_records: list[dict[str, Any]]) -> dict[str, Any]:
     """Agrega remuneraciones mensuales de contratos vigentes sin confundirlas con gasto rendido."""
     by_month: Counter[str] = Counter()
@@ -777,6 +848,7 @@ def collect(args: argparse.Namespace) -> None:
                     "motions_by_month_and_state": summarize_projects(open_data["motions"], deputy_id),
                     "agreements_by_month_and_state": summarize_projects(open_data["agreements"], deputy_id),
                     "resolutions_by_month_and_state": summarize_projects(open_data["resolutions"], deputy_id),
+                    "offices_by_month": summarize_offices(open_data["resolutions"], deputy_id),
                 },
                 "commissions": commissions_by_deputy.get(deputy_id, []),
                 "attendance": attendance_by_deputy.get(
@@ -787,6 +859,18 @@ def collect(args: argparse.Namespace) -> None:
                     "availability": personnel_metadata["availability"],
                     "personnel_support": personnel_by_deputy.get(deputy_id, {"by_month": {}, "contracts_count": 0}),
                     "personnel_support_metadata": personnel_metadata,
+                    "operational_expenses": empty_monthly_money(
+                        source_url=TRANSPARENCY_SOURCES["operational_expenses"].format(deputy_id=deputy_id),
+                        label="Gastos operacionales",
+                    ),
+                    "external_advisories": empty_monthly_money(
+                        source_url=TRANSPARENCY_SOURCES["external_advisories"].format(deputy_id=deputy_id),
+                        label="Asesorías externas",
+                    ),
+                    "flights": empty_monthly_money(
+                        source_url=TRANSPARENCY_SOURCES["flights"].format(deputy_id=deputy_id),
+                        label="Pasajes aéreos nacionales",
+                    ),
                     "reason": personnel_metadata.get("reason"),
                 },
                 "retrieved_at": retrieved_at,
@@ -807,6 +891,7 @@ def collect(args: argparse.Namespace) -> None:
             "motions": summarize_district_activity(deputy_records, "motions_by_month_and_state"),
             "agreements": summarize_district_activity(deputy_records, "agreements_by_month_and_state"),
             "resolutions": summarize_district_activity(deputy_records, "resolutions_by_month_and_state"),
+            "offices": summarize_monthly_field(deputy_records, "offices_by_month"),
         },
         "attendance": {
             "average_percentage": round(sum(attendance_percentages) / len(attendance_percentages), 1) if attendance_percentages else None,
@@ -828,6 +913,18 @@ def collect(args: argparse.Namespace) -> None:
         "transparency": {
             "personnel_support": summarize_personnel_support(deputy_records),
             "personnel_support_metadata": personnel_metadata,
+            "operational_expenses": empty_monthly_money(
+                source_url=TRANSPARENCY_SOURCES["operational_expenses"].format(deputy_id="{id}"),
+                label="Gastos operacionales",
+            ),
+            "external_advisories": empty_monthly_money(
+                source_url=TRANSPARENCY_SOURCES["external_advisories"].format(deputy_id="{id}"),
+                label="Asesorías externas",
+            ),
+            "flights": empty_monthly_money(
+                source_url=TRANSPARENCY_SOURCES["flights"].format(deputy_id="{id}"),
+                label="Pasajes aéreos nacionales",
+            ),
         },
         "availability": "phase_one_complete" if not any(detail_failures.values()) and not commission_failures else "phase_one_partial",
         "detail_failures": detail_failures,
