@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T22:33:23.634090+00:00",
+  "retrieved_at": "2026-07-21T22:50:05.079651+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -76,7 +76,28 @@
     "session_detail_failures": []
   },
   "commissions": {
-    "detail_failures": []
+    "detail_failures": [],
+    "snapshot_retrieved_at": "2026-07-21",
+    "snapshot_applied_to": [
+      "1190",
+      "1217",
+      "1256",
+      "1188",
+      "1234",
+      "1210",
+      "1200"
+    ],
+    "source": "Fichas públicas vigentes de la Cámara de Diputadas y Diputados",
+    "source_urls": {
+      "1165": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1165",
+      "1190": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1190",
+      "1217": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1217",
+      "1256": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1256",
+      "1188": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1188",
+      "1234": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1234",
+      "1210": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1210",
+      "1200": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1200"
+    }
   },
   "diet": {
     "monthly_gross_per_deputy_clp": 8239091,
