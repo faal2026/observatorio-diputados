@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T19:29:41.107416+00:00",
+  "retrieved_at": "2026-07-21T20:58:16.595102+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -70,6 +70,10 @@
       "average_per_deputy_per_month": 0.725
     }
   },
+  "attendance": {
+    "average_percentage": null,
+    "deputies_with_classified_records": 0
+  },
   "availability": "phase_one_complete",
   "detail_failures": {
     "motions": [],
@@ -78,6 +82,8 @@
   },
   "sources": {
     "deputies": "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx/retornarDiputadosPeriodoActual",
+    "commissions": "https://opendata.camara.cl/camaradiputados/WServices/WSComision.asmx/retornarComisionesVigentes",
+    "sessions": "https://opendata.camara.cl/camaradiputados/WServices/WSSala.asmx/retornarSesionesXAnno?prmAnno=2026",
     "motions": "https://opendata.camara.cl/camaradiputados/WServices/WSLegislativo.asmx/retornarMocionesXAnno?prmAnno=2026",
     "agreements": "https://opendata.camara.cl/camaradiputados/WServices/WSProyectosAcuerdo.asmx/retornarProyectosAcuerdoXAnno?prmAnno=2026",
     "resolutions": "https://opendata.camara.cl/camaradiputados/WServices/WSProyectosResolucion.asmx/retornarProyectosResolucionXAnno?prmAnno=2026",

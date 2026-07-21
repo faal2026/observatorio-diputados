@@ -23,9 +23,18 @@
       }
     }
   },
+  "commissions": [],
+  "attendance": {
+    "sessions_recorded": 0,
+    "present": 0,
+    "not_present": 0,
+    "unclassified": 0,
+    "percentage": null,
+    "by_type": {}
+  },
   "transparency": {
     "availability": "pending_second_phase",
     "reason": "monthly_postback_collection_not_run"
   },
-  "retrieved_at": "2026-07-21T19:29:41.107416+00:00"
+  "retrieved_at": "2026-07-21T20:58:16.595102+00:00"
 }
