@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T22:50:05.079651+00:00",
+  "retrieved_at": "2026-07-21T23:10:25.536943+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -106,6 +106,22 @@
     "note": "Monto bruto mensual vigente para diputadas y diputados sin funciones de presidencia o vicepresidencia.",
     "monthly_gross_district_clp": 65912728,
     "deputies_counted": 8
+  },
+  "transparency": {
+    "personnel_support": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "Suma de remuneraciones mensuales publicadas para contratos vigentes; no equivale a gasto rendido."
+    },
+    "personnel_support_metadata": {
+      "availability": "unavailable",
+      "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
+      "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx"
+    }
   },
   "availability": "phase_one_complete",
   "detail_failures": {
