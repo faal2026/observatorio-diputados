@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T20:58:16.595102+00:00",
+  "retrieved_at": "2026-07-21T21:37:02.446430+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -71,8 +71,9 @@
     }
   },
   "attendance": {
-    "average_percentage": null,
-    "deputies_with_classified_records": 0
+    "average_percentage": 100.0,
+    "deputies_with_classified_records": 8,
+    "session_detail_failures": []
   },
   "availability": "phase_one_complete",
   "detail_failures": {
