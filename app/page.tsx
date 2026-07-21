@@ -47,7 +47,7 @@ type DeputyRecord = {
 };
 
 const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
-const monthFormatter = new Intl.DateTimeFormat("es-CL", { month: "short", year: "numeric" });
+const monthFormatter = new Intl.DateTimeFormat("es-CL", { month: "short", year: "numeric", timeZone: "UTC" });
 
 function labelMonth(month: string) {
   const [year, number] = month.split("-").map(Number);
