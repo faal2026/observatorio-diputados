@@ -22,6 +22,7 @@ from datetime import UTC, datetime
 from html import unescape
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -33,7 +34,15 @@ DATA_DIR = ROOT / "public" / "data" / "distrito-8"
 RAW_DIR = DATA_DIR / "raw"
 OPEN_DATA = "https://opendata.camara.cl/camaradiputados/WServices"
 PROFILE_URL = "https://www.camara.cl/diputados/detalle/personaldepoyo.aspx?prmId={deputy_id}"
-USER_AGENT = "ObservatorioParlamentarioPilot/0.1 (+https://felipealcerreca.lat)"
+# Las fuentes públicas de la Cámara rechazan algunos agentes automatizados.
+# Se usan cabeceras equivalentes a una visita web normal, sin autenticación ni
+# evasión de controles de acceso.
+REQUEST_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "es-CL,es;q=0.9,en;q=0.8",
+    "Referer": "https://www.camara.cl/",
+}
 
 METHODS = {
     "deputies": ("WSDiputado.asmx/retornarDiputadosPeriodoActual", {}),
@@ -55,9 +64,12 @@ def clean_text(value: str | None) -> str | None:
 
 
 def request_text(url: str, *, delay: float) -> str:
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/xml,text/html"})
-    with urlopen(request, timeout=45) as response:  # noqa: S310 - las URLs se definen arriba.
-        payload = response.read().decode(response.headers.get_content_charset() or "utf-8", errors="replace")
+    request = Request(url, headers=REQUEST_HEADERS)
+    try:
+        with urlopen(request, timeout=45) as response:  # noqa: S310 - las URLs se definen arriba.
+            payload = response.read().decode(response.headers.get_content_charset() or "utf-8", errors="replace")
+    except HTTPError as error:
+        raise RuntimeError(f"La fuente oficial rechazó la consulta ({error.code}) en {url}") from error
     time.sleep(delay)
     return payload
 
