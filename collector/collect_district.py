@@ -23,7 +23,7 @@ from datetime import UTC, datetime
 from html import unescape
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -91,15 +91,27 @@ def normalized(value: str) -> str:
     return value.lower().translate(replacements)
 
 
-def request_text(url: str, *, delay: float) -> str:
+def request_text(url: str, *, delay: float, retries: int = 2) -> str:
     request = Request(url, headers=REQUEST_HEADERS)
-    try:
-        with urlopen(request, timeout=45) as response:  # noqa: S310 - las URLs se definen arriba.
-            payload = response.read().decode(response.headers.get_content_charset() or "utf-8", errors="replace")
-    except HTTPError as error:
-        raise RuntimeError(f"La fuente oficial rechazó la consulta ({error.code}) en {url}") from error
-    time.sleep(delay)
-    return payload
+    for attempt in range(retries):
+        try:
+            with urlopen(request, timeout=45) as response:  # noqa: S310 - las URLs se definen arriba.
+                payload = response.read().decode(response.headers.get_content_charset() or "utf-8", errors="replace")
+            time.sleep(delay)
+            return payload
+        except HTTPError as error:
+            # Errores de parámetro o acceso no mejoran esperando; los errores
+            # transitorios del servidor sí se reintentan con pausa creciente.
+            if error.code < 500 and error.code != 429:
+                raise RuntimeError(f"La fuente oficial rechazó la consulta ({error.code}) en {url}") from error
+            last_error: Exception = error
+        except URLError as error:
+            last_error = error
+
+        if attempt < retries - 1:
+            time.sleep((attempt + 1) * 3)
+
+    raise RuntimeError(f"La fuente oficial no respondió después de {retries} intentos en {url}") from last_error
 
 
 def method_url(name: str, year: int | None = None) -> str:
@@ -218,17 +230,24 @@ def hydrate_authors(
     element_name: str,
     *,
     delay: float,
-) -> list[dict[str, Any]]:
+) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
     """Completa los autores que no vienen expandidos en la respuesta anual."""
     hydrated: list[dict[str, Any]] = []
+    unavailable: list[dict[str, str]] = []
     for project in projects:
         if not project.get("id"):
             continue
-        detail = parse_projects(request_text(project_detail_url(source_name, project), delay=delay), element_name)
+        detail_url = project_detail_url(source_name, project)
+        try:
+            detail = parse_projects(request_text(detail_url, delay=delay), element_name)
+        except RuntimeError as error:
+            unavailable.append({"id": str(project["id"]), "url": detail_url, "reason": str(error)})
+            continue
         if not detail:
+            unavailable.append({"id": str(project["id"]), "url": detail_url, "reason": "El detalle no entregó un proyecto."})
             continue
         hydrated.append(detail[0])
-    return hydrated
+    return hydrated, unavailable
 
 
 def month_key(value: str | None) -> str | None:
@@ -283,10 +302,11 @@ def collect(args: argparse.Namespace) -> None:
         )
 
     open_data: dict[str, list[dict[str, Any]]] = {}
+    detail_failures: dict[str, list[dict[str, str]]] = {}
     for name, element_name in (("motions", "ProyectoLey"), ("agreements", "ProyectoAcuerdo"), ("resolutions", "ProyectoResolucion")):
         payload = request_text(urls[name], delay=args.delay)
         annual_projects = parse_projects(payload, element_name)
-        open_data[name] = hydrate_authors(name, annual_projects, element_name, delay=args.delay)
+        open_data[name], detail_failures[name] = hydrate_authors(name, annual_projects, element_name, delay=args.delay)
 
     deputy_records = []
     for profile in district_profiles:
@@ -313,7 +333,8 @@ def collect(args: argparse.Namespace) -> None:
         "retrieved_at": retrieved_at,
         "deputies_count": len(deputy_records),
         "deputies": [{"id": item["profile"]["id"], "name": item["profile"]["name"]} for item in deputy_records],
-        "availability": "phase_one_complete",
+        "availability": "phase_one_complete" if not any(detail_failures.values()) else "phase_one_partial",
+        "detail_failures": detail_failures,
         "sources": {**urls, "district_roster": DISTRICT_8_ROSTER_SOURCE},
     }
     save_json(DATA_DIR / "monthly-summary.json", summary)
@@ -325,7 +346,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Recolecta la primera fase del piloto Distrito 8.")
     parser.add_argument("--district", type=int, default=8)
     parser.add_argument("--year", type=int, default=datetime.now().year)
-    parser.add_argument("--delay", type=float, default=0.25, help="Pausa mínima entre solicitudes, en segundos.")
+    parser.add_argument("--delay", type=float, default=1.0, help="Pausa mínima entre solicitudes, en segundos.")
     parser.add_argument("--dry-run", action="store_true", help="Muestra las fuentes sin realizar solicitudes.")
     collect(parser.parse_args())
 
