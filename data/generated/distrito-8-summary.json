@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T18:45:15.590329+00:00",
+  "retrieved_at": "2026-07-21T19:29:41.107416+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -37,6 +37,39 @@
       "name": "Cristian Contreras Radovic"
     }
   ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 7,
+        "2026-03": 13,
+        "2026-04": 18,
+        "2026-05": 11,
+        "2026-06": 22,
+        "2026-07": 2
+      },
+      "total": 73,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.5208333333333333
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 4,
+        "2026-04": 9,
+        "2026-05": 6,
+        "2026-06": 5,
+        "2026-07": 5
+      },
+      "total": 29,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.725
+    }
+  },
   "availability": "phase_one_complete",
   "detail_failures": {
     "motions": [],
