@@ -62,6 +62,8 @@ REQUEST_HEADERS = {
 
 METHODS = {
     "deputies": ("WSDiputado.asmx/retornarDiputadosPeriodoActual", {}),
+    "commissions": ("WSComision.asmx/retornarComisionesVigentes", {}),
+    "sessions": ("WSSala.asmx/retornarSesionesXAnno", {"prmAnno": "{year}"}),
     "motions": ("WSLegislativo.asmx/retornarMocionesXAnno", {"prmAnno": "{year}"}),
     "agreements": ("WSProyectosAcuerdo.asmx/retornarProyectosAcuerdoXAnno", {"prmAnno": "{year}"}),
     "resolutions": ("WSProyectosResolucion.asmx/retornarProyectosResolucionXAnno", {"prmAnno": "{year}"}),
@@ -274,6 +276,77 @@ def summarize_projects(projects: list[dict[str, Any]], deputy_id: str) -> dict[s
     return {month: dict(counts) for month, counts in sorted(result.items())}
 
 
+def parse_commissions(xml_text: str) -> dict[str, list[str]]:
+    """Obtiene las comisiones vigentes de cada diputado/a desde la nómina oficial."""
+    result: dict[str, list[str]] = defaultdict(list)
+    root = parse_xml(xml_text)
+    for commission in root.iter():
+        if local_name(commission.tag) != "Comision":
+            continue
+        commission_name = child_text(commission, "NombreWeb") or child_text(commission, "Nombre")
+        members = next((child for child in commission if local_name(child.tag) == "Integrantes"), None)
+        if not commission_name or members is None:
+            continue
+        for membership in members:
+            if local_name(membership.tag) != "DiputadoIntegrante":
+                continue
+            deputy = next((child for child in membership if local_name(child.tag) == "Diputado"), None)
+            deputy_id = child_text(deputy, "Id") if deputy is not None else None
+            if deputy_id and commission_name not in result[deputy_id]:
+                result[deputy_id].append(commission_name)
+    return {deputy_id: sorted(names) for deputy_id, names in result.items()}
+
+
+def attendance_kind(value: str | None) -> str:
+    """Clasifica la etiqueta oficial sin asumir que una ausencia es asistencia."""
+    label = normalized(value or "")
+    if "presente" in label or "asiste" in label:
+        return "present"
+    if any(word in label for word in ("ausente", "justific", "permiso", "licencia", "pareo")):
+        return "not_present"
+    return "unclassified"
+
+
+def parse_attendance(xml_text: str) -> dict[str, dict[str, Any]]:
+    """Resume asistencia de sala; conserva los tipos para que el cálculo sea auditable."""
+    records: dict[str, dict[str, Any]] = defaultdict(lambda: {"sessions_recorded": 0, "present": 0, "not_present": 0, "unclassified": 0, "by_type": Counter()})
+    root = parse_xml(xml_text)
+    for session in root.iter():
+        if local_name(session.tag) != "Sesion":
+            continue
+        attendance_list = next((child for child in session if local_name(child.tag) == "ListadoAsistencia"), None)
+        if attendance_list is None:
+            continue
+        session_deputies: set[str] = set()
+        for attendance in attendance_list:
+            if local_name(attendance.tag) != "Asistencia":
+                continue
+            deputy = next((child for child in attendance if local_name(child.tag) == "Diputado"), None)
+            deputy_id = child_text(deputy, "Id") if deputy is not None else None
+            if not deputy_id or deputy_id in session_deputies:
+                continue
+            session_deputies.add(deputy_id)
+            attendance_type = child_text(attendance, "TipoAsistencia") or "Sin tipo publicado"
+            kind = attendance_kind(attendance_type)
+            record = records[deputy_id]
+            record["sessions_recorded"] += 1
+            record[kind] += 1
+            record["by_type"][attendance_type] += 1
+
+    result: dict[str, dict[str, Any]] = {}
+    for deputy_id, record in records.items():
+        denominator = record["sessions_recorded"] - record["unclassified"]
+        result[deputy_id] = {
+            "sessions_recorded": record["sessions_recorded"],
+            "present": record["present"],
+            "not_present": record["not_present"],
+            "unclassified": record["unclassified"],
+            "percentage": round(record["present"] * 100 / denominator, 1) if denominator else None,
+            "by_type": dict(sorted(record["by_type"].items())),
+        }
+    return result
+
+
 def summarize_district_activity(deputy_records: list[dict[str, Any]], activity_key: str) -> dict[str, Any]:
     """Agrega una actividad mensual sin convertir ausencias de datos en gastos o actividad ficticia."""
     by_month: Counter[str] = Counter()
@@ -327,6 +400,9 @@ def collect(args: argparse.Namespace) -> None:
         annual_projects = parse_projects(payload, element_name)
         open_data[name], detail_failures[name] = hydrate_authors(name, annual_projects, element_name, delay=args.delay)
 
+    commissions_by_deputy = parse_commissions(request_text(urls["commissions"], delay=args.delay))
+    attendance_by_deputy = parse_attendance(request_text(urls["sessions"], delay=args.delay))
+
     deputy_records = []
     for profile in district_profiles:
         deputy_id = profile["id"]
@@ -338,6 +414,11 @@ def collect(args: argparse.Namespace) -> None:
                     "agreements_by_month_and_state": summarize_projects(open_data["agreements"], deputy_id),
                     "resolutions_by_month_and_state": summarize_projects(open_data["resolutions"], deputy_id),
                 },
+                "commissions": commissions_by_deputy.get(deputy_id, []),
+                "attendance": attendance_by_deputy.get(
+                    deputy_id,
+                    {"sessions_recorded": 0, "present": 0, "not_present": 0, "unclassified": 0, "percentage": None, "by_type": {}},
+                ),
                 "transparency": {"availability": "pending_second_phase", "reason": "monthly_postback_collection_not_run"},
                 "retrieved_at": retrieved_at,
             }
@@ -346,6 +427,7 @@ def collect(args: argparse.Namespace) -> None:
     for record in deputy_records:
         save_json(DATA_DIR / "deputies" / f"{record['profile']['id']}.json", record)
 
+    attendance_percentages = [record["attendance"]["percentage"] for record in deputy_records if record["attendance"]["percentage"] is not None]
     summary = {
         "district": args.district,
         "year": args.year,
@@ -356,6 +438,10 @@ def collect(args: argparse.Namespace) -> None:
             "motions": summarize_district_activity(deputy_records, "motions_by_month_and_state"),
             "agreements": summarize_district_activity(deputy_records, "agreements_by_month_and_state"),
             "resolutions": summarize_district_activity(deputy_records, "resolutions_by_month_and_state"),
+        },
+        "attendance": {
+            "average_percentage": round(sum(attendance_percentages) / len(attendance_percentages), 1) if attendance_percentages else None,
+            "deputies_with_classified_records": len(attendance_percentages),
         },
         "availability": "phase_one_complete" if not any(detail_failures.values()) else "phase_one_partial",
         "detail_failures": detail_failures,
