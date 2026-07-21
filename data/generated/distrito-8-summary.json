@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T23:26:02.437596+00:00",
+  "retrieved_at": "2026-07-21T23:39:27.053778+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -68,6 +68,16 @@
       "total": 29,
       "months_with_records": 5,
       "average_per_deputy_per_month": 0.725
+    },
+    "offices": {
+      "by_month": {
+        "2026-05": 6,
+        "2026-07": 1
+      },
+      "total": 7,
+      "months_with_records": 2,
+      "average_per_deputy_per_month": 0.4375,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
     }
   },
   "attendance": {
@@ -131,6 +141,48 @@
       "coverage": "2026-03 a 2026-07",
       "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
       "methodology": "Respaldo trazable de la publicación oficial; suma remuneraciones de contratos vigentes y no equivale a gasto rendido."
+    },
+    "operational_expenses": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Gastos operacionales",
+        "source_url": "https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId={id}"
+      }
+    },
+    "external_advisories": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Asesorías externas",
+        "source_url": "https://www.camara.cl/diputados/detalle/asesoriasexternas.aspx?prmId={id}"
+      }
+    },
+    "flights": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Pasajes aéreos nacionales",
+        "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId={id}"
+      }
     }
   },
   "availability": "phase_one_complete",

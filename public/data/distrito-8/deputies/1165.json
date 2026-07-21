@@ -22,7 +22,8 @@
       "2026-05": {
         "Rechazado": 1
       }
-    }
+    },
+    "offices_by_month": {}
   },
   "commissions": [
     "Salud"
@@ -59,7 +60,49 @@
       "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
       "methodology": "Respaldo trazable de la publicación oficial; suma remuneraciones de contratos vigentes y no equivale a gasto rendido."
     },
+    "operational_expenses": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Gastos operacionales",
+        "source_url": "https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1165"
+      }
+    },
+    "external_advisories": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Asesorías externas",
+        "source_url": "https://www.camara.cl/diputados/detalle/asesoriasexternas.aspx?prmId=1165"
+      }
+    },
+    "flights": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Pasajes aéreos nacionales",
+        "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1165"
+      }
+    },
     "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-07-21T23:26:02.437596+00:00"
+  "retrieved_at": "2026-07-21T23:39:27.053778+00:00"
 }
