@@ -274,6 +274,25 @@ def summarize_projects(projects: list[dict[str, Any]], deputy_id: str) -> dict[s
     return {month: dict(counts) for month, counts in sorted(result.items())}
 
 
+def summarize_district_activity(deputy_records: list[dict[str, Any]], activity_key: str) -> dict[str, Any]:
+    """Agrega una actividad mensual sin convertir ausencias de datos en gastos o actividad ficticia."""
+    by_month: Counter[str] = Counter()
+    for record in deputy_records:
+        for month, states in record["activity"][activity_key].items():
+            by_month[month] += sum(states.values())
+
+    series = dict(sorted(by_month.items()))
+    total = sum(series.values())
+    months_with_records = len(series)
+    average = total / (len(deputy_records) * months_with_records) if deputy_records and months_with_records else None
+    return {
+        "by_month": series,
+        "total": total,
+        "months_with_records": months_with_records,
+        "average_per_deputy_per_month": average,
+    }
+
+
 def save_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -333,6 +352,11 @@ def collect(args: argparse.Namespace) -> None:
         "retrieved_at": retrieved_at,
         "deputies_count": len(deputy_records),
         "deputies": [{"id": item["profile"]["id"], "name": item["profile"]["name"]} for item in deputy_records],
+        "activity": {
+            "motions": summarize_district_activity(deputy_records, "motions_by_month_and_state"),
+            "agreements": summarize_district_activity(deputy_records, "agreements_by_month_and_state"),
+            "resolutions": summarize_district_activity(deputy_records, "resolutions_by_month_and_state"),
+        },
         "availability": "phase_one_complete" if not any(detail_failures.values()) else "phase_one_partial",
         "detail_failures": detail_failures,
         "sources": {**urls, "district_roster": DISTRICT_8_ROSTER_SOURCE},
