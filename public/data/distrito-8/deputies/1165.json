@@ -39,17 +39,27 @@
     }
   },
   "transparency": {
-    "availability": "unavailable",
+    "availability": "published_snapshot",
     "personnel_support": {
-      "by_month": {},
-      "contracts_count": 0
+      "contracts_count": 7,
+      "by_month": {
+        "2026-03": 8728545,
+        "2026-04": 8728545,
+        "2026-05": 8728545,
+        "2026-06": 9598545,
+        "2026-07": 9598545
+      }
     },
     "personnel_support_metadata": {
-      "availability": "unavailable",
-      "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
-      "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx"
+      "availability": "published_snapshot",
+      "label": "Remuneración mensual de contratos vigentes de personal de apoyo",
+      "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+      "snapshot_retrieved_at": "2026-07-21",
+      "coverage": "2026-03 a 2026-07",
+      "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
+      "methodology": "Respaldo trazable de la publicación oficial; suma remuneraciones de contratos vigentes y no equivale a gasto rendido."
     },
-    "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
+    "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-07-21T23:10:25.536943+00:00"
+  "retrieved_at": "2026-07-21T23:26:02.437596+00:00"
 }
