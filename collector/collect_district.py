@@ -76,6 +76,8 @@ DETAIL_METHODS = {
     "resolutions": ("WSProyectosResolucion.asmx/retornarProyectoResolucion", "prmProyectoResolucionId", "id"),
 }
 
+SESSION_ATTENDANCE_METHOD = "WSSala.asmx/retornarSesionAsistencia"
+
 
 def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
@@ -129,6 +131,11 @@ def project_detail_url(name: str, project: dict[str, Any]) -> str:
     if not project_value:
         raise ValueError(f"No hay {project_key} para consultar el detalle de {name}.")
     return f"{OPEN_DATA}/{path}?{urlencode({parameter_name: project_value})}"
+
+
+def session_attendance_url(session_id: str) -> str:
+    """Devuelve el detalle de asistencia de una sesión de Sala."""
+    return f"{OPEN_DATA}/{SESSION_ATTENDANCE_METHOD}?{urlencode({'prmSesionId': session_id})}"
 
 
 def child_text(element: ET.Element, name: str) -> str | None:
@@ -297,6 +304,19 @@ def parse_commissions(xml_text: str) -> dict[str, list[str]]:
     return {deputy_id: sorted(names) for deputy_id, names in result.items()}
 
 
+def parse_session_ids(xml_text: str) -> list[str]:
+    """Extrae los ids del listado anual; la asistencia viene en otra operación."""
+    root = parse_xml(xml_text)
+    session_ids: list[str] = []
+    for session in root.iter():
+        if local_name(session.tag) not in {"Sesion", "SesionSala"}:
+            continue
+        session_id = child_text(session, "Id")
+        if session_id and session_id not in session_ids:
+            session_ids.append(session_id)
+    return session_ids
+
+
 def attendance_kind(value: str | None) -> str:
     """Clasifica la etiqueta oficial sin asumir que una ausencia es asistencia."""
     label = normalized(value or "")
@@ -312,7 +332,7 @@ def parse_attendance(xml_text: str) -> dict[str, dict[str, Any]]:
     records: dict[str, dict[str, Any]] = defaultdict(lambda: {"sessions_recorded": 0, "present": 0, "not_present": 0, "unclassified": 0, "by_type": Counter()})
     root = parse_xml(xml_text)
     for session in root.iter():
-        if local_name(session.tag) != "Sesion":
+        if local_name(session.tag) not in {"Sesion", "SesionSala"}:
             continue
         attendance_list = next((child for child in session if local_name(child.tag) == "ListadoAsistencia"), None)
         if attendance_list is None:
@@ -326,7 +346,9 @@ def parse_attendance(xml_text: str) -> dict[str, dict[str, Any]]:
             if not deputy_id or deputy_id in session_deputies:
                 continue
             session_deputies.add(deputy_id)
-            attendance_type = child_text(attendance, "TipoAsistencia") or "Sin tipo publicado"
+            attendance_type_node = next((child for child in attendance if local_name(child.tag) == "TipoAsistencia"), None)
+            attendance_type = flatten(attendance_type_node) if attendance_type_node is not None else None
+            attendance_type = attendance_type or "Sin tipo publicado"
             kind = attendance_kind(attendance_type)
             record = records[deputy_id]
             record["sessions_recorded"] += 1
@@ -345,6 +367,41 @@ def parse_attendance(xml_text: str) -> dict[str, dict[str, Any]]:
             "by_type": dict(sorted(record["by_type"].items())),
         }
     return result
+
+
+def hydrate_attendance(session_ids: list[str], *, delay: float) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
+    """Consulta el detalle de cada sesión sin bloquear la publicación por fallas aisladas."""
+    combined: dict[str, dict[str, Any]] = {}
+    unavailable: list[dict[str, str]] = []
+    for session_id in session_ids:
+        detail_url = session_attendance_url(session_id)
+        try:
+            session_records = parse_attendance(request_text(detail_url, delay=delay))
+        except RuntimeError as error:
+            unavailable.append({"id": session_id, "url": detail_url, "reason": str(error)})
+            continue
+
+        for deputy_id, record in session_records.items():
+            target = combined.setdefault(
+                deputy_id,
+                {"sessions_recorded": 0, "present": 0, "not_present": 0, "unclassified": 0, "by_type": Counter()},
+            )
+            for field in ("sessions_recorded", "present", "not_present", "unclassified"):
+                target[field] += record[field]
+            target["by_type"].update(record["by_type"])
+
+    result: dict[str, dict[str, Any]] = {}
+    for deputy_id, record in combined.items():
+        denominator = record["sessions_recorded"] - record["unclassified"]
+        result[deputy_id] = {
+            "sessions_recorded": record["sessions_recorded"],
+            "present": record["present"],
+            "not_present": record["not_present"],
+            "unclassified": record["unclassified"],
+            "percentage": round(record["present"] * 100 / denominator, 1) if denominator else None,
+            "by_type": dict(sorted(record["by_type"].items())),
+        }
+    return result, unavailable
 
 
 def summarize_district_activity(deputy_records: list[dict[str, Any]], activity_key: str) -> dict[str, Any]:
@@ -401,7 +458,8 @@ def collect(args: argparse.Namespace) -> None:
         open_data[name], detail_failures[name] = hydrate_authors(name, annual_projects, element_name, delay=args.delay)
 
     commissions_by_deputy = parse_commissions(request_text(urls["commissions"], delay=args.delay))
-    attendance_by_deputy = parse_attendance(request_text(urls["sessions"], delay=args.delay))
+    annual_sessions = request_text(urls["sessions"], delay=args.delay)
+    attendance_by_deputy, attendance_failures = hydrate_attendance(parse_session_ids(annual_sessions), delay=args.delay)
 
     deputy_records = []
     for profile in district_profiles:
@@ -442,6 +500,7 @@ def collect(args: argparse.Namespace) -> None:
         "attendance": {
             "average_percentage": round(sum(attendance_percentages) / len(attendance_percentages), 1) if attendance_percentages else None,
             "deputies_with_classified_records": len(attendance_percentages),
+            "session_detail_failures": attendance_failures,
         },
         "availability": "phase_one_complete" if not any(detail_failures.values()) else "phase_one_partial",
         "detail_failures": detail_failures,
