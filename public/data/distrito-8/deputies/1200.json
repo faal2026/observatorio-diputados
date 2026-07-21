@@ -1,0 +1,23 @@
+{
+  "profile": {
+    "id": "1200",
+    "name": "Cristian Contreras Radovic",
+    "district": "Distrito 8",
+    "region": "Región Metropolitana de Santiago",
+    "period": "2026-2030",
+    "party": null,
+    "bench": null,
+    "source_url": "https://www.camara.cl/diputados/detalle/personaldepoyo.aspx?prmId=1200",
+    "territory_source_url": "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=8"
+  },
+  "activity": {
+    "motions_by_month_and_state": {},
+    "agreements_by_month_and_state": {},
+    "resolutions_by_month_and_state": {}
+  },
+  "transparency": {
+    "availability": "pending_second_phase",
+    "reason": "monthly_postback_collection_not_run"
+  },
+  "retrieved_at": "2026-07-21T18:01:28.162589+00:00"
+}
