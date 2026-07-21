@@ -2,12 +2,13 @@
 """Recolector inicial para el piloto del Distrito 8.
 
 No requiere librerías externas. Usa los servicios de Datos Abiertos de la
-Cámara para actividad legislativa y las fichas públicas para validar el
-territorio de cada diputada o diputado.
+Cámara para identidad y actividad legislativa. La nómina territorial se
+mantiene como una lista explícita basada en el reporte oficial de la Biblioteca
+del Congreso Nacional, porque la ficha individual de la Cámara bloquea
+solicitudes originadas desde GitHub Actions.
 
-La primera fase genera la nómina, las fichas territoriales y las métricas
-anuales que ya están disponibles en Datos Abiertos. Las fuentes mensuales de
-transparencia se incorporan en una segunda fase mediante sus postbacks ASP.NET.
+La primera fase genera la nómina y las métricas disponibles en Datos Abiertos.
+Las fuentes mensuales de transparencia se incorporan en una segunda fase.
 """
 
 from __future__ import annotations
@@ -34,6 +35,20 @@ DATA_DIR = ROOT / "public" / "data" / "distrito-8"
 RAW_DIR = DATA_DIR / "raw"
 OPEN_DATA = "https://opendata.camara.cl/camaradiputados/WServices"
 PROFILE_URL = "https://www.camara.cl/diputados/detalle/personaldepoyo.aspx?prmId={deputy_id}"
+DISTRICT_8_ROSTER_SOURCE = "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=8"
+
+# Se usan nombre y apellido para no confundir homónimos al cruzar la nómina
+# distrital con los identificadores oficiales de Datos Abiertos.
+DISTRICT_8_IDENTIFIERS = (
+    ("agustin", "romero"),
+    ("cristian", "contreras"),
+    ("enrique", "bassaletti"),
+    ("gustavo", "gatica"),
+    ("marcos", "barraza"),
+    ("mario", "olavarria"),
+    ("pier", "karlezi"),
+    ("tatiana", "urrutia"),
+)
 # Las fuentes públicas de la Cámara rechazan algunos agentes automatizados.
 # Se usan cabeceras equivalentes a una visita web normal, sin autenticación ni
 # evasión de controles de acceso.
@@ -61,6 +76,11 @@ def clean_text(value: str | None) -> str | None:
         return None
     result = " ".join(unescape(value).split())
     return result or None
+
+
+def normalized(value: str) -> str:
+    replacements = str.maketrans("áéíóúüñ", "aeiouun")
+    return value.lower().translate(replacements)
 
 
 def request_text(url: str, *, delay: float) -> str:
@@ -125,29 +145,22 @@ def parse_deputies(xml_text: str) -> list[dict[str, str]]:
     return deputies
 
 
-def html_to_text(html: str) -> str:
-    without_noise = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.IGNORECASE | re.DOTALL)
-    return clean_text(re.sub(r"<[^>]+>", " ", without_noise)) or ""
+def belongs_to_district_8(deputy: dict[str, str]) -> bool:
+    name = normalized(deputy["name"])
+    return any(given_name in name and family_name in name for given_name, family_name in DISTRICT_8_IDENTIFIERS)
 
 
-def labelled_value(text: str, label: str, next_labels: Iterable[str]) -> str | None:
-    marker = re.escape(label)
-    endings = "|".join(re.escape(item) for item in next_labels)
-    match = re.search(rf"{marker}\s*:?\s*(.+?)(?=\s*(?:{endings})\s*:|$)", text, flags=re.IGNORECASE)
-    return clean_text(match.group(1)) if match else None
-
-
-def profile_from_html(deputy: dict[str, str], html: str) -> dict[str, Any]:
-    text = html_to_text(html)
-    labels = ["Distrito", "Región", "Período", "Partido", "Bancada", "Contacto", "Trabajo Parlamentario"]
-    values = {
-        "district": labelled_value(text, "Distrito", labels[1:]),
-        "region": labelled_value(text, "Región", labels[2:]),
-        "period": labelled_value(text, "Período", labels[3:]),
-        "party": labelled_value(text, "Partido", labels[4:]),
-        "bench": labelled_value(text, "Bancada", labels[5:]),
+def profile_from_roster(deputy: dict[str, str]) -> dict[str, Any]:
+    return {
+        **deputy,
+        "district": "Distrito 8",
+        "region": "Región Metropolitana de Santiago",
+        "period": "2026-2030",
+        "party": None,
+        "bench": None,
+        "source_url": PROFILE_URL.format(deputy_id=deputy["id"]),
+        "territory_source_url": DISTRICT_8_ROSTER_SOURCE,
     }
-    return {**deputy, **values, "source_url": PROFILE_URL.format(deputy_id=deputy["id"])}
 
 
 def parse_projects(xml_text: str, element_name: str) -> list[dict[str, Any]]:
@@ -213,12 +226,16 @@ def collect(args: argparse.Namespace) -> None:
     save_json(RAW_DIR / "deputies.xml.json", {"retrieved_at": retrieved_at, "url": urls["deputies"], "payload": deputies_xml})
     deputies = parse_deputies(deputies_xml)
 
-    district_profiles: list[dict[str, Any]] = []
-    for deputy in deputies:
-        profile_html = request_text(PROFILE_URL.format(deputy_id=deputy["id"]), delay=args.delay)
-        profile = profile_from_html(deputy, profile_html)
-        if profile.get("district") and re.search(rf"\b{re.escape(str(args.district))}\b", profile["district"]):
-            district_profiles.append(profile)
+    if args.district != 8:
+        raise ValueError("Este piloto solo tiene configurada la nómina del Distrito 8.")
+
+    district_profiles = [profile_from_roster(deputy) for deputy in deputies if belongs_to_district_8(deputy)]
+    if len(district_profiles) != len(DISTRICT_8_IDENTIFIERS):
+        found_names = ", ".join(profile["name"] for profile in district_profiles) or "ninguno"
+        raise RuntimeError(
+            f"La nómina oficial de Datos Abiertos no coincidió con el Distrito 8: se encontraron {len(district_profiles)} de "
+            f"{len(DISTRICT_8_IDENTIFIERS)} integrantes ({found_names})."
+        )
 
     open_data: dict[str, list[dict[str, Any]]] = {}
     for name, element_name in (("motions", "ProyectoLey"), ("agreements", "ProyectoAcuerdo"), ("resolutions", "ProyectoResolucion")):
@@ -251,7 +268,7 @@ def collect(args: argparse.Namespace) -> None:
         "deputies_count": len(deputy_records),
         "deputies": [{"id": item["profile"]["id"], "name": item["profile"]["name"]} for item in deputy_records],
         "availability": "phase_one_complete",
-        "sources": urls,
+        "sources": {**urls, "district_roster": DISTRICT_8_ROSTER_SOURCE},
     }
     save_json(DATA_DIR / "monthly-summary.json", summary)
     print(f"Distrito {args.district}: {len(deputy_records)} diputadas y diputados guardados en {DATA_DIR}")

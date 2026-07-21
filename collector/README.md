@@ -7,7 +7,7 @@ El piloto combinará dos fuentes oficiales:
 
 Cada registro mensual debe incluir `source_url`, `retrieved_at`, `availability` y `published_deputies_count`. Los valores no publicados se almacenan como `null`, nunca como cero.
 
-La primera fase está implementada en `collect_district.py`. Construye la nómina territorial del distrito y las métricas anuales disponibles en Datos Abiertos para mociones, acuerdos y resoluciones. Se puede revisar sin consultar las fuentes:
+La primera fase está implementada en `collect_district.py`. Cruza los identificadores de Datos Abiertos con la nómina oficial del Distrito 8 publicada por la Biblioteca del Congreso Nacional y genera las métricas anuales disponibles para mociones, acuerdos y resoluciones. Se puede revisar sin consultar las fuentes:
 
 ```text
 python3 collector/collect_district.py --dry-run
