@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T22:06:50.440898+00:00",
+  "retrieved_at": "2026-07-21T22:33:23.634090+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -74,6 +74,9 @@
     "average_percentage": 100.0,
     "deputies_with_classified_records": 8,
     "session_detail_failures": []
+  },
+  "commissions": {
+    "detail_failures": []
   },
   "diet": {
     "monthly_gross_per_deputy_clp": 8239091,
