@@ -67,6 +67,12 @@ METHODS = {
     "resolutions": ("WSProyectosResolucion.asmx/retornarProyectosResolucionXAnno", {"prmAnno": "{year}"}),
 }
 
+DETAIL_METHODS = {
+    "motions": ("WSLegislativo.asmx/retornarProyectoLey", "prmProyectoLeyId"),
+    "agreements": ("WSProyectosAcuerdo.asmx/retornarProyectoAcuerdo", "prmProyectoAcuerdoId"),
+    "resolutions": ("WSProyectosResolucion.asmx/retornarProyectoResolucion", "prmProyectoResolucionId"),
+}
+
 
 def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
@@ -100,6 +106,11 @@ def method_url(name: str, year: int | None = None) -> str:
     resolved = {key: value.format(year=year) if "{year}" in value else value for key, value in params.items()}
     query = f"?{urlencode(resolved)}" if resolved else ""
     return f"{OPEN_DATA}/{path}{query}"
+
+
+def project_detail_url(name: str, project_id: str) -> str:
+    path, parameter_name = DETAIL_METHODS[name]
+    return f"{OPEN_DATA}/{path}?{urlencode({parameter_name: project_id})}"
 
 
 def child_text(element: ET.Element, name: str) -> str | None:
@@ -171,12 +182,21 @@ def parse_projects(xml_text: str, element_name: str) -> list[dict[str, Any]]:
         if local_name(node.tag) != element_name:
             continue
         authors = next((child for child in node if local_name(child.tag) == "Autores"), None)
+        author_ids: list[str] = []
+        if authors is not None:
+            for author in authors.iter():
+                if local_name(author.tag) != "Diputado":
+                    continue
+                author_id = child_text(author, "Id")
+                if author_id:
+                    author_ids.append(author_id)
         projects.append(
             {
                 "id": child_text(node, "Id"),
                 "date": descendant_text(node, ("FechaIngreso", "Fecha")),
                 "state": descendant_text(node, ("Estado", "Adminisible", "Admisible")),
                 "authors_text": flatten(authors) if authors is not None else "",
+                "author_ids": author_ids,
                 "source": flatten(node),
             }
         )
@@ -184,7 +204,27 @@ def parse_projects(xml_text: str, element_name: str) -> list[dict[str, Any]]:
 
 
 def is_author(project: dict[str, Any], deputy_id: str) -> bool:
-    return bool(re.search(rf"(?<!\d){re.escape(deputy_id)}(?!\d)", project["authors_text"]))
+    return deputy_id in project.get("author_ids", []) or bool(re.search(rf"(?<!\d){re.escape(deputy_id)}(?!\d)", project["authors_text"]))
+
+
+def hydrate_authors(
+    source_name: str,
+    projects: list[dict[str, Any]],
+    element_name: str,
+    *,
+    delay: float,
+) -> list[dict[str, Any]]:
+    """Completa los autores que no vienen expandidos en la respuesta anual."""
+    hydrated: list[dict[str, Any]] = []
+    for project in projects:
+        project_id = project.get("id")
+        if not project_id:
+            continue
+        detail = parse_projects(request_text(project_detail_url(source_name, project_id), delay=delay), element_name)
+        if not detail:
+            continue
+        hydrated.append(detail[0])
+    return hydrated
 
 
 def month_key(value: str | None) -> str | None:
@@ -241,7 +281,8 @@ def collect(args: argparse.Namespace) -> None:
     open_data: dict[str, list[dict[str, Any]]] = {}
     for name, element_name in (("motions", "ProyectoLey"), ("agreements", "ProyectoAcuerdo"), ("resolutions", "ProyectoResolucion")):
         payload = request_text(urls[name], delay=args.delay)
-        open_data[name] = parse_projects(payload, element_name)
+        annual_projects = parse_projects(payload, element_name)
+        open_data[name] = hydrate_authors(name, annual_projects, element_name, delay=args.delay)
 
     deputy_records = []
     for profile in district_profiles:
@@ -280,7 +321,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Recolecta la primera fase del piloto Distrito 8.")
     parser.add_argument("--district", type=int, default=8)
     parser.add_argument("--year", type=int, default=datetime.now().year)
-    parser.add_argument("--delay", type=float, default=0.8, help="Pausa mínima entre solicitudes, en segundos.")
+    parser.add_argument("--delay", type=float, default=0.25, help="Pausa mínima entre solicitudes, en segundos.")
     parser.add_argument("--dry-run", action="store_true", help="Muestra las fuentes sin realizar solicitudes.")
     collect(parser.parse_args())
 
