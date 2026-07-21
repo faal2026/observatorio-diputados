@@ -34,7 +34,7 @@ jobs:
           python-version: "3.12"
 
       - name: Recopilar datos oficiales
-        run: python collector/collect_district.py --district 8 --year "$(date +%Y)"
+        run: python collector/collect_district.py --district 8 --year "$(date +%Y)" --workers 5 --delay 0.2
 
       - name: Guardar datos actualizados
         run: |

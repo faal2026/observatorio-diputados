@@ -19,6 +19,7 @@ import re
 import time
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
 from html import unescape
 from pathlib import Path
@@ -77,6 +78,7 @@ DETAIL_METHODS = {
 }
 
 SESSION_ATTENDANCE_METHOD = "WSSala.asmx/retornarSesionAsistencia"
+COMMISSION_DETAIL_METHOD = "WSComision.asmx/retornarComision"
 
 # La dieta no es una asignación rendida por cada diputado/a: es una
 # remuneración bruta mensual fijada para el cargo. Se mantiene separada de
@@ -148,6 +150,10 @@ def session_attendance_url(session_id: str) -> str:
     return f"{OPEN_DATA}/{SESSION_ATTENDANCE_METHOD}?{urlencode({'prmSesionId': session_id})}"
 
 
+def commission_detail_url(commission_id: str) -> str:
+    return f"{OPEN_DATA}/{COMMISSION_DETAIL_METHOD}?{urlencode({'prmComisionId': commission_id})}"
+
+
 def child_text(element: ET.Element, name: str) -> str | None:
     for child in element:
         if local_name(child.tag) == name:
@@ -171,6 +177,15 @@ def flatten(element: ET.Element) -> str:
 
 def parse_xml(xml_text: str) -> ET.Element:
     return ET.fromstring(xml_text)
+
+
+def load_json(path: Path, default: Any) -> Any:
+    if not path.exists():
+        return default
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return default
 
 
 def parse_deputies(xml_text: str) -> list[dict[str, str]]:
@@ -249,24 +264,53 @@ def hydrate_authors(
     element_name: str,
     *,
     delay: float,
+    workers: int,
+    author_cache: dict[str, dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
-    """Completa los autores que no vienen expandidos en la respuesta anual."""
+    """Completa autores y reutiliza los ya obtenidos en ejecuciones anteriores."""
     hydrated: list[dict[str, Any]] = []
     unavailable: list[dict[str, str]] = []
+    pending: list[dict[str, Any]] = []
+
     for project in projects:
-        if not project.get("id"):
+        project_id = str(project.get("id") or "")
+        if not project_id:
             continue
+        cached = author_cache.get(project_id)
+        if cached:
+            hydrated.append({**project, "author_ids": cached.get("author_ids", []), "authors_text": cached.get("authors_text", "")})
+            continue
+        pending.append(project)
+
+    def fetch_project(project: dict[str, Any]) -> tuple[dict[str, Any] | None, dict[str, str] | None]:
         detail_url = project_detail_url(source_name, project)
         try:
             detail = parse_projects(request_text(detail_url, delay=delay), element_name)
         except RuntimeError as error:
-            unavailable.append({"id": str(project["id"]), "url": detail_url, "reason": str(error)})
-            continue
+            return None, {"id": str(project["id"]), "url": detail_url, "reason": str(error)}
         if not detail:
-            unavailable.append({"id": str(project["id"]), "url": detail_url, "reason": "El detalle no entregó un proyecto."})
-            continue
-        hydrated.append(detail[0])
-    return hydrated, unavailable
+            return None, {"id": str(project["id"]), "url": detail_url, "reason": "El detalle no entregó un proyecto."}
+        detailed_project = detail[0]
+        merged = {**project, "author_ids": detailed_project["author_ids"], "authors_text": detailed_project["authors_text"]}
+        return merged, None
+
+    if pending:
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = [executor.submit(fetch_project, project) for project in pending]
+            for future in as_completed(futures):
+                hydrated_project, failure = future.result()
+                if failure:
+                    unavailable.append(failure)
+                    continue
+                if hydrated_project:
+                    project_id = str(hydrated_project["id"])
+                    author_cache[project_id] = {
+                        "author_ids": hydrated_project["author_ids"],
+                        "authors_text": hydrated_project["authors_text"],
+                    }
+                    hydrated.append(hydrated_project)
+
+    return hydrated, sorted(unavailable, key=lambda item: item["id"])
 
 
 def month_key(value: str | None) -> str | None:
@@ -312,6 +356,40 @@ def parse_commissions(xml_text: str) -> dict[str, list[str]]:
             if deputy_id and commission_name not in result[deputy_id]:
                 result[deputy_id].append(commission_name)
     return {deputy_id: sorted(names) for deputy_id, names in result.items()}
+
+
+def parse_commission_ids(xml_text: str) -> list[str]:
+    root = parse_xml(xml_text)
+    return list(dict.fromkeys(child_text(commission, "Id") for commission in root.iter() if local_name(commission.tag) == "Comision" and child_text(commission, "Id")))
+
+
+def hydrate_commissions(xml_text: str, *, delay: float, workers: int) -> tuple[dict[str, list[str]], list[dict[str, str]]]:
+    """La consulta resumida no expande integrantes; se obtienen desde cada comisión."""
+    combined: dict[str, list[str]] = defaultdict(list)
+    for deputy_id, names in parse_commissions(xml_text).items():
+        combined[deputy_id].extend(names)
+    failures: list[dict[str, str]] = []
+
+    def fetch_commission(commission_id: str) -> tuple[dict[str, list[str]] | None, dict[str, str] | None]:
+        url = commission_detail_url(commission_id)
+        try:
+            return parse_commissions(request_text(url, delay=delay)), None
+        except RuntimeError as error:
+            return None, {"id": commission_id, "url": url, "reason": str(error)}
+
+    commission_ids = parse_commission_ids(xml_text)
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(fetch_commission, commission_id) for commission_id in commission_ids]
+        for future in as_completed(futures):
+            memberships, failure = future.result()
+            if failure:
+                failures.append(failure)
+                continue
+            for deputy_id, names in (memberships or {}).items():
+                for name in names:
+                    if name not in combined[deputy_id]:
+                        combined[deputy_id].append(name)
+    return {deputy_id: sorted(names) for deputy_id, names in combined.items()}, sorted(failures, key=lambda item: item["id"])
 
 
 def parse_session_ids(xml_text: str) -> list[str]:
@@ -379,26 +457,32 @@ def parse_attendance(xml_text: str) -> dict[str, dict[str, Any]]:
     return result
 
 
-def hydrate_attendance(session_ids: list[str], *, delay: float) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
+def hydrate_attendance(session_ids: list[str], *, delay: float, workers: int) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
     """Consulta el detalle de cada sesión sin bloquear la publicación por fallas aisladas."""
     combined: dict[str, dict[str, Any]] = {}
     unavailable: list[dict[str, str]] = []
-    for session_id in session_ids:
+    def fetch_session(session_id: str) -> tuple[dict[str, dict[str, Any]] | None, dict[str, str] | None]:
         detail_url = session_attendance_url(session_id)
         try:
-            session_records = parse_attendance(request_text(detail_url, delay=delay))
+            return parse_attendance(request_text(detail_url, delay=delay)), None
         except RuntimeError as error:
-            unavailable.append({"id": session_id, "url": detail_url, "reason": str(error)})
-            continue
+            return None, {"id": session_id, "url": detail_url, "reason": str(error)}
 
-        for deputy_id, record in session_records.items():
-            target = combined.setdefault(
-                deputy_id,
-                {"sessions_recorded": 0, "present": 0, "not_present": 0, "unclassified": 0, "by_type": Counter()},
-            )
-            for field in ("sessions_recorded", "present", "not_present", "unclassified"):
-                target[field] += record[field]
-            target["by_type"].update(record["by_type"])
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(fetch_session, session_id) for session_id in session_ids]
+        for future in as_completed(futures):
+            session_records, failure = future.result()
+            if failure:
+                unavailable.append(failure)
+                continue
+            for deputy_id, record in (session_records or {}).items():
+                target = combined.setdefault(
+                    deputy_id,
+                    {"sessions_recorded": 0, "present": 0, "not_present": 0, "unclassified": 0, "by_type": Counter()},
+                )
+                for field in ("sessions_recorded", "present", "not_present", "unclassified"):
+                    target[field] += record[field]
+                target["by_type"].update(record["by_type"])
 
     result: dict[str, dict[str, Any]] = {}
     for deputy_id, record in combined.items():
@@ -411,7 +495,7 @@ def hydrate_attendance(session_ids: list[str], *, delay: float) -> tuple[dict[st
             "percentage": round(record["present"] * 100 / denominator, 1) if denominator else None,
             "by_type": dict(sorted(record["by_type"].items())),
         }
-    return result, unavailable
+    return result, sorted(unavailable, key=lambda item: item["id"])
 
 
 def summarize_district_activity(deputy_records: list[dict[str, Any]], activity_key: str) -> dict[str, Any]:
@@ -462,14 +546,30 @@ def collect(args: argparse.Namespace) -> None:
 
     open_data: dict[str, list[dict[str, Any]]] = {}
     detail_failures: dict[str, list[dict[str, str]]] = {}
+    author_cache_path = RAW_DIR / f"author-cache-{args.year}.json"
+    author_cache_payload = load_json(author_cache_path, {"schema_version": 1, "sources": {}})
+    if not isinstance(author_cache_payload, dict):
+        author_cache_payload = {"schema_version": 1, "sources": {}}
+    author_cache_sources = author_cache_payload.setdefault("sources", {})
+    workers = max(1, min(args.workers, 6))
     for name, element_name in (("motions", "ProyectoLey"), ("agreements", "ProyectoAcuerdo"), ("resolutions", "ProyectoResolucion")):
         payload = request_text(urls[name], delay=args.delay)
         annual_projects = parse_projects(payload, element_name)
-        open_data[name], detail_failures[name] = hydrate_authors(name, annual_projects, element_name, delay=args.delay)
+        source_cache = author_cache_sources.setdefault(name, {})
+        open_data[name], detail_failures[name] = hydrate_authors(
+            name,
+            annual_projects,
+            element_name,
+            delay=args.delay,
+            workers=workers,
+            author_cache=source_cache,
+        )
+    save_json(author_cache_path, author_cache_payload)
 
-    commissions_by_deputy = parse_commissions(request_text(urls["commissions"], delay=args.delay))
+    commissions_xml = request_text(urls["commissions"], delay=args.delay)
+    commissions_by_deputy, commission_failures = hydrate_commissions(commissions_xml, delay=args.delay, workers=workers)
     annual_sessions = request_text(urls["sessions"], delay=args.delay)
-    attendance_by_deputy, attendance_failures = hydrate_attendance(parse_session_ids(annual_sessions), delay=args.delay)
+    attendance_by_deputy, attendance_failures = hydrate_attendance(parse_session_ids(annual_sessions), delay=args.delay, workers=workers)
 
     deputy_records = []
     for profile in district_profiles:
@@ -512,12 +612,13 @@ def collect(args: argparse.Namespace) -> None:
             "deputies_with_classified_records": len(attendance_percentages),
             "session_detail_failures": attendance_failures,
         },
+        "commissions": {"detail_failures": commission_failures},
         "diet": {
             **DIET_2026,
             "monthly_gross_district_clp": DIET_2026["monthly_gross_per_deputy_clp"] * len(deputy_records),
             "deputies_counted": len(deputy_records),
         },
-        "availability": "phase_one_complete" if not any(detail_failures.values()) else "phase_one_partial",
+        "availability": "phase_one_complete" if not any(detail_failures.values()) and not commission_failures else "phase_one_partial",
         "detail_failures": detail_failures,
         "sources": {**urls, "district_roster": DISTRICT_8_ROSTER_SOURCE},
     }
@@ -531,6 +632,7 @@ def main() -> None:
     parser.add_argument("--district", type=int, default=8)
     parser.add_argument("--year", type=int, default=datetime.now().year)
     parser.add_argument("--delay", type=float, default=1.0, help="Pausa mínima entre solicitudes, en segundos.")
+    parser.add_argument("--workers", type=int, default=4, help="Consultas oficiales simultáneas (máximo seguro: 6).")
     parser.add_argument("--dry-run", action="store_true", help="Muestra las fuentes sin realizar solicitudes.")
     collect(parser.parse_args())
 
