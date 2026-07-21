@@ -11,7 +11,17 @@
     "territory_source_url": "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=8"
   },
   "activity": {
-    "motions_by_month_and_state": {},
+    "motions_by_month_and_state": {
+      "2026-04": {
+        "true": 5
+      },
+      "2026-05": {
+        "true": 3
+      },
+      "2026-06": {
+        "true": 8
+      }
+    },
     "agreements_by_month_and_state": {},
     "resolutions_by_month_and_state": {}
   },
@@ -19,5 +29,5 @@
     "availability": "pending_second_phase",
     "reason": "monthly_postback_collection_not_run"
   },
-  "retrieved_at": "2026-07-21T18:01:28.162589+00:00"
+  "retrieved_at": "2026-07-21T18:45:15.590329+00:00"
 }

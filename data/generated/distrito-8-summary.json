@@ -1,16 +1,53 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T18:01:28.162589+00:00",
+  "retrieved_at": "2026-07-21T18:45:15.590329+00:00",
   "deputies_count": 8,
   "deputies": [
-    { "id": "1165", "name": "Agustín Romero Leiva" },
-    { "id": "1190", "name": "Enrique Bassaletti Riess" },
-    { "id": "1217", "name": "Pier Karlezi Hazleby" },
-    { "id": "1256", "name": "Tatiana Urrutia Herrera" },
-    { "id": "1188", "name": "Marcos Barraza Gómez" },
-    { "id": "1234", "name": "Mario Olavarría Rodríguez" },
-    { "id": "1210", "name": "Gustavo Gatica Villarroel" },
-    { "id": "1200", "name": "Cristian Contreras Radovic" }
-  ]
+    {
+      "id": "1165",
+      "name": "Agustín Romero Leiva"
+    },
+    {
+      "id": "1190",
+      "name": "Enrique Bassaletti Riess"
+    },
+    {
+      "id": "1217",
+      "name": "Pier Karlezi Hazleby"
+    },
+    {
+      "id": "1256",
+      "name": "Tatiana Urrutia Herrera"
+    },
+    {
+      "id": "1188",
+      "name": "Marcos Barraza Gómez"
+    },
+    {
+      "id": "1234",
+      "name": "Mario Olavarría Rodríguez"
+    },
+    {
+      "id": "1210",
+      "name": "Gustavo Gatica Villarroel"
+    },
+    {
+      "id": "1200",
+      "name": "Cristian Contreras Radovic"
+    }
+  ],
+  "availability": "phase_one_complete",
+  "detail_failures": {
+    "motions": [],
+    "agreements": [],
+    "resolutions": []
+  },
+  "sources": {
+    "deputies": "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx/retornarDiputadosPeriodoActual",
+    "motions": "https://opendata.camara.cl/camaradiputados/WServices/WSLegislativo.asmx/retornarMocionesXAnno?prmAnno=2026",
+    "agreements": "https://opendata.camara.cl/camaradiputados/WServices/WSProyectosAcuerdo.asmx/retornarProyectosAcuerdoXAnno?prmAnno=2026",
+    "resolutions": "https://opendata.camara.cl/camaradiputados/WServices/WSProyectosResolucion.asmx/retornarProyectosResolucionXAnno?prmAnno=2026",
+    "district_roster": "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=8"
+  }
 }
