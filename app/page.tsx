@@ -5,12 +5,13 @@ import districtSummary from "../data/generated/distrito-8-summary.json";
 
 type Metric = "gastos" | "asesorias" | "pasajes" | "personal" | "mociones" | "resoluciones";
 type ActivityName = "motions" | "resolutions";
+type TransparencyName = "personnel_support";
 
-const metricLabels: Record<Metric, { label: string; unit: string; activity?: ActivityName }> = {
+const metricLabels: Record<Metric, { label: string; unit: string; activity?: ActivityName; transparency?: TransparencyName }> = {
   gastos: { label: "Gastos operacionales", unit: "CLP por mes" },
   asesorias: { label: "Asesorías externas", unit: "CLP por mes" },
   pasajes: { label: "Pasajes aéreos", unit: "CLP por mes" },
-  personal: { label: "Personal de apoyo", unit: "CLP por mes" },
+  personal: { label: "Personal de apoyo", unit: "CLP por mes", transparency: "personnel_support" },
   mociones: { label: "Mociones", unit: "Número por mes", activity: "motions" },
   resoluciones: { label: "Resoluciones", unit: "Número por mes", activity: "resolutions" },
 };
@@ -29,6 +30,16 @@ type MonthlyActivity = {
   average_per_deputy_per_month: number | null;
 };
 
+type MonthlyMoney = {
+  by_month: Record<string, number>;
+  latest_month: string | null;
+  latest_amount: number | null;
+  average_monthly: number | null;
+  median_monthly: number | null;
+  months_with_records: number;
+  methodology?: string;
+};
+
 type DistrictSummary = {
   deputies_count: number;
   retrieved_at: string;
@@ -37,6 +48,7 @@ type DistrictSummary = {
   activity?: { motions: MonthlyActivity; agreements: MonthlyActivity; resolutions: MonthlyActivity };
   attendance?: { average_percentage: number | null; deputies_with_classified_records: number };
   commissions?: { snapshot_retrieved_at?: string; snapshot_applied_to?: string[] };
+  transparency?: { personnel_support?: MonthlyMoney; personnel_support_metadata?: { availability: string; label?: string; methodology?: string } };
   diet?: { monthly_gross_per_deputy_clp: number; monthly_gross_district_clp: number; valid_from: string; source_url: string; note: string };
 };
 
@@ -49,7 +61,7 @@ type DeputyRecord = {
   };
   commissions?: string[];
   attendance?: { sessions_recorded: number; present: number; not_present: number; unclassified: number; percentage: number | null; by_type: Record<string, number> };
-  transparency: { availability: string };
+  transparency: { availability: string; personnel_support?: { by_month: Record<string, number>; contracts_count: number }; personnel_support_metadata?: { label?: string; methodology?: string } };
 };
 
 const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
@@ -91,7 +103,8 @@ export default function Home() {
   const selected = metricLabels[metric];
   const selectedDeputy = summary.deputies.find((item) => item.name === deputy);
   const activity = selected.activity ? summary.activity?.[selected.activity] : undefined;
-  const series = Object.entries(activity?.by_month ?? {});
+  const money = selected.transparency ? summary.transparency?.[selected.transparency] : undefined;
+  const series = Object.entries(activity?.by_month ?? money?.by_month ?? {});
   const maximum = Math.max(...series.map(([, value]) => value), 1);
 
   useEffect(() => {
@@ -128,6 +141,7 @@ export default function Home() {
       ...Object.keys(deputyRecord.activity.motions_by_month_and_state),
       ...Object.keys(deputyRecord.activity.agreements_by_month_and_state),
       ...Object.keys(deputyRecord.activity.resolutions_by_month_and_state),
+      ...Object.keys(deputyRecord.transparency.personnel_support?.by_month ?? {}),
     ]);
     return [...months].sort().reverse();
   }, [deputyRecord]);
@@ -138,6 +152,8 @@ export default function Home() {
   const diet = summary.diet;
   const chartLabel = activity
     ? `${activity.total} registros legislativos en los meses publicados del piloto.`
+    : money?.latest_amount != null
+      ? `${money.methodology ?? "Monto mensual publicado."} Último mes: ${labelMonth(money.latest_month ?? "2026-01")}.`
     : `La serie de ${selected.label.toLocaleLowerCase("es-CL")} se incorporará al terminar la fase de transparencia.`;
 
   return (
@@ -166,7 +182,7 @@ export default function Home() {
             <MetricCard label="Promedio de asistencia" value={percentage(averageAttendance)} detail={averageAttendance == null ? "Pendiente de la fuente oficial" : "Sesiones de sala con clasificación oficial"} />
             <MetricCard label="Promedio de mociones" value={averageMotions == null ? "—" : decimal.format(averageMotions)} detail="Por diputado(a) y mes con actividad" />
             <MetricCard label="Promedio de resoluciones" value={averageResolutions == null ? "—" : decimal.format(averageResolutions)} detail="Por diputado(a) y mes con actividad" />
-            <MetricCard label={selected.label} value={activity ? String(activity.total) : "—"} detail={activity ? `Total del Distrito 8 · ${selected.unit}` : "Pendiente de publicación mensual"} />
+            <MetricCard label={selected.label} value={activity ? String(activity.total) : money?.latest_amount != null ? currency.format(money.latest_amount) : "—"} detail={activity ? `Total del Distrito 8 · ${selected.unit}` : money?.latest_month ? `Último mes publicado: ${labelMonth(money.latest_month)}` : "Pendiente de publicación mensual"} />
             <MetricCard label="Dieta parlamentaria" value={diet ? currency.format(diet.monthly_gross_per_deputy_clp) : "—"} detail={diet ? "Bruta mensual vigente por diputado(a)" : "Monto bruto mensual vigente · pendiente"} />
           </div>
 
@@ -197,7 +213,7 @@ export default function Home() {
 
         {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Disponibilidad</h4><p>Actividad legislativa, asistencia y comisiones disponibles. Oficios y transparencia se incorporarán al validar sus fuentes oficiales mensuales.</p></div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
 
-        <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.length ? detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord?.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.resolutions_by_month_and_state[month]} /></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>) : <tr><td colSpan={10}>Elige un diputado(a) para ver los meses publicados.</td></tr>}</tbody></table></div>
+        <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.length ? detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord?.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord?.activity.resolutions_by_month_and_state[month]} /></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>{deputyRecord?.transparency.personnel_support?.by_month[month] != null ? currency.format(deputyRecord.transparency.personnel_support.by_month[month]) : "—"}</td></tr>) : <tr><td colSpan={10}>Elige un diputado(a) para ver los meses publicados.</td></tr>}</tbody></table></div>
       </section>
 
       <section className="methodology" aria-labelledby="methodology-title"><p className="eyebrow">Trazabilidad</p><h2 id="methodology-title">Cómo leer este tablero</h2><ul>{sources.map((source) => <li key={source}>{source}</li>)}</ul></section>

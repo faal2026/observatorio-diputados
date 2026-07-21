@@ -14,6 +14,7 @@ Las fuentes mensuales de transparencia se incorporan en una segunda fase.
 from __future__ import annotations
 
 import argparse
+import calendar
 import json
 import re
 import time
@@ -22,7 +23,9 @@ from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
 from html import unescape
+from html.parser import HTMLParser
 from pathlib import Path
+from statistics import median
 from typing import Any, Iterable
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -38,6 +41,7 @@ BUILD_DATA_DIR = ROOT / "data" / "generated"
 OPEN_DATA = "https://opendata.camara.cl/camaradiputados/WServices"
 PROFILE_URL = "https://www.camara.cl/diputados/detalle/personaldepoyo.aspx?prmId={deputy_id}"
 DISTRICT_8_ROSTER_SOURCE = "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=8"
+PERSONNEL_SUPPORT_URL = "https://www.camara.cl/transparencia/personalapoyogral.aspx"
 
 # Se usan nombre y apellido para no confundir homónimos al cruzar la nómina
 # distrital con los identificadores oficiales de Datos Abiertos.
@@ -112,6 +116,17 @@ COMMISSION_SNAPSHOT_2026 = {
         deputy_id: f"https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId={deputy_id}"
         for deputy_id in ("1165", "1190", "1217", "1256", "1188", "1234", "1210", "1200")
     },
+}
+
+PERSONNEL_DIRECTORY_IDENTIFIERS = {
+    "1165": ("romero", "agustin"),
+    "1190": ("bassaletti", "enrique"),
+    "1217": ("karlezi", "pier"),
+    "1256": ("urrutia", "tatiana"),
+    "1188": ("barraza", "marcos"),
+    "1234": ("olavarria", "mario"),
+    "1210": ("gatica", "gustavo"),
+    "1200": ("contreras", "cristian"),
 }
 
 
@@ -201,6 +216,106 @@ def flatten(element: ET.Element) -> str:
 
 def parse_xml(xml_text: str) -> ET.Element:
     return ET.fromstring(xml_text)
+
+
+class TableRowsParser(HTMLParser):
+    """Extractor acotado de filas para los listados HTML de transparencia."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.rows: list[list[str]] = []
+        self._row: list[list[str]] | None = None
+        self._cell: list[str] | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "tr":
+            self._row = []
+        elif tag in {"td", "th"} and self._row is not None:
+            self._cell = []
+        elif tag == "br" and self._cell is not None:
+            self._cell.append(" ")
+
+    def handle_data(self, data: str) -> None:
+        if self._cell is not None:
+            self._cell.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"td", "th"} and self._cell is not None and self._row is not None:
+            self._row.append(" ".join("".join(self._cell).split()))
+            self._cell = None
+        elif tag == "tr" and self._row is not None:
+            if self._row:
+                self.rows.append(self._row)
+            self._row = None
+
+
+def parse_clp(value: str) -> int | None:
+    candidate = value.replace("$", "").replace(" ", "")
+    if not re.fullmatch(r"\d{1,3}(?:\.\d{3})+|\d{5,}", candidate):
+        return None
+    return int(candidate.replace(".", ""))
+
+
+def parse_short_date(value: str) -> datetime | None:
+    try:
+        return datetime.strptime(value, "%d/%m/%y")
+    except ValueError:
+        return None
+
+
+def parse_personnel_support(html: str, *, through: datetime) -> dict[str, dict[str, Any]]:
+    """Suma remuneraciones mensuales de contratos vigentes del directorio público.
+
+    No representa gasto rendido: refleja la remuneración mensual publicada para
+    contratos activos en cada mes, según sus fechas de inicio y término.
+    """
+    parser = TableRowsParser()
+    parser.feed(html)
+    records: dict[str, list[tuple[int, datetime, datetime | None]]] = defaultdict(list)
+    for row in parser.rows:
+        if not row or row[0] != "8":
+            continue
+        joined = normalized(" ".join(row))
+        deputy_id = next(
+            (identifier for identifier, terms in PERSONNEL_DIRECTORY_IDENTIFIERS.items() if all(term in joined for term in terms)),
+            None,
+        )
+        if not deputy_id:
+            continue
+        amount = next((parsed for cell in row for parsed in [parse_clp(cell)] if parsed is not None), None)
+        dates = [parsed for cell in row for match in re.findall(r"\b\d{2}/\d{2}/\d{2}\b", cell) for parsed in [parse_short_date(match)] if parsed]
+        if amount is None or not dates:
+            continue
+        records[deputy_id].append((amount, dates[0], dates[1] if len(dates) > 1 else None))
+
+    result: dict[str, dict[str, Any]] = {}
+    first_month = datetime(through.year, 3, 1)
+    month = first_month
+    while month <= through.replace(day=1):
+        month_key = month.strftime("%Y-%m")
+        month_end = month.replace(day=calendar.monthrange(month.year, month.month)[1])
+        for deputy_id, contracts in records.items():
+            amount = sum(value for value, start, end in contracts if start <= month_end and (end is None or end >= month))
+            if amount:
+                result.setdefault(deputy_id, {"by_month": {}, "contracts_count": len(contracts)})["by_month"][month_key] = amount
+        month = datetime(month.year + (month.month == 12), (month.month % 12) + 1, 1)
+    return result
+
+
+def collect_personnel_support(*, through: datetime) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
+    try:
+        html = request_text(PERSONNEL_SUPPORT_URL, delay=0.2)
+        records = parse_personnel_support(html, through=through)
+    except RuntimeError as error:
+        return {}, {"availability": "unavailable", "reason": str(error), "source_url": PERSONNEL_SUPPORT_URL}
+    if not records:
+        return {}, {"availability": "unavailable", "reason": "El directorio publicado no entregó filas identificables para el Distrito 8.", "source_url": PERSONNEL_SUPPORT_URL}
+    return records, {
+        "availability": "published_contract_directory",
+        "label": "Remuneración mensual de contratos vigentes de personal de apoyo",
+        "source_url": PERSONNEL_SUPPORT_URL,
+        "methodology": "Suma de remuneraciones mensuales publicadas para contratos con vigencia en cada mes; no equivale a gasto rendido.",
+    }
 
 
 def load_json(path: Path, default: Any) -> Any:
@@ -542,6 +657,25 @@ def summarize_district_activity(deputy_records: list[dict[str, Any]], activity_k
     }
 
 
+def summarize_personnel_support(deputy_records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Agrega remuneraciones mensuales de contratos vigentes sin confundirlas con gasto rendido."""
+    by_month: Counter[str] = Counter()
+    for record in deputy_records:
+        by_month.update(record["transparency"].get("personnel_support", {}).get("by_month", {}))
+    series = dict(sorted(by_month.items()))
+    values = list(series.values())
+    latest_month = max(series, default=None)
+    return {
+        "by_month": series,
+        "latest_month": latest_month,
+        "latest_amount": series.get(latest_month) if latest_month else None,
+        "average_monthly": round(sum(values) / len(values)) if values else None,
+        "median_monthly": round(median(values)) if values else None,
+        "months_with_records": len(values),
+        "methodology": "Suma de remuneraciones mensuales publicadas para contratos vigentes; no equivale a gasto rendido.",
+    }
+
+
 def save_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -549,6 +683,7 @@ def save_json(path: Path, data: Any) -> None:
 
 def collect(args: argparse.Namespace) -> None:
     retrieved_at = datetime.now(UTC).isoformat()
+    collected_at = datetime.now(UTC)
     urls = {name: method_url(name, args.year) if "{year}" in str(METHODS[name]) else method_url(name) for name in METHODS}
     if args.dry_run:
         print(json.dumps({"district": args.district, "year": args.year, "urls": urls, "profile_url": PROFILE_URL}, indent=2))
@@ -600,6 +735,7 @@ def collect(args: argparse.Namespace) -> None:
             snapshot_applied_to.append(deputy_id)
     annual_sessions = request_text(urls["sessions"], delay=args.delay)
     attendance_by_deputy, attendance_failures = hydrate_attendance(parse_session_ids(annual_sessions), delay=args.delay, workers=workers)
+    personnel_by_deputy, personnel_metadata = collect_personnel_support(through=collected_at)
 
     deputy_records = []
     for profile in district_profiles:
@@ -617,7 +753,12 @@ def collect(args: argparse.Namespace) -> None:
                     deputy_id,
                     {"sessions_recorded": 0, "present": 0, "not_present": 0, "unclassified": 0, "percentage": None, "by_type": {}},
                 ),
-                "transparency": {"availability": "pending_second_phase", "reason": "monthly_postback_collection_not_run"},
+                "transparency": {
+                    "availability": personnel_metadata["availability"],
+                    "personnel_support": personnel_by_deputy.get(deputy_id, {"by_month": {}, "contracts_count": 0}),
+                    "personnel_support_metadata": personnel_metadata,
+                    "reason": personnel_metadata.get("reason"),
+                },
                 "retrieved_at": retrieved_at,
             }
         )
@@ -653,6 +794,10 @@ def collect(args: argparse.Namespace) -> None:
             **DIET_2026,
             "monthly_gross_district_clp": DIET_2026["monthly_gross_per_deputy_clp"] * len(deputy_records),
             "deputies_counted": len(deputy_records),
+        },
+        "transparency": {
+            "personnel_support": summarize_personnel_support(deputy_records),
+            "personnel_support_metadata": personnel_metadata,
         },
         "availability": "phase_one_complete" if not any(detail_failures.values()) and not commission_failures else "phase_one_partial",
         "detail_failures": detail_failures,
