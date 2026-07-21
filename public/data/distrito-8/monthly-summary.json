@@ -1,7 +1,7 @@
 {
   "district": 8,
   "year": 2026,
-  "retrieved_at": "2026-07-21T21:37:02.446430+00:00",
+  "retrieved_at": "2026-07-21T22:06:50.440898+00:00",
   "deputies_count": 8,
   "deputies": [
     {
@@ -74,6 +74,14 @@
     "average_percentage": 100.0,
     "deputies_with_classified_records": 8,
     "session_detail_failures": []
+  },
+  "diet": {
+    "monthly_gross_per_deputy_clp": 8239091,
+    "valid_from": "2026-03-11",
+    "source_url": "https://www.camara.cl/transparencia/doc/dieta_actualizada.pdf",
+    "note": "Monto bruto mensual vigente para diputadas y diputados sin funciones de presidencia o vicepresidencia.",
+    "monthly_gross_district_clp": 65912728,
+    "deputies_counted": 8
   },
   "availability": "phase_one_complete",
   "detail_failures": {
