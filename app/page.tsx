@@ -35,6 +35,7 @@ type DistrictSummary = {
   availability: string;
   activity?: { motions: MonthlyActivity; agreements: MonthlyActivity; resolutions: MonthlyActivity };
   attendance?: { average_percentage: number | null; deputies_with_classified_records: number };
+  diet?: { monthly_gross_per_deputy_clp: number; monthly_gross_district_clp: number; valid_from: string; source_url: string; note: string };
 };
 
 type DeputyRecord = {
@@ -50,6 +51,7 @@ type DeputyRecord = {
 };
 
 const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
+const currency = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
 const monthFormatter = new Intl.DateTimeFormat("es-CL", { month: "short", year: "numeric", timeZone: "UTC" });
 
 function labelMonth(month: string) {
@@ -131,6 +133,7 @@ export default function Home() {
   const averageMotions = summary.activity?.motions.average_per_deputy_per_month;
   const averageResolutions = summary.activity?.resolutions.average_per_deputy_per_month;
   const averageAttendance = summary.attendance?.average_percentage;
+  const diet = summary.diet;
   const chartLabel = activity
     ? `${activity.total} registros legislativos en los meses publicados del piloto.`
     : `La serie de ${selected.label.toLocaleLowerCase("es-CL")} se incorporará al terminar la fase de transparencia.`;
@@ -162,7 +165,7 @@ export default function Home() {
             <MetricCard label="Promedio de mociones" value={averageMotions == null ? "—" : decimal.format(averageMotions)} detail="Por diputado(a) y mes con actividad" />
             <MetricCard label="Promedio de resoluciones" value={averageResolutions == null ? "—" : decimal.format(averageResolutions)} detail="Por diputado(a) y mes con actividad" />
             <MetricCard label={selected.label} value={activity ? String(activity.total) : "—"} detail={activity ? `Total del Distrito 8 · ${selected.unit}` : "Pendiente de publicación mensual"} />
-            <MetricCard label="Dieta parlamentaria" value="—" detail="Monto bruto mensual vigente · pendiente" />
+            <MetricCard label="Dieta parlamentaria" value={diet ? currency.format(diet.monthly_gross_per_deputy_clp) : "—"} detail={diet ? "Bruta mensual vigente por diputado(a)" : "Monto bruto mensual vigente · pendiente"} />
           </div>
 
           <article className="chart-panel" aria-labelledby="chart-title">
@@ -179,7 +182,7 @@ export default function Home() {
 
       <section className="district-view" aria-labelledby="district-title">
         <div><p className="eyebrow">Vista territorial</p><h2 id="district-title">Región Metropolitana · Distrito 8</h2><p>La versión completa incorporará el mapa nacional y permitirá fijar una región para revisar diputados, dieta y gastos mensuales agregados.</p></div>
-        <dl className="territory-details"><div><dt>Región</dt><dd>Metropolitana de Santiago</dd></div><div><dt>Distrito</dt><dd>8</dd></div><div><dt>Comunas</dt><dd>Tiltil, Quilicura, Colina, Estación Central, Pudahuel, Lampa, Cerrillos y Maipú</dd></div></dl>
+        <dl className="territory-details"><div><dt>Región</dt><dd>Metropolitana de Santiago</dd></div><div><dt>Distrito</dt><dd>8</dd></div><div><dt>Comunas</dt><dd>Tiltil, Quilicura, Colina, Estación Central, Pudahuel, Lampa, Cerrillos y Maipú</dd></div><div><dt>Dieta bruta mensual</dt><dd>{diet ? currency.format(diet.monthly_gross_district_clp) : "Pendiente de publicación"}</dd></div></dl>
       </section>
 
       <section className="profile" aria-labelledby="profile-title">

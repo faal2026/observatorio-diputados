@@ -78,6 +78,16 @@ DETAIL_METHODS = {
 
 SESSION_ATTENDANCE_METHOD = "WSSala.asmx/retornarSesionAsistencia"
 
+# La dieta no es una asignación rendida por cada diputado/a: es una
+# remuneración bruta mensual fijada para el cargo. Se mantiene separada de
+# gastos operacionales, asesorías, pasajes y personal de apoyo.
+DIET_2026 = {
+    "monthly_gross_per_deputy_clp": 8_239_091,
+    "valid_from": "2026-03-11",
+    "source_url": "https://www.camara.cl/transparencia/doc/dieta_actualizada.pdf",
+    "note": "Monto bruto mensual vigente para diputadas y diputados sin funciones de presidencia o vicepresidencia.",
+}
+
 
 def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
@@ -501,6 +511,11 @@ def collect(args: argparse.Namespace) -> None:
             "average_percentage": round(sum(attendance_percentages) / len(attendance_percentages), 1) if attendance_percentages else None,
             "deputies_with_classified_records": len(attendance_percentages),
             "session_detail_failures": attendance_failures,
+        },
+        "diet": {
+            **DIET_2026,
+            "monthly_gross_district_clp": DIET_2026["monthly_gross_per_deputy_clp"] * len(deputy_records),
+            "deputies_counted": len(deputy_records),
         },
         "availability": "phase_one_complete" if not any(detail_failures.values()) else "phase_one_partial",
         "detail_failures": detail_failures,
