@@ -51,8 +51,17 @@
     }
   },
   "transparency": {
-    "availability": "pending_second_phase",
-    "reason": "monthly_postback_collection_not_run"
+    "availability": "unavailable",
+    "personnel_support": {
+      "by_month": {},
+      "contracts_count": 0
+    },
+    "personnel_support_metadata": {
+      "availability": "unavailable",
+      "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
+      "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx"
+    },
+    "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-07-21T22:50:05.079651+00:00"
+  "retrieved_at": "2026-07-21T23:05:54.279121+00:00"
 }
