@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Metric = "gastos" | "asesorias" | "pasajes" | "personal" | "mociones" | "resoluciones";
 
@@ -27,11 +27,24 @@ const sources = [
   "Transparencia Activa: dieta parlamentaria vigente.",
 ];
 
+type DistrictSummary = {
+  deputies_count: number;
+  retrieved_at: string;
+};
+
 export default function Home() {
   const [metric, setMetric] = useState<Metric>("gastos");
   const [region, setRegion] = useState("");
   const [district, setDistrict] = useState("");
   const [deputy, setDeputy] = useState("");
+  const [summary, setSummary] = useState<DistrictSummary | null>(null);
+
+  useEffect(() => {
+    fetch("./data/distrito-8/monthly-summary.json")
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: DistrictSummary | null) => setSummary(data))
+      .catch(() => setSummary(null));
+  }, []);
 
   const selected = metricLabels[metric];
   const chartLabel = useMemo(
@@ -51,8 +64,8 @@ export default function Home() {
 
       <section className="status" aria-label="Estado del piloto">
         <span className="status-dot" aria-hidden="true" />
-        <strong>Preparando la primera recolección del Distrito 8</strong>
-        <span>Los meses sin publicación se mostrarán como tales; nunca como $0.</span>
+        <strong>{summary ? "Datos del Distrito 8 actualizados" : "Preparando la primera recolección del Distrito 8"}</strong>
+        <span>{summary ? `Nómina oficial descargada el ${new Intl.DateTimeFormat("es-CL", { dateStyle: "medium" }).format(new Date(summary.retrieved_at))}.` : "Los meses sin publicación se mostrarán como tales; nunca como $0."}</span>
       </section>
 
       <section className="dashboard" aria-labelledby="dashboard-title">
@@ -73,7 +86,7 @@ export default function Home() {
 
         <div className="dashboard-grid">
           <div className="summary-grid">
-            <MetricCard label="Diputados en cobertura" value="—" detail="Se completará desde la nómina vigente" />
+            <MetricCard label="Diputados en cobertura" value={summary ? String(summary.deputies_count) : "—"} detail={summary ? "Nómina vigente del Distrito 8" : "Se completará desde la nómina vigente"} />
             <MetricCard label="Promedio de asistencia" value="—" detail="Con desglose y metodología" />
             <MetricCard label="Promedio de mociones" value="—" detail="Por diputado y por mes" />
             <MetricCard label="Promedio de resoluciones" value="—" detail="Por diputado y por mes" />

@@ -18,6 +18,6 @@ La segunda fase añadirá los postbacks mensuales de transparencia y el detalle 
 La primera corrida completa producirá un archivo por diputado y un agregado distrital:
 
 ```text
-data/distrito-8/deputies/<id>.json
-data/distrito-8/monthly-summary.json
+public/data/distrito-8/deputies/<id>.json
+public/data/distrito-8/monthly-summary.json
 ```

@@ -27,7 +27,9 @@ from urllib.request import Request, urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = ROOT / "data" / "distrito-8"
+# Estos archivos se publican tal como se descargan para que el tablero estático
+# pueda mostrarlos y cualquier persona pueda revisar el dato de origen.
+DATA_DIR = ROOT / "public" / "data" / "distrito-8"
 RAW_DIR = DATA_DIR / "raw"
 OPEN_DATA = "https://opendata.camara.cl/camaradiputados/WServices"
 PROFILE_URL = "https://www.camara.cl/diputados/detalle/personaldepoyo.aspx?prmId={deputy_id}"

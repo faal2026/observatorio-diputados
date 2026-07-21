@@ -1,0 +1,71 @@
+name: Actualizar datos Distrito 8
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Día 10 de cada mes, 14:17 UTC. La fuente publica algunos antecedentes
+    # de transparencia con rezago, por eso se evita ejecutar al inicio del mes.
+    - cron: "17 14 10 * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  cancel-in-progress: false
+
+jobs:
+  collect-and-publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      PAGES_BASE_PATH: ${{ vars.PAGES_BASE_PATH || '/observatorio-diputados' }}
+    steps:
+      - name: Obtener el proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Recopilar datos oficiales
+        run: python collector/collect_district.py --district 8 --year "$(date +%Y)"
+
+      - name: Guardar datos actualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/distrito-8
+          if git diff --cached --quiet; then
+            echo "No hay datos nuevos para guardar."
+          else
+            git commit -m "Actualizar datos oficiales Distrito 8"
+            git push
+          fi
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Construir sitio estático
+        run: |
+          npm ci
+          npm run build
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

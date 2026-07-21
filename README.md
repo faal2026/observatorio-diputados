@@ -15,4 +15,4 @@ Piloto de transparencia pública para el Distrito 8 de la Cámara de Diputadas y
 - Totales, promedios y medianas indican siempre cuántos diputados tienen datos publicados.
 - Cada registro conserva su URL de fuente y fecha de recolección.
 
-El contrato del piloto está en `data/distrito-8/pilot-contract.json` y la estrategia de fuentes en `collector/README.md`.
+El contrato del piloto está en `public/data/distrito-8/pilot-contract.json` y la estrategia de fuentes en `collector/README.md`.

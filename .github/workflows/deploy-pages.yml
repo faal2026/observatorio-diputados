@@ -1,0 +1,52 @@
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    env:
+      # El valor por defecto permite probar el sitio en GitHub Pages.
+      # Al activar el subdominio, definir PAGES_BASE_PATH como ".".
+      PAGES_BASE_PATH: ${{ vars.PAGES_BASE_PATH || '/observatorio-diputados' }}
+    steps:
+      - name: Obtener el proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Construir sitio estático
+        run: |
+          npm ci
+          npm run build
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
