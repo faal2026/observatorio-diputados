@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # pueda mostrarlos y cualquier persona pueda revisar el dato de origen.
 DATA_DIR = ROOT / "public" / "data" / "distrito-8"
 RAW_DIR = DATA_DIR / "raw"
+BUILD_DATA_DIR = ROOT / "data" / "generated"
 OPEN_DATA = "https://opendata.camara.cl/camaradiputados/WServices"
 PROFILE_URL = "https://www.camara.cl/diputados/detalle/personaldepoyo.aspx?prmId={deputy_id}"
 DISTRICT_8_ROSTER_SOURCE = "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=8"
@@ -271,6 +272,7 @@ def collect(args: argparse.Namespace) -> None:
         "sources": {**urls, "district_roster": DISTRICT_8_ROSTER_SOURCE},
     }
     save_json(DATA_DIR / "monthly-summary.json", summary)
+    save_json(BUILD_DATA_DIR / "distrito-8-summary.json", summary)
     print(f"Distrito {args.district}: {len(deputy_records)} diputadas y diputados guardados en {DATA_DIR}")
 
 

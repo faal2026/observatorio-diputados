@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import districtSummary from "../data/generated/distrito-8-summary.json";
 
 type Metric = "gastos" | "asesorias" | "pasajes" | "personal" | "mociones" | "resoluciones";
 
@@ -30,6 +31,7 @@ const sources = [
 type DistrictSummary = {
   deputies_count: number;
   retrieved_at: string;
+  deputies: { id: string; name: string }[];
 };
 
 export default function Home() {
@@ -37,14 +39,7 @@ export default function Home() {
   const [region, setRegion] = useState("");
   const [district, setDistrict] = useState("");
   const [deputy, setDeputy] = useState("");
-  const [summary, setSummary] = useState<DistrictSummary | null>(null);
-
-  useEffect(() => {
-    fetch("./data/distrito-8/monthly-summary.json")
-      .then((response) => (response.ok ? response.json() : null))
-      .then((data: DistrictSummary | null) => setSummary(data))
-      .catch(() => setSummary(null));
-  }, []);
+  const summary = districtSummary as DistrictSummary;
 
   const selected = metricLabels[metric];
   const chartLabel = useMemo(
@@ -64,8 +59,8 @@ export default function Home() {
 
       <section className="status" aria-label="Estado del piloto">
         <span className="status-dot" aria-hidden="true" />
-        <strong>{summary ? "Datos del Distrito 8 actualizados" : "Preparando la primera recolección del Distrito 8"}</strong>
-        <span>{summary ? `Nómina oficial descargada el ${new Intl.DateTimeFormat("es-CL", { dateStyle: "medium" }).format(new Date(summary.retrieved_at))}.` : "Los meses sin publicación se mostrarán como tales; nunca como $0."}</span>
+        <strong>Datos del Distrito 8 actualizados</strong>
+        <span>Nómina oficial descargada el {new Intl.DateTimeFormat("es-CL", { dateStyle: "medium" }).format(new Date(summary.retrieved_at))}. Los meses sin publicación se mostrarán como tales; nunca como $0.</span>
       </section>
 
       <section className="dashboard" aria-labelledby="dashboard-title">
@@ -86,7 +81,7 @@ export default function Home() {
 
         <div className="dashboard-grid">
           <div className="summary-grid">
-            <MetricCard label="Diputados en cobertura" value={summary ? String(summary.deputies_count) : "—"} detail={summary ? "Nómina vigente del Distrito 8" : "Se completará desde la nómina vigente"} />
+            <MetricCard label="Diputados en cobertura" value={String(summary.deputies_count)} detail="Nómina vigente del Distrito 8" />
             <MetricCard label="Promedio de asistencia" value="—" detail="Con desglose y metodología" />
             <MetricCard label="Promedio de mociones" value="—" detail="Por diputado y por mes" />
             <MetricCard label="Promedio de resoluciones" value="—" detail="Por diputado y por mes" />
@@ -135,19 +130,22 @@ export default function Home() {
         <div className="filters">
           <label><span>Región</span><select value={region} onChange={(event) => setRegion(event.target.value)}><option value="">Seleccionar región</option><option>Región Metropolitana de Santiago</option></select></label>
           <label><span>Distrito</span><select value={district} onChange={(event) => setDistrict(event.target.value)} disabled={!region}><option value="">Seleccionar distrito</option><option>Distrito 8</option></select></label>
-          <label><span>Diputado(a)</span><select value={deputy} onChange={(event) => setDeputy(event.target.value)} disabled={!district}><option value="">Seleccionar diputado(a)</option><option>{pilotProfile.name}</option></select></label>
+          <label><span>Diputado(a)</span><select value={deputy} onChange={(event) => setDeputy(event.target.value)} disabled={!district}><option value="">Seleccionar diputado(a)</option>{summary.deputies.map((item) => <option key={item.id}>{item.name}</option>)}</select></label>
         </div>
 
         {deputy ? (
           <article className="profile-card">
             <div>
-              <p className="eyebrow">Ficha de prueba</p>
-              <h3>{pilotProfile.name}</h3>
+              <p className="eyebrow">Ficha del piloto</p>
+              <h3>{deputy}</h3>
               <p>{pilotProfile.district} · {pilotProfile.region} · {pilotProfile.period}</p>
             </div>
             <div>
-              <h4>Comisiones actuales</h4>
-              <ul>{pilotProfile.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul>
+              {deputy === pilotProfile.name ? (
+                <><h4>Comisiones actuales</h4><ul>{pilotProfile.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul></>
+              ) : (
+                <><h4>Comisiones actuales</h4><p>Se incorporarán desde la fuente oficial en la siguiente actualización del piloto.</p></>
+              )}
             </div>
           </article>
         ) : (
