@@ -1,0 +1,32 @@
+{
+  "pilot": {
+    "name": "Distrito 8",
+    "status": "collecting",
+    "period": "2026-2030",
+    "currency": "CLP",
+    "default_month_window": 12
+  },
+  "rules": {
+    "missing_publication": "null",
+    "money": "integer_clp",
+    "average_and_median": "calculated_only_over_published_deputies",
+    "attendance": "derived_with_official_component_counts"
+  },
+  "monthly_metrics": [
+    "motions_by_status",
+    "agreements_count",
+    "resolutions_count",
+    "attendance",
+    "official_letters_count",
+    "parliamentary_diet_clp",
+    "operational_expenses_clp",
+    "external_advisory_clp",
+    "domestic_flights_clp",
+    "support_staff_clp"
+  ],
+  "sources": [
+    "https://www.camara.cl/transparencia/datosAbiertos.aspx",
+    "https://www.camara.cl/transparencia/transparencia_activa.aspx",
+    "https://www.camara.cl/diputados/detalle/"
+  ]
+}
