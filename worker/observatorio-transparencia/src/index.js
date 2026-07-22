@@ -110,22 +110,6 @@ async function publishedDirectory(url, monthKey, parser) {
   return parser(await response.text());
 }
 
-async function browserSourceCheck(env, url, parser) {
-  const response = await env.BROWSER.quickAction("content", {
-    url,
-    userAgent: browserHeaders["User-Agent"],
-    gotoOptions: { waitUntil: "domcontentloaded", timeout: 20000 },
-    rejectResourceTypes: ["image", "font", "stylesheet"],
-  });
-  const html = await response.text();
-  return {
-    response_status: response.status,
-    has_month_selector: Boolean(selectName(html, "ddlMes")),
-    has_year_selector: Boolean(selectName(html, "ddlAno")),
-    has_data_table: parser(html).length > 0,
-  };
-}
-
 function aggregateByDeputy(rows, deputies) {
   const totals = {};
   const unmatched = [];
@@ -193,15 +177,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { headers: cors(request) });
-    if (request.method !== "GET") return new Response("Not found", { status: 404 });
-    if (url.pathname === "/v1/source-check") {
-      const [advisories, personnel] = await Promise.all([
-        browserSourceCheck(env, ADVISORIES_URL, rowsFromAdvisories).catch((error) => ({ error: error.message })),
-        browserSourceCheck(env, PERSONNEL_URL, rowsFromPersonnel).catch((error) => ({ error: error.message })),
-      ]);
-      return new Response(JSON.stringify({ advisories, personnel }), { headers: cors(request) });
-    }
-    if (url.pathname !== "/v1/transparency") return new Response("Not found", { status: 404 });
+    if (url.pathname !== "/v1/transparency" || request.method !== "GET") return new Response("Not found", { status: 404 });
     const value = await env.TRANSPARENCY.get("latest");
     if (value) return new Response(value, { headers: cors(request) });
 
