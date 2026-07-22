@@ -23,11 +23,25 @@ jobs:
       - name: Actualizar nómina oficial de Chile
         run: python collector/collect_national_index.py
 
+      - name: Verificar nómina nacional
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          summary = json.loads(Path("data/generated/chile-summary.json").read_text(encoding="utf-8"))
+          if summary.get("availability") != "national_index_complete" or summary.get("deputies_count") != 155:
+              raise SystemExit("La nómina nacional no quedó completa; se cancela la publicación.")
+          print("Nómina verificada: 155 diputadas y diputados.")
+          PY
+
       - name: Guardar índice actualizado
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/chile data/generated/chile-summary.json
+          # data/generated está excluido del repositorio por defecto. Se fuerza
+          # sólo este archivo verificable para que Pages reconstruya el mapa.
+          git add -f data/generated/chile-summary.json public/data/chile
           if git diff --cached --quiet; then
             echo "La nómina nacional no registra cambios."
           else

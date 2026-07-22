@@ -98,6 +98,7 @@ type NationalSummary = {
 const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
 const currency = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
 const monthFormatter = new Intl.DateTimeFormat("es-CL", { month: "short", year: "numeric", timeZone: "UTC" });
+const collectionDateFormatter = new Intl.DateTimeFormat("es-CL", { dateStyle: "medium", timeStyle: "short", timeZone: "America/Santiago" });
 
 function clp(value: number) {
   return `${currency.format(value)} CLP`;
@@ -230,7 +231,7 @@ export default function Home() {
       <section className="status" aria-label="Estado del piloto">
         <span className="status-dot" aria-hidden="true" />
         <strong>{national.availability === "national_index_complete" ? `${decimal.format(national.deputies_count ?? 0)} diputados(as) en el índice nacional` : "Índice nacional preparado para su primera actualización"}</strong>
-        <span>Detalle legislativo validado en Distrito 8 · última recolección: {new Intl.DateTimeFormat("es-CL", { dateStyle: "medium", timeStyle: "short" }).format(new Date(summary.retrieved_at))}. Los meses sin publicación se mostrarán como tales; nunca como $0.</span>
+        <span>Detalle legislativo validado en Distrito 8 · última recolección: {collectionDateFormatter.format(new Date(summary.retrieved_at))}. Los meses sin publicación se mostrarán como tales; nunca como $0.</span>
       </section>
 
       <section className="dashboard" aria-labelledby="dashboard-title">
