@@ -2328,11 +2328,13 @@
       "average_monthly": null,
       "median_monthly": null,
       "months_with_records": 0,
-      "methodology": "Suma de montos publicados por la Cámara para cada mes. La cobertura indica cuántas fichas tuvieron un registro publicado; las fichas sin publicación no se imputan como $0.",
+      "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
       "metadata": {
-        "availability": "not_published",
+        "availability": "pending_official_import",
         "label": "Asesorías externas",
-        "source_url": "https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId={id}"
+        "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+        "source_files": [],
+        "last_imported_at": null
       }
     },
     "flights": {
@@ -2350,7 +2352,7 @@
         "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId={id}"
       }
     },
-    "retrieved_at": "2026-07-22T02:29:45.860279+00:00",
+    "retrieved_at": "2026-07-22T15:28:23.082565+00:00",
     "month_requested": "2026-03",
     "failures": [
       {
@@ -4678,6 +4680,24 @@
         "category": "flights",
         "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1148"
       }
-    ]
+    ],
+    "personnel_support": {
+      "by_month": {},
+      "coverage_by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+      "metadata": {
+        "availability": "pending_official_import",
+        "label": "Personal de apoyo",
+        "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+        "source_files": [],
+        "last_imported_at": null
+      }
+    },
+    "official_imports": []
   }
 }

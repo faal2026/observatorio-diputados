@@ -9,6 +9,7 @@ Observatorio de transparencia pública de la Cámara de Diputadas y Diputados de
 - Mapa horizontal de las 16 regiones, filtros nacionales y ficha por diputado o diputada.
 - Tablero nacional, mapa territorial interactivo y ficha detallada para las 155 diputadas y diputados.
 - Transparencia nacional: asesorías externas y personal de apoyo se incorporan desde directorios generales de la Cámara; gastos operacionales y pasajes se muestran como pendientes hasta contar con un directorio nacional equivalente o una fuente autorizada.
+- Las exportaciones mensuales oficiales se pueden incorporar sin automatizar las páginas de la Cámara: ver [`data/imports/official/README.md`](data/imports/official/README.md). La carga cruza el archivo con la nómina nacional y deja visible el mes, la cobertura y los nombres que requieran revisión.
 - Personal de apoyo se mantiene separado: la fuente disponible describe remuneraciones de contratos vigentes, no gasto rendido.
 - Cuando una ficha o mes no está publicado se muestra como pendiente, nunca como $0.
 
@@ -25,4 +26,5 @@ El contrato del piloto está en `public/data/distrito-8/pilot-contract.json` y l
 
 - **Actualizar fichas nacionales** reúne actividad, asistencia y comisiones una vez al mes.
 - **Actualizar transparencia nacional** mantiene el mecanismo anterior de verificación para las fuentes de la Cámara. Si ésta rechaza las consultas automatizadas, no publica ceros.
+- **Importar transparencia oficial** se ejecuta automáticamente al subir una exportación mensual oficial a `data/imports/official/`. Es la ruta preferente para asesorías externas y personal de apoyo.
 - **Publicar recolector de transparencia** instala en Cloudflare el recolector mensual independiente. Sus instrucciones están en `worker/observatorio-transparencia/README.md`; las credenciales de Cloudflare quedan guardadas como secretos de GitHub, nunca dentro del repositorio.

@@ -1,0 +1,44 @@
+name: Importar transparencia oficial
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/imports/official/**"
+      - "collector/import_official_transparency.py"
+      - ".github/workflows/importar-transparencia-oficial.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: importar-transparencia-oficial
+  cancel-in-progress: false
+
+jobs:
+  import-and-save:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Incorporar exportaciones oficiales
+        run: python collector/import_official_transparency.py
+
+      - name: Guardar datos preparados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/generated/chile-details-summary.json public/data/chile
+          if git diff --cached --quiet; then
+            echo "No hay exportaciones nuevas para incorporar."
+          else
+            git commit -m "Incorporar transparencia oficial exportada"
+            git push
+          fi

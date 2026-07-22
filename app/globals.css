@@ -76,6 +76,14 @@ select:disabled { background: #f2f3f2; color: #9ca3aa; opacity: 1; }
 .national-summary-grid { background: var(--line); border: 1px solid var(--line); display: grid; gap: 1px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .national-summary-grid .metric-card { min-height: 135px; }
 .national-summary-note { color: var(--muted); font-size: .76rem; line-height: 1.48; margin: 12px 0 0; max-width: 760px; }
+.transparency-coverage { border-top: 1px solid var(--line); display: grid; gap: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 24px; }
+.transparency-coverage article { border-right: 1px solid var(--line); padding: 14px 16px 14px 0; }
+.transparency-coverage article + article { padding-left: 16px; }
+.transparency-coverage article:last-child { border-right: 0; }
+.transparency-coverage p { color: var(--muted); font-size: .68rem; line-height: 1.25; margin-bottom: 7px; }
+.transparency-coverage strong { display: block; font-size: .92rem; font-variant-numeric: tabular-nums; letter-spacing: -.03em; line-height: 1.18; margin-bottom: 5px; }
+.transparency-coverage small, .transparency-coverage span, .transparency-coverage a { color: var(--muted); display: block; font-size: .67rem; line-height: 1.38; }
+.transparency-coverage a { color: var(--accent); margin-top: 7px; }
 .national-trend { margin-top: 28px; }
 .national-chart { min-height: 316px; }
 .filters { background: var(--panel); border: 1px solid var(--line); display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 18px; padding: 15px; }
@@ -107,6 +115,10 @@ td[colspan] { text-align: center; }
   .site-header, .dashboard-grid, .national-map-layout, .profile-card { grid-template-columns: 1fr; }
   .site-header { align-items: start; gap: 18px; }
   .summary-grid, .national-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .transparency-coverage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .transparency-coverage article:nth-child(2) { border-right: 0; }
+  .transparency-coverage article:nth-child(3) { border-top: 1px solid var(--line); padding-left: 0; }
+  .transparency-coverage article:nth-child(4) { border-top: 1px solid var(--line); }
   .national-map { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
@@ -115,7 +127,9 @@ td[colspan] { text-align: center; }
   h1 { font-size: clamp(2.8rem, 16vw, 4rem); }
   section { margin-top: 44px; }
   .section-heading { align-items: start; flex-direction: column; gap: 14px; }
-  .summary-grid, .national-summary-grid, .filters { grid-template-columns: 1fr; }
+  .summary-grid, .national-summary-grid, .filters, .transparency-coverage { grid-template-columns: 1fr; }
+  .transparency-coverage article, .transparency-coverage article + article { border-right: 0; border-top: 1px solid var(--line); padding: 13px 0; }
+  .transparency-coverage article:first-child { border-top: 0; }
   .chart-panel { min-height: 315px; }
   .national-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .region-tile { min-height: 92px; }

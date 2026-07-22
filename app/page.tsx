@@ -50,6 +50,15 @@ type MonthlyMoney = {
   months_with_records: number;
   methodology?: string;
   coverage_by_month?: Record<string, number>;
+  metadata?: {
+    availability?: string;
+    label?: string;
+    source_url?: string;
+    source_file?: string;
+    source_files?: string[];
+    imported_at?: string;
+    last_imported_at?: string;
+  };
 };
 
 type DistrictSummary = {
@@ -110,13 +119,14 @@ type NationalDetailsSummary = {
   deputies_with_details: number;
   activity?: Partial<Record<ActivityName, MonthlyActivity>>;
   attendance?: { average_percentage?: number | null; deputies_with_classified_records?: number };
-  transparency?: Partial<Record<Exclude<TransparencyName, "personnel_support">, MonthlyMoney>> & { month_requested?: string; failures?: unknown[] };
+  transparency?: Partial<Record<TransparencyName, MonthlyMoney>> & { month_requested?: string; failures?: unknown[] };
   districts?: Array<{
     district: number;
     region: string;
     deputies_count: number;
     activity?: Partial<Record<ActivityName, MonthlyActivity>>;
     attendance?: { average_percentage?: number | null };
+    transparency?: Partial<Record<TransparencyName, MonthlyMoney>>;
   }>;
 };
 
@@ -207,16 +217,17 @@ export default function Home() {
   const workerAdvisories = workerTransparency?.categories?.external_advisories;
   const workerPersonnel = workerTransparency?.categories?.personnel_support;
   const workerMonth = workerTransparency?.month;
-  const workerDistrictTotal = (category: WorkerTransparencyCategory | undefined) => workerMonth && category
+  const workerDataMonth = workerMonth && (workerAdvisories?.national_total_clp != null || workerPersonnel?.national_total_clp != null) ? workerMonth : undefined;
+  const workerDistrictTotal = (category: WorkerTransparencyCategory | undefined) => workerDataMonth && category?.national_total_clp != null
     ? nationalDeputies.filter((item) => item.district === 8).reduce((sum, item) => sum + (category.by_deputy?.[item.id] ?? 0), 0)
     : null;
   const workerDistrictAdvisories = workerDistrictTotal(workerAdvisories);
   const workerDistrictPersonnel = workerDistrictTotal(workerPersonnel);
   const activity = selected.activity ? summary.activity?.[selected.activity] : undefined;
-  const workerMoney = selected.transparency === "external_advisories" ? workerAdvisories : selected.transparency === "personnel_support" ? workerPersonnel : undefined;
+  const workerMoney = selected.transparency === "external_advisories" && workerAdvisories?.national_total_clp != null ? workerAdvisories : selected.transparency === "personnel_support" && workerPersonnel?.national_total_clp != null ? workerPersonnel : undefined;
   const workerDistrictMoney = selected.transparency === "external_advisories" ? workerDistrictAdvisories : selected.transparency === "personnel_support" ? workerDistrictPersonnel : null;
-  const money = selected.transparency && workerMonth && workerDistrictMoney != null && workerMoney
-    ? { by_month: { [workerMonth]: workerDistrictMoney }, latest_month: workerMonth, latest_amount: workerDistrictMoney, average_monthly: null, median_monthly: null, months_with_records: 1, methodology: workerMoney.methodology, coverage_by_month: { [workerMonth]: workerMoney.deputies_with_records ?? 0 } }
+  const money = selected.transparency && workerDataMonth && workerDistrictMoney != null && workerMoney
+    ? { by_month: { [workerDataMonth]: workerDistrictMoney }, latest_month: workerDataMonth, latest_amount: workerDistrictMoney, average_monthly: null, median_monthly: null, months_with_records: 1, methodology: workerMoney.methodology, coverage_by_month: { [workerDataMonth]: workerMoney.deputies_with_records ?? 0 } }
     : selected.transparency ? summary.transparency?.[selected.transparency] : undefined;
   const series = Object.entries(activity?.by_month ?? money?.by_month ?? {});
   const maximum = Math.max(...series.map(([, value]) => value), 1);
@@ -272,10 +283,10 @@ export default function Home() {
       ...Object.keys(deputyRecord.transparency.operational_expenses?.by_month ?? {}),
       ...Object.keys(deputyRecord.transparency.external_advisories?.by_month ?? {}),
       ...Object.keys(deputyRecord.transparency.flights?.by_month ?? {}),
-      ...(workerMonth ? [workerMonth] : []),
+      ...(workerDataMonth ? [workerDataMonth] : []),
     ]);
     return [...months].sort().reverse();
-  }, [deputyRecord, workerMonth]);
+  }, [deputyRecord, workerDataMonth]);
 
   const averageMotions = summary.activity?.motions.average_per_deputy_per_month;
   const averageResolutions = summary.activity?.resolutions.average_per_deputy_per_month;
@@ -291,32 +302,48 @@ export default function Home() {
   const nationalTransparency = nationalDetails.transparency;
   const transparencyCard = (name: TransparencyName) => {
    const workerCategory = name === "external_advisories" ? workerAdvisories : name === "personnel_support" ? workerPersonnel : undefined;
-   if (workerMonth && workerCategory) {
-      const isAvailable = workerCategory.national_total_clp != null;
+   if (workerDataMonth && workerCategory?.national_total_clp != null) {
      return {
-        value: isAvailable ? clp(workerCategory.national_total_clp ?? 0) : "—",
-        detail: isAvailable
-          ? `${labelMonth(workerMonth)} · ${workerCategory.deputies_with_records ?? 0} de 155 diputados(as) con registros`
-          : workerCategory.reason ?? "Fuente nacional pendiente de publicación.",
+        value: clp(workerCategory.national_total_clp),
+        detail: `${labelMonth(workerDataMonth)} · ${workerCategory.deputies_with_records ?? 0} de 155 diputados(as) con registros`,
      };
     }
-    const item = name === "personnel_support" ? undefined : nationalTransparency?.[name];
+    const item = nationalTransparency?.[name];
     const coverage = item?.latest_month ? item.coverage_by_month?.[item.latest_month] : undefined;
     return {
       value: item?.latest_amount == null ? "—" : clp(item.latest_amount),
-      detail: item?.latest_month ? `${labelMonth(item.latest_month)} · ${coverage ?? 0} de 155 fichas con publicación` : "Mes publicado pendiente de carga",
+      detail: item?.latest_month
+        ? `${labelMonth(item.latest_month)} · ${coverage ?? 0} de 155 diputados(as) con registros${item.metadata?.source_file || item.metadata?.source_files?.length ? " · exportación oficial" : ""}`
+        : workerCategory?.reason ?? "Mes publicado pendiente de carga",
     };
   };
   const nationalOperational = transparencyCard("operational_expenses");
   const nationalAdvisories = transparencyCard("external_advisories");
   const nationalFlights = transparencyCard("flights");
   const nationalPersonnel = transparencyCard("personnel_support");
-  const regionalWorkerTotal = (category: WorkerTransparencyCategory | undefined) => mapRegion && workerMonth && category
+  const transparencyCoverage = [
+    { key: "external_advisories" as TransparencyName, label: "Asesorías externas", card: nationalAdvisories },
+    { key: "personnel_support" as TransparencyName, label: "Personal de apoyo", card: nationalPersonnel },
+    { key: "operational_expenses" as TransparencyName, label: "Gastos operacionales", card: nationalOperational },
+    { key: "flights" as TransparencyName, label: "Pasajes aéreos", card: nationalFlights },
+  ];
+  const regionalWorkerTotal = (category: WorkerTransparencyCategory | undefined) => mapRegion && workerDataMonth && category?.national_total_clp != null
     ? nationalDeputies.filter((item) => item.region_code === mapRegion.code).reduce((sum, item) => sum + (category.by_deputy?.[item.id] ?? 0), 0)
     : null;
   const regionalAdvisories = regionalWorkerTotal(workerAdvisories);
   const regionalPersonnel = regionalWorkerTotal(workerPersonnel);
   const selectedRegionDetails = (nationalDetails.districts ?? []).filter((item) => item.region === mapRegion?.name);
+  const regionalImportedMoney = (name: TransparencyName) => {
+    const items = selectedRegionDetails.map((item) => item.transparency?.[name]).filter((item): item is MonthlyMoney => item != null);
+    const month = items.flatMap((item) => Object.keys(item.by_month ?? {})).sort().at(-1);
+    if (!month) return null;
+    const amounts = items.map((item) => item.by_month?.[month]).filter((amount): amount is number => amount != null);
+    return amounts.length ? { month, amount: amounts.reduce((sum, amount) => sum + amount, 0) } : null;
+  };
+  const regionalAdvisoriesImported = regionalImportedMoney("external_advisories");
+  const regionalPersonnelImported = regionalImportedMoney("personnel_support");
+  const regionalAdvisoriesDisplay = regionalAdvisories == null ? regionalAdvisoriesImported : workerDataMonth ? { month: workerDataMonth, amount: regionalAdvisories } : null;
+  const regionalPersonnelDisplay = regionalPersonnel == null ? regionalPersonnelImported : workerDataMonth ? { month: workerDataMonth, amount: regionalPersonnel } : null;
   const regionalDetailAvailable = mapRegion != null && selectedRegionDetails.length === mapRegion.districts.length;
   const regionalAttendanceRecords = selectedRegionDetails.filter((item) => item.attendance?.average_percentage != null);
   const regionalAttendanceWeight = regionalAttendanceRecords.reduce((sum, item) => sum + item.deputies_count, 0);
@@ -360,6 +387,18 @@ export default function Home() {
           <MetricCard label="Personal de apoyo" value={nationalPersonnel.value} detail={nationalPersonnel.detail} />
         </div>
         <p className="national-summary-note">Los totales de transparencia muestran sólo fichas y meses efectivamente publicados por la Cámara. La cobertura queda visible junto a cada cifra; una ficha sin publicación nunca se incorpora como $0. Personal de apoyo corresponde a la suma de sueldos vigentes informados en el corte, no a una rendición mensual.</p>
+        <div className="transparency-coverage" aria-label="Cobertura de fuentes de transparencia">
+          {transparencyCoverage.map((item) => {
+            const metadata = nationalTransparency?.[item.key]?.metadata;
+            const source = metadata?.source_url;
+            return <article key={item.key}>
+              <p>{item.label}</p>
+              <strong>{item.card.value}</strong>
+              <small>{item.card.detail}</small>
+              {source ? <a href={source} target="_blank" rel="noreferrer">Ver fuente oficial</a> : <span>Esperando archivo nacional comparable</span>}
+            </article>;
+          })}
+        </div>
       </section>
 
       <section className="national-trend" aria-labelledby="national-trend-title">
@@ -409,7 +448,7 @@ export default function Home() {
             {nationalRegions.map((item, index) => <button key={item.code} type="button" role="listitem" className={`region-tile ${region === item.code ? "is-selected" : ""} ${mapRegion?.code === item.code ? "is-previewed" : ""}`} onMouseEnter={() => setHoverRegion(item.code)} onMouseLeave={() => setHoverRegion("")} onFocus={() => setHoverRegion(item.code)} onBlur={() => setHoverRegion("")} onClick={() => { setRegion(item.code); setDistrict(""); setDeputy(""); }} title={`${item.name}: ${item.deputies_count == null ? "nómina en actualización" : `${item.deputies_count} diputados(as)`}`}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.name}</strong><small>{item.deputies_count == null ? "Nómina en actualización" : `${decimal.format(item.deputies_count)} diputados(as)`}</small></button>)}
           </div>
           <aside className="region-panel" aria-live="polite">
-            {mapRegion ? <><p className="eyebrow">{hoverRegion ? "Vista previa regional" : "Región seleccionada"}</p><h3>{mapRegion.name}</h3><dl><div><dt>Distritos</dt><dd>{mapRegion.districts.map((item) => `D${item}`).join(" · ")}</dd></div><div><dt>Diputados(as)</dt><dd>{mapRegion.deputies_count == null ? "Actualizando nómina" : decimal.format(mapRegion.deputies_count)}</dd></div><div><dt>Dieta bruta mensual</dt><dd>{mapRegion.diet_monthly_clp != null ? clp(mapRegion.diet_monthly_clp) : "Disponible al actualizar la nómina"}</dd></div><div><dt>Asistencia promedio</dt><dd>{regionalDetailAvailable ? percentage(regionalAttendance) : "Sin registros clasificados"}</dd></div><div><dt>Mociones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("motions")) : "Sin serie publicada"}</dd></div><div><dt>Resoluciones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("resolutions")) : "Sin serie publicada"}</dd></div><div><dt>Asesorías externas</dt><dd>{regionalAdvisories == null ? "Corte mensual pendiente" : `${clp(regionalAdvisories)} · ${labelMonth(workerMonth ?? "2026-01")}`}</dd></div><div><dt>Personal de apoyo</dt><dd>{regionalPersonnel == null ? "Corte mensual pendiente" : `${clp(regionalPersonnel)} · ${labelMonth(workerMonth ?? "2026-01")}`}</dd></div><div><dt>Gastos y pasajes</dt><dd>Sin publicación mensual comparable</dd></div></dl></> : <><p className="eyebrow">Cobertura nacional</p><h3>{national.deputies_count == null ? "Nómina en actualización" : `${decimal.format(national.deputies_count)} diputados(as)`}</h3><p>Pasa sobre una región para ver sus distritos, representantes, dieta mensual y actividad legislativa. Haz clic para cargarla en el filtro individual.</p></>}
+            {mapRegion ? <><p className="eyebrow">{hoverRegion ? "Vista previa regional" : "Región seleccionada"}</p><h3>{mapRegion.name}</h3><dl><div><dt>Distritos</dt><dd>{mapRegion.districts.map((item) => `D${item}`).join(" · ")}</dd></div><div><dt>Diputados(as)</dt><dd>{mapRegion.deputies_count == null ? "Actualizando nómina" : decimal.format(mapRegion.deputies_count)}</dd></div><div><dt>Dieta bruta mensual</dt><dd>{mapRegion.diet_monthly_clp != null ? clp(mapRegion.diet_monthly_clp) : "Disponible al actualizar la nómina"}</dd></div><div><dt>Asistencia promedio</dt><dd>{regionalDetailAvailable ? percentage(regionalAttendance) : "Sin registros clasificados"}</dd></div><div><dt>Mociones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("motions")) : "Sin serie publicada"}</dd></div><div><dt>Resoluciones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("resolutions")) : "Sin serie publicada"}</dd></div><div><dt>Asesorías externas</dt><dd>{regionalAdvisoriesDisplay ? `${clp(regionalAdvisoriesDisplay.amount)} · ${labelMonth(regionalAdvisoriesDisplay.month)}` : "Corte mensual pendiente"}</dd></div><div><dt>Personal de apoyo</dt><dd>{regionalPersonnelDisplay ? `${clp(regionalPersonnelDisplay.amount)} · ${labelMonth(regionalPersonnelDisplay.month)}` : "Corte mensual pendiente"}</dd></div><div><dt>Gastos y pasajes</dt><dd>Sin publicación mensual comparable</dd></div></dl></> : <><p className="eyebrow">Cobertura nacional</p><h3>{national.deputies_count == null ? "Nómina en actualización" : `${decimal.format(national.deputies_count)} diputados(as)`}</h3><p>Pasa sobre una región para ver sus distritos, representantes, dieta mensual y actividad legislativa. Haz clic para cargarla en el filtro individual.</p></>}
           </aside>
         </div>
       </section>
@@ -422,9 +461,9 @@ export default function Home() {
           <label><span>Diputado(a)</span><select value={deputy} onChange={(event) => setDeputy(event.target.value)} disabled={!district}><option value="">Seleccionar diputado(a)</option>{availableDeputies.map((item) => <option key={item.id}>{item.name}</option>)}</select></label>
         </div>
 
-        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha individual</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Comisiones incorporadas desde la fuente oficial. Puedes contrastarlas en la <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha vigente de la Cámara</a>.</p></> : <p>El servicio de Datos Abiertos no devolvió aún integrantes para esta ficha. No significa que no participe en comisiones: consulta la <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha vigente de la Cámara</a>.</p>}<h4 className="profile-subheading">Cobertura de transparencia</h4>{workerMonth && (workerAdvisories || workerPersonnel) ? <p>{workerAdvisories ? `Asesorías externas: corte de ${labelMonth(workerMonth)} desde el directorio mensual nacional. ` : ""}{workerPersonnel ? `Personal de apoyo: suma de sueldos vigentes del corte ${labelMonth(workerMonth)}, no gasto rendido. ` : ""}Los montos publicados aparecen en la tabla; categorías sin registros no se convierten en $0.</p> : deputyRecord.transparency.availability === "published_partial" ? <p>Esta ficha ya tiene meses de transparencia publicados. Los meses posteriores o categorías sin registro se mantienen como pendientes, sin imputar $0. Personal de apoyo se publica por ahora sólo donde existe una fuente mensual comparable.</p> : deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido.</p> : <p>La Cámara aún no publica transparencia mensual para esta ficha. El tablero conservará esos meses como pendientes, nunca como $0.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
+        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha individual</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Comisiones incorporadas desde la fuente oficial. Puedes contrastarlas en la <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha vigente de la Cámara</a>.</p></> : <p>El servicio de Datos Abiertos no devolvió aún integrantes para esta ficha. No significa que no participe en comisiones: consulta la <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha vigente de la Cámara</a>.</p>}<h4 className="profile-subheading">Cobertura de transparencia</h4>{workerDataMonth && (workerAdvisories?.national_total_clp != null || workerPersonnel?.national_total_clp != null) ? <p>{workerAdvisories?.national_total_clp != null ? `Asesorías externas: corte de ${labelMonth(workerDataMonth)} desde el directorio mensual nacional. ` : ""}{workerPersonnel?.national_total_clp != null ? `Personal de apoyo: suma de sueldos vigentes del corte ${labelMonth(workerDataMonth)}, no gasto rendido. ` : ""}Los montos publicados aparecen en la tabla; categorías sin registros no se convierten en $0.</p> : deputyRecord.transparency.availability === "published_partial" ? <p>Esta ficha ya tiene meses de transparencia publicados. Los meses posteriores o categorías sin registro se mantienen como pendientes, sin imputar $0. Personal de apoyo se publica por ahora sólo donde existe una fuente mensual comparable.</p> : deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido.</p> : <p>La Cámara aún no publica transparencia mensual para esta ficha. El tablero conservará esos meses como pendientes, nunca como $0.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
 
-        {deputyRecord ? <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia total</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.resolutions_by_month_and_state[month]} /></td><td>{decimal.format(deputyRecord.activity.offices_by_month[month] ?? 0)}</td><td>{percentage(deputyRecord.attendance?.percentage)}</td><td>{MoneyCell(deputyRecord.transparency.operational_expenses?.by_month[month], deputyRecord.transparency.operational_expenses?.by_month)}</td><td>{month === workerMonth && workerAdvisories ? workerAdvisories.by_deputy?.[deputyRecord.profile.id] == null ? <span className="pending-cell">Sin registros</span> : clp(workerAdvisories.by_deputy[deputyRecord.profile.id]) : MoneyCell(deputyRecord.transparency.external_advisories?.by_month[month], deputyRecord.transparency.external_advisories?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.flights?.by_month[month], deputyRecord.transparency.flights?.by_month)}</td><td>{month === workerMonth && workerPersonnel ? workerPersonnel.by_deputy?.[deputyRecord.profile.id] == null ? <span className="pending-cell">Sin registros</span> : clp(workerPersonnel.by_deputy[deputyRecord.profile.id]) : MoneyCell(deputyRecord.transparency.personnel_support?.by_month[month], deputyRecord.transparency.personnel_support?.by_month)}</td></tr>)}</tbody></table></div> : null}
+        {deputyRecord ? <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia total</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.resolutions_by_month_and_state[month]} /></td><td>{decimal.format(deputyRecord.activity.offices_by_month[month] ?? 0)}</td><td>{percentage(deputyRecord.attendance?.percentage)}</td><td>{MoneyCell(deputyRecord.transparency.operational_expenses?.by_month[month], deputyRecord.transparency.operational_expenses?.by_month)}</td><td>{month === workerDataMonth && workerAdvisories?.national_total_clp != null ? workerAdvisories.by_deputy?.[deputyRecord.profile.id] == null ? <span className="pending-cell">Sin registros</span> : clp(workerAdvisories.by_deputy[deputyRecord.profile.id]) : MoneyCell(deputyRecord.transparency.external_advisories?.by_month[month], deputyRecord.transparency.external_advisories?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.flights?.by_month[month], deputyRecord.transparency.flights?.by_month)}</td><td>{month === workerDataMonth && workerPersonnel?.national_total_clp != null ? workerPersonnel.by_deputy?.[deputyRecord.profile.id] == null ? <span className="pending-cell">Sin registros</span> : clp(workerPersonnel.by_deputy[deputyRecord.profile.id]) : MoneyCell(deputyRecord.transparency.personnel_support?.by_month[month], deputyRecord.transparency.personnel_support?.by_month)}</td></tr>)}</tbody></table></div> : null}
       </section>
 
       <section className="methodology" aria-labelledby="methodology-title"><p className="eyebrow">Trazabilidad</p><h2 id="methodology-title">Cómo leer este tablero</h2><ul>{sources.map((source) => <li key={source}>{source}</li>)}</ul></section>
