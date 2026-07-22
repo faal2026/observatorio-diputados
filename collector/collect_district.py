@@ -463,8 +463,13 @@ def hydrate_authors(
         project_id = str(project.get("id") or "")
         if not project_id:
             continue
+        # Una ejecución anterior puede haber dejado una entrada nula tras una
+        # respuesta incompleta. No es un caché utilizable: se vuelve a pedir
+        # sólo ese proyecto, sin interrumpir todo el lote nacional.
         cached = author_cache.get(project_id)
-        cache_has_offices = source_name != "resolutions" or "offices" in cached
+        if not isinstance(cached, dict):
+            cached = None
+        cache_has_offices = cached is not None and (source_name != "resolutions" or "offices" in cached)
         if cached and cache_has_offices:
             hydrated.append({**project, "author_ids": cached.get("author_ids", []), "authors_text": cached.get("authors_text", ""), "offices": cached.get("offices", [])})
             continue
