@@ -1,0 +1,78 @@
+{
+  "district": 13,
+  "region": "Metropolitana de Santiago",
+  "deputies_count": 5,
+  "deputies": [
+    {
+      "id": "1028",
+      "name": "Eduardo Durán Salinas"
+    },
+    {
+      "id": "1248",
+      "name": "Felipe Ross Correa"
+    },
+    {
+      "id": "1087",
+      "name": "Gael Yeomans Araya"
+    },
+    {
+      "id": "1159",
+      "name": "Lorena Pizarro Sierra"
+    },
+    {
+      "id": "1191",
+      "name": "Valentina Becerra Peña"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 5,
+        "2026-04": 9,
+        "2026-05": 6,
+        "2026-06": 29,
+        "2026-07": 5
+      },
+      "total": 54,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 2.16
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 5,
+        "2026-04": 8,
+        "2026-05": 7,
+        "2026-06": 4,
+        "2026-07": 4
+      },
+      "total": 29,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.9666666666666667
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-04": 1,
+        "2026-05": 5,
+        "2026-07": 1
+      },
+      "total": 8,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.4,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 41195455
+  }
+}

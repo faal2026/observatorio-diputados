@@ -1,0 +1,77 @@
+{
+  "district": 15,
+  "region": "Libertador General Bernardo O’Higgins",
+  "deputies_count": 5,
+  "deputies": [
+    {
+      "id": "1253",
+      "name": "Fernando Ugarte Tejeda"
+    },
+    {
+      "id": "1264",
+      "name": "Fernando Zamorano Peralta"
+    },
+    {
+      "id": "1166",
+      "name": "Natalia Romero Talguia"
+    },
+    {
+      "id": "1077",
+      "name": "Raúl Soto Mardones"
+    },
+    {
+      "id": "1207",
+      "name": "Valentina Cáceres Monsálvez"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-03": 2,
+        "2026-04": 11,
+        "2026-05": 5,
+        "2026-06": 13,
+        "2026-07": 7
+      },
+      "total": 40,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.3333333333333333
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 11,
+        "2026-04": 7,
+        "2026-05": 8,
+        "2026-06": 3,
+        "2026-07": 1
+      },
+      "total": 30,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 1.2
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 5,
+        "2026-05": 8,
+        "2026-06": 2
+      },
+      "total": 15,
+      "months_with_records": 3,
+      "average_per_deputy_per_month": 1.0,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 41195455
+  }
+}

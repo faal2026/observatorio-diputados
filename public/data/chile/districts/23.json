@@ -1,0 +1,83 @@
+{
+  "district": 23,
+  "region": "La Araucanía",
+  "deputies_count": 6,
+  "deputies": [
+    {
+      "id": "1153",
+      "name": "Coca Ericka Ñanco Vásquez"
+    },
+    {
+      "id": "1232",
+      "name": "Cristian Neira Martínez"
+    },
+    {
+      "id": "1201",
+      "name": "Flor Contreras Vivallo"
+    },
+    {
+      "id": "1226",
+      "name": "José Montalva Feuerhake"
+    },
+    {
+      "id": "1172",
+      "name": "Stephan Schubert Rubio"
+    },
+    {
+      "id": "1219",
+      "name": "Tomás Kast Sommerhoff"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 3,
+        "2026-03": 2,
+        "2026-04": 7,
+        "2026-05": 8,
+        "2026-06": 26,
+        "2026-07": 3
+      },
+      "total": 49,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.3611111111111112
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 3,
+        "2026-03": 8,
+        "2026-04": 8,
+        "2026-05": 11,
+        "2026-06": 1,
+        "2026-07": 3
+      },
+      "total": 34,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.9444444444444444
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 3,
+        "2026-04": 2,
+        "2026-05": 6,
+        "2026-07": 3
+      },
+      "total": 14,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.5833333333333334,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 49434546
+  }
+}

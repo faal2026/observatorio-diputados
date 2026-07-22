@@ -1,0 +1,92 @@
+{
+  "district": 6,
+  "region": "Valparaíso",
+  "deputies_count": 8,
+  "deputies": [
+    {
+      "id": "1221",
+      "name": "Benjamín Lorca Inzunza"
+    },
+    {
+      "id": "1104",
+      "name": "Chiara Barchiesi Chávez"
+    },
+    {
+      "id": "1224",
+      "name": "Cristian Mella Andaur"
+    },
+    {
+      "id": "1235",
+      "name": "Javier Olivares Avendaño"
+    },
+    {
+      "id": "1060",
+      "name": "Luis Pardo Sáinz"
+    },
+    {
+      "id": "1107",
+      "name": "María Francisca Bello Campos"
+    },
+    {
+      "id": "1181",
+      "name": "Nelson Venegas Salazar"
+    },
+    {
+      "id": "1211",
+      "name": "Sofía González Cortés"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 9,
+        "2026-03": 7,
+        "2026-04": 11,
+        "2026-05": 15,
+        "2026-06": 41,
+        "2026-07": 9
+      },
+      "total": 92,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.9166666666666667
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-03": 6,
+        "2026-04": 13,
+        "2026-05": 8,
+        "2026-06": 2,
+        "2026-07": 3
+      },
+      "total": 34,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.7083333333333334
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-04": 1,
+        "2026-05": 5,
+        "2026-06": 1,
+        "2026-07": 1
+      },
+      "total": 10,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.25,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 65912728
+  }
+}

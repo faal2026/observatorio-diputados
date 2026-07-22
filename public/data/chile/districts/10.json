@@ -1,0 +1,93 @@
+{
+  "district": 10,
+  "region": "Metropolitana de Santiago",
+  "deputies_count": 8,
+  "deputies": [
+    {
+      "id": "1171",
+      "name": "Emilia Schneider Videla"
+    },
+    {
+      "id": "1237",
+      "name": "Francisco Orrego Gutiérrez"
+    },
+    {
+      "id": "1086",
+      "name": "Gonzalo Winter Etcheberry"
+    },
+    {
+      "id": "1223",
+      "name": "Hans Marowski Cuevas"
+    },
+    {
+      "id": "1213",
+      "name": "Irací Hassler Jacob"
+    },
+    {
+      "id": "1009",
+      "name": "Jorge Alessandri Vergara"
+    },
+    {
+      "id": "1218",
+      "name": "José Antonio Kast Adriasola"
+    },
+    {
+      "id": "1127",
+      "name": "Lorena Fries Monleón"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 10,
+        "2026-03": 4,
+        "2026-04": 11,
+        "2026-05": 6,
+        "2026-06": 33,
+        "2026-07": 11
+      },
+      "total": 75,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.5625
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 4,
+        "2026-03": 15,
+        "2026-04": 12,
+        "2026-05": 15,
+        "2026-06": 7,
+        "2026-07": 2
+      },
+      "total": 55,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.1458333333333333
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 7,
+        "2026-03": 1,
+        "2026-04": 2,
+        "2026-05": 8,
+        "2026-06": 2,
+        "2026-07": 4
+      },
+      "total": 24,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.5,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 65912728
+  }
+}

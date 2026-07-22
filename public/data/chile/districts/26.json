@@ -1,0 +1,77 @@
+{
+  "district": 26,
+  "region": "Los Lagos",
+  "deputies_count": 5,
+  "deputies": [
+    {
+      "id": "1013",
+      "name": "Alejandro Bernales Maldonado"
+    },
+    {
+      "id": "1230",
+      "name": "Alex Nahuelquin Nahuelquin"
+    },
+    {
+      "id": "1244",
+      "name": "Claudia Reyes Larenas"
+    },
+    {
+      "id": "1178",
+      "name": "Héctor Ulloa Aguilera"
+    },
+    {
+      "id": "1131",
+      "name": "Mauro González Villarroel"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 3,
+        "2026-03": 1,
+        "2026-04": 13,
+        "2026-05": 13,
+        "2026-06": 25,
+        "2026-07": 4
+      },
+      "total": 59,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.9666666666666666
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 6,
+        "2026-04": 2,
+        "2026-05": 8,
+        "2026-06": 3,
+        "2026-07": 1
+      },
+      "total": 20,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.8
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 2,
+        "2026-05": 5,
+        "2026-07": 2
+      },
+      "total": 9,
+      "months_with_records": 3,
+      "average_per_deputy_per_month": 0.6,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 41195455
+  }
+}

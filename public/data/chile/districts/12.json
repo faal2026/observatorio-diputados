@@ -1,0 +1,84 @@
+{
+  "district": 12,
+  "region": "Metropolitana de Santiago",
+  "deputies_count": 7,
+  "deputies": [
+    {
+      "id": "1128",
+      "name": "Ana María Gazmuri Vieira"
+    },
+    {
+      "id": "1173",
+      "name": "Daniela Serrano Salazar"
+    },
+    {
+      "id": "1251",
+      "name": "Macarena Santelices Cañas"
+    },
+    {
+      "id": "1039",
+      "name": "Pamela Jiles Moreno"
+    },
+    {
+      "id": "1059",
+      "name": "Ximena Ossandón Irarrázabal"
+    },
+    {
+      "id": "1240",
+      "name": "Zandra Parisi Fernández"
+    },
+    {
+      "id": "1017",
+      "name": "Álvaro Carter Fernández"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 16,
+        "2026-04": 21,
+        "2026-05": 24,
+        "2026-06": 36,
+        "2026-07": 9
+      },
+      "total": 106,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 3.0285714285714285
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 5,
+        "2026-04": 10,
+        "2026-05": 7,
+        "2026-06": 10,
+        "2026-07": 6
+      },
+      "total": 38,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 1.0857142857142856
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 3,
+        "2026-05": 4,
+        "2026-07": 3
+      },
+      "total": 10,
+      "months_with_records": 3,
+      "average_per_deputy_per_month": 0.47619047619047616,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 57673637
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "district": 7,
+  "region": "Valparaíso",
+  "deputies_count": 8,
+  "deputies": [
+    {
+      "id": "1021",
+      "name": "Andrés Celis Montt"
+    },
+    {
+      "id": "1176",
+      "name": "Hotuiti Teao Drago"
+    },
+    {
+      "id": "1189",
+      "name": "Jaime Bassa Mercado"
+    },
+    {
+      "id": "1015",
+      "name": "Jorge Brito Hasbún"
+    },
+    {
+      "id": "1259",
+      "name": "Juan Marcelo Valenzuela Henríquez"
+    },
+    {
+      "id": "1122",
+      "name": "Luis Alberto Cuello Peña y Lillo"
+    },
+    {
+      "id": "1170",
+      "name": "Luis Sánchez Ossa"
+    },
+    {
+      "id": "1263",
+      "name": "Sebastián Zamora Soto"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 8,
+        "2026-03": 2,
+        "2026-04": 18,
+        "2026-05": 11,
+        "2026-06": 39,
+        "2026-07": 5
+      },
+      "total": 83,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.7291666666666667
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 30,
+        "2026-04": 9,
+        "2026-05": 9,
+        "2026-06": 4,
+        "2026-07": 4
+      },
+      "total": 57,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.1875
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 1,
+        "2026-04": 6,
+        "2026-05": 8,
+        "2026-06": 9,
+        "2026-07": 6
+      },
+      "total": 31,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.6458333333333334,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 65912728
+  }
+}

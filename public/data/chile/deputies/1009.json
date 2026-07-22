@@ -1,0 +1,104 @@
+{
+  "profile": {
+    "id": "1009",
+    "name": "Jorge Alessandri Vergara",
+    "district": "Distrito 10",
+    "region": "Metropolitana de Santiago",
+    "period": "2026-2030",
+    "source_url": "https://www.camara.cl/diputados/detalle/biografia.aspx?prmId=1009",
+    "commissions_source_url": "https://www.camara.cl/diputados/detalle/comisiones.aspx?prmId=1009",
+    "territory_source_url": "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r=2026&distrito=10"
+  },
+  "activity": {
+    "motions_by_month_and_state": {
+      "2026-01": {
+        "true": 1
+      },
+      "2026-06": {
+        "true": 4
+      },
+      "2026-07": {
+        "true": 2
+      }
+    },
+    "agreements_by_month_and_state": {},
+    "resolutions_by_month_and_state": {
+      "2026-01": {
+        "Aprobado": 1
+      },
+      "2026-05": {
+        "En trámite": 1
+      }
+    },
+    "offices_by_month": {
+      "2026-01": 4
+    }
+  },
+  "commissions": [],
+  "attendance": {
+    "sessions_recorded": 67,
+    "present": 67,
+    "not_present": 0,
+    "unclassified": 0,
+    "percentage": 100.0,
+    "by_type": {
+      "Asiste": 61,
+      "No Asiste": 6
+    }
+  },
+  "transparency": {
+    "availability": "not_published",
+    "operational_expenses": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Gastos operacionales",
+        "source_url": "https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1009"
+      }
+    },
+    "external_advisories": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Asesorías externas",
+        "source_url": "https://www.camara.cl/diputados/detalle/asesoriasexternas.aspx?prmId=1009"
+      }
+    },
+    "flights": {
+      "by_month": {},
+      "latest_month": null,
+      "latest_amount": null,
+      "average_monthly": null,
+      "median_monthly": null,
+      "months_with_records": 0,
+      "methodology": "La Cámara publica este antecedente con desfase y no hay meses publicados para esta nómina en la consulta oficial actual.",
+      "metadata": {
+        "availability": "not_published",
+        "label": "Pasajes aéreos nacionales",
+        "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1009"
+      }
+    },
+    "personnel_support": {
+      "by_month": {},
+      "contracts_count": 0
+    },
+    "personnel_support_metadata": {
+      "availability": "pending_national_backfill",
+      "label": "Personal de apoyo",
+      "reason": "La serie nacional comparable aún no ha sido publicada en una fuente automatizable."
+    }
+  },
+  "retrieved_at": "2026-07-22T01:27:53.826907+00:00"
+}

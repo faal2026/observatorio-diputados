@@ -1,0 +1,82 @@
+{
+  "district": 24,
+  "region": "Los Ríos",
+  "deputies_count": 6,
+  "deputies": [
+    {
+      "id": "1261",
+      "name": "Daniel Valenzuela Salazar"
+    },
+    {
+      "id": "1220",
+      "name": "Leandro Kunstmann Collado"
+    },
+    {
+      "id": "1038",
+      "name": "Marcos Ilabaca Cerda"
+    },
+    {
+      "id": "1209",
+      "name": "Matías Fernández Hartwig"
+    },
+    {
+      "id": "1249",
+      "name": "Omar Sabat Guzmán"
+    },
+    {
+      "id": "843",
+      "name": "René Manuel García García"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-03": 2,
+        "2026-04": 10,
+        "2026-05": 10,
+        "2026-06": 24,
+        "2026-07": 4
+      },
+      "total": 52,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.4444444444444444
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 10,
+        "2026-04": 5,
+        "2026-05": 6,
+        "2026-06": 4,
+        "2026-07": 2
+      },
+      "total": 27,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.9
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 2,
+        "2026-05": 3,
+        "2026-06": 1,
+        "2026-07": 5
+      },
+      "total": 11,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.4583333333333333,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 49434546
+  }
+}

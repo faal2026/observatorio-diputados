@@ -1,0 +1,69 @@
+{
+  "district": 28,
+  "region": "Magallanes y de la Antártica Chilena",
+  "deputies_count": 3,
+  "deputies": [
+    {
+      "id": "1245",
+      "name": "Alejandro Riquelme Ducci"
+    },
+    {
+      "id": "1110",
+      "name": "Carlos Bianchi Chelech"
+    },
+    {
+      "id": "1148",
+      "name": "Javiera Morales Alvarado"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 7,
+        "2026-03": 3,
+        "2026-04": 5,
+        "2026-05": 4,
+        "2026-06": 9,
+        "2026-07": 2
+      },
+      "total": 30,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.6666666666666667
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-03": 7,
+        "2026-04": 3,
+        "2026-05": 4
+      },
+      "total": 16,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 1.3333333333333333
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-04": 1,
+        "2026-05": 2,
+        "2026-07": 2
+      },
+      "total": 7,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.5833333333333334,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 24717273
+  }
+}
