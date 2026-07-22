@@ -1,42 +1,227 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T15:28:23.082565+00:00",
+  "generated_at": "2026-07-22T15:55:56.580898+00:00",
   "source": "Exportaciones mensuales oficiales de Transparencia Activa de la Cámara",
   "categories": {
     "external_advisories": {
-      "by_month": {},
-      "coverage_by_month": {},
-      "latest_month": null,
-      "latest_amount": null,
-      "average_monthly": null,
-      "median_monthly": null,
-      "months_with_records": 0,
+      "by_month": {
+        "2026-03": 36989811,
+        "2026-04": 46519644,
+        "2026-05": 28680549,
+        "2026-06": 47948917
+      },
+      "coverage_by_month": {
+        "2026-03": 43,
+        "2026-04": 45,
+        "2026-05": 29,
+        "2026-06": 47
+      },
+      "latest_month": "2026-06",
+      "latest_amount": 47948917,
+      "average_monthly": 40034730,
+      "median_monthly": 41754728,
+      "months_with_records": 4,
       "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
       "metadata": {
-        "availability": "pending_official_import",
+        "availability": "published_official_import",
         "label": "Asesorías externas",
         "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
-        "source_files": [],
-        "last_imported_at": null
+        "source_files": [
+          "asesorias-2026-06.xls"
+        ],
+        "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
       }
     },
     "personnel_support": {
-      "by_month": {},
-      "coverage_by_month": {},
-      "latest_month": null,
-      "latest_amount": null,
-      "average_monthly": null,
-      "median_monthly": null,
-      "months_with_records": 0,
+      "by_month": {
+        "2026-03": 1079118520,
+        "2026-04": 1403359906,
+        "2026-05": 1431115922,
+        "2026-06": 1431155292
+      },
+      "coverage_by_month": {
+        "2026-03": 155,
+        "2026-04": 155,
+        "2026-05": 155,
+        "2026-06": 155
+      },
+      "latest_month": "2026-06",
+      "latest_amount": 1431155292,
+      "average_monthly": 1336187410,
+      "median_monthly": 1417237914,
+      "months_with_records": 4,
       "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
       "metadata": {
-        "availability": "pending_official_import",
+        "availability": "published_official_import",
         "label": "Personal de apoyo",
         "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
-        "source_files": [],
-        "last_imported_at": null
+        "source_files": [
+          "personal-apoyo-2026-06.xls"
+        ],
+        "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
       }
     }
   },
-  "imports": []
+  "imports": [
+    {
+      "category": "external_advisories",
+      "month": "2026-03",
+      "file": "asesorias-2026-03.xls",
+      "rows_read": 57,
+      "deputies_matched": 43,
+      "unmatched_names": [
+        "Coloma Á., Juan Antonio",
+        "Fuenzalida C., Juan Manuel"
+      ]
+    },
+    {
+      "category": "external_advisories",
+      "month": "2026-04",
+      "file": "asesorias-2026-04.xls",
+      "rows_read": 47,
+      "deputies_matched": 45,
+      "unmatched_names": []
+    },
+    {
+      "category": "external_advisories",
+      "month": "2026-05",
+      "file": "asesorias-2026-05.xls",
+      "rows_read": 31,
+      "deputies_matched": 29,
+      "unmatched_names": []
+    },
+    {
+      "category": "external_advisories",
+      "month": "2026-06",
+      "file": "asesorias-2026-06.xls",
+      "rows_read": 47,
+      "deputies_matched": 47,
+      "unmatched_names": []
+    },
+    {
+      "category": "external_advisories",
+      "month": "2026-07",
+      "file": "asesorias-2026-07.xls",
+      "rows_read": 0,
+      "deputies_matched": 0,
+      "unmatched_names": []
+    },
+    {
+      "category": "personnel_support",
+      "month": "2026-03",
+      "file": "personal-apoyo-2026-03.xls",
+      "rows_read": 1966,
+      "deputies_matched": 155,
+      "unmatched_names": [
+        "Acevedo S., María Candelaria",
+        "Aedo J., Eric",
+        "Ahumada P., Yovana",
+        "Arce C., Mónica",
+        "Astudillo P., Danisa",
+        "Barrios O., Arturo",
+        "Becker A., Miguel Ángel",
+        "Benavente V., Gustavo",
+        "Berger F., Bernardo",
+        "Bravo C., Ana María",
+        "Bravo S., Marta",
+        "Bórquez M., Fernando",
+        "Calisto Á., Miguel Ángel",
+        "Cariola O., Karol",
+        "Castro B., José Miguel",
+        "Cicardini M., Daniella",
+        "Cid V., Sofía",
+        "Cifuentes L., Ricardo",
+        "Coloma Á., Juan Antonio",
+        "Cordero V., María Luisa",
+        "Cornejo L., Eduardo",
+        "De la Carrera C., Gonzalo",
+        "Delgado R., Viviana",
+        "Donoso C., Felipe",
+        "Durán E., Jorge",
+        "Flores O., Camila",
+        "Fuenzalida C., Juan Manuel",
+        "Giordano S., Andrés",
+        "González G., Félix",
+        "González O., Marta",
+        "Hertz C., Carmen",
+        "Hirsch G., Tomás",
+        "Ibáñez C., Diego",
+        "Jouannet V., Andrés",
+        "Jürgensen R., Harry",
+        "Kaiser B., Johannes",
+        "Labbé M., Cristian",
+        "Labra B., Paula",
+        "Lagomarsino G., Tomás",
+        "Lavín L., Joaquín",
+        "Leal B., Henry",
+        "Lee F., Enrique",
+        "Longton H., Andrés",
+        "Marzán P., Carolina",
+        "Matheson V., Christian",
+        "Medina V., Karen",
+        "Mellado P., Cosme",
+        "Mellado S., Miguel",
+        "Melo C., Daniel",
+        "Mirosevic V., Vlado",
+        "Mix J., Claudia",
+        "Molina M., Helia",
+        "Morales M., Carla",
+        "Moreira B., Cristhian",
+        "Musante M., Camila",
+        "Naranjo O., Jaime",
+        "Ojeda R., Mauricio",
+        "Olivera D., Erika",
+        "Orsini P., Maite",
+        "Oyarzo F., Rubén",
+        "Palma P., Hernán",
+        "Pino F., Víctor",
+        "Placencia C., Alejandra",
+        "Pulgar C., Francisco",
+        "Pérez S., Catalina",
+        "Ramírez P., Matías",
+        "Raphael M., Marcia",
+        "Rathgeb S., Jorge",
+        "Rey M., Hugo",
+        "Riquelme A., Marcela",
+        "Rivas S., Gaspar",
+        "Rojas V., Camila",
+        "Romero S., Leonidas",
+        "Rosas B., Patricio",
+        "Saffirio E., Jorge",
+        "Sagardia C., Clara",
+        "Sauerbaum M., Frank",
+        "Sepúlveda S., Alexis",
+        "Soto F., Leonardo",
+        "Sáez Q., Jaime",
+        "Trisotti M., Renzo",
+        "Undurraga G., Francisco",
+        "Undurraga V., Alberto",
+        "Von Mühlenbrock Z., Gastón"
+      ]
+    },
+    {
+      "category": "personnel_support",
+      "month": "2026-04",
+      "file": "personal-apoyo-2026-04.xls",
+      "rows_read": 1046,
+      "deputies_matched": 155,
+      "unmatched_names": []
+    },
+    {
+      "category": "personnel_support",
+      "month": "2026-05",
+      "file": "personal-apoyo-2026-05.xls",
+      "rows_read": 1079,
+      "deputies_matched": 155,
+      "unmatched_names": []
+    },
+    {
+      "category": "personnel_support",
+      "month": "2026-06",
+      "file": "personal-apoyo-2026-06.xls",
+      "rows_read": 1103,
+      "deputies_matched": 155,
+      "unmatched_names": []
+    }
+  ]
 }

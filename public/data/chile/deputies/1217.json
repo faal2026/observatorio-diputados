@@ -60,7 +60,7 @@
     }
   },
   "transparency": {
-    "availability": "not_published",
+    "availability": "published_partial",
     "operational_expenses": {
       "by_month": {},
       "latest_month": null,
@@ -104,13 +104,35 @@
       }
     },
     "personnel_support": {
-      "by_month": {},
-      "contracts_count": 0
+      "by_month": {
+        "2026-03": 5800000,
+        "2026-04": 6716667,
+        "2026-05": 5200000,
+        "2026-06": 7200000
+      },
+      "contracts_count": 0,
+      "latest_month": "2026-06",
+      "latest_amount": 7200000,
+      "average_monthly": 6229167,
+      "median_monthly": 6258334,
+      "months_with_records": 4,
+      "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+      "metadata": {
+        "availability": "published_official_import",
+        "label": "Personal de apoyo",
+        "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+        "source_file": "personal-apoyo-2026-06.xls",
+        "imported_at": "2026-07-22T15:55:56.580898+00:00",
+        "month": "2026-06"
+      }
     },
     "personnel_support_metadata": {
-      "availability": "pending_national_backfill",
+      "availability": "published_official_import",
       "label": "Personal de apoyo",
-      "reason": "La serie nacional comparable aún no ha sido publicada en una fuente automatizable."
+      "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+      "source_file": "personal-apoyo-2026-06.xls",
+      "imported_at": "2026-07-22T15:55:56.580898+00:00",
+      "month": "2026-06"
     }
   },
   "retrieved_at": "2026-07-22T02:29:45.829017+00:00"
