@@ -26,6 +26,13 @@ OUTPUT_PATH = ROOT / "data" / "generated" / "chile-summary.json"
 RAW_PATH = ROOT / "public" / "data" / "chile" / "raw" / "diputados-periodo-actual.xml.json"
 SOURCE_URL = "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx/retornarDiputadosPeriodoActual?"
 DISTRICT_REPORT_URL = "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r={year}&distrito={district}"
+# Dos fichas vigentes difieren en una letra respecto de la grafía usada por
+# los reportes distritales. Se declaran de forma explícita para que el cruce
+# no adivine ni asigne por similitud ambigua.
+KNOWN_DISTRICT_ALIASES = {
+    "valentina caceres monsalvez": 15,
+    "mauro gonzalez villarroel": 26,
+}
 DIET_MONTHLY_CLP = 8_239_091
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; ObservatorioParlamentario/1.0)",
@@ -111,7 +118,12 @@ def resolve_assignment(name: str, assignments: dict[str, tuple[int, str]]) -> tu
         if tokens <= set(candidate_name.split()) or set(candidate_name.split()) <= tokens
     }
     # Solo se admite la normalización cuando identifica un único distrito.
-    return next(iter(candidates)) if len(candidates) == 1 else None
+    if len(candidates) == 1:
+        return next(iter(candidates))
+    district = KNOWN_DISTRICT_ALIASES.get(normalized(name))
+    if district:
+        return district, DISTRICT_REPORT_URL.format(year=datetime.now(UTC).year, district=district)
+    return None
 
 
 def parse_roster(xml_text: str, regions: list[dict[str, object]], assignments: dict[str, tuple[int, str]]) -> list[dict[str, object]]:
