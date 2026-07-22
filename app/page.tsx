@@ -121,6 +121,8 @@ type NationalDetailsSummary = {
 };
 
 type WorkerTransparencyCategory = {
+  availability?: string;
+  reason?: string;
   by_deputy?: Record<string, number>;
   national_total_clp?: number;
   deputies_with_records?: number;
@@ -288,12 +290,15 @@ export default function Home() {
   const nationalTrendMaximum = Math.max(...nationalTrendSeries.map(([, value]) => value), 1);
   const nationalTransparency = nationalDetails.transparency;
   const transparencyCard = (name: TransparencyName) => {
-    const workerCategory = name === "external_advisories" ? workerAdvisories : name === "personnel_support" ? workerPersonnel : undefined;
-    if (workerMonth && workerCategory) {
-      return {
-        value: workerCategory.national_total_clp == null ? "—" : clp(workerCategory.national_total_clp),
-        detail: `${labelMonth(workerMonth)} · ${workerCategory.deputies_with_records ?? 0} de 155 diputados(as) con registros`,
-      };
+   const workerCategory = name === "external_advisories" ? workerAdvisories : name === "personnel_support" ? workerPersonnel : undefined;
+   if (workerMonth && workerCategory) {
+      const isAvailable = workerCategory.national_total_clp != null;
+     return {
+        value: isAvailable ? clp(workerCategory.national_total_clp) : "—",
+        detail: isAvailable
+          ? `${labelMonth(workerMonth)} · ${workerCategory.deputies_with_records ?? 0} de 155 diputados(as) con registros`
+          : workerCategory.reason ?? "Fuente nacional pendiente de publicación.",
+     };
     }
     const item = name === "personnel_support" ? undefined : nationalTransparency?.[name];
     const coverage = item?.latest_month ? item.coverage_by_month?.[item.latest_month] : undefined;

@@ -1,6 +1,7 @@
+import { ROSTER } from "./roster.js";
+
 const ADVISORIES_URL = "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx";
 const PERSONNEL_URL = "https://www.camara.cl/transparencia/personalapoyogral.aspx";
-const ROSTER_URL = "https://faal2026.github.io/observatorio-diputados/data/chile/index.json";
 const ALLOWED_ORIGINS = new Set([
   "https://faal2026.github.io",
   "https://diputados.felipealcerreca.lat",
@@ -129,19 +130,15 @@ function aggregateByDeputy(rows, deputies) {
 }
 
 async function refresh(env, monthKey) {
-  const [advisoriesResult, personnelResult, rosterResponse] = await Promise.all([
+  const [advisoriesResult, personnelResult] = await Promise.all([
     publishedAdvisories(monthKey).then((rows) => ({ rows })).catch((error) => ({ error })),
     publishedPersonnel(monthKey).then((rows) => ({ rows })).catch((error) => ({ error })),
-    fetch(ROSTER_URL, { headers: { Accept: "application/json" } }),
   ]);
-  if (!rosterResponse.ok) throw new Error("No fue posible cargar la nómina nacional publicada.");
-  const roster = await rosterResponse.json();
-  const deputies = roster.deputies ?? [];
-  const advisoryCategory = advisoriesResult.rows
-    ? { ...aggregateByDeputy(advisoriesResult.rows, deputies), methodology: "Suma de filas del directorio general de asesorías externas de la Cámara para el mes publicado. Cada fila está asociada a un diputado o diputada por la fuente oficial." }
+  const advisoryCategory = advisoriesResult.rows?.length
+    ? { ...aggregateByDeputy(advisoriesResult.rows, ROSTER), methodology: "Suma de filas del directorio general de asesorías externas de la Cámara para el mes publicado. Cada fila está asociada a un diputado o diputada por la fuente oficial." }
     : { availability: "pending_source", reason: "El directorio nacional de asesorías no respondió en este corte." };
-  const personnelCategory = personnelResult.rows
-    ? { ...aggregateByDeputy(personnelResult.rows, deputies), methodology: "Suma de sueldos informados para el personal de apoyo vigente en el directorio nacional. Es una fotografía de remuneraciones vigentes, no una rendición mensual de gasto." }
+  const personnelCategory = personnelResult.rows?.length
+    ? { ...aggregateByDeputy(personnelResult.rows, ROSTER), methodology: "Suma de sueldos informados para el personal de apoyo vigente en el directorio nacional. Es una fotografía de remuneraciones vigentes, no una rendición mensual de gasto." }
     : { availability: "pending_source", reason: "El directorio nacional de personal de apoyo no respondió en este corte." };
   const snapshot = {
     schema_version: 1,
@@ -184,7 +181,7 @@ export default {
     const value = await env.TRANSPARENCY.get("latest");
     if (value) return new Response(value, { headers: cors(request) });
 
-    const retryAt = await env.TRANSPARENCY.get("initialization_retry_at");
+    const retryAt = await env.TRANSPARENCY.get("initialization_retry_at_v2");
     if (retryAt && Number(retryAt) > Date.now()) {
       return new Response(JSON.stringify({ availability: "pending_first_refresh" }), { status: 503, headers: cors(request) });
     }
@@ -193,7 +190,7 @@ export default {
       const snapshot = await refresh(env, monthTwoMonthsAgo());
       return new Response(JSON.stringify(snapshot), { headers: cors(request) });
     } catch {
-      await env.TRANSPARENCY.put("initialization_retry_at", String(Date.now() + 60 * 60 * 1000), { expirationTtl: 60 * 60 });
+      await env.TRANSPARENCY.put("initialization_retry_at_v2", String(Date.now() + 60 * 60 * 1000), { expirationTtl: 60 * 60 });
       return new Response(JSON.stringify({ availability: "pending_first_refresh" }), { status: 503, headers: cors(request) });
     }
   },
