@@ -119,6 +119,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 24717273
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 819515,
+            "2026-04": 1229273,
+            "2026-05": 1229273,
+            "2026-06": 1229273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1229273,
+          "average_monthly": 1126834,
+          "median_monthly": 1229273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 22298504,
+            "2026-04": 30534168,
+            "2026-05": 30531168,
+            "2026-06": 30531168
+          },
+          "coverage_by_month": {
+            "2026-03": 3,
+            "2026-04": 3,
+            "2026-05": 3,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 30531168,
+          "average_monthly": 28473752,
+          "median_monthly": 30531168,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -186,6 +246,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 24717273
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 650000,
+            "2026-04": 650000,
+            "2026-05": 650000,
+            "2026-06": 650000
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 650000,
+          "average_monthly": 650000,
+          "median_monthly": 650000,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 11569209,
+            "2026-04": 24079714,
+            "2026-05": 25233283,
+            "2026-06": 23628913
+          },
+          "coverage_by_month": {
+            "2026-03": 3,
+            "2026-04": 3,
+            "2026-05": 3,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 23628913,
+          "average_monthly": 21127780,
+          "median_monthly": 23854314,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -262,6 +382,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 41195455
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 819515,
+            "2026-04": 1229273,
+            "2026-05": 1229273,
+            "2026-06": 1229273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1229273,
+          "average_monthly": 1126834,
+          "median_monthly": 1229273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 36188799,
+            "2026-04": 49508325,
+            "2026-05": 49974992,
+            "2026-06": 48208325
+          },
+          "coverage_by_month": {
+            "2026-03": 5,
+            "2026-04": 5,
+            "2026-05": 5,
+            "2026-06": 5
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 48208325,
+          "average_monthly": 45970110,
+          "median_monthly": 48858325,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -340,6 +520,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 41195455
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 819515,
+            "2026-04": 1229273,
+            "2026-05": 1229273,
+            "2026-06": 1229273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1229273,
+          "average_monthly": 1126834,
+          "median_monthly": 1229273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 39075826,
+            "2026-04": 45184794,
+            "2026-05": 45143709,
+            "2026-06": 44289962
+          },
+          "coverage_by_month": {
+            "2026-03": 5,
+            "2026-04": 5,
+            "2026-05": 5,
+            "2026-06": 5
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 44289962,
+          "average_monthly": 43423573,
+          "median_monthly": 44716836,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -428,6 +668,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 57673637
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1047823,
+            "2026-04": 650000,
+            "2026-05": 650000,
+            "2026-06": 650000
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 650000,
+          "average_monthly": 749456,
+          "median_monthly": 650000,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 52219916,
+            "2026-04": 68676472,
+            "2026-05": 68676472,
+            "2026-06": 69725805
+          },
+          "coverage_by_month": {
+            "2026-03": 7,
+            "2026-04": 7,
+            "2026-05": 7,
+            "2026-06": 7
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 69725805,
+          "average_monthly": 64824666,
+          "median_monthly": 68676472,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -520,6 +820,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 65912728
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 2036853,
+            "2026-04": 2458546,
+            "2026-05": 1229273,
+            "2026-06": 2458546
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-05": 1,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 2458546,
+          "average_monthly": 2045804,
+          "median_monthly": 2247700,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 56951553,
+            "2026-04": 78684946,
+            "2026-05": 81088347,
+            "2026-06": 79528177
+          },
+          "coverage_by_month": {
+            "2026-03": 8,
+            "2026-04": 8,
+            "2026-05": 8,
+            "2026-06": 8
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 79528177,
+          "average_monthly": 74063256,
+          "median_monthly": 79106562,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -613,6 +973,64 @@
       },
       "diet": {
         "monthly_gross_district_clp": 65912728
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 2036853,
+            "2026-04": 2458546,
+            "2026-06": 2458546
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 2458546,
+          "average_monthly": 2317982,
+          "median_monthly": 2458546,
+          "months_with_records": 3,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 55036945,
+            "2026-04": 69906272,
+            "2026-05": 68999906,
+            "2026-06": 72923239
+          },
+          "coverage_by_month": {
+            "2026-03": 8,
+            "2026-04": 8,
+            "2026-05": 8,
+            "2026-06": 8
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 72923239,
+          "average_monthly": 66716590,
+          "median_monthly": 69453089,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -701,6 +1119,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 65912728
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 2686853,
+            "2026-04": 3108546,
+            "2026-05": 1879273,
+            "2026-06": 3108546
+          },
+          "coverage_by_month": {
+            "2026-03": 3,
+            "2026-04": 3,
+            "2026-05": 2,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 3108546,
+          "average_monthly": 2695804,
+          "median_monthly": 2897700,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 52812888,
+            "2026-04": 78038225,
+            "2026-05": 75225558,
+            "2026-06": 78805558
+          },
+          "coverage_by_month": {
+            "2026-03": 8,
+            "2026-04": 8,
+            "2026-05": 8,
+            "2026-06": 8
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 78805558,
+          "average_monthly": 71220557,
+          "median_monthly": 76631892,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -787,6 +1265,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 57673637
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 2265161,
+            "2026-04": 3608546,
+            "2026-05": 1150000,
+            "2026-06": 2879273
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 3,
+            "2026-05": 1,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 2879273,
+          "average_monthly": 2475745,
+          "median_monthly": 2572217,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 54578276,
+            "2026-04": 63659938,
+            "2026-05": 66552094,
+            "2026-06": 64548104
+          },
+          "coverage_by_month": {
+            "2026-03": 7,
+            "2026-04": 7,
+            "2026-05": 7,
+            "2026-06": 7
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 64548104,
+          "average_monthly": 62334603,
+          "median_monthly": 64104021,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -880,6 +1418,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 65912728
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1867338,
+            "2026-04": 2379273,
+            "2026-05": 1150000,
+            "2026-06": 1879273
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-05": 1,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1879273,
+          "average_monthly": 1818971,
+          "median_monthly": 1873306,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 57547265,
+            "2026-04": 73100467,
+            "2026-05": 74589499,
+            "2026-06": 72707051
+          },
+          "coverage_by_month": {
+            "2026-03": 8,
+            "2026-04": 8,
+            "2026-05": 8,
+            "2026-06": 8
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 72707051,
+          "average_monthly": 69486070,
+          "median_monthly": 72903759,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -962,6 +1560,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 49434546
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 2686853,
+            "2026-04": 2879273,
+            "2026-05": 650000,
+            "2026-06": 2879273
+          },
+          "coverage_by_month": {
+            "2026-03": 3,
+            "2026-04": 3,
+            "2026-05": 1,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 2879273,
+          "average_monthly": 2273850,
+          "median_monthly": 2783063,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 52345668,
+            "2026-04": 49948757,
+            "2026-05": 52507491,
+            "2026-06": 52434775
+          },
+          "coverage_by_month": {
+            "2026-03": 6,
+            "2026-04": 6,
+            "2026-05": 6,
+            "2026-06": 6
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 52434775,
+          "average_monthly": 51809173,
+          "median_monthly": 52390222,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1046,6 +1704,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 57673637
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1639030,
+            "2026-04": 1229273,
+            "2026-05": 1229273,
+            "2026-06": 2458546
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 2458546,
+          "average_monthly": 1639030,
+          "median_monthly": 1434152,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 54974632,
+            "2026-04": 69297497,
+            "2026-05": 69920997,
+            "2026-06": 68257549
+          },
+          "coverage_by_month": {
+            "2026-03": 7,
+            "2026-04": 7,
+            "2026-05": 7,
+            "2026-06": 7
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 68257549,
+          "average_monthly": 65612669,
+          "median_monthly": 68777523,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1124,6 +1842,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 41195455
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1639030,
+            "2026-04": 2458546,
+            "2026-05": 3629273,
+            "2026-06": 3687819
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-05": 2,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 3687819,
+          "average_monthly": 2853667,
+          "median_monthly": 3043910,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 34769719,
+            "2026-04": 42793259,
+            "2026-05": 43748417,
+            "2026-06": 43788417
+          },
+          "coverage_by_month": {
+            "2026-03": 5,
+            "2026-04": 5,
+            "2026-05": 5,
+            "2026-06": 5
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 43788417,
+          "average_monthly": 41274953,
+          "median_monthly": 43270838,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1205,6 +1983,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 49434546
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 2686853,
+            "2026-04": 3108546,
+            "2026-05": 1879273,
+            "2026-06": 3108546
+          },
+          "coverage_by_month": {
+            "2026-03": 3,
+            "2026-04": 3,
+            "2026-05": 2,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 3108546,
+          "average_monthly": 2695804,
+          "median_monthly": 2897700,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 38262384,
+            "2026-04": 52325354,
+            "2026-05": 55454528,
+            "2026-06": 53870634
+          },
+          "coverage_by_month": {
+            "2026-03": 6,
+            "2026-04": 6,
+            "2026-05": 6,
+            "2026-06": 6
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 53870634,
+          "average_monthly": 49978225,
+          "median_monthly": 53097994,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1282,6 +2120,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 41195455
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 819515,
+            "2026-04": 1729273,
+            "2026-05": 500000,
+            "2026-06": 1729273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 2,
+            "2026-05": 1,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1729273,
+          "average_monthly": 1194515,
+          "median_monthly": 1274394,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 32169062,
+            "2026-04": 44650303,
+            "2026-05": 47250303,
+            "2026-06": 46681319
+          },
+          "coverage_by_month": {
+            "2026-03": 5,
+            "2026-04": 5,
+            "2026-05": 5,
+            "2026-06": 5
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 46681319,
+          "average_monthly": 42687747,
+          "median_monthly": 45665811,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1355,6 +2253,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 32956364
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1469515,
+            "2026-04": 1879273,
+            "2026-05": 650000,
+            "2026-06": 1879273
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-05": 1,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1879273,
+          "average_monthly": 1469515,
+          "median_monthly": 1674394,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 22211824,
+            "2026-04": 37365562,
+            "2026-05": 36775252,
+            "2026-06": 36912549
+          },
+          "coverage_by_month": {
+            "2026-03": 4,
+            "2026-04": 4,
+            "2026-05": 4,
+            "2026-06": 4
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 36912549,
+          "average_monthly": 33316297,
+          "median_monthly": 36843900,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1437,6 +2395,64 @@
       },
       "diet": {
         "monthly_gross_district_clp": 57673637
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1217338,
+            "2026-04": 1229273,
+            "2026-06": 1229273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1229273,
+          "average_monthly": 1225295,
+          "median_monthly": 1229273,
+          "months_with_records": 3,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 47934725,
+            "2026-04": 61201377,
+            "2026-05": 65398783,
+            "2026-06": 66753705
+          },
+          "coverage_by_month": {
+            "2026-03": 7,
+            "2026-04": 7,
+            "2026-05": 7,
+            "2026-06": 7
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 66753705,
+          "average_monthly": 60322148,
+          "median_monthly": 63300080,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1511,6 +2527,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 32956364
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 819515,
+            "2026-04": 1229273,
+            "2026-05": 1229273,
+            "2026-06": 1229273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1229273,
+          "average_monthly": 1126834,
+          "median_monthly": 1229273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 27361955,
+            "2026-04": 35202000,
+            "2026-05": 34152000,
+            "2026-06": 34879583
+          },
+          "coverage_by_month": {
+            "2026-03": 4,
+            "2026-04": 4,
+            "2026-05": 4,
+            "2026-06": 4
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 34879583,
+          "average_monthly": 32898884,
+          "median_monthly": 34515792,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1591,6 +2667,54 @@
       },
       "diet": {
         "monthly_gross_district_clp": 41195455
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {},
+          "coverage_by_month": {},
+          "latest_month": null,
+          "latest_amount": null,
+          "average_monthly": null,
+          "median_monthly": null,
+          "months_with_records": 0,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "pending_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [],
+            "last_imported_at": null
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 33366923,
+            "2026-04": 45261834,
+            "2026-05": 50856336,
+            "2026-06": 49903629
+          },
+          "coverage_by_month": {
+            "2026-03": 5,
+            "2026-04": 5,
+            "2026-05": 5,
+            "2026-06": 5
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 49903629,
+          "average_monthly": 44847180,
+          "median_monthly": 47582732,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1683,6 +2807,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 65912728
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1717338,
+            "2026-04": 1729273,
+            "2026-05": 1729273,
+            "2026-06": 1729273
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-05": 2,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1729273,
+          "average_monthly": 1726289,
+          "median_monthly": 1729273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 50517637,
+            "2026-04": 65103531,
+            "2026-05": 69536792,
+            "2026-06": 72492449
+          },
+          "coverage_by_month": {
+            "2026-03": 8,
+            "2026-04": 8,
+            "2026-05": 8,
+            "2026-06": 8
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 72492449,
+          "average_monthly": 64412602,
+          "median_monthly": 67320162,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1760,6 +2944,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 41195455
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 500000,
+            "2026-04": 500000,
+            "2026-05": 500000,
+            "2026-06": 500000
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 500000,
+          "average_monthly": 500000,
+          "median_monthly": 500000,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 37365595,
+            "2026-04": 44816762,
+            "2026-05": 45299262,
+            "2026-06": 46421962
+          },
+          "coverage_by_month": {
+            "2026-03": 5,
+            "2026-04": 5,
+            "2026-05": 5,
+            "2026-06": 5
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 46421962,
+          "average_monthly": 43475895,
+          "median_monthly": 45058012,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1833,6 +3077,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 32956364
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 650000,
+            "2026-04": 1879273,
+            "2026-05": 1879273,
+            "2026-06": 1879273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 2,
+            "2026-05": 2,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1879273,
+          "average_monthly": 1571955,
+          "median_monthly": 1879273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 26316244,
+            "2026-04": 36745333,
+            "2026-05": 37745333,
+            "2026-06": 36271730
+          },
+          "coverage_by_month": {
+            "2026-03": 4,
+            "2026-04": 4,
+            "2026-05": 4,
+            "2026-06": 4
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 36271730,
+          "average_monthly": 34269660,
+          "median_monthly": 36508532,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1916,6 +3220,64 @@
       },
       "diet": {
         "monthly_gross_district_clp": 49434546
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1639030,
+            "2026-04": 2029273,
+            "2026-06": 2229273
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 2229273,
+          "average_monthly": 1965859,
+          "median_monthly": 2029273,
+          "months_with_records": 3,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 38925832,
+            "2026-04": 50279675,
+            "2026-05": 52051202,
+            "2026-06": 52222750
+          },
+          "coverage_by_month": {
+            "2026-03": 6,
+            "2026-04": 6,
+            "2026-05": 6,
+            "2026-06": 6
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 52222750,
+          "average_monthly": 48369865,
+          "median_monthly": 51165438,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -1998,6 +3360,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 49434546
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 1469515,
+            "2026-04": 1879273,
+            "2026-05": 1879273,
+            "2026-06": 1879273
+          },
+          "coverage_by_month": {
+            "2026-03": 2,
+            "2026-04": 2,
+            "2026-05": 2,
+            "2026-06": 2
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1879273,
+          "average_monthly": 1776834,
+          "median_monthly": 1879273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 33318119,
+            "2026-04": 53279556,
+            "2026-05": 51402442,
+            "2026-06": 52220197
+          },
+          "coverage_by_month": {
+            "2026-03": 6,
+            "2026-04": 6,
+            "2026-05": 6,
+            "2026-06": 6
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 52220197,
+          "average_monthly": 47555078,
+          "median_monthly": 51811320,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -2073,6 +3495,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 32956364
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 697823,
+            "2026-04": 650000,
+            "2026-05": 650000,
+            "2026-06": 650000
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 650000,
+          "average_monthly": 661956,
+          "median_monthly": 650000,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 33770335,
+            "2026-04": 37298949,
+            "2026-05": 37848949,
+            "2026-06": 37842502
+          },
+          "coverage_by_month": {
+            "2026-03": 4,
+            "2026-04": 4,
+            "2026-05": 4,
+            "2026-06": 4
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 37842502,
+          "average_monthly": 36690184,
+          "median_monthly": 37570726,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -2150,6 +3632,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 41195455
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 819515,
+            "2026-04": 1229273,
+            "2026-05": 1229273,
+            "2026-06": 1229273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1229273,
+          "average_monthly": 1126834,
+          "median_monthly": 1229273,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 36578204,
+            "2026-04": 43892477,
+            "2026-05": 42821810,
+            "2026-06": 46412477
+          },
+          "coverage_by_month": {
+            "2026-03": 5,
+            "2026-04": 5,
+            "2026-05": 5,
+            "2026-06": 5
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 46412477,
+          "average_monthly": 42426242,
+          "median_monthly": 43357144,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -2217,6 +3759,66 @@
       },
       "diet": {
         "monthly_gross_district_clp": 24717273
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 650000,
+            "2026-04": 650000,
+            "2026-05": 650000,
+            "2026-06": 650000
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-05": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 650000,
+          "average_monthly": 650000,
+          "median_monthly": 650000,
+          "months_with_records": 4,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 18674601,
+            "2026-04": 26274840,
+            "2026-05": 25931478,
+            "2026-06": 25034840
+          },
+          "coverage_by_month": {
+            "2026-03": 3,
+            "2026-04": 3,
+            "2026-05": 3,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 25034840,
+          "average_monthly": 23978940,
+          "median_monthly": 25483159,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     },
     {
@@ -2286,6 +3888,64 @@
       },
       "diet": {
         "monthly_gross_district_clp": 24717273
+      },
+      "transparency": {
+        "external_advisories": {
+          "by_month": {
+            "2026-03": 819515,
+            "2026-04": 1229273,
+            "2026-06": 1229273
+          },
+          "coverage_by_month": {
+            "2026-03": 1,
+            "2026-04": 1,
+            "2026-06": 1
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 1229273,
+          "average_monthly": 1092687,
+          "median_monthly": 1229273,
+          "months_with_records": 3,
+          "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Asesorías externas",
+            "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
+            "source_files": [
+              "asesorias-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        },
+        "personnel_support": {
+          "by_month": {
+            "2026-03": 21975880,
+            "2026-04": 26249519,
+            "2026-05": 26399519,
+            "2026-06": 23857923
+          },
+          "coverage_by_month": {
+            "2026-03": 3,
+            "2026-04": 3,
+            "2026-05": 3,
+            "2026-06": 3
+          },
+          "latest_month": "2026-06",
+          "latest_amount": 23857923,
+          "average_monthly": 24620710,
+          "median_monthly": 25053721,
+          "months_with_records": 4,
+          "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
+          "metadata": {
+            "availability": "published_official_import",
+            "label": "Personal de apoyo",
+            "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
+            "source_files": [
+              "personal-apoyo-2026-06.xls"
+            ],
+            "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
+          }
+        }
       }
     }
   ],
@@ -2321,20 +3981,32 @@
       }
     },
     "external_advisories": {
-      "by_month": {},
-      "coverage_by_month": {},
-      "latest_month": null,
-      "latest_amount": null,
-      "average_monthly": null,
-      "median_monthly": null,
-      "months_with_records": 0,
+      "by_month": {
+        "2026-03": 36989811,
+        "2026-04": 46519644,
+        "2026-05": 28680549,
+        "2026-06": 47948917
+      },
+      "coverage_by_month": {
+        "2026-03": 43,
+        "2026-04": 45,
+        "2026-05": 29,
+        "2026-06": 47
+      },
+      "latest_month": "2026-06",
+      "latest_amount": 47948917,
+      "average_monthly": 40034730,
+      "median_monthly": 41754728,
+      "months_with_records": 4,
       "methodology": "Suma de filas del directorio mensual nacional de asesorías externas publicado por la Cámara. Cada fila se cruza con la nómina vigente; los nombres no conciliados quedan reportados y no se asignan a otra persona.",
       "metadata": {
-        "availability": "pending_official_import",
+        "availability": "published_official_import",
         "label": "Asesorías externas",
         "source_url": "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx",
-        "source_files": [],
-        "last_imported_at": null
+        "source_files": [
+          "asesorias-2026-06.xls"
+        ],
+        "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
       }
     },
     "flights": {
@@ -2352,7 +4024,7 @@
         "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId={id}"
       }
     },
-    "retrieved_at": "2026-07-22T15:28:23.082565+00:00",
+    "retrieved_at": "2026-07-22T15:55:56.580898+00:00",
     "month_requested": "2026-03",
     "failures": [
       {
@@ -4682,22 +6354,195 @@
       }
     ],
     "personnel_support": {
-      "by_month": {},
-      "coverage_by_month": {},
-      "latest_month": null,
-      "latest_amount": null,
-      "average_monthly": null,
-      "median_monthly": null,
-      "months_with_records": 0,
+      "by_month": {
+        "2026-03": 1079118520,
+        "2026-04": 1403359906,
+        "2026-05": 1431115922,
+        "2026-06": 1431155292
+      },
+      "coverage_by_month": {
+        "2026-03": 155,
+        "2026-04": 155,
+        "2026-05": 155,
+        "2026-06": 155
+      },
+      "latest_month": "2026-06",
+      "latest_amount": 1431155292,
+      "average_monthly": 1336187410,
+      "median_monthly": 1417237914,
+      "months_with_records": 4,
       "methodology": "Suma de remuneraciones informadas para el personal de apoyo vigente en el directorio nacional. Es una fotografía de contratos informados, no una rendición mensual de gasto.",
       "metadata": {
-        "availability": "pending_official_import",
+        "availability": "published_official_import",
         "label": "Personal de apoyo",
         "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
-        "source_files": [],
-        "last_imported_at": null
+        "source_files": [
+          "personal-apoyo-2026-06.xls"
+        ],
+        "last_imported_at": "2026-07-22T15:55:56.580898+00:00"
       }
     },
-    "official_imports": []
+    "official_imports": [
+      {
+        "category": "external_advisories",
+        "month": "2026-03",
+        "file": "asesorias-2026-03.xls",
+        "rows_read": 57,
+        "deputies_matched": 43,
+        "unmatched_names": [
+          "Coloma Á., Juan Antonio",
+          "Fuenzalida C., Juan Manuel"
+        ]
+      },
+      {
+        "category": "external_advisories",
+        "month": "2026-04",
+        "file": "asesorias-2026-04.xls",
+        "rows_read": 47,
+        "deputies_matched": 45,
+        "unmatched_names": []
+      },
+      {
+        "category": "external_advisories",
+        "month": "2026-05",
+        "file": "asesorias-2026-05.xls",
+        "rows_read": 31,
+        "deputies_matched": 29,
+        "unmatched_names": []
+      },
+      {
+        "category": "external_advisories",
+        "month": "2026-06",
+        "file": "asesorias-2026-06.xls",
+        "rows_read": 47,
+        "deputies_matched": 47,
+        "unmatched_names": []
+      },
+      {
+        "category": "external_advisories",
+        "month": "2026-07",
+        "file": "asesorias-2026-07.xls",
+        "rows_read": 0,
+        "deputies_matched": 0,
+        "unmatched_names": []
+      },
+      {
+        "category": "personnel_support",
+        "month": "2026-03",
+        "file": "personal-apoyo-2026-03.xls",
+        "rows_read": 1966,
+        "deputies_matched": 155,
+        "unmatched_names": [
+          "Acevedo S., María Candelaria",
+          "Aedo J., Eric",
+          "Ahumada P., Yovana",
+          "Arce C., Mónica",
+          "Astudillo P., Danisa",
+          "Barrios O., Arturo",
+          "Becker A., Miguel Ángel",
+          "Benavente V., Gustavo",
+          "Berger F., Bernardo",
+          "Bravo C., Ana María",
+          "Bravo S., Marta",
+          "Bórquez M., Fernando",
+          "Calisto Á., Miguel Ángel",
+          "Cariola O., Karol",
+          "Castro B., José Miguel",
+          "Cicardini M., Daniella",
+          "Cid V., Sofía",
+          "Cifuentes L., Ricardo",
+          "Coloma Á., Juan Antonio",
+          "Cordero V., María Luisa",
+          "Cornejo L., Eduardo",
+          "De la Carrera C., Gonzalo",
+          "Delgado R., Viviana",
+          "Donoso C., Felipe",
+          "Durán E., Jorge",
+          "Flores O., Camila",
+          "Fuenzalida C., Juan Manuel",
+          "Giordano S., Andrés",
+          "González G., Félix",
+          "González O., Marta",
+          "Hertz C., Carmen",
+          "Hirsch G., Tomás",
+          "Ibáñez C., Diego",
+          "Jouannet V., Andrés",
+          "Jürgensen R., Harry",
+          "Kaiser B., Johannes",
+          "Labbé M., Cristian",
+          "Labra B., Paula",
+          "Lagomarsino G., Tomás",
+          "Lavín L., Joaquín",
+          "Leal B., Henry",
+          "Lee F., Enrique",
+          "Longton H., Andrés",
+          "Marzán P., Carolina",
+          "Matheson V., Christian",
+          "Medina V., Karen",
+          "Mellado P., Cosme",
+          "Mellado S., Miguel",
+          "Melo C., Daniel",
+          "Mirosevic V., Vlado",
+          "Mix J., Claudia",
+          "Molina M., Helia",
+          "Morales M., Carla",
+          "Moreira B., Cristhian",
+          "Musante M., Camila",
+          "Naranjo O., Jaime",
+          "Ojeda R., Mauricio",
+          "Olivera D., Erika",
+          "Orsini P., Maite",
+          "Oyarzo F., Rubén",
+          "Palma P., Hernán",
+          "Pino F., Víctor",
+          "Placencia C., Alejandra",
+          "Pulgar C., Francisco",
+          "Pérez S., Catalina",
+          "Ramírez P., Matías",
+          "Raphael M., Marcia",
+          "Rathgeb S., Jorge",
+          "Rey M., Hugo",
+          "Riquelme A., Marcela",
+          "Rivas S., Gaspar",
+          "Rojas V., Camila",
+          "Romero S., Leonidas",
+          "Rosas B., Patricio",
+          "Saffirio E., Jorge",
+          "Sagardia C., Clara",
+          "Sauerbaum M., Frank",
+          "Sepúlveda S., Alexis",
+          "Soto F., Leonardo",
+          "Sáez Q., Jaime",
+          "Trisotti M., Renzo",
+          "Undurraga G., Francisco",
+          "Undurraga V., Alberto",
+          "Von Mühlenbrock Z., Gastón"
+        ]
+      },
+      {
+        "category": "personnel_support",
+        "month": "2026-04",
+        "file": "personal-apoyo-2026-04.xls",
+        "rows_read": 1046,
+        "deputies_matched": 155,
+        "unmatched_names": []
+      },
+      {
+        "category": "personnel_support",
+        "month": "2026-05",
+        "file": "personal-apoyo-2026-05.xls",
+        "rows_read": 1079,
+        "deputies_matched": 155,
+        "unmatched_names": []
+      },
+      {
+        "category": "personnel_support",
+        "month": "2026-06",
+        "file": "personal-apoyo-2026-06.xls",
+        "rows_read": 1103,
+        "deputies_matched": 155,
+        "unmatched_names": []
+      }
+    ]
   }
 }
