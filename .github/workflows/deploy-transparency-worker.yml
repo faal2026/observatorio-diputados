@@ -1,0 +1,23 @@
+name: Publicar recolector de transparencia
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-worker:
+    name: Publicar Worker en Cloudflare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Obtener el proyecto
+        uses: actions/checkout@v4
+
+      - name: Publicar recolector mensual
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config worker/observatorio-transparencia/wrangler.jsonc

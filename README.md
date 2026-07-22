@@ -8,7 +8,7 @@ Observatorio de transparencia pública de la Cámara de Diputadas y Diputados de
 - Transparencia mensual: dieta, gastos operacionales, asesorías externas, pasajes y personal de apoyo.
 - Mapa horizontal de las 16 regiones, filtros nacionales y ficha por diputado o diputada.
 - Tablero nacional, mapa territorial interactivo y ficha detallada para las 155 diputadas y diputados.
-- Transparencia mensual nacional para gastos operacionales, asesorías externas y pasajes; la tarea consulta sólo el mes publicado y muestra su cobertura.
+- Transparencia mensual nacional: asesorías externas se incorpora desde un directorio general mensual de la Cámara; gastos operacionales, pasajes y personal de apoyo se muestran como pendientes hasta contar con un directorio nacional equivalente o una fuente autorizada.
 - Personal de apoyo se mantiene separado: la fuente disponible describe remuneraciones de contratos vigentes y todavía no entrega una serie mensual nacional homogénea.
 - Cuando una ficha o mes no está publicado se muestra como pendiente, nunca como $0.
 
@@ -24,4 +24,5 @@ El contrato del piloto está en `public/data/distrito-8/pilot-contract.json` y l
 ## Actualizaciones automáticas
 
 - **Actualizar fichas nacionales** reúne actividad, asistencia y comisiones una vez al mes.
-- **Actualizar transparencia nacional** consulta un solo mes para las 155 fichas y sus tres categorías de gasto. Puede ejecutarse manualmente indicando el mes `AAAA-MM`; por defecto propone `2026-03` para validar la primera publicación disponible.
+- **Actualizar transparencia nacional** mantiene el mecanismo anterior de verificación para las fuentes de la Cámara. Si ésta rechaza las consultas automatizadas, no publica ceros.
+- **Publicar recolector de transparencia** instala en Cloudflare el recolector mensual independiente. Sus instrucciones están en `worker/observatorio-transparencia/README.md`; las credenciales de Cloudflare quedan guardadas como secretos de GitHub, nunca dentro del repositorio.

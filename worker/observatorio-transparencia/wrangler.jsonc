@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "observatorio-transparencia",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-21",
+  "workers_dev": true,
+  "kv_namespaces": [
+    {
+      "binding": "TRANSPARENCY"
+    }
+  ],
+  "triggers": {
+    "crons": ["20 17 12 * *"]
+  }
+}
