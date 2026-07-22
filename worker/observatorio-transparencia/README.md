@@ -13,6 +13,8 @@ Luego abre **Actions → Publicar recolector de transparencia → Run workflow**
 
 El primer corte se genera automáticamente con la primera consulta pública a `https://<tu-worker>.workers.dev/v1/transparency`; si la fuente temporalmente no responde, el Worker espera una hora antes de volver a intentarlo. Después de eso, el cron mantiene el corte mensual.
 
+El Worker incluye una comprobación puntual con navegador real en `/v1/source-check`. Esta no actualiza datos ni se ejecuta en el cron: sólo permite comprobar si la fuente oficial acepta navegación automatizada antes de habilitarla para la carga mensual.
+
 ## Qué publica
 
 - `external_advisories`: asesorías externas del directorio mensual general de la Cámara, con total nacional, montos por diputado/a y filas que requieren revisión de nombre.
