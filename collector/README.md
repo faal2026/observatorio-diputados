@@ -1,4 +1,4 @@
-# Recolector del piloto Distrito 8
+# Recolectores del Observatorio Parlamentario
 
 El piloto combinará dos fuentes oficiales:
 
@@ -7,7 +7,14 @@ El piloto combinará dos fuentes oficiales:
 
 Cada registro mensual debe incluir `source_url`, `retrieved_at`, `availability` y `published_deputies_count`. Los valores no publicados se almacenan como `null`, nunca como cero.
 
-La primera fase está implementada en `collect_district.py`. Cruza los identificadores de Datos Abiertos con la nómina oficial del Distrito 8 publicada por la Biblioteca del Congreso Nacional y genera las métricas anuales disponibles para mociones, acuerdos y resoluciones. Se puede revisar sin consultar las fuentes:
+`collect_national_index.py` es la entrada nacional ligera. Consulta una sola vez el servicio oficial `retornarDiputadosPeriodoActual`, que entrega la nómina vigente y su distrito, y genera el índice de las 16 regiones. No descarga todavía fichas individuales, por lo que puede correr junto con cada actualización sin aumentar significativamente el tiempo.
+
+```text
+public/data/chile/index.json
+data/generated/chile-summary.json
+```
+
+La primera fase detallada está implementada en `collect_district.py`. Cruza los identificadores de Datos Abiertos con la nómina oficial del Distrito 8 publicada por la Biblioteca del Congreso Nacional y genera las métricas anuales disponibles para mociones, acuerdos y resoluciones. Se puede revisar sin consultar las fuentes:
 
 ```text
 python3 collector/collect_district.py --dry-run

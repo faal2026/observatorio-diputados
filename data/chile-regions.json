@@ -1,0 +1,18 @@
+[
+  {"code":"arica","name":"Arica y Parinacota","districts":[1]},
+  {"code":"tarapaca","name":"Tarapacá","districts":[2]},
+  {"code":"antofagasta","name":"Antofagasta","districts":[3]},
+  {"code":"atacama","name":"Atacama","districts":[4]},
+  {"code":"coquimbo","name":"Coquimbo","districts":[5]},
+  {"code":"valparaiso","name":"Valparaíso","districts":[6,7]},
+  {"code":"metropolitana","name":"Metropolitana de Santiago","districts":[8,9,10,11,12,13,14]},
+  {"code":"ohiggins","name":"Libertador General Bernardo O’Higgins","districts":[15,16]},
+  {"code":"maule","name":"Maule","districts":[17,18]},
+  {"code":"nuble","name":"Ñuble","districts":[19]},
+  {"code":"biobio","name":"Biobío","districts":[20,21]},
+  {"code":"araucania","name":"La Araucanía","districts":[22,23]},
+  {"code":"rios","name":"Los Ríos","districts":[24]},
+  {"code":"lagos","name":"Los Lagos","districts":[25,26]},
+  {"code":"aysen","name":"Aysén del General Carlos Ibáñez del Campo","districts":[27]},
+  {"code":"magallanes","name":"Magallanes y de la Antártica Chilena","districts":[28]}
+]

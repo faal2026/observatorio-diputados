@@ -1,0 +1,36 @@
+name: Actualizar índice nacional
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 12 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  collect-national-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Actualizar nómina oficial de Chile
+        run: python collector/collect_national_index.py
+
+      - name: Guardar índice actualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/chile data/generated/chile-summary.json
+          if git diff --cached --quiet; then
+            echo "La nómina nacional no registra cambios."
+          else
+            git commit -m "Actualizar índice nacional de diputados"
+            git push
+          fi

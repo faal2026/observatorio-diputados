@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "retrieved_at": null,
+  "availability": "national_index_pending",
+  "source_url": "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx/retornarDiputadosPeriodoActual",
+  "deputies_count": null,
+  "deputies": [],
+  "regions": [
+    {"code":"arica","name":"Arica y Parinacota","districts":[1],"deputies_count":null},
+    {"code":"tarapaca","name":"Tarapacá","districts":[2],"deputies_count":null},
+    {"code":"antofagasta","name":"Antofagasta","districts":[3],"deputies_count":null},
+    {"code":"atacama","name":"Atacama","districts":[4],"deputies_count":null},
+    {"code":"coquimbo","name":"Coquimbo","districts":[5],"deputies_count":null},
+    {"code":"valparaiso","name":"Valparaíso","districts":[6,7],"deputies_count":null},
+    {"code":"metropolitana","name":"Metropolitana de Santiago","districts":[8,9,10,11,12,13,14],"deputies_count":null},
+    {"code":"ohiggins","name":"Libertador General Bernardo O’Higgins","districts":[15,16],"deputies_count":null},
+    {"code":"maule","name":"Maule","districts":[17,18],"deputies_count":null},
+    {"code":"nuble","name":"Ñuble","districts":[19],"deputies_count":null},
+    {"code":"biobio","name":"Biobío","districts":[20,21],"deputies_count":null},
+    {"code":"araucania","name":"La Araucanía","districts":[22,23],"deputies_count":null},
+    {"code":"rios","name":"Los Ríos","districts":[24],"deputies_count":null},
+    {"code":"lagos","name":"Los Lagos","districts":[25,26],"deputies_count":null},
+    {"code":"aysen","name":"Aysén del General Carlos Ibáñez del Campo","districts":[27],"deputies_count":null},
+    {"code":"magallanes","name":"Magallanes y de la Antártica Chilena","districts":[28],"deputies_count":null}
+  ]
+}
