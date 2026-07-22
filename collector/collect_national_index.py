@@ -10,8 +10,12 @@ y dejar la carga detallada para procesos por zona y con caché.
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
+from html import unescape
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -21,6 +25,7 @@ REGIONS_PATH = ROOT / "data" / "chile-regions.json"
 OUTPUT_PATH = ROOT / "data" / "generated" / "chile-summary.json"
 RAW_PATH = ROOT / "public" / "data" / "chile" / "raw" / "diputados-periodo-actual.xml.json"
 SOURCE_URL = "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx/retornarDiputadosPeriodoActual?"
+DISTRICT_REPORT_URL = "https://www.bcn.cl/siit/reportesdistritales/pdf_distrito.html?anno_r={year}&distrito={district}"
 DIET_MONTHLY_CLP = 8_239_091
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; ObservatorioParlamentario/1.0)",
@@ -52,44 +57,84 @@ def request_text(url: str) -> str:
         return response.read().decode("utf-8-sig")
 
 
-def parse_roster(xml_text: str, regions: list[dict[str, object]]) -> list[dict[str, object]]:
-    district_to_region = {
-        district: region
-        for region in regions
-        for district in region["districts"]  # type: ignore[index]
-    }
+def normalized(value: str) -> str:
+    decomposed = unicodedata.normalize("NFKD", value)
+    plain = "".join(char for char in decomposed if not unicodedata.combining(char))
+    return " ".join(plain.lower().split())
+
+
+def parse_district_deputies(html_text: str, district: int) -> list[str]:
+    plain = unescape(re.sub(r"<[^>]+>", " ", html_text))
+    match = re.search(r"\bDiputados\s+(.+?)\s+Tabla de contenidos\b", " ".join(plain.split()), flags=re.IGNORECASE)
+    if not match:
+        raise RuntimeError(f"El reporte BCN del Distrito {district} no contiene su nómina de diputados.")
+    names_text = match.group(1).replace(" y ", ", ")
+    names = [" ".join(name.split()) for name in names_text.split(",") if name.strip()]
+    if not names:
+        raise RuntimeError(f"El reporte BCN del Distrito {district} entregó una nómina vacía.")
+    return names
+
+
+def collect_district_rosters(year: int) -> dict[str, tuple[int, str]]:
+    assignments: dict[str, tuple[int, str]] = {}
+    districts = list(range(1, 29))
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {
+            executor.submit(request_text, DISTRICT_REPORT_URL.format(year=year, district=district)): district
+            for district in districts
+        }
+        for future in as_completed(futures):
+            district = futures[future]
+            source_url = DISTRICT_REPORT_URL.format(year=year, district=district)
+            for name in parse_district_deputies(future.result(), district):
+                key = normalized(name)
+                if key in assignments:
+                    raise RuntimeError(f"La nómina BCN repite a {name} en más de un distrito.")
+                assignments[key] = (district, source_url)
+    return assignments
+
+
+def parse_roster(xml_text: str, regions: list[dict[str, object]], assignments: dict[str, tuple[int, str]]) -> list[dict[str, object]]:
+    district_to_region = {district: region for region in regions for district in region["districts"]}  # type: ignore[index]
     root = ET.fromstring(xml_text)
     roster: list[dict[str, object]] = []
+    unmatched: list[str] = []
     for item in root.iter():
         if local_name(item.tag) != "DiputadoPeriodo":
             continue
         deputy = child(item, "Diputado")
-        district_node = child(item, "Distrito")
         deputy_id = child_text(deputy, "Id")
-        district_number = child_text(district_node, "Numero")
-        if not deputy_id or not district_number:
+        if not deputy_id:
             continue
-        district = int(district_number)
-        region = district_to_region.get(district)
-        if not region:
-            raise RuntimeError(f"Distrito {district} no está definido en chile-regions.json")
         names = [
             child_text(deputy, "Nombre"),
             child_text(deputy, "Nombre2"),
             child_text(deputy, "ApellidoPaterno"),
             child_text(deputy, "ApellidoMaterno"),
         ]
+        name = " ".join(part for part in names if part)
+        assignment = assignments.get(normalized(name))
+        if not assignment:
+            unmatched.append(name)
+            continue
+        district, territory_source_url = assignment
+        region = district_to_region.get(district)
+        if not region:
+            raise RuntimeError(f"Distrito {district} no está definido en chile-regions.json")
         roster.append(
             {
                 "id": deputy_id,
-                "name": " ".join(part for part in names if part),
+                "name": name,
                 "district": district,
                 "district_label": f"Distrito {district}",
                 "region_code": region["code"],
                 "region": region["name"],
                 "profile_url": f"https://www.camara.cl/diputados/detalle/biografia.aspx?prmId={deputy_id}",
+                "territory_source_url": territory_source_url,
             }
         )
+    if unmatched:
+        raise RuntimeError(f"No fue posible cruzar {len(unmatched)} integrantes con la nómina territorial BCN: {', '.join(unmatched[:8])}")
     return sorted(roster, key=lambda item: (int(item["district"]), str(item["name"])))
 
 
@@ -102,7 +147,8 @@ def main() -> None:
     regions = json.loads(REGIONS_PATH.read_text(encoding="utf-8"))
     retrieved_at = datetime.now(UTC).isoformat()
     xml_text = request_text(SOURCE_URL)
-    roster = parse_roster(xml_text, regions)
+    assignments = collect_district_rosters(datetime.now(UTC).year)
+    roster = parse_roster(xml_text, regions, assignments)
     if len(roster) != 155:
         raise RuntimeError(f"La nómina oficial devolvió {len(roster)} integrantes; se esperaban 155.")
 
