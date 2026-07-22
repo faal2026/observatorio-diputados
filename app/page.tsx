@@ -57,7 +57,7 @@ type MonthlyMoney = {
     source_file?: string;
     source_files?: string[];
     imported_at?: string;
-    last_imported_at?: string;
+    last_imported_at?: string | null;
   };
 };
 
@@ -114,12 +114,28 @@ type NationalSummary = {
   regions: NationalRegion[];
 };
 
+type OfficialTransparencyImport = {
+  category: TransparencyName;
+  month: string;
+  file: string;
+  rows_read: number;
+  deputies_matched: number;
+  unmatched_names: string[];
+};
+
+type NationalTransparency = Partial<Record<TransparencyName, MonthlyMoney>> & {
+  month_requested?: string;
+  failures?: unknown[];
+  official_imports?: OfficialTransparencyImport[];
+  retrieved_at?: string;
+};
+
 type NationalDetailsSummary = {
   availability: string;
   deputies_with_details: number;
   activity?: Partial<Record<ActivityName, MonthlyActivity>>;
   attendance?: { average_percentage?: number | null; deputies_with_classified_records?: number };
-  transparency?: Partial<Record<TransparencyName, MonthlyMoney>> & { month_requested?: string; failures?: unknown[] };
+  transparency?: NationalTransparency;
   districts?: Array<{
     district: number;
     region: string;
