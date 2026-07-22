@@ -11,7 +11,7 @@ No es necesario instalar nada en el computador. Antes de ejecutar el flujo de pu
 
 Luego abre **Actions → Publicar recolector de transparencia → Run workflow**. Cloudflare creará el espacio KV indicado en la configuración y publicará el Worker. Conserva la URL `workers.dev` que aparece al final del registro de la ejecución.
 
-Para generar el primer corte, en Cloudflare abre **Workers & Pages → observatorio-transparencia → Settings → Triggers** y ejecuta el evento programado una vez. Ese corte queda disponible en `https://<tu-worker>.workers.dev/v1/transparency`.
+El primer corte se genera automáticamente con la primera consulta pública a `https://<tu-worker>.workers.dev/v1/transparency`; si la fuente temporalmente no responde, el Worker espera una hora antes de volver a intentarlo. Después de eso, el cron mantiene el corte mensual.
 
 ## Qué publica
 

@@ -154,11 +154,23 @@ export default {
     if (request.method === "OPTIONS") return new Response(null, { headers: cors(request) });
     if (url.pathname !== "/v1/transparency" || request.method !== "GET") return new Response("Not found", { status: 404 });
     const value = await env.TRANSPARENCY.get("latest");
-    return new Response(value ?? JSON.stringify({ availability: "pending_first_refresh" }), { headers: cors(request) });
+    if (value) return new Response(value, { headers: cors(request) });
+
+    const retryAt = await env.TRANSPARENCY.get("initialization_retry_at");
+    if (retryAt && Number(retryAt) > Date.now()) {
+      return new Response(JSON.stringify({ availability: "pending_first_refresh" }), { status: 503, headers: cors(request) });
+    }
+
+    try {
+      const snapshot = await refresh(env, monthTwoMonthsAgo());
+      return new Response(JSON.stringify(snapshot), { headers: cors(request) });
+    } catch {
+      await env.TRANSPARENCY.put("initialization_retry_at", String(Date.now() + 60 * 60 * 1000), { expirationTtl: 60 * 60 });
+      return new Response(JSON.stringify({ availability: "pending_first_refresh" }), { status: 503, headers: cors(request) });
+    }
   },
 
   async scheduled(_controller, env) {
     await refresh(env, monthTwoMonthsAgo());
   },
 };
-
