@@ -1,0 +1,82 @@
+name: Actualizar fichas nacionales
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Después de la actualización mensual del piloto: reutiliza el caché de
+    # autorías y evita consultar una vez por distrito las mismas iniciativas.
+    - cron: "35 16 11 * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  collect-national-details:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      PAGES_BASE_PATH: ${{ vars.PAGES_BASE_PATH || '/observatorio-diputados' }}
+    steps:
+      - name: Obtener el proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Recopilar fichas nacionales
+        run: python collector/collect_national_details.py --year "$(date +%Y)" --workers 5 --delay 0.25
+
+      - name: Verificar cobertura de fichas
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          summary = json.loads(Path("data/generated/chile-details-summary.json").read_text(encoding="utf-8"))
+          if summary.get("deputies_with_details") != 155:
+              raise SystemExit("No se generaron las 155 fichas nacionales; se cancela la publicación.")
+          print("Fichas verificadas: 155 integrantes.")
+          PY
+
+      - name: Guardar fichas actualizadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/generated/chile-details-summary.json public/data/chile
+          if git diff --cached --quiet; then
+            echo "No hay fichas nuevas para guardar."
+          else
+            git commit -m "Actualizar fichas legislativas nacionales"
+            git push
+          fi
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Construir sitio estático
+        run: |
+          npm ci
+          npm run build
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

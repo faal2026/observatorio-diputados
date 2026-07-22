@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import districtSummary from "../data/generated/distrito-8-summary.json";
 import nationalSummary from "../data/generated/chile-summary.json";
+import nationalDetailsSummary from "../data/generated/chile-details-summary.json";
 
 type Metric = "gastos" | "asesorias" | "pasajes" | "personal" | "mociones" | "resoluciones" | "oficios";
 type ActivityName = "motions" | "resolutions" | "offices";
@@ -95,6 +96,13 @@ type NationalSummary = {
   regions: NationalRegion[];
 };
 
+type NationalDetailsSummary = {
+  availability: string;
+  deputies_with_details: number;
+  activity?: { motions?: MonthlyActivity; resolutions?: MonthlyActivity };
+  attendance?: { average_percentage?: number | null; deputies_with_classified_records?: number };
+};
+
 const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
 const currency = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
 const monthFormatter = new Intl.DateTimeFormat("es-CL", { month: "short", year: "numeric", timeZone: "UTC" });
@@ -142,6 +150,7 @@ export default function Home() {
   const [profileMessage, setProfileMessage] = useState("");
   const summary = districtSummary as DistrictSummary;
   const national = nationalSummary as NationalSummary;
+  const nationalDetails = nationalDetailsSummary as NationalDetailsSummary;
   const selected = metricLabels[metric];
   const nationalRegions = national.regions;
   const nationalDeputies = useMemo(() => national.deputies.length ? national.deputies : summary.deputies.map((item) => ({
@@ -168,16 +177,13 @@ export default function Home() {
       return;
     }
 
-    if (selectedDeputy.district !== 8) {
-      setDeputyRecord(null);
-      setProfileMessage(`La ficha detallada de ${selectedDeputy.name} se incorporará en la carga de ${selectedDeputy.region}. La nómina y el mapa nacional ya están disponibles.`);
-      return;
-    }
-
     let active = true;
     setDeputyRecord(null);
     setProfileMessage("Cargando actividad legislativa…");
-    fetch(`data/distrito-8/deputies/${selectedDeputy.id}.json`)
+    const profileDataPath = selectedDeputy.district === 8
+      ? `data/distrito-8/deputies/${selectedDeputy.id}.json`
+      : `data/chile/deputies/${selectedDeputy.id}.json`;
+    fetch(profileDataPath)
       .then((response) => {
         if (!response.ok) throw new Error("La ficha no está disponible.");
         return response.json() as Promise<DeputyRecord>;
@@ -189,7 +195,7 @@ export default function Home() {
         }
       })
       .catch(() => {
-        if (active) setProfileMessage("No fue posible cargar esta ficha. Vuelve a intentarlo en unos segundos.");
+        if (active) setProfileMessage(`La ficha detallada de ${selectedDeputy.name} aún no se ha publicado. La nómina territorial sí está disponible.`);
       });
 
     return () => { active = false; };
@@ -215,6 +221,9 @@ export default function Home() {
   const averageAttendance = summary.attendance?.average_percentage;
   const diet = summary.diet;
   const nationalDietTotal = (national.deputies_count ?? 0) * (national.diet_monthly_clp ?? 0);
+  const nationalAverageAttendance = nationalDetails.attendance?.average_percentage;
+  const nationalAverageMotions = nationalDetails.activity?.motions?.average_per_deputy_per_month;
+  const nationalAverageResolutions = nationalDetails.activity?.resolutions?.average_per_deputy_per_month;
   const chartLabel = activity
     ? `${activity.total} registros legislativos en los meses publicados del piloto.`
     : money?.latest_amount != null
@@ -241,8 +250,10 @@ export default function Home() {
           <span className="coverage-note">Datos consolidados de nómina y dieta mensual</span>
         </div>
         <div className="national-summary-grid">
-          <MetricCard label="Diputados(as) en ejercicio" value={national.deputies_count == null ? "—" : decimal.format(national.deputies_count)} detail="Nómina vigente de la Cámara" />
-          <MetricCard label="Regiones representadas" value={decimal.format(nationalRegions.length)} detail="16 regiones · 28 distritos electorales" />
+          <MetricCard label="Diputados(as) en ejercicio" value={national.deputies_count == null ? "—" : decimal.format(national.deputies_count)} detail={`${decimal.format(nationalRegions.length)} regiones · 28 distritos electorales`} />
+          <MetricCard label="Promedio de asistencia" value={percentage(nationalAverageAttendance)} detail={nationalAverageAttendance == null ? "Fichas nacionales en carga" : "Sesiones de sala con clasificación oficial"} />
+          <MetricCard label="Promedio de mociones" value={nationalAverageMotions == null ? "—" : decimal.format(nationalAverageMotions)} detail={nationalAverageMotions == null ? "Fichas nacionales en carga" : "Por diputado(a) y mes con actividad"} />
+          <MetricCard label="Promedio de resoluciones" value={nationalAverageResolutions == null ? "—" : decimal.format(nationalAverageResolutions)} detail={nationalAverageResolutions == null ? "Fichas nacionales en carga" : "Por diputado(a) y mes con actividad"} />
           <MetricCard label="Dieta bruta nacional" value={national.deputies_count == null ? "—" : clp(nationalDietTotal)} detail="Total mensual de las 155 dietas brutas" />
           <MetricCard label="Dieta bruta por diputado(a)" value={national.diet_monthly_clp == null ? "—" : clp(national.diet_monthly_clp)} detail="Promedio y mediana mensual: mismo monto vigente" />
         </div>
@@ -291,14 +302,14 @@ export default function Home() {
       </section>
 
       <section className="profile" aria-labelledby="profile-title">
-        <div className="section-heading"><div><p className="eyebrow">Ficha individual</p><h2 id="profile-title">Detalle por diputado(a)</h2></div><span className="coverage-note">Distrito 8 disponible · cobertura nacional en carga</span></div>
+        <div className="section-heading"><div><p className="eyebrow">Ficha individual</p><h2 id="profile-title">Detalle por diputado(a)</h2></div><span className="coverage-note">{nationalDetails.deputies_with_details === 155 ? "Fichas nacionales disponibles" : "Distrito 8 disponible · fichas nacionales en carga"}</span></div>
         <div className="filters">
           <label><span>Región</span><select value={region} onChange={(event) => { setRegion(event.target.value); setDistrict(""); setDeputy(""); }}><option value="">Seleccionar región</option>{nationalRegions.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}</select></label>
           <label><span>Distrito</span><select value={district} onChange={(event) => { setDistrict(event.target.value); setDeputy(""); }} disabled={!region}><option value="">Seleccionar distrito</option>{districtOptions.map((item) => <option key={item} value={item}>Distrito {item}</option>)}</select></label>
           <label><span>Diputado(a)</span><select value={deputy} onChange={(event) => setDeputy(event.target.value)} disabled={!district}><option value="">Seleccionar diputado(a)</option>{availableDeputies.map((item) => <option key={item.id}>{item.name}</option>)}</select></label>
         </div>
 
-        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Cobertura de transparencia</h4>{deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido. Gastos, asesorías y pasajes quedarán como “sin publicación” hasta que la Cámara libere esos meses.</p> : <p>La Cámara aún no publica transparencia mensual para esta nómina. El tablero conservará esos meses como pendientes, nunca como $0.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
+        {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha individual</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Cobertura de transparencia</h4>{deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido. Gastos, asesorías y pasajes quedarán como “sin publicación” hasta que la Cámara libere esos meses.</p> : <p>La Cámara aún no publica transparencia mensual para esta nómina. El tablero conservará esos meses como pendientes, nunca como $0.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
 
         {deputyRecord ? <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia total</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.resolutions_by_month_and_state[month]} /></td><td>{decimal.format(deputyRecord.activity.offices_by_month[month] ?? 0)}</td><td>{percentage(deputyRecord.attendance?.percentage)}</td><td>{MoneyCell(deputyRecord.transparency.operational_expenses?.by_month[month], deputyRecord.transparency.operational_expenses?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.external_advisories?.by_month[month], deputyRecord.transparency.external_advisories?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.flights?.by_month[month], deputyRecord.transparency.flights?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.personnel_support?.by_month[month], deputyRecord.transparency.personnel_support?.by_month)}</td></tr>)}</tbody></table></div> : null}
       </section>
