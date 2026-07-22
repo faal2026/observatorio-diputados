@@ -1,0 +1,76 @@
+name: Actualizar transparencia nacional
+
+on:
+  workflow_dispatch:
+    inputs:
+      month:
+        description: Mes publicado a consultar (AAAA-MM)
+        required: true
+        default: "2026-03"
+  schedule:
+    # La Cámara señala un desfase de dos meses para gastos operacionales.
+    - cron: "10 17 12 * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  collect-national-transparency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Obtener el proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Recopilar transparencia mensual nacional
+        env:
+          REQUESTED_MONTH: ${{ inputs.month }}
+        run: |
+          MONTH="${REQUESTED_MONTH:-$(date -d '2 months ago' +%Y-%m)}"
+          python collector/collect_national_transparency.py --month "$MONTH" --workers 5 --delay 0.2
+
+      - name: Guardar transparencia actualizada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/generated/chile-details-summary.json public/data/chile
+          if git diff --cached --quiet; then
+            echo "No hay transparencia nueva para guardar."
+          else
+            git commit -m "Actualizar transparencia mensual nacional"
+            git push
+          fi
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Construir sitio estático
+        run: |
+          npm ci
+          npm run build
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

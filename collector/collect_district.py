@@ -44,7 +44,7 @@ DISTRICT_8_ROSTER_SOURCE = "https://www.bcn.cl/siit/reportesdistritales/pdf_dist
 PERSONNEL_SUPPORT_URL = "https://www.camara.cl/transparencia/personalapoyogral.aspx"
 TRANSPARENCY_SOURCES = {
     "operational_expenses": "https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId={deputy_id}",
-    "external_advisories": "https://www.camara.cl/diputados/detalle/asesoriasexternas.aspx?prmId={deputy_id}",
+    "external_advisories": "https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId={deputy_id}",
     "flights": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId={deputy_id}",
 }
 
@@ -195,6 +195,34 @@ def request_text(url: str, *, delay: float, retries: int = 2) -> str:
     raise RuntimeError(f"La fuente oficial no respondió después de {retries} intentos en {url}") from last_error
 
 
+def request_form_text(url: str, fields: dict[str, str], *, delay: float, retries: int = 2) -> str:
+    """Envía el postback normal de los selectores mensuales de la Cámara.
+
+    Las tres fichas de transparencia son formularios ASP.NET WebForms: el mes
+    publicado no se puede deducir desde la URL. Se conserva el viewstate que
+    entrega la propia página y se envía el mismo postback que produce un cambio
+    de mes en el navegador, sin autenticación ni otra vía de acceso.
+    """
+    headers = {**REQUEST_HEADERS, "Content-Type": "application/x-www-form-urlencoded"}
+    payload = urlencode(fields).encode("utf-8")
+    for attempt in range(retries):
+        try:
+            request = Request(url, data=payload, headers=headers, method="POST")
+            with urlopen(request, timeout=45) as response:  # noqa: S310 - las URLs se definen arriba.
+                body = response.read().decode(response.headers.get_content_charset() or "utf-8", errors="replace")
+            time.sleep(delay)
+            return body
+        except HTTPError as error:
+            if error.code < 500 and error.code != 429:
+                raise RuntimeError(f"La fuente oficial rechazó el selector mensual ({error.code}) en {url}") from error
+            last_error: Exception = error
+        except URLError as error:
+            last_error = error
+        if attempt < retries - 1:
+            time.sleep((attempt + 1) * 3)
+    raise RuntimeError(f"La fuente oficial no respondió al selector mensual después de {retries} intentos en {url}") from last_error
+
+
 def method_url(name: str, year: int | None = None) -> str:
     path, params = METHODS[name]
     resolved = {key: value.format(year=year) if "{year}" in value else value for key, value in params.items()}
@@ -275,11 +303,109 @@ class TableRowsParser(HTMLParser):
             self._row = None
 
 
+class WebFormsStateParser(HTMLParser):
+    """Extrae los campos necesarios para un postback de transparencia."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.hidden: dict[str, str] = {}
+        self.selects: dict[str, list[tuple[str, str]]] = {}
+        self._select_name: str | None = None
+        self._options: list[tuple[str, str]] = []
+        self._option_value: str | None = None
+        self._option_text: list[str] | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if tag == "input" and (values.get("type") or "").lower() == "hidden" and values.get("name"):
+            self.hidden[values["name"]] = values.get("value") or ""
+        elif tag == "select" and values.get("name"):
+            self._select_name = values["name"]
+            self._options = []
+        elif tag == "option" and self._select_name is not None:
+            self._option_value = values.get("value") or ""
+            self._option_text = []
+
+    def handle_data(self, data: str) -> None:
+        if self._option_text is not None:
+            self._option_text.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "option" and self._option_text is not None:
+            self._options.append((self._option_value or "", " ".join("".join(self._option_text).split())))
+            self._option_value = None
+            self._option_text = None
+        elif tag == "select" and self._select_name is not None:
+            self.selects[self._select_name] = self._options
+            self._select_name = None
+            self._options = []
+
+
+def parse_webforms_state(html: str) -> WebFormsStateParser:
+    parser = WebFormsStateParser()
+    parser.feed(html)
+    return parser
+
+
+def _select_value(options: list[tuple[str, str]], wanted: int) -> str:
+    candidates = {str(wanted), f"{wanted:02d}"}
+    for value, label in options:
+        if value in candidates:
+            return value
+        if re.search(rf"(?<!\d)0?{wanted}(?!\d)", label):
+            return value
+    raise RuntimeError(f"La ficha no ofreció el valor {wanted} en su selector.")
+
+
+def parse_transparency_amounts(html: str) -> list[int]:
+    """Obtiene los montos de las filas publicadas, sin confundir folios con CLP."""
+    parser = TableRowsParser()
+    parser.feed(html)
+    amounts: list[int] = []
+    for row in parser.rows:
+        if len(row) < 2:
+            continue
+        amount = parse_clp(row[-1])
+        if amount is not None:
+            amounts.append(amount)
+    return amounts
+
+
+def collect_transparency_month(
+    *, deputy_id: str, source_url: str, year: int, month: int, delay: float
+) -> int | None:
+    """Suma un mes publicado para una ficha; ``None`` significa no publicado."""
+    page = request_text(source_url.format(deputy_id=deputy_id), delay=delay)
+    state = parse_webforms_state(page)
+    month_select = next((name for name in state.selects if name.lower().endswith("ddlmes")), None)
+    year_select = next((name for name in state.selects if name.lower().endswith("ddlano")), None)
+    deputy_select = next((name for name in state.selects if name.lower().endswith("ddldiputados")), None)
+    if not month_select or not year_select:
+        raise RuntimeError("La ficha de transparencia no expuso los selectores de mes y año.")
+    fields = dict(state.hidden)
+    for name, options in state.selects.items():
+        if options:
+            fields[name] = options[0][0]
+    fields[month_select] = _select_value(state.selects[month_select], month)
+    fields[year_select] = _select_value(state.selects[year_select], year)
+    if deputy_select:
+        try:
+            fields[deputy_select] = _select_value(state.selects[deputy_select], int(deputy_id))
+        except RuntimeError:
+            # La URL ya fija la ficha; no todos los selectores incluyen el id.
+            pass
+    fields["__EVENTTARGET"] = month_select
+    fields["__EVENTARGUMENT"] = ""
+    published = request_form_text(source_url.format(deputy_id=deputy_id), fields, delay=delay)
+    amounts = parse_transparency_amounts(published)
+    return sum(amounts) if amounts else None
+
+
 def parse_clp(value: str) -> int | None:
-    candidate = value.replace("$", "").replace(" ", "")
-    if not re.fullmatch(r"\d{1,3}(?:\.\d{3})+|\d{5,}", candidate):
+    candidate = value.replace("$", "").replace("CLP", "").replace(" ", "")
+    if not re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+|\d{5,}", candidate):
         return None
-    return int(candidate.replace(".", ""))
+    return int(candidate.replace(".", "").replace(",", ""))
 
 
 def parse_short_date(value: str) -> datetime | None:
