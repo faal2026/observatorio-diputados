@@ -70,9 +70,18 @@ const decimal = new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 });
 const currency = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
 const monthFormatter = new Intl.DateTimeFormat("es-CL", { month: "short", year: "numeric", timeZone: "UTC" });
 
+function clp(value: number) {
+  return `${currency.format(value)} CLP`;
+}
+
 function labelMonth(month: string) {
   const [year, number] = month.split("-").map(Number);
   return monthFormatter.format(new Date(Date.UTC(year, number - 1, 1))).replace(".", "");
+}
+
+function latestPublished(byMonth: Record<string, number> | undefined) {
+  const month = Object.keys(byMonth ?? {}).sort().at(-1);
+  return month && byMonth ? { month, value: byMonth[month] } : null;
 }
 
 function total(states: Record<string, number> | undefined) {
@@ -87,7 +96,7 @@ function stateLabel(state: string) {
 
 function ActivityCell({ states }: { states: Record<string, number> | undefined }) {
   if (!states || total(states) === 0) return <>0</>;
-  return <><strong>{total(states)}</strong><small className="activity-state">{Object.entries(states).map(([state, count]) => `${stateLabel(state)}: ${count}`).join(" · ")}</small></>;
+  return <><strong>{decimal.format(total(states))}</strong><small className="activity-state">{Object.entries(states).map(([state, count]) => `${stateLabel(state)}: ${decimal.format(count)}`).join(" · ")}</small></>;
 }
 
 function percentage(value: number | null | undefined) {
@@ -159,7 +168,7 @@ export default function Home() {
   const chartLabel = activity
     ? `${activity.total} registros legislativos en los meses publicados del piloto.`
     : money?.latest_amount != null
-      ? `${money.methodology ?? "Monto mensual publicado."} Último mes: ${labelMonth(money.latest_month ?? "2026-01")}.`
+      ? `${money.methodology ?? "Monto mensual publicado."} Último mes disponible: ${labelMonth(money.latest_month ?? "2026-01")}. Los meses posteriores quedan pendientes hasta su publicación oficial.`
       : `La serie de ${selected.label.toLocaleLowerCase("es-CL")} se incorporará al terminar la fase de transparencia.`;
   const personnelMetadata = summary.transparency?.personnel_support_metadata;
 
@@ -188,8 +197,8 @@ export default function Home() {
             <MetricCard label="Promedio de asistencia" value={percentage(averageAttendance)} detail={averageAttendance == null ? "Pendiente de la fuente oficial" : "Sesiones de sala con clasificación oficial"} />
             <MetricCard label="Promedio de mociones" value={averageMotions == null ? "—" : decimal.format(averageMotions)} detail="Por diputado(a) y mes con actividad" />
             <MetricCard label="Promedio de resoluciones" value={averageResolutions == null ? "—" : decimal.format(averageResolutions)} detail="Por diputado(a) y mes con actividad" />
-            <MetricCard label={selected.label} value={activity ? String(activity.total) : money?.latest_amount != null ? currency.format(money.latest_amount) : "—"} detail={activity ? `Total del Distrito 8 · ${selected.unit}` : money?.latest_month ? `Último mes publicado: ${labelMonth(money.latest_month)}` : "Pendiente de publicación mensual"} />
-            <MetricCard label="Dieta parlamentaria" value={diet ? currency.format(diet.monthly_gross_per_deputy_clp) : "—"} detail={diet ? "Bruta mensual vigente por diputado(a)" : "Monto bruto mensual vigente · pendiente"} />
+            <MetricCard label={selected.label} value={activity ? decimal.format(activity.total) : money?.latest_amount != null ? clp(money.latest_amount) : "—"} detail={activity ? `Total del Distrito 8 · ${selected.unit}` : money?.latest_month ? `Último mes publicado: ${labelMonth(money.latest_month)}` : "Pendiente de publicación mensual"} />
+            <MetricCard label="Dieta parlamentaria" value={diet ? clp(diet.monthly_gross_per_deputy_clp) : "—"} detail={diet ? "Bruta mensual vigente por diputado(a)" : "Monto bruto mensual vigente · pendiente"} />
           </div>
 
           <article className="chart-panel" aria-labelledby="chart-title">
@@ -197,7 +206,7 @@ export default function Home() {
             {series.length ? (
               <div className="chart" role="img" aria-label={`Serie mensual de ${selected.label}`}>
                 <div className="chart-lines" aria-hidden="true">{series.map(([month, value]) => <i key={month} style={{ height: `${Math.max(8, Math.round((value / maximum) * 100))}%` }} title={`${labelMonth(month)}: ${value}`} />)}</div>
-                <div className="chart-axis">{series.map(([month, value]) => <span key={month}>{labelMonth(month)}<b>{value}</b></span>)}</div>
+                <div className="chart-axis">{series.map(([month, value]) => <span key={month}>{labelMonth(month)}<b>{selected.transparency ? <><span>{currency.format(value)}</span><em>CLP</em></> : decimal.format(value)}</b></span>)}</div>
               </div>
             ) : <div className="chart-placeholder" role="img" aria-label="Serie pendiente de publicación"><span>Sin serie publicada aún</span></div>}
             {selected.transparency && personnelMetadata?.source_url ? <p className="source-note">{personnelMetadata.availability === "published_snapshot" ? "Respaldo de" : "Fuente:"} <a href={personnelMetadata.source_url} target="_blank" rel="noreferrer">directorio oficial de personal de apoyo</a>{personnelMetadata.snapshot_retrieved_at ? ` · corte ${personnelMetadata.snapshot_retrieved_at}` : ""}. {personnelMetadata.methodology}</p> : null}
@@ -207,7 +216,7 @@ export default function Home() {
 
       <section className="district-view" aria-labelledby="district-title">
         <div><p className="eyebrow">Vista territorial</p><h2 id="district-title">Región Metropolitana · Distrito 8</h2><p>La versión completa incorporará el mapa nacional y permitirá fijar una región para revisar diputados, dieta y gastos mensuales agregados.</p></div>
-        <dl className="territory-details"><div><dt>Región</dt><dd>Metropolitana de Santiago</dd></div><div><dt>Distrito</dt><dd>8</dd></div><div><dt>Comunas</dt><dd>Tiltil, Quilicura, Colina, Estación Central, Pudahuel, Lampa, Cerrillos y Maipú</dd></div><div><dt>Dieta bruta mensual</dt><dd>{diet ? currency.format(diet.monthly_gross_district_clp) : "Pendiente de publicación"}</dd></div></dl>
+        <dl className="territory-details"><div><dt>Región</dt><dd>Metropolitana de Santiago</dd></div><div><dt>Distrito</dt><dd>8</dd></div><div><dt>Comunas</dt><dd>Tiltil, Quilicura, Colina, Estación Central, Pudahuel, Lampa, Cerrillos y Maipú</dd></div><div><dt>Dieta bruta mensual</dt><dd>{diet ? clp(diet.monthly_gross_district_clp) : "Pendiente de publicación"}</dd></div></dl>
       </section>
 
       <section className="profile" aria-labelledby="profile-title">
@@ -220,7 +229,7 @@ export default function Home() {
 
         {deputyRecord ? <article className="profile-card"><div><p className="eyebrow">Ficha del piloto</p><h3>{deputyRecord.profile.name}</h3><p>{deputyRecord.profile.district} · {deputyRecord.profile.region} · {deputyRecord.profile.period}</p><h4>Asistencia a sala</h4><p>{percentage(deputyRecord.attendance?.percentage)} · {deputyRecord.attendance?.present ?? 0} presencias en {deputyRecord.attendance?.sessions_recorded ?? 0} registros de sesión.</p></div><div><h4>Comisiones actuales</h4>{deputyRecord.commissions?.length ? <><ul>{deputyRecord.commissions.map((commission) => <li key={commission}>{commission}</li>)}</ul><p className="source-note">Verificadas en <a href={deputyRecord.profile.commissions_source_url} target="_blank" rel="noreferrer">ficha oficial vigente</a>: {summary.commissions?.snapshot_retrieved_at ?? "fecha no indicada"}.</p></> : <p>La fuente oficial consultada aún no publica integrantes para esta actualización.</p>}<h4 className="profile-subheading">Cobertura de transparencia</h4>{deputyRecord.transparency.personnel_support?.by_month && Object.keys(deputyRecord.transparency.personnel_support.by_month).length ? <p>Personal de apoyo publicado para {deputyRecord.transparency.personnel_support_metadata?.coverage ?? "los meses disponibles"}. Son remuneraciones de contratos vigentes; no equivalen a gasto rendido. Gastos, asesorías y pasajes quedarán como “sin publicación” hasta que la Cámara libere esos meses.</p> : <p>La Cámara aún no publica transparencia mensual para esta nómina. El tablero conservará esos meses como pendientes, nunca como $0.</p>}</div></article> : <div className="empty-state">{profileMessage || "Elige región, distrito y diputado(a) para abrir su ficha."}</div>}
 
-        {deputyRecord ? <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia total</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.resolutions_by_month_and_state[month]} /></td><td>{deputyRecord.activity.offices_by_month[month] ?? 0}</td><td>{percentage(deputyRecord.attendance?.percentage)}</td><td>{MoneyCell(deputyRecord.transparency.operational_expenses?.by_month[month])}</td><td>{MoneyCell(deputyRecord.transparency.external_advisories?.by_month[month])}</td><td>{MoneyCell(deputyRecord.transparency.flights?.by_month[month])}</td><td>{MoneyCell(deputyRecord.transparency.personnel_support?.by_month[month])}</td></tr>)}</tbody></table></div> : null}
+        {deputyRecord ? <div className="table-wrap"><table><thead><tr><th>Mes</th><th>Mociones</th><th>Acuerdos</th><th>Resoluciones</th><th>Oficios</th><th>Asistencia total</th><th>Gastos</th><th>Asesorías</th><th>Pasajes</th><th>Personal</th></tr></thead><tbody>{detailMonths.map((month) => <tr key={month}><td>{labelMonth(month)}</td><td><ActivityCell states={deputyRecord.activity.motions_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.agreements_by_month_and_state[month]} /></td><td><ActivityCell states={deputyRecord.activity.resolutions_by_month_and_state[month]} /></td><td>{decimal.format(deputyRecord.activity.offices_by_month[month] ?? 0)}</td><td>{percentage(deputyRecord.attendance?.percentage)}</td><td>{MoneyCell(deputyRecord.transparency.operational_expenses?.by_month[month], deputyRecord.transparency.operational_expenses?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.external_advisories?.by_month[month], deputyRecord.transparency.external_advisories?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.flights?.by_month[month], deputyRecord.transparency.flights?.by_month)}</td><td>{MoneyCell(deputyRecord.transparency.personnel_support?.by_month[month], deputyRecord.transparency.personnel_support?.by_month)}</td></tr>)}</tbody></table></div> : null}
       </section>
 
       <section className="methodology" aria-labelledby="methodology-title"><p className="eyebrow">Trazabilidad</p><h2 id="methodology-title">Cómo leer este tablero</h2><ul>{sources.map((source) => <li key={source}>{source}</li>)}</ul></section>
@@ -232,6 +241,8 @@ function MetricCard({ label, value, detail }: { label: string; value: string; de
   return <article className="metric-card"><span>{label}</span><strong>{value}</strong><small>{detail}</small></article>;
 }
 
-function MoneyCell(value: number | undefined) {
-  return value == null ? <span className="pending-cell">Pendiente</span> : currency.format(value);
+function MoneyCell(value: number | undefined, byMonth?: Record<string, number>) {
+  if (value != null) return clp(value);
+  const latest = latestPublished(byMonth);
+  return latest ? <span className="pending-cell"><small>Último: {labelMonth(latest.month)}</small>{clp(latest.value)}</span> : <span className="pending-cell">Pendiente</span>;
 }
