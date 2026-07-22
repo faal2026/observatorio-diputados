@@ -294,7 +294,7 @@ export default function Home() {
    if (workerMonth && workerCategory) {
       const isAvailable = workerCategory.national_total_clp != null;
      return {
-        value: isAvailable ? clp(workerCategory.national_total_clp) : "—",
+        value: isAvailable ? clp(workerCategory.national_total_clp ?? 0) : "—",
         detail: isAvailable
           ? `${labelMonth(workerMonth)} · ${workerCategory.deputies_with_records ?? 0} de 155 diputados(as) con registros`
           : workerCategory.reason ?? "Fuente nacional pendiente de publicación.",
