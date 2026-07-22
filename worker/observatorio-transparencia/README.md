@@ -16,7 +16,8 @@ El primer corte se genera automáticamente con la primera consulta pública a `h
 ## Qué publica
 
 - `external_advisories`: asesorías externas del directorio mensual general de la Cámara, con total nacional, montos por diputado/a y filas que requieren revisión de nombre.
-- Las demás categorías quedan explícitamente en espera hasta disponer de un directorio general equivalente o de una autorización de acceso automatizado. Nunca se publican como cero.
+- `personnel_support`: suma de los sueldos publicados para personal de apoyo vigente, por diputado/a y a nivel nacional. Es una fotografía de remuneraciones vigentes, no una rendición mensual de gasto.
+- Gastos operacionales y pasajes quedan explícitamente en espera hasta disponer de un directorio general equivalente o de una autorización de acceso automatizado. Nunca se publican como cero.
 
 ## Programación
 

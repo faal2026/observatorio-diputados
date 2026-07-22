@@ -1,4 +1,5 @@
 const ADVISORIES_URL = "https://www.camara.cl/transparencia/asesoriasexternasgral.aspx";
+const PERSONNEL_URL = "https://www.camara.cl/transparencia/personalapoyogral.aspx";
 const ROSTER_URL = "https://faal2026.github.io/observatorio-diputados/data/chile/index.json";
 const ALLOWED_ORIGINS = new Set([
   "https://faal2026.github.io",
@@ -57,6 +58,15 @@ function rowsFromAdvisories(html) {
   }).filter((row) => row.amount != null && row.deputy);
 }
 
+function rowsFromPersonnel(html) {
+  const table = [...html.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)].find((item) => /Distrito[\s\S]{0,500}Diputado[\s\S]{0,500}Sueldo/i.test(item[1]));
+  if (!table) return [];
+  return [...table[1].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map((row) => {
+    const cells = [...row[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((cell) => clean(cell[1]));
+    return { district: cells[0], deputy: cells[1], amount: parseAmount(cells[5] ?? "") };
+  }).filter((row) => row.amount != null && row.deputy);
+}
+
 function deputyId(sourceName, deputies) {
   const name = normalized(sourceName);
   const [surnamePart, givenPart = ""] = name.split(",");
@@ -70,9 +80,17 @@ function deputyId(sourceName, deputies) {
 }
 
 async function publishedAdvisories(monthKey) {
+  return publishedDirectory(ADVISORIES_URL, monthKey, rowsFromAdvisories);
+}
+
+async function publishedPersonnel(monthKey) {
+  return publishedDirectory(PERSONNEL_URL, monthKey, rowsFromPersonnel);
+}
+
+async function publishedDirectory(url, monthKey, parser) {
   const [year, month] = monthKey.split("-").map(Number);
-  const initial = await fetch(ADVISORIES_URL, { headers: browserHeaders });
-  if (!initial.ok) throw new Error(`La Cámara respondió ${initial.status} al directorio general de asesorías.`);
+  const initial = await fetch(url, { headers: browserHeaders });
+  if (!initial.ok) throw new Error(`La Cámara respondió ${initial.status} al directorio general.`);
   const html = await initial.text();
   const monthName = selectName(html, "ddlMes");
   const yearName = selectName(html, "ddlAno");
@@ -82,49 +100,59 @@ async function publishedAdvisories(monthKey) {
   fields.set(yearName, String(year));
   fields.set("__EVENTTARGET", monthName);
   fields.set("__EVENTARGUMENT", "");
-  const response = await fetch(ADVISORIES_URL, {
+  const response = await fetch(url, {
     method: "POST",
     headers: { ...browserHeaders, "Content-Type": "application/x-www-form-urlencoded" },
     body: fields.toString(),
   });
   if (!response.ok) throw new Error(`La Cámara respondió ${response.status} al consultar ${monthKey}.`);
-  return rowsFromAdvisories(await response.text());
+  return parser(await response.text());
 }
 
-async function refresh(env, monthKey) {
-  const [rows, rosterResponse] = await Promise.all([
-    publishedAdvisories(monthKey),
-    fetch(ROSTER_URL, { headers: { Accept: "application/json" } }),
-  ]);
-  if (!rosterResponse.ok) throw new Error("No fue posible cargar la nómina nacional publicada.");
-  const roster = await rosterResponse.json();
+function aggregateByDeputy(rows, deputies) {
   const totals = {};
   const unmatched = [];
   for (const row of rows) {
-    const id = deputyId(row.deputy, roster.deputies ?? []);
+    const id = deputyId(row.deputy, deputies);
     if (!id) {
-      unmatched.push({ deputy: row.deputy, folio: row.folio });
+      unmatched.push({ deputy: row.deputy });
       continue;
     }
     totals[id] = (totals[id] ?? 0) + row.amount;
   }
-  const nationalTotal = Object.values(totals).reduce((sum, amount) => sum + amount, 0);
+  return {
+    by_deputy: totals,
+    national_total_clp: Object.values(totals).reduce((sum, amount) => sum + amount, 0),
+    deputies_with_records: Object.keys(totals).length,
+    unmatched_rows: unmatched,
+  };
+}
+
+async function refresh(env, monthKey) {
+  const [advisoriesResult, personnelResult, rosterResponse] = await Promise.all([
+    publishedAdvisories(monthKey).then((rows) => ({ rows })).catch((error) => ({ error })),
+    publishedPersonnel(monthKey).then((rows) => ({ rows })).catch((error) => ({ error })),
+    fetch(ROSTER_URL, { headers: { Accept: "application/json" } }),
+  ]);
+  if (!rosterResponse.ok) throw new Error("No fue posible cargar la nómina nacional publicada.");
+  const roster = await rosterResponse.json();
+  const deputies = roster.deputies ?? [];
+  const advisoryCategory = advisoriesResult.rows
+    ? { ...aggregateByDeputy(advisoriesResult.rows, deputies), methodology: "Suma de filas del directorio general de asesorías externas de la Cámara para el mes publicado. Cada fila está asociada a un diputado o diputada por la fuente oficial." }
+    : { availability: "pending_source", reason: "El directorio nacional de asesorías no respondió en este corte." };
+  const personnelCategory = personnelResult.rows
+    ? { ...aggregateByDeputy(personnelResult.rows, deputies), methodology: "Suma de sueldos informados para el personal de apoyo vigente en el directorio nacional. Es una fotografía de remuneraciones vigentes, no una rendición mensual de gasto." }
+    : { availability: "pending_source", reason: "El directorio nacional de personal de apoyo no respondió en este corte." };
   const snapshot = {
     schema_version: 1,
     retrieved_at: new Date().toISOString(),
     source: ADVISORIES_URL,
     month: monthKey,
     categories: {
-      external_advisories: {
-        by_deputy: totals,
-        national_total_clp: nationalTotal,
-        deputies_with_records: Object.keys(totals).length,
-        unmatched_rows: unmatched,
-        methodology: "Suma de filas del directorio general de asesorías externas de la Cámara para el mes publicado. Cada fila está asociada a un diputado o diputada por la fuente oficial.",
-      },
+      external_advisories: advisoryCategory,
       operational_expenses: { availability: "pending_source" },
       flights: { availability: "pending_source" },
-      personnel_support: { availability: "pending_source" },
+      personnel_support: personnelCategory,
     },
   };
   await env.TRANSPARENCY.put("latest", JSON.stringify(snapshot));

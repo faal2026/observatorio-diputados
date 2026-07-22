@@ -8,8 +8,8 @@ Observatorio de transparencia pública de la Cámara de Diputadas y Diputados de
 - Transparencia mensual: dieta, gastos operacionales, asesorías externas, pasajes y personal de apoyo.
 - Mapa horizontal de las 16 regiones, filtros nacionales y ficha por diputado o diputada.
 - Tablero nacional, mapa territorial interactivo y ficha detallada para las 155 diputadas y diputados.
-- Transparencia mensual nacional: asesorías externas se incorpora desde un directorio general mensual de la Cámara; gastos operacionales, pasajes y personal de apoyo se muestran como pendientes hasta contar con un directorio nacional equivalente o una fuente autorizada.
-- Personal de apoyo se mantiene separado: la fuente disponible describe remuneraciones de contratos vigentes y todavía no entrega una serie mensual nacional homogénea.
+- Transparencia nacional: asesorías externas y personal de apoyo se incorporan desde directorios generales de la Cámara; gastos operacionales y pasajes se muestran como pendientes hasta contar con un directorio nacional equivalente o una fuente autorizada.
+- Personal de apoyo se mantiene separado: la fuente disponible describe remuneraciones de contratos vigentes, no gasto rendido.
 - Cuando una ficha o mes no está publicado se muestra como pendiente, nunca como $0.
 
 ## Criterios de datos
