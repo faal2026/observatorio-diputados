@@ -68,8 +68,13 @@ def parse_district_deputies(html_text: str, district: int) -> list[str]:
     match = re.search(r"\bDiputados\s+(.+?)\s+Tabla de contenidos\b", " ".join(plain.split()), flags=re.IGNORECASE)
     if not match:
         raise RuntimeError(f"El reporte BCN del Distrito {district} no contiene su nómina de diputados.")
-    names_text = match.group(1).replace(" y ", ", ")
-    names = [" ".join(name.split()) for name in names_text.split(",") if name.strip()]
+    parts = [" ".join(name.split()) for name in match.group(1).split(",") if name.strip()]
+    # La conjunción final separa a las dos últimas personas. No se reemplaza
+    # cada " y " porque hay apellidos compuestos, como "Peña y Lillo".
+    if parts and " y " in parts[-1]:
+        penultimate, last = parts[-1].rsplit(" y ", 1)
+        parts = [*parts[:-1], penultimate, last]
+    names = parts
     if not names:
         raise RuntimeError(f"El reporte BCN del Distrito {district} entregó una nómina vacía.")
     return names
@@ -94,6 +99,21 @@ def collect_district_rosters(year: int) -> dict[str, tuple[int, str]]:
     return assignments
 
 
+def resolve_assignment(name: str, assignments: dict[str, tuple[int, str]]) -> tuple[int, str] | None:
+    exact = assignments.get(normalized(name))
+    if exact:
+        return exact
+
+    tokens = set(normalized(name).split())
+    candidates = {
+        assignment
+        for candidate_name, assignment in assignments.items()
+        if tokens <= set(candidate_name.split()) or set(candidate_name.split()) <= tokens
+    }
+    # Solo se admite la normalización cuando identifica un único distrito.
+    return next(iter(candidates)) if len(candidates) == 1 else None
+
+
 def parse_roster(xml_text: str, regions: list[dict[str, object]], assignments: dict[str, tuple[int, str]]) -> list[dict[str, object]]:
     district_to_region = {district: region for region in regions for district in region["districts"]}  # type: ignore[index]
     root = ET.fromstring(xml_text)
@@ -113,7 +133,7 @@ def parse_roster(xml_text: str, regions: list[dict[str, object]], assignments: d
             child_text(deputy, "ApellidoMaterno"),
         ]
         name = " ".join(part for part in names if part)
-        assignment = assignments.get(normalized(name))
+        assignment = resolve_assignment(name, assignments)
         if not assignment:
             unmatched.append(name)
             continue
