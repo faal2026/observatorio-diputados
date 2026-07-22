@@ -1,0 +1,88 @@
+{
+  "district": 5,
+  "region": "Coquimbo",
+  "deputies_count": 7,
+  "deputies": [
+    {
+      "id": "1250",
+      "name": "Bernardo Salinas Maya"
+    },
+    {
+      "id": "1177",
+      "name": "Carolina Tello Rojas"
+    },
+    {
+      "id": "1142",
+      "name": "Daniel Manouchehri Lobos"
+    },
+    {
+      "id": "1255",
+      "name": "Eileen Urqueta Rojas"
+    },
+    {
+      "id": "1212",
+      "name": "Erich Grohs Marín"
+    },
+    {
+      "id": "1174",
+      "name": "Marco Antonio Sulantay Olivares"
+    },
+    {
+      "id": "1117",
+      "name": "Nathalie Castillo Rojas"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 21,
+        "2026-03": 2,
+        "2026-04": 21,
+        "2026-05": 13,
+        "2026-06": 31,
+        "2026-07": 8
+      },
+      "total": 96,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 2.2857142857142856
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 4,
+        "2026-03": 25,
+        "2026-04": 14,
+        "2026-05": 10,
+        "2026-06": 6,
+        "2026-07": 8
+      },
+      "total": 67,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.5952380952380953
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 4,
+        "2026-04": 4,
+        "2026-05": 11,
+        "2026-06": 10,
+        "2026-07": 2
+      },
+      "total": 31,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.8857142857142857,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 57673637
+  }
+}

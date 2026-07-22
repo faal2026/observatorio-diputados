@@ -1,0 +1,80 @@
+{
+  "district": 19,
+  "region": "Ñuble",
+  "deputies_count": 5,
+  "deputies": [
+    {
+      "id": "1197",
+      "name": "Carlos Chandía Alarcón"
+    },
+    {
+      "id": "1143",
+      "name": "Cristóbal Martínez Ramírez"
+    },
+    {
+      "id": "1116",
+      "name": "Felipe Camaño Cárdenas"
+    },
+    {
+      "id": "1204",
+      "name": "Francisco Crisóstomo Llanos"
+    },
+    {
+      "id": "1119",
+      "name": "Sara Concha Smith"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 1,
+        "2026-04": 14,
+        "2026-05": 11,
+        "2026-06": 28,
+        "2026-07": 4
+      },
+      "total": 59,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.9666666666666666
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 24,
+        "2026-04": 6,
+        "2026-05": 18,
+        "2026-06": 9,
+        "2026-07": 1
+      },
+      "total": 59,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.9666666666666666
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 4,
+        "2026-04": 3,
+        "2026-05": 5,
+        "2026-06": 11,
+        "2026-07": 1
+      },
+      "total": 24,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.96,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 41195455
+  }
+}

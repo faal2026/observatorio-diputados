@@ -1,0 +1,78 @@
+{
+  "district": 4,
+  "region": "Atacama",
+  "deputies_count": 5,
+  "deputies": [
+    {
+      "id": "1175",
+      "name": "Cristián Tapia Ramos"
+    },
+    {
+      "id": "1254",
+      "name": "Ignacio Urcullú Clèment-Lund"
+    },
+    {
+      "id": "872",
+      "name": "Jaime Mulet Martínez"
+    },
+    {
+      "id": "1073",
+      "name": "Juan Santana Castillo"
+    },
+    {
+      "id": "1236",
+      "name": "Paula Olmos Contreras"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 4,
+        "2026-03": 2,
+        "2026-04": 11,
+        "2026-05": 14,
+        "2026-06": 17
+      },
+      "total": 48,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 1.92
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 2,
+        "2026-04": 3,
+        "2026-05": 10,
+        "2026-06": 3,
+        "2026-07": 3
+      },
+      "total": 22,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.7333333333333333
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-04": 1,
+        "2026-05": 3,
+        "2026-07": 1
+      },
+      "total": 6,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.3,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 41195455
+  }
+}

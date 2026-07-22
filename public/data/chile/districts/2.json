@@ -1,0 +1,67 @@
+{
+  "district": 2,
+  "region": "Tarapacá",
+  "deputies_count": 3,
+  "deputies": [
+    {
+      "id": "1195",
+      "name": "Carlos Carvajal Gallardo"
+    },
+    {
+      "id": "1231",
+      "name": "Ximena Naranjo Pinto"
+    },
+    {
+      "id": "1215",
+      "name": "Álvaro Jofré Cáceres"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 3,
+        "2026-04": 12,
+        "2026-05": 3,
+        "2026-06": 23,
+        "2026-07": 5
+      },
+      "total": 47,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 2.611111111111111
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 1,
+        "2026-04": 7,
+        "2026-05": 5,
+        "2026-06": 1
+      },
+      "total": 14,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 1.1666666666666667
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 1,
+        "2026-05": 4
+      },
+      "total": 5,
+      "months_with_records": 2,
+      "average_per_deputy_per_month": 0.8333333333333334,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 24717273
+  }
+}

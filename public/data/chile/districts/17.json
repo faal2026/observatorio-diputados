@@ -1,0 +1,82 @@
+{
+  "district": 17,
+  "region": "Maule",
+  "deputies_count": 7,
+  "deputies": [
+    {
+      "id": "1150",
+      "name": "Benjamín Moreno Bascur"
+    },
+    {
+      "id": "915",
+      "name": "Germán Verdugo Soto"
+    },
+    {
+      "id": "1258",
+      "name": "Guillermo Valdés Carmona"
+    },
+    {
+      "id": "1229",
+      "name": "Javier Muñoz Riquelme"
+    },
+    {
+      "id": "1132",
+      "name": "Jorge Guzmán Zepeda"
+    },
+    {
+      "id": "1196",
+      "name": "Priscilla Castillo Gerli"
+    },
+    {
+      "id": "1184",
+      "name": "Roberto Celedón Fernández"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-04": 10,
+        "2026-05": 7,
+        "2026-06": 18,
+        "2026-07": 5
+      },
+      "total": 40,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 1.4285714285714286
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-03": 2,
+        "2026-04": 4,
+        "2026-05": 9,
+        "2026-07": 3
+      },
+      "total": 20,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.5714285714285714
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-05": 4
+      },
+      "total": 6,
+      "months_with_records": 2,
+      "average_per_deputy_per_month": 0.42857142857142855,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 57673637
+  }
+}

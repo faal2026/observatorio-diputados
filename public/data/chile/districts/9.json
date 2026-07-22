@@ -1,0 +1,86 @@
+{
+  "district": 9,
+  "region": "Metropolitana de Santiago",
+  "deputies_count": 7,
+  "deputies": [
+    {
+      "id": "1012",
+      "name": "Boris Barrera Moreno"
+    },
+    {
+      "id": "1205",
+      "name": "Carlos Cuadrado Prats"
+    },
+    {
+      "id": "1260",
+      "name": "César Valenzuela Maass"
+    },
+    {
+      "id": "1065",
+      "name": "Guillermo Ramírez Diez"
+    },
+    {
+      "id": "1247",
+      "name": "Javiera Rodríguez Pascual"
+    },
+    {
+      "id": "1146",
+      "name": "José Carlos Meza Pereira"
+    },
+    {
+      "id": "1243",
+      "name": "Tamara Ramírez Ramírez"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 7,
+        "2026-03": 2,
+        "2026-04": 10,
+        "2026-05": 9,
+        "2026-06": 31,
+        "2026-07": 3
+      },
+      "total": 62,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.4761904761904763
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 21,
+        "2026-04": 4,
+        "2026-05": 9,
+        "2026-06": 7,
+        "2026-07": 4
+      },
+      "total": 45,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 1.2857142857142858
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 4,
+        "2026-05": 10,
+        "2026-06": 10,
+        "2026-07": 2
+      },
+      "total": 26,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.9285714285714286,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 57673637
+  }
+}

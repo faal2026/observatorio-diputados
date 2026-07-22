@@ -1,0 +1,92 @@
+{
+  "district": 20,
+  "region": "Biobío",
+  "deputies_count": 8,
+  "deputies": [
+    {
+      "id": "1054",
+      "name": "Francesca Muñoz González"
+    },
+    {
+      "id": "1246",
+      "name": "José Antonio Rivas Villalobos"
+    },
+    {
+      "id": "1157",
+      "name": "Marlene Pérez Cartes"
+    },
+    {
+      "id": "1193",
+      "name": "Patricio Briones Moller"
+    },
+    {
+      "id": "1198",
+      "name": "Paz Charpentier Rajcevich"
+    },
+    {
+      "id": "1102",
+      "name": "Roberto Arroyo Muñoz"
+    },
+    {
+      "id": "815",
+      "name": "Sergio Bobadilla Muñoz"
+    },
+    {
+      "id": "1238",
+      "name": "Álvaro Ortiz Vera"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 5,
+        "2026-03": 3,
+        "2026-04": 16,
+        "2026-05": 20,
+        "2026-06": 41,
+        "2026-07": 10
+      },
+      "total": 95,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.9791666666666667
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-03": 38,
+        "2026-04": 3,
+        "2026-05": 10,
+        "2026-06": 8,
+        "2026-07": 4
+      },
+      "total": 65,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.3541666666666667
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 8,
+        "2026-04": 6,
+        "2026-05": 9,
+        "2026-06": 19,
+        "2026-07": 3
+      },
+      "total": 45,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 1.125,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 65912728
+  }
+}

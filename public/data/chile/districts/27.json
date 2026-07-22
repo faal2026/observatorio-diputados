@@ -1,0 +1,67 @@
+{
+  "district": 27,
+  "region": "Aysén del General Carlos Ibáñez del Campo",
+  "deputies_count": 3,
+  "deputies": [
+    {
+      "id": "1257",
+      "name": "Alejandra Valdebenito Torres"
+    },
+    {
+      "id": "1222",
+      "name": "Andrea Macías Palma"
+    },
+    {
+      "id": "803",
+      "name": "René Alinco Bustos"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 1,
+        "2026-04": 8,
+        "2026-05": 6,
+        "2026-06": 6,
+        "2026-07": 1
+      },
+      "total": 23,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.2777777777777777
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-04": 2,
+        "2026-05": 1,
+        "2026-06": 4,
+        "2026-07": 2
+      },
+      "total": 9,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.75
+    },
+    "offices": {
+      "by_month": {
+        "2026-06": 1,
+        "2026-07": 1
+      },
+      "total": 2,
+      "months_with_records": 2,
+      "average_per_deputy_per_month": 0.3333333333333333,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 24717273
+  }
+}

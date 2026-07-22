@@ -1,0 +1,5 @@
+{
+  "retrieved_at": "2026-07-22T01:27:53.826907+00:00",
+  "url": "https://opendata.camara.cl/camaradiputados/WServices/WSProyectosAcuerdo.asmx/retornarProyectosAcuerdoXAnno?prmAnno=2026",
+  "payload": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ProyectosAcuerdosColeccion xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://opendata.camara.cl/camaradiputados/v1\" />"
+}

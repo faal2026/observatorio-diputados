@@ -1,0 +1,65 @@
+{
+  "district": 1,
+  "region": "Arica y Parinacota",
+  "deputies_count": 3,
+  "deputies": [
+    {
+      "id": "1208",
+      "name": "Jorge Díaz Ibarra"
+    },
+    {
+      "id": "1141",
+      "name": "Luis Malla Valenzuela"
+    },
+    {
+      "id": "1216",
+      "name": "Stephanie Jéldrez Ortiz"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 3,
+        "2026-04": 8,
+        "2026-05": 9,
+        "2026-06": 9,
+        "2026-07": 1
+      },
+      "total": 30,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 2.0
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 3,
+        "2026-05": 7,
+        "2026-06": 3,
+        "2026-07": 1
+      },
+      "total": 14,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 1.1666666666666667
+    },
+    "offices": {
+      "by_month": {
+        "2026-05": 3
+      },
+      "total": 3,
+      "months_with_records": 1,
+      "average_per_deputy_per_month": 1.0,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 24717273
+  }
+}

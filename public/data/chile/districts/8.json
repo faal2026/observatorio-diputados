@@ -1,0 +1,88 @@
+{
+  "district": 8,
+  "region": "Metropolitana de Santiago",
+  "deputies_count": 8,
+  "deputies": [
+    {
+      "id": "1165",
+      "name": "Agustín Romero Leiva"
+    },
+    {
+      "id": "1200",
+      "name": "Cristian Contreras Radovic"
+    },
+    {
+      "id": "1190",
+      "name": "Enrique Bassaletti Riess"
+    },
+    {
+      "id": "1210",
+      "name": "Gustavo Gatica Villarroel"
+    },
+    {
+      "id": "1188",
+      "name": "Marcos Barraza Gómez"
+    },
+    {
+      "id": "1234",
+      "name": "Mario Olavarría Rodríguez"
+    },
+    {
+      "id": "1217",
+      "name": "Pier Karlezi Hazleby"
+    },
+    {
+      "id": "1256",
+      "name": "Tatiana Urrutia Herrera"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 7,
+        "2026-03": 13,
+        "2026-04": 18,
+        "2026-05": 11,
+        "2026-06": 22,
+        "2026-07": 2
+      },
+      "total": 73,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.5208333333333333
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 4,
+        "2026-04": 9,
+        "2026-05": 6,
+        "2026-06": 5,
+        "2026-07": 5
+      },
+      "total": 29,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.725
+    },
+    "offices": {
+      "by_month": {
+        "2026-05": 6,
+        "2026-07": 1
+      },
+      "total": 7,
+      "months_with_records": 2,
+      "average_per_deputy_per_month": 0.4375,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 65912728
+  }
+}

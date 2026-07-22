@@ -1,0 +1,75 @@
+{
+  "district": 25,
+  "region": "Los Lagos",
+  "deputies_count": 4,
+  "deputies": [
+    {
+      "id": "1140",
+      "name": "Daniel Lilayu Vivanco"
+    },
+    {
+      "id": "1056",
+      "name": "Emilia Nuyado Ancapichun"
+    },
+    {
+      "id": "1105",
+      "name": "Héctor Barría Angulo"
+    },
+    {
+      "id": "1228",
+      "name": "Paulina Muñoz Minte"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 4,
+        "2026-03": 1,
+        "2026-04": 10,
+        "2026-05": 12,
+        "2026-06": 12,
+        "2026-07": 3
+      },
+      "total": 42,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.75
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 2,
+        "2026-03": 19,
+        "2026-04": 4,
+        "2026-05": 3,
+        "2026-06": 6,
+        "2026-07": 1
+      },
+      "total": 35,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.4583333333333333
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 5,
+        "2026-04": 3,
+        "2026-05": 6,
+        "2026-06": 10
+      },
+      "total": 24,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 1.5,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 32956364
+  }
+}

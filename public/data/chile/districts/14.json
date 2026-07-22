@@ -1,0 +1,81 @@
+{
+  "district": 14,
+  "region": "Metropolitana de Santiago",
+  "deputies_count": 6,
+  "deputies": [
+    {
+      "id": "1262",
+      "name": "Diego Vergara Rodríguez"
+    },
+    {
+      "id": "1186",
+      "name": "Ignacio Achurra Díaz"
+    },
+    {
+      "id": "1199",
+      "name": "Jaime Coloma Álamos"
+    },
+    {
+      "id": "1133",
+      "name": "Juan Irarrázaval Rossel"
+    },
+    {
+      "id": "1074",
+      "name": "Marisela Santibáñez Novoa"
+    },
+    {
+      "id": "1044",
+      "name": "Raúl Leiva Carvajal"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 3,
+        "2026-04": 8,
+        "2026-05": 8,
+        "2026-06": 22,
+        "2026-07": 5
+      },
+      "total": 46,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 1.5333333333333334
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 3,
+        "2026-04": 9,
+        "2026-05": 4,
+        "2026-06": 3,
+        "2026-07": 3
+      },
+      "total": 23,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.6388888888888888
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-05": 4,
+        "2026-07": 2
+      },
+      "total": 7,
+      "months_with_records": 3,
+      "average_per_deputy_per_month": 0.3888888888888889,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 49434546
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "district": 16,
+  "region": "Libertador General Bernardo O’Higgins",
+  "deputies_count": 4,
+  "deputies": [
+    {
+      "id": "1206",
+      "name": "Carolina Cucumides Calderón"
+    },
+    {
+      "id": "1114",
+      "name": "Félix Bugueño Sotelo"
+    },
+    {
+      "id": "1233",
+      "name": "Ricardo Neumann Bertín"
+    },
+    {
+      "id": "1203",
+      "name": "Sebastián Cristoffanini Jaraquemada"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-04": 4,
+        "2026-05": 8,
+        "2026-06": 16,
+        "2026-07": 4
+      },
+      "total": 32,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 2.0
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-03": 4,
+        "2026-04": 4,
+        "2026-05": 2,
+        "2026-06": 4,
+        "2026-07": 2
+      },
+      "total": 17,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 0.7083333333333334
+    },
+    "offices": {
+      "by_month": {
+        "2026-01": 1,
+        "2026-05": 1,
+        "2026-06": 1,
+        "2026-07": 1
+      },
+      "total": 4,
+      "months_with_records": 4,
+      "average_per_deputy_per_month": 0.25,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 32956364
+  }
+}

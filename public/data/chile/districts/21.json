@@ -1,0 +1,77 @@
+{
+  "district": 21,
+  "region": "Biobío",
+  "deputies_count": 5,
+  "deputies": [
+    {
+      "id": "1082",
+      "name": "Cristóbal Urruticoechea Ríos"
+    },
+    {
+      "id": "1183",
+      "name": "Flor Weisse Novoa"
+    },
+    {
+      "id": "1062",
+      "name": "Joanna Pérez Olea"
+    },
+    {
+      "id": "1192",
+      "name": "Lilian Betancurt Delgado"
+    },
+    {
+      "id": "1241",
+      "name": "Patricio Pinilla Valencia"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 4,
+        "2026-03": 1,
+        "2026-04": 12,
+        "2026-05": 5,
+        "2026-06": 26,
+        "2026-07": 5
+      },
+      "total": 53,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 1.7666666666666666
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 19,
+        "2026-04": 2,
+        "2026-05": 10,
+        "2026-06": 3,
+        "2026-07": 4
+      },
+      "total": 38,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 1.52
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 3,
+        "2026-05": 9,
+        "2026-06": 9
+      },
+      "total": 21,
+      "months_with_records": 3,
+      "average_per_deputy_per_month": 1.4,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 41195455
+  }
+}

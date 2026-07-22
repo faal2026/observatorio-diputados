@@ -1,0 +1,76 @@
+{
+  "district": 3,
+  "region": "Antofagasta",
+  "deputies_count": 5,
+  "deputies": [
+    {
+      "id": "1187",
+      "name": "Carlo Arqueros Pizarro"
+    },
+    {
+      "id": "1239",
+      "name": "Fabián Ossandón Briceño"
+    },
+    {
+      "id": "1099",
+      "name": "Jaime Araya Guerrero"
+    },
+    {
+      "id": "986",
+      "name": "Marcela Hernando Pérez"
+    },
+    {
+      "id": "1182",
+      "name": "Sebastián Videla Castillo"
+    }
+  ],
+  "activity": {
+    "motions": {
+      "by_month": {
+        "2026-01": 8,
+        "2026-03": 10,
+        "2026-04": 12,
+        "2026-05": 15,
+        "2026-06": 16,
+        "2026-07": 4
+      },
+      "total": 65,
+      "months_with_records": 6,
+      "average_per_deputy_per_month": 2.1666666666666665
+    },
+    "agreements": {
+      "by_month": {},
+      "total": 0,
+      "months_with_records": 0,
+      "average_per_deputy_per_month": null
+    },
+    "resolutions": {
+      "by_month": {
+        "2026-03": 4,
+        "2026-04": 2,
+        "2026-05": 7,
+        "2026-06": 5,
+        "2026-07": 4
+      },
+      "total": 22,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.88
+    },
+    "offices": {
+      "by_month": {
+        "2026-04": 1,
+        "2026-05": 5
+      },
+      "total": 6,
+      "months_with_records": 2,
+      "average_per_deputy_per_month": 0.6,
+      "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
+    }
+  },
+  "attendance": {
+    "average_percentage": 100.0
+  },
+  "diet": {
+    "monthly_gross_district_clp": 41195455
+  }
+}
