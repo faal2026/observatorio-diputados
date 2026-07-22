@@ -75,6 +75,8 @@ select:disabled { background: #f2f3f2; color: #9ca3aa; opacity: 1; }
 .national-summary-grid { background: var(--line); border: 1px solid var(--line); display: grid; gap: 1px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .national-summary-grid .metric-card { min-height: 135px; }
 .national-summary-note { color: var(--muted); font-size: .76rem; line-height: 1.48; margin: 12px 0 0; max-width: 760px; }
+.national-trend { margin-top: 28px; }
+.national-chart { min-height: 316px; }
 .filters { background: var(--panel); border: 1px solid var(--line); display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 18px; padding: 15px; }
 .filters select { width: 100%; }
 .profile-card { background: var(--panel); border: 1px solid var(--line); display: grid; gap: 28px; grid-template-columns: 1fr 1fr; padding: 22px; }
