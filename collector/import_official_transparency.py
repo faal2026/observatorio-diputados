@@ -54,7 +54,6 @@ CATEGORIES = {
     },
 }
 
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Importa exportaciones oficiales nacionales de transparencia.")
     parser.add_argument("--directory", type=Path, default=IMPORT_DIR, help="Directorio de archivos oficiales.")
@@ -75,6 +74,14 @@ def normalized(value: str) -> str:
     text = unicodedata.normalize("NFD", str(value))
     text = "".join(char for char in text if unicodedata.category(char) != "Mn")
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", text.lower())).strip()
+
+
+# Erratas verificadas en los directorios oficiales. Cada alias apunta a la
+# persona de la nómina vigente; no se realizan aproximaciones genéricas para
+# evitar atribuir gastos a un diputado distinto.
+VERIFIED_DEPUTY_ALIASES = {
+    normalized("Zamorano P., Fernado"): "Fernando Zamorano Peralta",
+}
 
 
 def clean_cell(value: str) -> str:
@@ -125,6 +132,11 @@ def rows_from_html(raw: bytes) -> list[list[str]]:
     text = raw.decode("utf-8", errors="replace")
     if text.count("�") > 10:
         text = raw.decode("latin-1", errors="replace")
+    # Los archivos .xls exportados por la Cámara son HTML y contienen celdas
+    # mal formadas como ``<td/>Texto</td>``. En un navegador se toleran, pero
+    # HTMLParser interpreta ese ``td`` como una celda ya cerrada. Normalizarlo
+    # permite conservar el contenido y sus encabezados oficiales.
+    text = re.sub(r"<(td|th)\s*/>", r"<\1>", text, flags=re.IGNORECASE)
     parser = TableParser()
     parser.feed(text)
     return parser.rows
@@ -223,6 +235,12 @@ def deputy_id(source_name: str, deputies: list[dict[str, Any]]) -> str | None:
     source = normalized(source_name)
     if not source:
         return None
+    alias = VERIFIED_DEPUTY_ALIASES.get(source)
+    if alias:
+        alias_normalized = normalized(alias)
+        match = next((str(deputy["id"]) for deputy in deputies if normalized(str(deputy["name"])) == alias_normalized), None)
+        if match:
+            return match
     surname_part, _, given_part = source.partition(" ")
     # La exportación de la Cámara usa normalmente "Apellido I., Nombre".
     if "," in source_name:
