@@ -1,13 +1,14 @@
 # Observatorio Parlamentario
 
-Observatorio de transparencia pública de la Cámara de Diputadas y Diputados de Chile. La nómina y el mapa nacional se actualizan desde Datos Abiertos; el Distrito 8 es el primer detalle legislativo validado.
+Observatorio de transparencia pública de la Cámara de Diputadas y Diputados de Chile. La nómina, la actividad legislativa y la asistencia cubren las 155 fichas nacionales; el Distrito 8 conserva el primer piloto de transparencia validado.
 
 ## Alcance inicial
 
 - Identidad territorial, comisiones, actividad legislativa, asistencia y oficios.
 - Transparencia mensual: dieta, gastos operacionales, asesorías externas, pasajes y personal de apoyo.
 - Mapa horizontal de las 16 regiones, filtros nacionales y ficha por diputado o diputada.
-- Tablero distrital y ficha detallada validada inicialmente para Distrito 8.
+- Tablero nacional, mapa territorial interactivo y ficha detallada para las 155 diputadas y diputados.
+- Transparencia mensual se incorpora sólo cuando la Cámara publica una serie comparable; mientras tanto se muestra como pendiente, nunca como $0.
 
 ## Criterios de datos
 

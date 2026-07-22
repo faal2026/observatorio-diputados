@@ -158,6 +158,7 @@ export default function Home() {
   const [metric, setMetric] = useState<Metric>("mociones");
   const [nationalMetric, setNationalMetric] = useState<ActivityName>("motions");
   const [region, setRegion] = useState("");
+  const [hoverRegion, setHoverRegion] = useState("");
   const [district, setDistrict] = useState("");
   const [deputy, setDeputy] = useState("");
   const [deputyRecord, setDeputyRecord] = useState<DeputyRecord | null>(null);
@@ -176,6 +177,7 @@ export default function Home() {
     region: "Metropolitana de Santiago",
   })), [national.deputies, summary.deputies]);
   const selectedRegion = nationalRegions.find((item) => item.code === region);
+  const mapRegion = nationalRegions.find((item) => item.code === hoverRegion) ?? selectedRegion;
   const districtOptions = selectedRegion?.districts ?? [];
   const availableDeputies = nationalDeputies.filter((item) => item.region_code === region && item.district === Number(district));
   const selectedDeputy = availableDeputies.find((item) => item.name === deputy);
@@ -241,8 +243,8 @@ export default function Home() {
   const nationalTrend = nationalDetails.activity?.[nationalMetric];
   const nationalTrendSeries = Object.entries(nationalTrend?.by_month ?? {});
   const nationalTrendMaximum = Math.max(...nationalTrendSeries.map(([, value]) => value), 1);
-  const selectedRegionDetails = (nationalDetails.districts ?? []).filter((item) => item.region === selectedRegion?.name);
-  const regionalDetailAvailable = selectedRegion != null && selectedRegionDetails.length === selectedRegion.districts.length;
+  const selectedRegionDetails = (nationalDetails.districts ?? []).filter((item) => item.region === mapRegion?.name);
+  const regionalDetailAvailable = mapRegion != null && selectedRegionDetails.length === mapRegion.districts.length;
   const regionalAttendanceRecords = selectedRegionDetails.filter((item) => item.attendance?.average_percentage != null);
   const regionalAttendanceWeight = regionalAttendanceRecords.reduce((sum, item) => sum + item.deputies_count, 0);
   const regionalAttendance = regionalAttendanceWeight ? regionalAttendanceRecords.reduce((sum, item) => sum + (item.attendance?.average_percentage ?? 0) * item.deputies_count, 0) / regionalAttendanceWeight : null;
@@ -258,19 +260,19 @@ export default function Home() {
     <main>
       <header className="site-header">
         <div><p className="eyebrow">Observatorio · Datos públicos</p><h1>Observatorio<br />Parlamentario</h1></div>
-        <p className="intro">Una lectura nacional de la Cámara de Diputadas y Diputados. El mapa y la nómina cubren Chile; el Distrito 8 mantiene el primer detalle legislativo validado.</p>
+        <p className="intro">Una lectura nacional de la Cámara de Diputadas y Diputados. Reúne nómina, actividad legislativa, asistencia y dieta de los 155 representantes en ejercicio.</p>
       </header>
 
       <section className="status" aria-label="Estado del piloto">
         <span className="status-dot" aria-hidden="true" />
         <strong>{national.availability === "national_index_complete" ? `${decimal.format(national.deputies_count ?? 0)} diputados(as) en el índice nacional` : "Índice nacional preparado para su primera actualización"}</strong>
-        <span>Detalle legislativo validado en Distrito 8 · última recolección: {collectionDateFormatter.format(new Date(summary.retrieved_at))}. Los meses sin publicación se mostrarán como tales; nunca como $0.</span>
+        <span>{nationalDetails.deputies_with_details === 155 ? "155 fichas legislativas consolidadas" : "Detalle legislativo en consolidación"} · última recolección del piloto: {collectionDateFormatter.format(new Date(summary.retrieved_at))}. Los meses sin publicación se mostrarán como tales; nunca como $0.</span>
       </section>
 
       <section className="national-summary" aria-labelledby="national-summary-title">
         <div className="section-heading">
           <div><p className="eyebrow">Panorama nacional</p><h2 id="national-summary-title">Chile en cifras</h2></div>
-          <span className="coverage-note">Datos consolidados de nómina y dieta mensual</span>
+          <span className="coverage-note">Nómina, dieta, asistencia y actividad consolidadas</span>
         </div>
         <div className="national-summary-grid">
           <MetricCard label="Diputados(as) en ejercicio" value={national.deputies_count == null ? "—" : decimal.format(national.deputies_count)} detail={`${decimal.format(nationalRegions.length)} regiones · 28 distritos electorales`} />
@@ -280,7 +282,7 @@ export default function Home() {
           <MetricCard label="Dieta bruta nacional" value={national.deputies_count == null ? "—" : clp(nationalDietTotal)} detail="Total mensual de las 155 dietas brutas" />
           <MetricCard label="Dieta bruta por diputado(a)" value={national.diet_monthly_clp == null ? "—" : clp(national.diet_monthly_clp)} detail="Promedio y mediana mensual: mismo monto vigente" />
         </div>
-        <p className="national-summary-note">Gastos operacionales, asesorías externas, pasajes y personal de apoyo se sumarán región por región cuando exista una serie oficial comparable. Hasta entonces se muestran como pendientes, nunca como $0.</p>
+        <p className="national-summary-note">Gastos operacionales, asesorías externas, pasajes y personal de apoyo sólo se sumarán cuando la Cámara publique una serie mensual comparable. Hasta entonces cada mes se muestra como pendiente, nunca como $0.</p>
       </section>
 
       <section className="national-trend" aria-labelledby="national-trend-title">
@@ -324,13 +326,13 @@ export default function Home() {
       </section>
 
       <section className="national-view" aria-labelledby="national-title">
-        <div className="section-heading"><div><p className="eyebrow">Vista territorial</p><h2 id="national-title">Chile, región por región</h2></div><span className="coverage-note">Haz clic en una región para preparar el filtro.</span></div>
+        <div className="section-heading"><div><p className="eyebrow">Vista territorial</p><h2 id="national-title">Chile, región por región</h2></div><span className="coverage-note">Pasa sobre una región para ver su resumen; haz clic para preparar el filtro.</span></div>
         <div className="national-map-layout">
           <div className="national-map" role="list" aria-label="Mapa horizontal de regiones de Chile">
-            {nationalRegions.map((item, index) => <button key={item.code} type="button" role="listitem" className={`region-tile ${region === item.code ? "is-selected" : ""}`} onClick={() => { setRegion(item.code); setDistrict(""); setDeputy(""); }} title={`${item.name}: ${item.deputies_count == null ? "nómina en actualización" : `${item.deputies_count} diputados(as)`}`}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.name}</strong><small>{item.deputies_count == null ? "Nómina en actualización" : `${decimal.format(item.deputies_count)} diputados(as)`}</small></button>)}
+            {nationalRegions.map((item, index) => <button key={item.code} type="button" role="listitem" className={`region-tile ${region === item.code ? "is-selected" : ""} ${mapRegion?.code === item.code ? "is-previewed" : ""}`} onMouseEnter={() => setHoverRegion(item.code)} onMouseLeave={() => setHoverRegion("")} onFocus={() => setHoverRegion(item.code)} onBlur={() => setHoverRegion("")} onClick={() => { setRegion(item.code); setDistrict(""); setDeputy(""); }} title={`${item.name}: ${item.deputies_count == null ? "nómina en actualización" : `${item.deputies_count} diputados(as)`}`}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.name}</strong><small>{item.deputies_count == null ? "Nómina en actualización" : `${decimal.format(item.deputies_count)} diputados(as)`}</small></button>)}
           </div>
           <aside className="region-panel" aria-live="polite">
-            {selectedRegion ? <><p className="eyebrow">Región seleccionada</p><h3>{selectedRegion.name}</h3><dl><div><dt>Distritos</dt><dd>{selectedRegion.districts.map((item) => `D${item}`).join(" · ")}</dd></div><div><dt>Diputados(as)</dt><dd>{selectedRegion.deputies_count == null ? "Actualizando nómina" : decimal.format(selectedRegion.deputies_count)}</dd></div><div><dt>Dieta bruta mensual</dt><dd>{selectedRegion.diet_monthly_clp != null ? clp(selectedRegion.diet_monthly_clp) : "Disponible al actualizar la nómina"}</dd></div><div><dt>Asistencia promedio</dt><dd>{regionalDetailAvailable ? percentage(regionalAttendance) : "Fichas nacionales en carga"}</dd></div><div><dt>Mociones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("motions")) : "Fichas nacionales en carga"}</dd></div><div><dt>Resoluciones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("resolutions")) : "Fichas nacionales en carga"}</dd></div><div><dt>Gastos y transparencia</dt><dd>{selectedRegion.code === "metropolitana" ? "Piloto detallado en Distrito 8" : "Serie regional pendiente"}</dd></div></dl></> : <><p className="eyebrow">Cobertura nacional</p><h3>{national.deputies_count == null ? "Nómina en actualización" : `${decimal.format(national.deputies_count)} diputados(as)`}</h3><p>Selecciona una región en el mapa para ver sus distritos, representantes, dieta mensual y actividad legislativa. La transparencia se incorporará por zonas, con trazabilidad de cada fuente.</p></>}
+            {mapRegion ? <><p className="eyebrow">{hoverRegion ? "Vista previa regional" : "Región seleccionada"}</p><h3>{mapRegion.name}</h3><dl><div><dt>Distritos</dt><dd>{mapRegion.districts.map((item) => `D${item}`).join(" · ")}</dd></div><div><dt>Diputados(as)</dt><dd>{mapRegion.deputies_count == null ? "Actualizando nómina" : decimal.format(mapRegion.deputies_count)}</dd></div><div><dt>Dieta bruta mensual</dt><dd>{mapRegion.diet_monthly_clp != null ? clp(mapRegion.diet_monthly_clp) : "Disponible al actualizar la nómina"}</dd></div><div><dt>Asistencia promedio</dt><dd>{regionalDetailAvailable ? percentage(regionalAttendance) : "Sin registros clasificados"}</dd></div><div><dt>Mociones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("motions")) : "Sin serie publicada"}</dd></div><div><dt>Resoluciones del período</dt><dd>{regionalDetailAvailable ? decimal.format(regionalTotal("resolutions")) : "Sin serie publicada"}</dd></div><div><dt>Gastos y transparencia</dt><dd>Sin publicación mensual comparable</dd></div></dl></> : <><p className="eyebrow">Cobertura nacional</p><h3>{national.deputies_count == null ? "Nómina en actualización" : `${decimal.format(national.deputies_count)} diputados(as)`}</h3><p>Pasa sobre una región para ver sus distritos, representantes, dieta mensual y actividad legislativa. Haz clic para cargarla en el filtro individual.</p></>}
           </aside>
         </div>
       </section>

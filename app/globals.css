@@ -56,11 +56,12 @@ select:disabled { background: #f2f3f2; color: #9ca3aa; opacity: 1; }
 .chart-axis b em { color: #9eb9d9; display: block; font-size: .54rem; font-style: normal; font-weight: 600; letter-spacing: .06em; margin-top: 1px; }
 
 .national-map-layout { background: var(--panel); border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(250px, .55fr); }
-.national-map { display: grid; gap: 1px; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--line); padding: 1px; }
-.region-tile { appearance: none; background: #fff; border: 0; color: var(--ink); cursor: pointer; display: flex; flex-direction: column; min-height: 102px; padding: 13px; text-align: left; transition: background .16s ease, color .16s ease; }
+.national-map { display: grid; gap: 1px; grid-template-columns: repeat(8, minmax(0, 1fr)); background: var(--line); padding: 1px; }
+.region-tile { appearance: none; background: #fff; border: 0; color: var(--ink); cursor: pointer; display: flex; flex-direction: column; min-height: 94px; padding: 12px; text-align: left; transition: background .16s ease, color .16s ease; }
 .region-tile:hover, .region-tile:focus-visible, .region-tile.is-selected { background: var(--accent); color: #fff; outline: 0; }
+.region-tile.is-previewed:not(.is-selected) { background: var(--accent-soft); }
 .region-tile > span { color: var(--accent); font-size: .62rem; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: .08em; margin-bottom: auto; }
-.region-tile strong { font-size: .82rem; letter-spacing: -.02em; line-height: 1.14; }
+.region-tile strong { font-size: .74rem; letter-spacing: -.02em; line-height: 1.14; }
 .region-tile small { color: var(--muted); font-size: .65rem; line-height: 1.25; margin-top: 8px; }
 .region-tile:hover > span, .region-tile:hover small, .region-tile:focus-visible > span, .region-tile:focus-visible small, .region-tile.is-selected > span, .region-tile.is-selected small { color: #d9e8fb; }
 .region-panel { background: #f0f4fa; padding: 24px; }
@@ -106,7 +107,7 @@ td[colspan] { text-align: center; }
   .site-header, .dashboard-grid, .national-map-layout, .profile-card { grid-template-columns: 1fr; }
   .site-header { align-items: start; gap: 18px; }
   .summary-grid, .national-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .national-map { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .national-map { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 @media (max-width: 560px) {
