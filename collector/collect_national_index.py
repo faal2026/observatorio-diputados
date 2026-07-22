@@ -88,7 +88,7 @@ def collect_district_rosters(year: int) -> dict[str, tuple[int, str]]:
             source_url = DISTRICT_REPORT_URL.format(year=year, district=district)
             for name in parse_district_deputies(future.result(), district):
                 key = normalized(name)
-                if key in assignments:
+                if key in assignments and assignments[key][0] != district:
                     raise RuntimeError(f"La nómina BCN repite a {name} en más de un distrito.")
                 assignments[key] = (district, source_url)
     return assignments
