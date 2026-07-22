@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "retrieved_at": "2026-07-22T00:49:50.817195+00:00",
+  "retrieved_at": "2026-07-22T01:07:16.879133+00:00",
   "availability": "national_index_complete",
   "source_url": "https://opendata.camara.cl/camaradiputados/WServices/WSDiputado.asmx/retornarDiputadosPeriodoActual",
   "deputies_count": 155,
