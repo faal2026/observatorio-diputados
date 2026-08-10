@@ -17,7 +17,7 @@
         "true": 3
       },
       "2026-07": {
-        "true": 2
+        "true": 6
       }
     },
     "agreements_by_month_and_state": {},
@@ -41,13 +41,13 @@
     "Seguridad Ciudadana"
   ],
   "attendance": {
-    "sessions_recorded": 49,
-    "present": 49,
+    "sessions_recorded": 55,
+    "present": 55,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 49
+      "Asiste": 55
     }
   },
   "transparency": {
@@ -96,7 +96,7 @@
       "metadata": {
         "availability": "not_published",
         "label": "Asesorías externas",
-        "source_url": "https://www.camara.cl/diputados/detalle/asesoriasexternas.aspx?prmId=1190"
+        "source_url": "https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1190"
       }
     },
     "flights": {
@@ -115,5 +115,5 @@
     },
     "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-07-21T23:57:53.962495+00:00"
+  "retrieved_at": "2026-08-10T17:32:05.025555+00:00"
 }

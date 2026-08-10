@@ -27,12 +27,15 @@
       },
       "2026-06": {
         "true": 5
+      },
+      "2026-07": {
+        "true": 2
       }
     },
     "agreements_by_month_and_state": {},
     "resolutions_by_month_and_state": {
       "2026-03": {
-        "En trámite": 2
+        "Aprobado": 2
       },
       "2026-04": {
         "En trámite": 4
@@ -54,13 +57,13 @@
     "Vivienda, Desarrollo Urbano y Bienes Nacionales"
   ],
   "attendance": {
-    "sessions_recorded": 49,
-    "present": 49,
+    "sessions_recorded": 55,
+    "present": 55,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 47,
+      "Asiste": 53,
       "No Asiste": 2
     }
   },
@@ -110,7 +113,7 @@
       "metadata": {
         "availability": "not_published",
         "label": "Asesorías externas",
-        "source_url": "https://www.camara.cl/diputados/detalle/asesoriasexternas.aspx?prmId=1217"
+        "source_url": "https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1217"
       }
     },
     "flights": {
@@ -129,5 +132,5 @@
     },
     "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-07-21T23:57:53.962495+00:00"
+  "retrieved_at": "2026-08-10T17:32:05.025555+00:00"
 }
