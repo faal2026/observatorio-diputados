@@ -31,11 +31,13 @@
         "2026-03": 2,
         "2026-04": 11,
         "2026-05": 14,
-        "2026-06": 17
+        "2026-06": 17,
+        "2026-07": 10,
+        "2026-08": 5
       },
-      "total": 48,
-      "months_with_records": 5,
-      "average_per_deputy_per_month": 1.92
+      "total": 63,
+      "months_with_records": 7,
+      "average_per_deputy_per_month": 1.8
     },
     "agreements": {
       "by_month": {},

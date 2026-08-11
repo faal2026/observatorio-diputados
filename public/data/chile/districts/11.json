@@ -36,11 +36,12 @@
         "2026-04": 2,
         "2026-05": 11,
         "2026-06": 32,
-        "2026-07": 11
+        "2026-07": 20,
+        "2026-08": 3
       },
-      "total": 66,
-      "months_with_records": 6,
-      "average_per_deputy_per_month": 1.8333333333333333
+      "total": 78,
+      "months_with_records": 7,
+      "average_per_deputy_per_month": 1.8571428571428572
     },
     "agreements": {
       "by_month": {},
@@ -54,11 +55,11 @@
         "2026-04": 4,
         "2026-05": 11,
         "2026-06": 7,
-        "2026-07": 2
+        "2026-07": 3
       },
-      "total": 38,
+      "total": 39,
       "months_with_records": 5,
-      "average_per_deputy_per_month": 1.2666666666666666
+      "average_per_deputy_per_month": 1.3
     },
     "offices": {
       "by_month": {
