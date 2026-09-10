@@ -30,6 +30,9 @@
       },
       "2026-07": {
         "true": 3
+      },
+      "2026-08": {
+        "true": 3
       }
     },
     "agreements_by_month_and_state": {},
@@ -39,44 +42,51 @@
       },
       "2026-07": {
         "En trámite": 2
+      },
+      "2026-08": {
+        "Aprobado": 1
+      },
+      "2026-09": {
+        "Rechazado": 1
       }
     },
-    "offices_by_month": {}
+    "offices_by_month": {
+      "2026-09": 1
+    }
   },
   "commissions": [
     "Desarrollo Social, Superación de la Pobreza y Planificación",
     "Medio Ambiente y Recursos Naturales"
   ],
   "attendance": {
-    "sessions_recorded": 55,
-    "present": 55,
+    "sessions_recorded": 69,
+    "present": 69,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 55
+      "Asiste": 69
     }
   },
   "transparency": {
-    "availability": "published_snapshot",
+    "availability": "published_contract_directory",
     "personnel_support": {
-      "contracts_count": 7,
       "by_month": {
-        "2026-03": 13260738,
-        "2026-04": 13260738,
-        "2026-05": 13260738,
-        "2026-06": 13260738,
-        "2026-07": 10460738
-      }
+        "2026-03": 12460738,
+        "2026-04": 12460738,
+        "2026-05": 12460738,
+        "2026-06": 12460738,
+        "2026-07": 12460738,
+        "2026-08": 12460738,
+        "2026-09": 12460738
+      },
+      "contracts_count": 7
     },
     "personnel_support_metadata": {
-      "availability": "published_snapshot",
+      "availability": "published_contract_directory",
       "label": "Remuneración mensual de contratos vigentes de personal de apoyo",
       "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
-      "snapshot_retrieved_at": "2026-07-21",
-      "coverage": "2026-03 a 2026-07",
-      "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
-      "methodology": "Respaldo trazable de la publicación oficial; suma remuneraciones de contratos vigentes y no equivale a gasto rendido."
+      "methodology": "Suma de remuneraciones mensuales publicadas para contratos con vigencia en cada mes; no equivale a gasto rendido."
     },
     "operational_expenses": {
       "by_month": {},
@@ -120,7 +130,7 @@
         "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1210"
       }
     },
-    "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
+    "reason": null
   },
-  "retrieved_at": "2026-08-10T17:32:05.025555+00:00"
+  "retrieved_at": "2026-09-10T14:30:49.579376+00:00"
 }
