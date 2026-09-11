@@ -33,11 +33,11 @@
         "2026-05": 14,
         "2026-06": 17,
         "2026-07": 10,
-        "2026-08": 5
+        "2026-08": 13
       },
-      "total": 63,
+      "total": 71,
       "months_with_records": 7,
-      "average_per_deputy_per_month": 1.8
+      "average_per_deputy_per_month": 2.0285714285714285
     },
     "agreements": {
       "by_month": {},
@@ -52,22 +52,25 @@
         "2026-04": 3,
         "2026-05": 10,
         "2026-06": 3,
-        "2026-07": 3
+        "2026-07": 3,
+        "2026-08": 4,
+        "2026-09": 2
       },
-      "total": 22,
-      "months_with_records": 6,
-      "average_per_deputy_per_month": 0.7333333333333333
+      "total": 28,
+      "months_with_records": 8,
+      "average_per_deputy_per_month": 0.7
     },
     "offices": {
       "by_month": {
         "2026-01": 1,
         "2026-04": 1,
         "2026-05": 3,
-        "2026-07": 1
+        "2026-07": 1,
+        "2026-08": 2
       },
-      "total": 6,
-      "months_with_records": 4,
-      "average_per_deputy_per_month": 0.3,
+      "total": 8,
+      "months_with_records": 5,
+      "average_per_deputy_per_month": 0.32,
       "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
     }
   },

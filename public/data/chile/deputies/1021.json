@@ -24,7 +24,7 @@
         "true": 1
       },
       "2026-08": {
-        "true": 1
+        "true": 2
       }
     },
     "agreements_by_month_and_state": {},
@@ -46,14 +46,14 @@
     "Salud"
   ],
   "attendance": {
-    "sessions_recorded": 75,
-    "present": 75,
+    "sessions_recorded": 87,
+    "present": 87,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 68,
-      "No Asiste": 7
+      "Asiste": 75,
+      "No Asiste": 12
     }
   },
   "transparency": {
@@ -110,5 +110,5 @@
       "reason": "La serie nacional comparable aún no ha sido publicada en una fuente automatizable."
     }
   },
-  "retrieved_at": "2026-08-12T20:05:35.767710+00:00"
+  "retrieved_at": "2026-09-11T16:46:11.653015+00:00"
 }

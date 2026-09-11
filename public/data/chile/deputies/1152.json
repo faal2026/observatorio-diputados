@@ -24,7 +24,7 @@
         "true": 2
       },
       "2026-08": {
-        "true": 1
+        "true": 3
       }
     },
     "agreements_by_month_and_state": {},
@@ -33,14 +33,14 @@
   },
   "commissions": [],
   "attendance": {
-    "sessions_recorded": 75,
-    "present": 75,
+    "sessions_recorded": 87,
+    "present": 87,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 57,
-      "No Asiste": 18
+      "Asiste": 68,
+      "No Asiste": 19
     }
   },
   "transparency": {
@@ -97,5 +97,5 @@
       "reason": "La serie nacional comparable aún no ha sido publicada en una fuente automatizable."
     }
   },
-  "retrieved_at": "2026-08-12T20:05:35.792212+00:00"
+  "retrieved_at": "2026-09-11T16:46:11.653015+00:00"
 }
