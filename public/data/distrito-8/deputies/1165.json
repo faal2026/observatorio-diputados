@@ -30,43 +30,50 @@
       },
       "2026-08": {
         "En trámite": 1
+      },
+      "2026-09": {
+        "En trámite": 1,
+        "Aprobado": 1
       }
     },
-    "offices_by_month": {}
+    "offices_by_month": {
+      "2026-09": 1
+    }
   },
   "commissions": [
     "Salud"
   ],
   "attendance": {
-    "sessions_recorded": 87,
-    "present": 87,
+    "sessions_recorded": 98,
+    "present": 98,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 85,
-      "No Asiste": 2
+      "Asiste": 92,
+      "No Asiste": 6
     }
   },
   "transparency": {
-    "availability": "published_contract_directory",
+    "availability": "published_snapshot",
     "personnel_support": {
+      "contracts_count": 7,
       "by_month": {
         "2026-03": 8728545,
         "2026-04": 8728545,
         "2026-05": 8728545,
         "2026-06": 9598545,
-        "2026-07": 9598545,
-        "2026-08": 9598545,
-        "2026-09": 9598545
-      },
-      "contracts_count": 7
+        "2026-07": 9598545
+      }
     },
     "personnel_support_metadata": {
-      "availability": "published_contract_directory",
+      "availability": "published_snapshot",
       "label": "Remuneración mensual de contratos vigentes de personal de apoyo",
       "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
-      "methodology": "Suma de remuneraciones mensuales publicadas para contratos con vigencia en cada mes; no equivale a gasto rendido."
+      "snapshot_retrieved_at": "2026-07-21",
+      "coverage": "2026-03 a 2026-07",
+      "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
+      "methodology": "Respaldo trazable de la publicación oficial; suma remuneraciones de contratos vigentes y no equivale a gasto rendido."
     },
     "operational_expenses": {
       "by_month": {},
@@ -110,7 +117,7 @@
         "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1165"
       }
     },
-    "reason": null
+    "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-09-10T14:30:49.579376+00:00"
+  "retrieved_at": "2026-10-10T18:40:28.966842+00:00"
 }

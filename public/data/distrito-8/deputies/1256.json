@@ -23,7 +23,10 @@
         "true": 3
       },
       "2026-08": {
-        "true": 1
+        "true": 2
+      },
+      "2026-09": {
+        "true": 4
       }
     },
     "agreements_by_month_and_state": {},
@@ -33,8 +36,7 @@
         "Rechazado": 1
       },
       "2026-04": {
-        "En trámite": 1,
-        "Aprobado": 2
+        "Aprobado": 3
       },
       "2026-05": {
         "Aprobado": 1
@@ -43,12 +45,15 @@
         "En trámite": 1
       },
       "2026-09": {
-        "En trámite": 1
+        "Rechazado": 1,
+        "Retirado": 1,
+        "Aprobado": 1
       }
     },
     "offices_by_month": {
       "2026-05": 2,
-      "2026-07": 1
+      "2026-07": 1,
+      "2026-09": 1
     }
   },
   "commissions": [
@@ -57,35 +62,36 @@
     "De Personas Mayores y Discapacidad"
   ],
   "attendance": {
-    "sessions_recorded": 69,
-    "present": 69,
+    "sessions_recorded": 80,
+    "present": 80,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 65,
+      "Asiste": 76,
       "No Asiste": 4
     }
   },
   "transparency": {
-    "availability": "published_contract_directory",
+    "availability": "published_snapshot",
     "personnel_support": {
+      "contracts_count": 7,
       "by_month": {
         "2026-03": 10900000,
         "2026-04": 10900000,
         "2026-05": 10900000,
         "2026-06": 10900000,
-        "2026-07": 10900000,
-        "2026-08": 10900000,
-        "2026-09": 10900000
-      },
-      "contracts_count": 7
+        "2026-07": 10900000
+      }
     },
     "personnel_support_metadata": {
-      "availability": "published_contract_directory",
+      "availability": "published_snapshot",
       "label": "Remuneración mensual de contratos vigentes de personal de apoyo",
       "source_url": "https://www.camara.cl/transparencia/personalapoyogral.aspx",
-      "methodology": "Suma de remuneraciones mensuales publicadas para contratos con vigencia en cada mes; no equivale a gasto rendido."
+      "snapshot_retrieved_at": "2026-07-21",
+      "coverage": "2026-03 a 2026-07",
+      "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx",
+      "methodology": "Respaldo trazable de la publicación oficial; suma remuneraciones de contratos vigentes y no equivale a gasto rendido."
     },
     "operational_expenses": {
       "by_month": {},
@@ -129,7 +135,7 @@
         "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1256"
       }
     },
-    "reason": null
+    "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-09-10T14:30:49.579376+00:00"
+  "retrieved_at": "2026-10-10T18:40:28.966842+00:00"
 }
