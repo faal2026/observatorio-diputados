@@ -34,6 +34,9 @@
       "2026-09": {
         "En trámite": 1,
         "Aprobado": 1
+      },
+      "2026-10": {
+        "En trámite": 1
       }
     },
     "offices_by_month": {
@@ -44,14 +47,14 @@
     "Salud"
   ],
   "attendance": {
-    "sessions_recorded": 98,
-    "present": 98,
+    "sessions_recorded": 109,
+    "present": 109,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 92,
-      "No Asiste": 6
+      "Asiste": 102,
+      "No Asiste": 7
     }
   },
   "transparency": {
@@ -119,5 +122,5 @@
     },
     "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-10-10T18:40:28.966842+00:00"
+  "retrieved_at": "2026-11-10T20:52:13.356245+00:00"
 }

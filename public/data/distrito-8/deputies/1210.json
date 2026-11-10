@@ -35,13 +35,19 @@
         "true": 4
       },
       "2026-09": {
-        "true": 4
+        "true": 5
+      },
+      "2026-10": {
+        "true": 3
+      },
+      "2026-11": {
+        "true": 2
       }
     },
     "agreements_by_month_and_state": {},
     "resolutions_by_month_and_state": {
       "2026-04": {
-        "En trámite": 1
+        "Aprobado": 1
       },
       "2026-07": {
         "En trámite": 2
@@ -50,17 +56,17 @@
         "Aprobado": 1
       },
       "2026-09": {
-        "Rechazado": 2,
         "En trámite": 2,
-        "Aprobado": 1
+        "Aprobado": 1,
+        "Rechazado": 2
       },
       "2026-10": {
-        "Aprobado": 1
+        "Aprobado": 2
       }
     },
     "offices_by_month": {
       "2026-09": 2,
-      "2026-10": 1
+      "2026-10": 2
     }
   },
   "commissions": [
@@ -68,13 +74,13 @@
     "Medio Ambiente y Recursos Naturales"
   ],
   "attendance": {
-    "sessions_recorded": 80,
-    "present": 80,
+    "sessions_recorded": 91,
+    "present": 91,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 80
+      "Asiste": 91
     }
   },
   "transparency": {
@@ -142,5 +148,5 @@
     },
     "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-10-10T18:40:28.966842+00:00"
+  "retrieved_at": "2026-11-10T20:52:13.356245+00:00"
 }

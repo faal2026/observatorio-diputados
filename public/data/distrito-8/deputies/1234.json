@@ -29,7 +29,10 @@
         "true": 6
       },
       "2026-09": {
-        "true": 2
+        "true": 3
+      },
+      "2026-10": {
+        "true": 7
       }
     },
     "agreements_by_month_and_state": {},
@@ -39,22 +42,30 @@
       },
       "2026-09": {
         "En trámite": 1
+      },
+      "2026-10": {
+        "Aprobado": 1
+      },
+      "2026-11": {
+        "En trámite": 1
       }
     },
-    "offices_by_month": {}
+    "offices_by_month": {
+      "2026-10": 1
+    }
   },
   "commissions": [
     "Gobierno Interior, Nacionalidad, Ciudadanía y Regionalización",
     "Vivienda, Desarrollo Urbano y Bienes Nacionales"
   ],
   "attendance": {
-    "sessions_recorded": 80,
-    "present": 80,
+    "sessions_recorded": 91,
+    "present": 91,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 72,
+      "Asiste": 83,
       "No Asiste": 8
     }
   },
@@ -123,5 +134,5 @@
     },
     "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-10-10T18:40:28.966842+00:00"
+  "retrieved_at": "2026-11-10T20:52:13.356245+00:00"
 }

@@ -24,6 +24,9 @@
       },
       "2026-09": {
         "true": 2
+      },
+      "2026-10": {
+        "true": 2
       }
     },
     "agreements_by_month_and_state": {},
@@ -35,13 +38,13 @@
     "Deportes y Recreación"
   ],
   "attendance": {
-    "sessions_recorded": 80,
-    "present": 80,
+    "sessions_recorded": 91,
+    "present": 91,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 78,
+      "Asiste": 89,
       "No Asiste": 2
     }
   },
@@ -110,5 +113,5 @@
     },
     "reason": "Acceso automático temporalmente bloqueado: La fuente oficial rechazó la consulta (403) en https://www.camara.cl/transparencia/personalapoyogral.aspx"
   },
-  "retrieved_at": "2026-10-10T18:40:28.966842+00:00"
+  "retrieved_at": "2026-11-10T20:52:13.356245+00:00"
 }
