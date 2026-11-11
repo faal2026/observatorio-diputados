@@ -27,6 +27,9 @@
         "true": 10
       },
       "2026-09": {
+        "true": 6
+      },
+      "2026-10": {
         "true": 5
       }
     },
@@ -39,8 +42,7 @@
         "Aprobado": 1
       },
       "2026-04": {
-        "En trámite": 2,
-        "Aprobado": 3,
+        "Aprobado": 5,
         "Rechazado": 2
       },
       "2026-05": {
@@ -52,24 +54,28 @@
       },
       "2026-09": {
         "Aprobado": 1
+      },
+      "2026-10": {
+        "Aprobado": 2
       }
     },
     "offices_by_month": {
       "2026-01": 1,
       "2026-05": 3,
-      "2026-09": 1
+      "2026-09": 1,
+      "2026-10": 2
     }
   },
   "commissions": [],
   "attendance": {
-    "sessions_recorded": 98,
-    "present": 98,
+    "sessions_recorded": 112,
+    "present": 112,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 92,
-      "No Asiste": 6
+      "Asiste": 104,
+      "No Asiste": 8
     }
   },
   "transparency": {
@@ -126,5 +132,5 @@
       "reason": "La serie nacional comparable aún no ha sido publicada en una fuente automatizable."
     }
   },
-  "retrieved_at": "2026-10-12T23:35:17.105992+00:00"
+  "retrieved_at": "2026-11-11T22:58:49.938491+00:00"
 }

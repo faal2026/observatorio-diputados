@@ -24,6 +24,12 @@
         "true": 4
       },
       "2026-09": {
+        "true": 2
+      },
+      "2026-10": {
+        "true": 1
+      },
+      "2026-11": {
         "true": 1
       }
     },
@@ -43,13 +49,13 @@
   },
   "commissions": [],
   "attendance": {
-    "sessions_recorded": 98,
-    "present": 98,
+    "sessions_recorded": 112,
+    "present": 112,
     "not_present": 0,
     "unclassified": 0,
     "percentage": 100.0,
     "by_type": {
-      "Asiste": 94,
+      "Asiste": 108,
       "No Asiste": 4
     }
   },
@@ -107,5 +113,5 @@
       "reason": "La serie nacional comparable aún no ha sido publicada en una fuente automatizable."
     }
   },
-  "retrieved_at": "2026-10-12T23:35:17.118569+00:00"
+  "retrieved_at": "2026-11-11T22:58:49.938491+00:00"
 }

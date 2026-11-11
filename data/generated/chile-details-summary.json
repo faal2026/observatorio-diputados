@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "retrieved_at": "2026-10-11T20:31:48.226372+00:00",
+  "retrieved_at": "2026-11-11T22:58:49.938491+00:00",
   "availability": "national_details_complete",
   "deputies_with_details": 155,
   "activity": {
@@ -13,12 +13,13 @@
         "2026-06": 663,
         "2026-07": 450,
         "2026-08": 422,
-        "2026-09": 329,
-        "2026-10": 20
+        "2026-09": 453,
+        "2026-10": 507,
+        "2026-11": 169
       },
-      "total": 2681,
-      "months_with_records": 9,
-      "average_per_deputy_per_month": 1.9218637992831542
+      "total": 3461,
+      "months_with_records": 10,
+      "average_per_deputy_per_month": 2.2329032258064516
     },
     "agreements": {
       "by_month": {},
@@ -36,11 +37,12 @@
         "2026-07": 115,
         "2026-08": 163,
         "2026-09": 232,
-        "2026-10": 68
+        "2026-10": 235,
+        "2026-11": 39
       },
-      "total": 1388,
-      "months_with_records": 9,
-      "average_per_deputy_per_month": 0.9949820788530466
+      "total": 1594,
+      "months_with_records": 10,
+      "average_per_deputy_per_month": 1.0283870967741935
     },
     "offices": {
       "by_month": {
@@ -52,11 +54,12 @@
         "2026-07": 49,
         "2026-08": 48,
         "2026-09": 69,
-        "2026-10": 59
+        "2026-10": 188,
+        "2026-11": 3
       },
-      "total": 559,
-      "months_with_records": 9,
-      "average_per_deputy_per_month": 0.4007168458781362,
+      "total": 691,
+      "months_with_records": 10,
+      "average_per_deputy_per_month": 0.4458064516129032,
       "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
     }
   },
@@ -92,12 +95,13 @@
             "2026-06": 9,
             "2026-07": 13,
             "2026-08": 4,
-            "2026-09": 9,
-            "2026-10": 1
+            "2026-09": 13,
+            "2026-10": 12,
+            "2026-11": 3
           },
-          "total": 56,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.3333333333333335
+          "total": 74,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 2.740740740740741
         },
         "agreements": {
           "by_month": {},
@@ -113,21 +117,21 @@
             "2026-07": 1,
             "2026-08": 3,
             "2026-09": 5,
-            "2026-10": 1
+            "2026-10": 10
           },
-          "total": 23,
+          "total": 32,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 1.0952380952380953
+          "average_per_deputy_per_month": 1.5238095238095237
         },
         "offices": {
           "by_month": {
             "2026-05": 3,
             "2026-08": 1,
-            "2026-10": 1
+            "2026-10": 6
           },
-          "total": 5,
+          "total": 10,
           "months_with_records": 3,
-          "average_per_deputy_per_month": 0.5555555555555556,
+          "average_per_deputy_per_month": 1.1111111111111112,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -166,12 +170,13 @@
             "2026-06": 23,
             "2026-07": 9,
             "2026-08": 16,
-            "2026-09": 10,
-            "2026-10": 2
+            "2026-09": 13,
+            "2026-10": 16,
+            "2026-11": 6
           },
-          "total": 79,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 2.925925925925926
+          "total": 102,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 3.4
         },
         "agreements": {
           "by_month": {},
@@ -187,11 +192,12 @@
             "2026-06": 1,
             "2026-08": 3,
             "2026-09": 5,
-            "2026-10": 1
+            "2026-10": 2,
+            "2026-11": 2
           },
-          "total": 23,
-          "months_with_records": 7,
-          "average_per_deputy_per_month": 1.0952380952380953
+          "total": 26,
+          "months_with_records": 8,
+          "average_per_deputy_per_month": 1.0833333333333333
         },
         "offices": {
           "by_month": {
@@ -199,11 +205,11 @@
             "2026-05": 4,
             "2026-08": 1,
             "2026-09": 1,
-            "2026-10": 1
+            "2026-10": 2
           },
-          "total": 8,
+          "total": 9,
           "months_with_records": 5,
-          "average_per_deputy_per_month": 0.5333333333333333,
+          "average_per_deputy_per_month": 0.6,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -250,12 +256,13 @@
             "2026-06": 16,
             "2026-07": 17,
             "2026-08": 18,
-            "2026-09": 8,
-            "2026-10": 2
+            "2026-09": 12,
+            "2026-10": 29,
+            "2026-11": 10
           },
-          "total": 106,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 2.3555555555555556
+          "total": 147,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.94
         },
         "agreements": {
           "by_month": {},
@@ -272,11 +279,11 @@
             "2026-07": 7,
             "2026-08": 7,
             "2026-09": 14,
-            "2026-10": 2
+            "2026-10": 5
           },
-          "total": 48,
+          "total": 51,
           "months_with_records": 8,
-          "average_per_deputy_per_month": 1.2
+          "average_per_deputy_per_month": 1.275
         },
         "offices": {
           "by_month": {
@@ -284,11 +291,11 @@
             "2026-05": 5,
             "2026-08": 2,
             "2026-09": 2,
-            "2026-10": 1
+            "2026-10": 4
           },
-          "total": 11,
+          "total": 14,
           "months_with_records": 5,
-          "average_per_deputy_per_month": 0.44,
+          "average_per_deputy_per_month": 0.56,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -335,12 +342,13 @@
             "2026-06": 17,
             "2026-07": 10,
             "2026-08": 15,
-            "2026-09": 22,
-            "2026-10": 2
+            "2026-09": 27,
+            "2026-10": 17,
+            "2026-11": 9
           },
-          "total": 97,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 2.1555555555555554
+          "total": 126,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.52
         },
         "agreements": {
           "by_month": {},
@@ -358,11 +366,12 @@
             "2026-07": 3,
             "2026-08": 4,
             "2026-09": 10,
-            "2026-10": 2
+            "2026-10": 7,
+            "2026-11": 1
           },
-          "total": 38,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 0.8444444444444444
+          "total": 44,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 0.88
         },
         "offices": {
           "by_month": {
@@ -372,11 +381,11 @@
             "2026-07": 1,
             "2026-08": 2,
             "2026-09": 3,
-            "2026-10": 1
+            "2026-10": 5
           },
-          "total": 12,
+          "total": 16,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.34285714285714286,
+          "average_per_deputy_per_month": 0.45714285714285713,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -431,11 +440,13 @@
             "2026-06": 31,
             "2026-07": 22,
             "2026-08": 26,
-            "2026-09": 24
+            "2026-09": 29,
+            "2026-10": 23,
+            "2026-11": 10
           },
-          "total": 160,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.857142857142857
+          "total": 198,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.8285714285714287
         },
         "agreements": {
           "by_month": {},
@@ -453,11 +464,12 @@
             "2026-07": 11,
             "2026-08": 10,
             "2026-09": 17,
-            "2026-10": 5
+            "2026-10": 12,
+            "2026-11": 6
           },
-          "total": 102,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 1.619047619047619
+          "total": 115,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.6428571428571428
         },
         "offices": {
           "by_month": {
@@ -468,11 +480,11 @@
             "2026-07": 2,
             "2026-08": 4,
             "2026-09": 5,
-            "2026-10": 4
+            "2026-10": 10
           },
-          "total": 44,
+          "total": 50,
           "months_with_records": 8,
-          "average_per_deputy_per_month": 0.7857142857142857,
+          "average_per_deputy_per_month": 0.8928571428571429,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -531,12 +543,13 @@
             "2026-06": 41,
             "2026-07": 30,
             "2026-08": 11,
-            "2026-09": 17,
-            "2026-10": 3
+            "2026-09": 25,
+            "2026-10": 18,
+            "2026-11": 11
           },
-          "total": 144,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 2.0
+          "total": 178,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.225
         },
         "agreements": {
           "by_month": {},
@@ -554,11 +567,12 @@
             "2026-07": 5,
             "2026-08": 7,
             "2026-09": 11,
-            "2026-10": 4
+            "2026-10": 13,
+            "2026-11": 1
           },
-          "total": 58,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 0.8055555555555556
+          "total": 68,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 0.85
         },
         "offices": {
           "by_month": {
@@ -569,11 +583,11 @@
             "2026-07": 1,
             "2026-08": 1,
             "2026-09": 3,
-            "2026-10": 4
+            "2026-10": 11
           },
-          "total": 18,
+          "total": 25,
           "months_with_records": 8,
-          "average_per_deputy_per_month": 0.28125,
+          "average_per_deputy_per_month": 0.390625,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -632,11 +646,13 @@
             "2026-06": 39,
             "2026-07": 22,
             "2026-08": 6,
-            "2026-09": 21
+            "2026-09": 26,
+            "2026-10": 21,
+            "2026-11": 6
           },
-          "total": 127,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.984375
+          "total": 159,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.9875
         },
         "agreements": {
           "by_month": {},
@@ -654,11 +670,12 @@
             "2026-07": 5,
             "2026-08": 4,
             "2026-09": 11,
-            "2026-10": 5
+            "2026-10": 11,
+            "2026-11": 4
           },
-          "total": 78,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 1.0833333333333333
+          "total": 88,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.1
         },
         "offices": {
           "by_month": {
@@ -670,11 +687,11 @@
             "2026-07": 6,
             "2026-08": 1,
             "2026-09": 4,
-            "2026-10": 4
+            "2026-10": 9
           },
-          "total": 40,
+          "total": 45,
           "months_with_records": 9,
-          "average_per_deputy_per_month": 0.5555555555555556,
+          "average_per_deputy_per_month": 0.625,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -733,11 +750,13 @@
             "2026-06": 22,
             "2026-07": 23,
             "2026-08": 24,
-            "2026-09": 21
+            "2026-09": 24,
+            "2026-10": 28,
+            "2026-11": 7
           },
-          "total": 139,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.171875
+          "total": 177,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.2125
         },
         "agreements": {
           "by_month": {},
@@ -754,22 +773,24 @@
             "2026-07": 6,
             "2026-08": 6,
             "2026-09": 16,
-            "2026-10": 2
+            "2026-10": 11,
+            "2026-11": 3
           },
-          "total": 54,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 0.84375
+          "total": 66,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 0.9166666666666666
         },
         "offices": {
           "by_month": {
             "2026-05": 6,
             "2026-07": 1,
             "2026-09": 6,
-            "2026-10": 2
+            "2026-10": 7,
+            "2026-11": 1
           },
-          "total": 15,
-          "months_with_records": 4,
-          "average_per_deputy_per_month": 0.46875,
+          "total": 21,
+          "months_with_records": 5,
+          "average_per_deputy_per_month": 0.525,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -824,11 +845,13 @@
             "2026-06": 31,
             "2026-07": 19,
             "2026-08": 12,
-            "2026-09": 12
+            "2026-09": 15,
+            "2026-10": 18,
+            "2026-11": 4
           },
-          "total": 102,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.8214285714285714
+          "total": 127,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.8142857142857143
         },
         "agreements": {
           "by_month": {},
@@ -845,11 +868,12 @@
             "2026-07": 6,
             "2026-08": 12,
             "2026-09": 11,
-            "2026-10": 5
+            "2026-10": 14,
+            "2026-11": 2
           },
-          "total": 75,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.3392857142857142
+          "total": 86,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 1.3650793650793651
         },
         "offices": {
           "by_month": {
@@ -859,11 +883,11 @@
             "2026-07": 2,
             "2026-08": 4,
             "2026-09": 5,
-            "2026-10": 4
+            "2026-10": 11
           },
-          "total": 39,
+          "total": 46,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.7959183673469388,
+          "average_per_deputy_per_month": 0.9387755102040817,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -922,11 +946,13 @@
             "2026-06": 33,
             "2026-07": 27,
             "2026-08": 13,
-            "2026-09": 13
+            "2026-09": 16,
+            "2026-10": 21,
+            "2026-11": 5
           },
-          "total": 117,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.828125
+          "total": 146,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.825
         },
         "agreements": {
           "by_month": {},
@@ -944,11 +970,11 @@
             "2026-07": 4,
             "2026-08": 6,
             "2026-09": 8,
-            "2026-10": 3
+            "2026-10": 16
           },
-          "total": 74,
+          "total": 87,
           "months_with_records": 9,
-          "average_per_deputy_per_month": 1.0277777777777777
+          "average_per_deputy_per_month": 1.2083333333333333
         },
         "offices": {
           "by_month": {
@@ -960,11 +986,11 @@
             "2026-07": 4,
             "2026-08": 1,
             "2026-09": 4,
-            "2026-10": 3
+            "2026-10": 15
           },
-          "total": 32,
+          "total": 44,
           "months_with_records": 9,
-          "average_per_deputy_per_month": 0.4444444444444444,
+          "average_per_deputy_per_month": 0.6111111111111112,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1015,11 +1041,13 @@
             "2026-06": 32,
             "2026-07": 20,
             "2026-08": 16,
-            "2026-09": 8
+            "2026-09": 12,
+            "2026-10": 17,
+            "2026-11": 2
           },
-          "total": 99,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.0625
+          "total": 122,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.033333333333333
         },
         "agreements": {
           "by_month": {},
@@ -1036,11 +1064,12 @@
             "2026-07": 3,
             "2026-08": 3,
             "2026-09": 5,
-            "2026-10": 2
+            "2026-10": 8,
+            "2026-11": 1
           },
-          "total": 49,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.0208333333333333
+          "total": 56,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 1.037037037037037
         },
         "offices": {
           "by_month": {
@@ -1050,11 +1079,11 @@
             "2026-07": 5,
             "2026-08": 2,
             "2026-09": 4,
-            "2026-10": 2
+            "2026-10": 7
           },
-          "total": 23,
+          "total": 28,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.5476190476190477,
+          "average_per_deputy_per_month": 0.6666666666666666,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1108,12 +1137,13 @@
             "2026-06": 36,
             "2026-07": 22,
             "2026-08": 21,
-            "2026-09": 23,
-            "2026-10": 2
+            "2026-09": 30,
+            "2026-10": 27,
+            "2026-11": 14
           },
-          "total": 165,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.9464285714285716
+          "total": 211,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 3.3492063492063493
         },
         "agreements": {
           "by_month": {},
@@ -1130,11 +1160,12 @@
             "2026-07": 6,
             "2026-08": 9,
             "2026-09": 18,
-            "2026-10": 4
+            "2026-10": 14,
+            "2026-11": 2
           },
-          "total": 69,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.2321428571428572
+          "total": 81,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 1.2857142857142858
         },
         "offices": {
           "by_month": {
@@ -1143,11 +1174,12 @@
             "2026-07": 3,
             "2026-08": 2,
             "2026-09": 6,
-            "2026-10": 2
+            "2026-10": 7,
+            "2026-11": 2
           },
-          "total": 20,
-          "months_with_records": 6,
-          "average_per_deputy_per_month": 0.47619047619047616,
+          "total": 27,
+          "months_with_records": 7,
+          "average_per_deputy_per_month": 0.5510204081632653,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1193,11 +1225,13 @@
             "2026-06": 29,
             "2026-07": 17,
             "2026-08": 11,
-            "2026-09": 11
+            "2026-09": 13,
+            "2026-10": 12,
+            "2026-11": 4
           },
-          "total": 88,
-          "months_with_records": 7,
-          "average_per_deputy_per_month": 2.5142857142857142
+          "total": 106,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 2.3555555555555556
         },
         "agreements": {
           "by_month": {},
@@ -1215,10 +1249,11 @@
             "2026-07": 6,
             "2026-08": 7,
             "2026-09": 4,
-            "2026-10": 3
+            "2026-10": 7,
+            "2026-11": 1
           },
-          "total": 45,
-          "months_with_records": 9,
+          "total": 50,
+          "months_with_records": 10,
           "average_per_deputy_per_month": 1.0
         },
         "offices": {
@@ -1229,11 +1264,11 @@
             "2026-07": 1,
             "2026-08": 1,
             "2026-09": 3,
-            "2026-10": 2
+            "2026-10": 5
           },
-          "total": 14,
+          "total": 17,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.4,
+          "average_per_deputy_per_month": 0.4857142857142857,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1283,11 +1318,13 @@
             "2026-06": 22,
             "2026-07": 10,
             "2026-08": 14,
-            "2026-09": 11
+            "2026-09": 12,
+            "2026-10": 16,
+            "2026-11": 1
           },
-          "total": 76,
-          "months_with_records": 7,
-          "average_per_deputy_per_month": 1.8095238095238095
+          "total": 94,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 1.7407407407407407
         },
         "agreements": {
           "by_month": {},
@@ -1305,11 +1342,12 @@
             "2026-07": 6,
             "2026-08": 5,
             "2026-09": 7,
-            "2026-10": 1
+            "2026-10": 7,
+            "2026-11": 1
           },
-          "total": 39,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 0.7222222222222222
+          "total": 46,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 0.7666666666666667
         },
         "offices": {
           "by_month": {
@@ -1318,11 +1356,11 @@
             "2026-07": 2,
             "2026-08": 1,
             "2026-09": 3,
-            "2026-10": 2
+            "2026-10": 7
           },
-          "total": 13,
+          "total": 18,
           "months_with_records": 6,
-          "average_per_deputy_per_month": 0.3611111111111111,
+          "average_per_deputy_per_month": 0.5,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1369,11 +1407,13 @@
             "2026-06": 13,
             "2026-07": 16,
             "2026-08": 16,
-            "2026-09": 3
+            "2026-09": 5,
+            "2026-10": 8,
+            "2026-11": 3
           },
-          "total": 68,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.7
+          "total": 81,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.62
         },
         "agreements": {
           "by_month": {},
@@ -1390,11 +1430,11 @@
             "2026-07": 2,
             "2026-08": 6,
             "2026-09": 7,
-            "2026-10": 2
+            "2026-10": 8
           },
-          "total": 46,
+          "total": 52,
           "months_with_records": 8,
-          "average_per_deputy_per_month": 1.15
+          "average_per_deputy_per_month": 1.3
         },
         "offices": {
           "by_month": {
@@ -1403,11 +1443,11 @@
             "2026-06": 2,
             "2026-08": 3,
             "2026-09": 3,
-            "2026-10": 2
+            "2026-10": 8
           },
-          "total": 23,
+          "total": 29,
           "months_with_records": 6,
-          "average_per_deputy_per_month": 0.7666666666666667,
+          "average_per_deputy_per_month": 0.9666666666666667,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1448,11 +1488,13 @@
             "2026-06": 16,
             "2026-07": 11,
             "2026-08": 13,
-            "2026-09": 6
+            "2026-09": 10,
+            "2026-10": 10,
+            "2026-11": 4
           },
-          "total": 58,
-          "months_with_records": 6,
-          "average_per_deputy_per_month": 2.4166666666666665
+          "total": 76,
+          "months_with_records": 8,
+          "average_per_deputy_per_month": 2.375
         },
         "agreements": {
           "by_month": {},
@@ -1470,11 +1512,12 @@
             "2026-07": 4,
             "2026-08": 3,
             "2026-09": 6,
-            "2026-10": 1
+            "2026-10": 5,
+            "2026-11": 1
           },
-          "total": 29,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 0.8055555555555556
+          "total": 34,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 0.85
         },
         "offices": {
           "by_month": {
@@ -1484,11 +1527,11 @@
             "2026-07": 1,
             "2026-08": 2,
             "2026-09": 2,
-            "2026-10": 2
+            "2026-10": 5
           },
-          "total": 10,
+          "total": 13,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.35714285714285715,
+          "average_per_deputy_per_month": 0.4642857142857143,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1541,11 +1584,13 @@
             "2026-06": 18,
             "2026-07": 13,
             "2026-08": 10,
-            "2026-09": 8
+            "2026-09": 12,
+            "2026-10": 23,
+            "2026-11": 5
           },
-          "total": 66,
-          "months_with_records": 6,
-          "average_per_deputy_per_month": 1.5714285714285714
+          "total": 98,
+          "months_with_records": 8,
+          "average_per_deputy_per_month": 1.75
         },
         "agreements": {
           "by_month": {},
@@ -1562,11 +1607,11 @@
             "2026-07": 5,
             "2026-08": 6,
             "2026-09": 5,
-            "2026-10": 3
+            "2026-10": 13
           },
-          "total": 36,
+          "total": 46,
           "months_with_records": 8,
-          "average_per_deputy_per_month": 0.6428571428571429
+          "average_per_deputy_per_month": 0.8214285714285714
         },
         "offices": {
           "by_month": {
@@ -1574,11 +1619,11 @@
             "2026-05": 4,
             "2026-08": 3,
             "2026-09": 1,
-            "2026-10": 3
+            "2026-10": 10
           },
-          "total": 13,
+          "total": 20,
           "months_with_records": 5,
-          "average_per_deputy_per_month": 0.37142857142857144,
+          "average_per_deputy_per_month": 0.5714285714285714,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1621,11 +1666,13 @@
             "2026-06": 14,
             "2026-07": 6,
             "2026-08": 2,
-            "2026-09": 5
+            "2026-09": 8,
+            "2026-10": 16,
+            "2026-11": 3
           },
-          "total": 44,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.375
+          "total": 66,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.65
         },
         "agreements": {
           "by_month": {},
@@ -1643,11 +1690,12 @@
             "2026-07": 3,
             "2026-08": 3,
             "2026-09": 4,
-            "2026-10": 1
+            "2026-10": 3,
+            "2026-11": 1
           },
-          "total": 24,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 0.6666666666666666
+          "total": 27,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 0.675
         },
         "offices": {
           "by_month": {
@@ -1657,11 +1705,11 @@
             "2026-07": 2,
             "2026-08": 2,
             "2026-09": 1,
-            "2026-10": 1
+            "2026-10": 3
           },
-          "total": 10,
+          "total": 12,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.35714285714285715,
+          "average_per_deputy_per_month": 0.42857142857142855,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1708,11 +1756,13 @@
             "2026-06": 28,
             "2026-07": 11,
             "2026-08": 15,
-            "2026-09": 11
+            "2026-09": 16,
+            "2026-10": 15,
+            "2026-11": 1
           },
-          "total": 92,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.3
+          "total": 113,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.26
         },
         "agreements": {
           "by_month": {},
@@ -1730,11 +1780,11 @@
             "2026-07": 3,
             "2026-08": 6,
             "2026-09": 3,
-            "2026-10": 2
+            "2026-10": 8
           },
-          "total": 72,
+          "total": 78,
           "months_with_records": 9,
-          "average_per_deputy_per_month": 1.6
+          "average_per_deputy_per_month": 1.7333333333333334
         },
         "offices": {
           "by_month": {
@@ -1744,11 +1794,11 @@
             "2026-06": 11,
             "2026-07": 1,
             "2026-08": 1,
-            "2026-10": 2
+            "2026-10": 6
           },
-          "total": 27,
+          "total": 31,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.7714285714285715,
+          "average_per_deputy_per_month": 0.8857142857142857,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1807,12 +1857,13 @@
             "2026-06": 41,
             "2026-07": 41,
             "2026-08": 35,
-            "2026-09": 18,
-            "2026-10": 3
+            "2026-09": 31,
+            "2026-10": 43,
+            "2026-11": 13
           },
-          "total": 182,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 2.5277777777777777
+          "total": 248,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 3.1
         },
         "agreements": {
           "by_month": {},
@@ -1830,11 +1881,12 @@
             "2026-07": 7,
             "2026-08": 14,
             "2026-09": 15,
-            "2026-10": 4
+            "2026-10": 11,
+            "2026-11": 2
           },
-          "total": 101,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 1.4027777777777777
+          "total": 110,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.375
         },
         "offices": {
           "by_month": {
@@ -1845,11 +1897,11 @@
             "2026-07": 3,
             "2026-08": 4,
             "2026-09": 3,
-            "2026-10": 3
+            "2026-10": 9
           },
-          "total": 55,
+          "total": 61,
           "months_with_records": 8,
-          "average_per_deputy_per_month": 0.859375,
+          "average_per_deputy_per_month": 0.953125,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1896,12 +1948,13 @@
             "2026-06": 26,
             "2026-07": 22,
             "2026-08": 19,
-            "2026-09": 12,
-            "2026-10": 1
+            "2026-09": 18,
+            "2026-10": 20,
+            "2026-11": 5
           },
-          "total": 102,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 2.2666666666666666
+          "total": 132,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.64
         },
         "agreements": {
           "by_month": {},
@@ -1918,11 +1971,12 @@
             "2026-07": 4,
             "2026-08": 6,
             "2026-09": 10,
-            "2026-10": 2
+            "2026-10": 9,
+            "2026-11": 3
           },
-          "total": 56,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.4
+          "total": 66,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 1.4666666666666666
         },
         "offices": {
           "by_month": {
@@ -1931,11 +1985,11 @@
             "2026-06": 9,
             "2026-08": 2,
             "2026-09": 1,
-            "2026-10": 1
+            "2026-10": 7
           },
-          "total": 25,
+          "total": 31,
           "months_with_records": 6,
-          "average_per_deputy_per_month": 0.8333333333333334,
+          "average_per_deputy_per_month": 1.0333333333333334,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -1978,11 +2032,13 @@
             "2026-06": 24,
             "2026-07": 8,
             "2026-08": 18,
-            "2026-09": 2
+            "2026-09": 5,
+            "2026-10": 12,
+            "2026-11": 2
           },
-          "total": 70,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.1875
+          "total": 87,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.175
         },
         "agreements": {
           "by_month": {},
@@ -1999,11 +2055,12 @@
             "2026-07": 3,
             "2026-08": 4,
             "2026-09": 3,
-            "2026-10": 2
+            "2026-10": 6,
+            "2026-11": 2
           },
-          "total": 25,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 0.78125
+          "total": 31,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 0.8611111111111112
         },
         "offices": {
           "by_month": {
@@ -2012,11 +2069,11 @@
             "2026-07": 1,
             "2026-08": 2,
             "2026-09": 1,
-            "2026-10": 2
+            "2026-10": 6
           },
-          "total": 11,
+          "total": 15,
           "months_with_records": 6,
-          "average_per_deputy_per_month": 0.4583333333333333,
+          "average_per_deputy_per_month": 0.625,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -2067,11 +2124,13 @@
             "2026-06": 26,
             "2026-07": 19,
             "2026-08": 12,
-            "2026-09": 13
+            "2026-09": 16,
+            "2026-10": 17,
+            "2026-11": 7
           },
-          "total": 90,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.875
+          "total": 117,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.95
         },
         "agreements": {
           "by_month": {},
@@ -2089,11 +2148,12 @@
             "2026-07": 5,
             "2026-08": 9,
             "2026-09": 8,
-            "2026-10": 4
+            "2026-10": 10,
+            "2026-11": 2
           },
-          "total": 57,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 1.0555555555555556
+          "total": 65,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.0833333333333333
         },
         "offices": {
           "by_month": {
@@ -2103,11 +2163,11 @@
             "2026-07": 3,
             "2026-08": 1,
             "2026-09": 2,
-            "2026-10": 2
+            "2026-10": 7
           },
-          "total": 19,
+          "total": 24,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.4523809523809524,
+          "average_per_deputy_per_month": 0.5714285714285714,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -2158,11 +2218,13 @@
             "2026-06": 24,
             "2026-07": 13,
             "2026-08": 23,
-            "2026-09": 13
+            "2026-09": 21,
+            "2026-10": 18,
+            "2026-11": 6
           },
-          "total": 97,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 2.0208333333333335
+          "total": 129,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.15
         },
         "agreements": {
           "by_month": {},
@@ -2178,11 +2240,13 @@
             "2026-06": 4,
             "2026-07": 5,
             "2026-08": 6,
-            "2026-09": 6
+            "2026-09": 6,
+            "2026-10": 4,
+            "2026-11": 2
           },
-          "total": 42,
-          "months_with_records": 7,
-          "average_per_deputy_per_month": 1.0
+          "total": 48,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 0.8888888888888888
         },
         "offices": {
           "by_month": {
@@ -2191,11 +2255,12 @@
             "2026-06": 1,
             "2026-07": 5,
             "2026-08": 2,
-            "2026-09": 2
+            "2026-09": 2,
+            "2026-10": 4
           },
-          "total": 15,
-          "months_with_records": 6,
-          "average_per_deputy_per_month": 0.4166666666666667,
+          "total": 19,
+          "months_with_records": 7,
+          "average_per_deputy_per_month": 0.4523809523809524,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -2238,12 +2303,13 @@
             "2026-06": 12,
             "2026-07": 6,
             "2026-08": 13,
-            "2026-09": 9,
-            "2026-10": 1
+            "2026-09": 16,
+            "2026-10": 16,
+            "2026-11": 8
           },
-          "total": 68,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 1.8888888888888888
+          "total": 98,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.45
         },
         "agreements": {
           "by_month": {},
@@ -2261,11 +2327,11 @@
             "2026-07": 1,
             "2026-08": 6,
             "2026-09": 5,
-            "2026-10": 1
+            "2026-10": 6
           },
-          "total": 47,
+          "total": 52,
           "months_with_records": 9,
-          "average_per_deputy_per_month": 1.3055555555555556
+          "average_per_deputy_per_month": 1.4444444444444444
         },
         "offices": {
           "by_month": {
@@ -2275,11 +2341,11 @@
             "2026-06": 10,
             "2026-08": 1,
             "2026-09": 1,
-            "2026-10": 2
+            "2026-10": 4
           },
-          "total": 28,
+          "total": 30,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 1.0,
+          "average_per_deputy_per_month": 1.0714285714285714,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -2326,12 +2392,13 @@
             "2026-06": 25,
             "2026-07": 13,
             "2026-08": 16,
-            "2026-09": 11,
-            "2026-10": 1
+            "2026-09": 18,
+            "2026-10": 19,
+            "2026-11": 11
           },
-          "total": 96,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 2.1333333333333333
+          "total": 132,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 2.64
         },
         "agreements": {
           "by_month": {},
@@ -2348,11 +2415,12 @@
             "2026-07": 1,
             "2026-08": 6,
             "2026-09": 11,
-            "2026-10": 3
+            "2026-10": 9,
+            "2026-11": 1
           },
-          "total": 40,
-          "months_with_records": 8,
-          "average_per_deputy_per_month": 1.0
+          "total": 47,
+          "months_with_records": 9,
+          "average_per_deputy_per_month": 1.0444444444444445
         },
         "offices": {
           "by_month": {
@@ -2361,11 +2429,11 @@
             "2026-07": 2,
             "2026-08": 1,
             "2026-09": 2,
-            "2026-10": 2
+            "2026-10": 7
           },
-          "total": 14,
+          "total": 19,
           "months_with_records": 6,
-          "average_per_deputy_per_month": 0.4666666666666667,
+          "average_per_deputy_per_month": 0.6333333333333333,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -2404,12 +2472,13 @@
             "2026-06": 6,
             "2026-07": 4,
             "2026-08": 13,
-            "2026-09": 4,
-            "2026-10": 1
+            "2026-09": 6,
+            "2026-10": 9,
+            "2026-11": 5
           },
-          "total": 44,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 1.6296296296296295
+          "total": 59,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.9666666666666666
         },
         "agreements": {
           "by_month": {},
@@ -2424,21 +2493,22 @@
             "2026-06": 4,
             "2026-07": 3,
             "2026-09": 3,
-            "2026-10": 1
+            "2026-10": 2,
+            "2026-11": 1
           },
-          "total": 14,
-          "months_with_records": 6,
-          "average_per_deputy_per_month": 0.7777777777777778
+          "total": 16,
+          "months_with_records": 7,
+          "average_per_deputy_per_month": 0.7619047619047619
         },
         "offices": {
           "by_month": {
             "2026-06": 1,
             "2026-07": 1,
-            "2026-10": 2
+            "2026-10": 3
           },
-          "total": 4,
+          "total": 5,
           "months_with_records": 3,
-          "average_per_deputy_per_month": 0.4444444444444444,
+          "average_per_deputy_per_month": 0.5555555555555556,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -2478,11 +2548,12 @@
             "2026-07": 6,
             "2026-08": 10,
             "2026-09": 4,
-            "2026-10": 1
+            "2026-10": 6,
+            "2026-11": 4
           },
-          "total": 49,
-          "months_with_records": 9,
-          "average_per_deputy_per_month": 1.8148148148148149
+          "total": 58,
+          "months_with_records": 10,
+          "average_per_deputy_per_month": 1.9333333333333333
         },
         "agreements": {
           "by_month": {},
@@ -2498,11 +2569,11 @@
             "2026-05": 4,
             "2026-08": 2,
             "2026-09": 4,
-            "2026-10": 2
+            "2026-10": 4
           },
-          "total": 24,
+          "total": 26,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 1.1428571428571428
+          "average_per_deputy_per_month": 1.2380952380952381
         },
         "offices": {
           "by_month": {
@@ -2512,11 +2583,11 @@
             "2026-07": 2,
             "2026-08": 1,
             "2026-09": 1,
-            "2026-10": 2
+            "2026-10": 3
           },
-          "total": 11,
+          "total": 12,
           "months_with_records": 7,
-          "average_per_deputy_per_month": 0.5238095238095238,
+          "average_per_deputy_per_month": 0.5714285714285714,
           "methodology": "Oficios enviados asociados a proyectos de resolución cofirmados, según Datos Abiertos Legislativos."
         }
       },
@@ -2542,2381 +2613,5 @@
     "motions": "https://opendata.camara.cl/camaradiputados/WServices/WSLegislativo.asmx/retornarMocionesXAnno?prmAnno=2026",
     "agreements": "https://opendata.camara.cl/camaradiputados/WServices/WSProyectosAcuerdo.asmx/retornarProyectosAcuerdoXAnno?prmAnno=2026",
     "resolutions": "https://opendata.camara.cl/camaradiputados/WServices/WSProyectosResolucion.asmx/retornarProyectosResolucionXAnno?prmAnno=2026"
-  },
-  "transparency": {
-    "operational_expenses": {
-      "by_month": {},
-      "coverage_by_month": {},
-      "latest_month": null,
-      "latest_amount": null,
-      "average_monthly": null,
-      "median_monthly": null,
-      "months_with_records": 0,
-      "methodology": "Suma de montos publicados por la Cámara para cada mes. La cobertura indica cuántas fichas tuvieron un registro publicado; las fichas sin publicación no se imputan como $0.",
-      "metadata": {
-        "availability": "not_published",
-        "label": "Gastos operacionales",
-        "source_url": "https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId={id}"
-      }
-    },
-    "external_advisories": {
-      "by_month": {},
-      "coverage_by_month": {},
-      "latest_month": null,
-      "latest_amount": null,
-      "average_monthly": null,
-      "median_monthly": null,
-      "months_with_records": 0,
-      "methodology": "Suma de montos publicados por la Cámara para cada mes. La cobertura indica cuántas fichas tuvieron un registro publicado; las fichas sin publicación no se imputan como $0.",
-      "metadata": {
-        "availability": "not_published",
-        "label": "Asesorías externas",
-        "source_url": "https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId={id}"
-      }
-    },
-    "flights": {
-      "by_month": {},
-      "coverage_by_month": {},
-      "latest_month": null,
-      "latest_amount": null,
-      "average_monthly": null,
-      "median_monthly": null,
-      "months_with_records": 0,
-      "methodology": "Suma de montos publicados por la Cámara para cada mes. La cobertura indica cuántas fichas tuvieron un registro publicado; las fichas sin publicación no se imputan como $0.",
-      "metadata": {
-        "availability": "not_published",
-        "label": "Pasajes aéreos nacionales",
-        "source_url": "https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId={id}"
-      }
-    },
-    "retrieved_at": "2026-10-12T23:35:17.135676+00:00",
-    "month_requested": "2026-08",
-    "failures": [
-      {
-        "deputy_id": "1141",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1141"
-      },
-      {
-        "deputy_id": "1208",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1208"
-      },
-      {
-        "deputy_id": "1208",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1208"
-      },
-      {
-        "deputy_id": "1208",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1208"
-      },
-      {
-        "deputy_id": "1141",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1141"
-      },
-      {
-        "deputy_id": "1216",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1216"
-      },
-      {
-        "deputy_id": "1141",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1141"
-      },
-      {
-        "deputy_id": "1216",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1216"
-      },
-      {
-        "deputy_id": "1216",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1216"
-      },
-      {
-        "deputy_id": "1195",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1195"
-      },
-      {
-        "deputy_id": "1195",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1195"
-      },
-      {
-        "deputy_id": "1231",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1231"
-      },
-      {
-        "deputy_id": "1195",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1195"
-      },
-      {
-        "deputy_id": "1231",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1231"
-      },
-      {
-        "deputy_id": "1215",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1215"
-      },
-      {
-        "deputy_id": "1215",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1215"
-      },
-      {
-        "deputy_id": "1187",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1187"
-      },
-      {
-        "deputy_id": "1231",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1231"
-      },
-      {
-        "deputy_id": "1215",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1215"
-      },
-      {
-        "deputy_id": "1187",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1187"
-      },
-      {
-        "deputy_id": "1187",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1187"
-      },
-      {
-        "deputy_id": "1239",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1239"
-      },
-      {
-        "deputy_id": "1239",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1239"
-      },
-      {
-        "deputy_id": "986",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=986"
-      },
-      {
-        "deputy_id": "1099",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1099"
-      },
-      {
-        "deputy_id": "1099",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1099"
-      },
-      {
-        "deputy_id": "1099",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1099"
-      },
-      {
-        "deputy_id": "1239",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1239"
-      },
-      {
-        "deputy_id": "986",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=986"
-      },
-      {
-        "deputy_id": "986",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=986"
-      },
-      {
-        "deputy_id": "1182",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1182"
-      },
-      {
-        "deputy_id": "1182",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1182"
-      },
-      {
-        "deputy_id": "1182",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1182"
-      },
-      {
-        "deputy_id": "1175",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1175"
-      },
-      {
-        "deputy_id": "1175",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1175"
-      },
-      {
-        "deputy_id": "1254",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1254"
-      },
-      {
-        "deputy_id": "1175",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1175"
-      },
-      {
-        "deputy_id": "1254",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1254"
-      },
-      {
-        "deputy_id": "1254",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1254"
-      },
-      {
-        "deputy_id": "872",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=872"
-      },
-      {
-        "deputy_id": "872",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=872"
-      },
-      {
-        "deputy_id": "1073",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1073"
-      },
-      {
-        "deputy_id": "1073",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1073"
-      },
-      {
-        "deputy_id": "872",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=872"
-      },
-      {
-        "deputy_id": "1073",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1073"
-      },
-      {
-        "deputy_id": "1236",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1236"
-      },
-      {
-        "deputy_id": "1236",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1236"
-      },
-      {
-        "deputy_id": "1250",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1250"
-      },
-      {
-        "deputy_id": "1250",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1250"
-      },
-      {
-        "deputy_id": "1236",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1236"
-      },
-      {
-        "deputy_id": "1177",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1177"
-      },
-      {
-        "deputy_id": "1177",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1177"
-      },
-      {
-        "deputy_id": "1250",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1250"
-      },
-      {
-        "deputy_id": "1177",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1177"
-      },
-      {
-        "deputy_id": "1142",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1142"
-      },
-      {
-        "deputy_id": "1142",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1142"
-      },
-      {
-        "deputy_id": "1255",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1255"
-      },
-      {
-        "deputy_id": "1142",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1142"
-      },
-      {
-        "deputy_id": "1255",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1255"
-      },
-      {
-        "deputy_id": "1255",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1255"
-      },
-      {
-        "deputy_id": "1212",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1212"
-      },
-      {
-        "deputy_id": "1212",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1212"
-      },
-      {
-        "deputy_id": "1174",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1174"
-      },
-      {
-        "deputy_id": "1212",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1212"
-      },
-      {
-        "deputy_id": "1174",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1174"
-      },
-      {
-        "deputy_id": "1117",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1117"
-      },
-      {
-        "deputy_id": "1174",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1174"
-      },
-      {
-        "deputy_id": "1117",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1117"
-      },
-      {
-        "deputy_id": "1117",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1117"
-      },
-      {
-        "deputy_id": "1221",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1221"
-      },
-      {
-        "deputy_id": "1221",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1221"
-      },
-      {
-        "deputy_id": "1104",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1104"
-      },
-      {
-        "deputy_id": "1104",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1104"
-      },
-      {
-        "deputy_id": "1221",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1221"
-      },
-      {
-        "deputy_id": "1224",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1224"
-      },
-      {
-        "deputy_id": "1224",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1224"
-      },
-      {
-        "deputy_id": "1104",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1104"
-      },
-      {
-        "deputy_id": "1235",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1235"
-      },
-      {
-        "deputy_id": "1235",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1235"
-      },
-      {
-        "deputy_id": "1224",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1224"
-      },
-      {
-        "deputy_id": "1235",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1235"
-      },
-      {
-        "deputy_id": "1060",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1060"
-      },
-      {
-        "deputy_id": "1060",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1060"
-      },
-      {
-        "deputy_id": "1060",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1060"
-      },
-      {
-        "deputy_id": "1107",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1107"
-      },
-      {
-        "deputy_id": "1107",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1107"
-      },
-      {
-        "deputy_id": "1107",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1107"
-      },
-      {
-        "deputy_id": "1181",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1181"
-      },
-      {
-        "deputy_id": "1181",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1181"
-      },
-      {
-        "deputy_id": "1211",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1211"
-      },
-      {
-        "deputy_id": "1181",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1181"
-      },
-      {
-        "deputy_id": "1211",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1211"
-      },
-      {
-        "deputy_id": "1021",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1021"
-      },
-      {
-        "deputy_id": "1211",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1211"
-      },
-      {
-        "deputy_id": "1176",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1176"
-      },
-      {
-        "deputy_id": "1021",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1021"
-      },
-      {
-        "deputy_id": "1021",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1021"
-      },
-      {
-        "deputy_id": "1176",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1176"
-      },
-      {
-        "deputy_id": "1176",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1176"
-      },
-      {
-        "deputy_id": "1189",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1189"
-      },
-      {
-        "deputy_id": "1189",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1189"
-      },
-      {
-        "deputy_id": "1189",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1189"
-      },
-      {
-        "deputy_id": "1015",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1015"
-      },
-      {
-        "deputy_id": "1015",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1015"
-      },
-      {
-        "deputy_id": "1259",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1259"
-      },
-      {
-        "deputy_id": "1259",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1259"
-      },
-      {
-        "deputy_id": "1015",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1015"
-      },
-      {
-        "deputy_id": "1259",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1259"
-      },
-      {
-        "deputy_id": "1122",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1122"
-      },
-      {
-        "deputy_id": "1122",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1122"
-      },
-      {
-        "deputy_id": "1170",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1170"
-      },
-      {
-        "deputy_id": "1122",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1122"
-      },
-      {
-        "deputy_id": "1170",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1170"
-      },
-      {
-        "deputy_id": "1170",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1170"
-      },
-      {
-        "deputy_id": "1263",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1263"
-      },
-      {
-        "deputy_id": "1263",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1263"
-      },
-      {
-        "deputy_id": "1263",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1263"
-      },
-      {
-        "deputy_id": "1165",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1165"
-      },
-      {
-        "deputy_id": "1165",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1165"
-      },
-      {
-        "deputy_id": "1200",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1200"
-      },
-      {
-        "deputy_id": "1165",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1165"
-      },
-      {
-        "deputy_id": "1200",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1200"
-      },
-      {
-        "deputy_id": "1190",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1190"
-      },
-      {
-        "deputy_id": "1200",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1200"
-      },
-      {
-        "deputy_id": "1190",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1190"
-      },
-      {
-        "deputy_id": "1210",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1210"
-      },
-      {
-        "deputy_id": "1190",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1190"
-      },
-      {
-        "deputy_id": "1210",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1210"
-      },
-      {
-        "deputy_id": "1210",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1210"
-      },
-      {
-        "deputy_id": "1188",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1188"
-      },
-      {
-        "deputy_id": "1188",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1188"
-      },
-      {
-        "deputy_id": "1188",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1188"
-      },
-      {
-        "deputy_id": "1217",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1217"
-      },
-      {
-        "deputy_id": "1234",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1234"
-      },
-      {
-        "deputy_id": "1234",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1234"
-      },
-      {
-        "deputy_id": "1217",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1217"
-      },
-      {
-        "deputy_id": "1234",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1234"
-      },
-      {
-        "deputy_id": "1217",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1217"
-      },
-      {
-        "deputy_id": "1256",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1256"
-      },
-      {
-        "deputy_id": "1256",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1256"
-      },
-      {
-        "deputy_id": "1012",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1012"
-      },
-      {
-        "deputy_id": "1256",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1256"
-      },
-      {
-        "deputy_id": "1012",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1012"
-      },
-      {
-        "deputy_id": "1205",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1205"
-      },
-      {
-        "deputy_id": "1205",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1205"
-      },
-      {
-        "deputy_id": "1012",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1012"
-      },
-      {
-        "deputy_id": "1205",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1205"
-      },
-      {
-        "deputy_id": "1260",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1260"
-      },
-      {
-        "deputy_id": "1260",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1260"
-      },
-      {
-        "deputy_id": "1065",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1065"
-      },
-      {
-        "deputy_id": "1065",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1065"
-      },
-      {
-        "deputy_id": "1065",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1065"
-      },
-      {
-        "deputy_id": "1260",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1260"
-      },
-      {
-        "deputy_id": "1247",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1247"
-      },
-      {
-        "deputy_id": "1247",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1247"
-      },
-      {
-        "deputy_id": "1146",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1146"
-      },
-      {
-        "deputy_id": "1247",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1247"
-      },
-      {
-        "deputy_id": "1146",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1146"
-      },
-      {
-        "deputy_id": "1243",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1243"
-      },
-      {
-        "deputy_id": "1146",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1146"
-      },
-      {
-        "deputy_id": "1243",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1243"
-      },
-      {
-        "deputy_id": "1243",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1243"
-      },
-      {
-        "deputy_id": "1171",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1171"
-      },
-      {
-        "deputy_id": "1237",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1237"
-      },
-      {
-        "deputy_id": "1171",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1171"
-      },
-      {
-        "deputy_id": "1171",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1171"
-      },
-      {
-        "deputy_id": "1237",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1237"
-      },
-      {
-        "deputy_id": "1086",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1086"
-      },
-      {
-        "deputy_id": "1237",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1237"
-      },
-      {
-        "deputy_id": "1223",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1223"
-      },
-      {
-        "deputy_id": "1086",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1086"
-      },
-      {
-        "deputy_id": "1086",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1086"
-      },
-      {
-        "deputy_id": "1213",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1213"
-      },
-      {
-        "deputy_id": "1223",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1223"
-      },
-      {
-        "deputy_id": "1223",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1223"
-      },
-      {
-        "deputy_id": "1213",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1213"
-      },
-      {
-        "deputy_id": "1009",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1009"
-      },
-      {
-        "deputy_id": "1213",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1213"
-      },
-      {
-        "deputy_id": "1009",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1009"
-      },
-      {
-        "deputy_id": "1218",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1218"
-      },
-      {
-        "deputy_id": "1009",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1009"
-      },
-      {
-        "deputy_id": "1218",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1218"
-      },
-      {
-        "deputy_id": "1218",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1218"
-      },
-      {
-        "deputy_id": "1127",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1127"
-      },
-      {
-        "deputy_id": "1127",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1127"
-      },
-      {
-        "deputy_id": "1025",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1025"
-      },
-      {
-        "deputy_id": "1025",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1025"
-      },
-      {
-        "deputy_id": "1127",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1127"
-      },
-      {
-        "deputy_id": "1025",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1025"
-      },
-      {
-        "deputy_id": "1227",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1227"
-      },
-      {
-        "deputy_id": "1227",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1227"
-      },
-      {
-        "deputy_id": "1227",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1227"
-      },
-      {
-        "deputy_id": "1214",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1214"
-      },
-      {
-        "deputy_id": "1214",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1214"
-      },
-      {
-        "deputy_id": "1214",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1214"
-      },
-      {
-        "deputy_id": "1252",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1252"
-      },
-      {
-        "deputy_id": "1100",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1100"
-      },
-      {
-        "deputy_id": "1100",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1100"
-      },
-      {
-        "deputy_id": "1252",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1252"
-      },
-      {
-        "deputy_id": "1252",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1252"
-      },
-      {
-        "deputy_id": "1075",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1075"
-      },
-      {
-        "deputy_id": "1075",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1075"
-      },
-      {
-        "deputy_id": "1100",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1100"
-      },
-      {
-        "deputy_id": "1128",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1128"
-      },
-      {
-        "deputy_id": "1128",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1128"
-      },
-      {
-        "deputy_id": "1128",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1128"
-      },
-      {
-        "deputy_id": "1173",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1173"
-      },
-      {
-        "deputy_id": "1173",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1173"
-      },
-      {
-        "deputy_id": "1075",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1075"
-      },
-      {
-        "deputy_id": "1173",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1173"
-      },
-      {
-        "deputy_id": "1251",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1251"
-      },
-      {
-        "deputy_id": "1251",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1251"
-      },
-      {
-        "deputy_id": "1251",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1251"
-      },
-      {
-        "deputy_id": "1039",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1039"
-      },
-      {
-        "deputy_id": "1039",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1039"
-      },
-      {
-        "deputy_id": "1039",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1039"
-      },
-      {
-        "deputy_id": "1059",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1059"
-      },
-      {
-        "deputy_id": "1059",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1059"
-      },
-      {
-        "deputy_id": "1059",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1059"
-      },
-      {
-        "deputy_id": "1240",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1240"
-      },
-      {
-        "deputy_id": "1240",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1240"
-      },
-      {
-        "deputy_id": "1017",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1017"
-      },
-      {
-        "deputy_id": "1240",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1240"
-      },
-      {
-        "deputy_id": "1017",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1017"
-      },
-      {
-        "deputy_id": "1017",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1017"
-      },
-      {
-        "deputy_id": "1028",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1028"
-      },
-      {
-        "deputy_id": "1248",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1248"
-      },
-      {
-        "deputy_id": "1028",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1028"
-      },
-      {
-        "deputy_id": "1028",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1028"
-      },
-      {
-        "deputy_id": "1248",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1248"
-      },
-      {
-        "deputy_id": "1248",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1248"
-      },
-      {
-        "deputy_id": "1087",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1087"
-      },
-      {
-        "deputy_id": "1087",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1087"
-      },
-      {
-        "deputy_id": "1159",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1159"
-      },
-      {
-        "deputy_id": "1087",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1087"
-      },
-      {
-        "deputy_id": "1159",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1159"
-      },
-      {
-        "deputy_id": "1159",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1159"
-      },
-      {
-        "deputy_id": "1191",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1191"
-      },
-      {
-        "deputy_id": "1191",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1191"
-      },
-      {
-        "deputy_id": "1191",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1191"
-      },
-      {
-        "deputy_id": "1262",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1262"
-      },
-      {
-        "deputy_id": "1262",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1262"
-      },
-      {
-        "deputy_id": "1186",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1186"
-      },
-      {
-        "deputy_id": "1262",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1262"
-      },
-      {
-        "deputy_id": "1186",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1186"
-      },
-      {
-        "deputy_id": "1199",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1199"
-      },
-      {
-        "deputy_id": "1186",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1186"
-      },
-      {
-        "deputy_id": "1199",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1199"
-      },
-      {
-        "deputy_id": "1199",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1199"
-      },
-      {
-        "deputy_id": "1133",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1133"
-      },
-      {
-        "deputy_id": "1133",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1133"
-      },
-      {
-        "deputy_id": "1133",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1133"
-      },
-      {
-        "deputy_id": "1074",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1074"
-      },
-      {
-        "deputy_id": "1074",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1074"
-      },
-      {
-        "deputy_id": "1044",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1044"
-      },
-      {
-        "deputy_id": "1074",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1074"
-      },
-      {
-        "deputy_id": "1044",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1044"
-      },
-      {
-        "deputy_id": "1044",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1044"
-      },
-      {
-        "deputy_id": "1253",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1253"
-      },
-      {
-        "deputy_id": "1264",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1264"
-      },
-      {
-        "deputy_id": "1264",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1264"
-      },
-      {
-        "deputy_id": "1253",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1253"
-      },
-      {
-        "deputy_id": "1264",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1264"
-      },
-      {
-        "deputy_id": "1253",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1253"
-      },
-      {
-        "deputy_id": "1166",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1166"
-      },
-      {
-        "deputy_id": "1166",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1166"
-      },
-      {
-        "deputy_id": "1166",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1166"
-      },
-      {
-        "deputy_id": "1077",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1077"
-      },
-      {
-        "deputy_id": "1077",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1077"
-      },
-      {
-        "deputy_id": "1207",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1207"
-      },
-      {
-        "deputy_id": "1207",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1207"
-      },
-      {
-        "deputy_id": "1077",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1077"
-      },
-      {
-        "deputy_id": "1206",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1206"
-      },
-      {
-        "deputy_id": "1206",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1206"
-      },
-      {
-        "deputy_id": "1206",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1206"
-      },
-      {
-        "deputy_id": "1207",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1207"
-      },
-      {
-        "deputy_id": "1114",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1114"
-      },
-      {
-        "deputy_id": "1114",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1114"
-      },
-      {
-        "deputy_id": "1233",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1233"
-      },
-      {
-        "deputy_id": "1114",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1114"
-      },
-      {
-        "deputy_id": "1233",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1233"
-      },
-      {
-        "deputy_id": "1233",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1233"
-      },
-      {
-        "deputy_id": "1203",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1203"
-      },
-      {
-        "deputy_id": "1203",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1203"
-      },
-      {
-        "deputy_id": "1150",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1150"
-      },
-      {
-        "deputy_id": "1150",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1150"
-      },
-      {
-        "deputy_id": "1150",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1150"
-      },
-      {
-        "deputy_id": "915",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=915"
-      },
-      {
-        "deputy_id": "915",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=915"
-      },
-      {
-        "deputy_id": "1203",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1203"
-      },
-      {
-        "deputy_id": "1258",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1258"
-      },
-      {
-        "deputy_id": "915",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=915"
-      },
-      {
-        "deputy_id": "1258",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1258"
-      },
-      {
-        "deputy_id": "1229",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1229"
-      },
-      {
-        "deputy_id": "1258",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1258"
-      },
-      {
-        "deputy_id": "1132",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1132"
-      },
-      {
-        "deputy_id": "1132",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1132"
-      },
-      {
-        "deputy_id": "1229",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1229"
-      },
-      {
-        "deputy_id": "1132",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1132"
-      },
-      {
-        "deputy_id": "1229",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1229"
-      },
-      {
-        "deputy_id": "1196",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1196"
-      },
-      {
-        "deputy_id": "1184",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1184"
-      },
-      {
-        "deputy_id": "1196",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1196"
-      },
-      {
-        "deputy_id": "1184",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1184"
-      },
-      {
-        "deputy_id": "1196",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1196"
-      },
-      {
-        "deputy_id": "1180",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1180"
-      },
-      {
-        "deputy_id": "1180",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1180"
-      },
-      {
-        "deputy_id": "1180",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1180"
-      },
-      {
-        "deputy_id": "1184",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1184"
-      },
-      {
-        "deputy_id": "1225",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1225"
-      },
-      {
-        "deputy_id": "1225",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1225"
-      },
-      {
-        "deputy_id": "1225",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1225"
-      },
-      {
-        "deputy_id": "1194",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1194"
-      },
-      {
-        "deputy_id": "1194",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1194"
-      },
-      {
-        "deputy_id": "1242",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1242"
-      },
-      {
-        "deputy_id": "1242",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1242"
-      },
-      {
-        "deputy_id": "1194",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1194"
-      },
-      {
-        "deputy_id": "1242",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1242"
-      },
-      {
-        "deputy_id": "1197",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1197"
-      },
-      {
-        "deputy_id": "1197",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1197"
-      },
-      {
-        "deputy_id": "1143",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1143"
-      },
-      {
-        "deputy_id": "1116",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1116"
-      },
-      {
-        "deputy_id": "1143",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1143"
-      },
-      {
-        "deputy_id": "1143",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1143"
-      },
-      {
-        "deputy_id": "1116",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1116"
-      },
-      {
-        "deputy_id": "1116",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1116"
-      },
-      {
-        "deputy_id": "1204",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1204"
-      },
-      {
-        "deputy_id": "1204",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1204"
-      },
-      {
-        "deputy_id": "1204",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1204"
-      },
-      {
-        "deputy_id": "1119",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1119"
-      },
-      {
-        "deputy_id": "1119",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1119"
-      },
-      {
-        "deputy_id": "1197",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1197"
-      },
-      {
-        "deputy_id": "1119",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1119"
-      },
-      {
-        "deputy_id": "1054",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1054"
-      },
-      {
-        "deputy_id": "1054",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1054"
-      },
-      {
-        "deputy_id": "1054",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1054"
-      },
-      {
-        "deputy_id": "1246",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1246"
-      },
-      {
-        "deputy_id": "1246",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1246"
-      },
-      {
-        "deputy_id": "1157",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1157"
-      },
-      {
-        "deputy_id": "1157",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1157"
-      },
-      {
-        "deputy_id": "1246",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1246"
-      },
-      {
-        "deputy_id": "1193",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1193"
-      },
-      {
-        "deputy_id": "1193",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1193"
-      },
-      {
-        "deputy_id": "1157",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1157"
-      },
-      {
-        "deputy_id": "1198",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1198"
-      },
-      {
-        "deputy_id": "1193",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1193"
-      },
-      {
-        "deputy_id": "1198",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1198"
-      },
-      {
-        "deputy_id": "1102",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1102"
-      },
-      {
-        "deputy_id": "1102",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1102"
-      },
-      {
-        "deputy_id": "1102",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1102"
-      },
-      {
-        "deputy_id": "1198",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1198"
-      },
-      {
-        "deputy_id": "1238",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1238"
-      },
-      {
-        "deputy_id": "815",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=815"
-      },
-      {
-        "deputy_id": "815",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=815"
-      },
-      {
-        "deputy_id": "815",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=815"
-      },
-      {
-        "deputy_id": "1238",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1238"
-      },
-      {
-        "deputy_id": "1082",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1082"
-      },
-      {
-        "deputy_id": "1082",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1082"
-      },
-      {
-        "deputy_id": "1238",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1238"
-      },
-      {
-        "deputy_id": "1082",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1082"
-      },
-      {
-        "deputy_id": "1183",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1183"
-      },
-      {
-        "deputy_id": "1062",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1062"
-      },
-      {
-        "deputy_id": "1183",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1183"
-      },
-      {
-        "deputy_id": "1062",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1062"
-      },
-      {
-        "deputy_id": "1192",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1192"
-      },
-      {
-        "deputy_id": "1192",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1192"
-      },
-      {
-        "deputy_id": "1183",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1183"
-      },
-      {
-        "deputy_id": "1192",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1192"
-      },
-      {
-        "deputy_id": "1241",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1241"
-      },
-      {
-        "deputy_id": "1062",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1062"
-      },
-      {
-        "deputy_id": "1241",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1241"
-      },
-      {
-        "deputy_id": "1061",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1061"
-      },
-      {
-        "deputy_id": "1241",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1241"
-      },
-      {
-        "deputy_id": "1061",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1061"
-      },
-      {
-        "deputy_id": "1202",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1202"
-      },
-      {
-        "deputy_id": "1061",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1061"
-      },
-      {
-        "deputy_id": "1202",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1202"
-      },
-      {
-        "deputy_id": "1202",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1202"
-      },
-      {
-        "deputy_id": "1152",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1152"
-      },
-      {
-        "deputy_id": "1152",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1152"
-      },
-      {
-        "deputy_id": "1152",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1152"
-      },
-      {
-        "deputy_id": "1108",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1108"
-      },
-      {
-        "deputy_id": "1108",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1108"
-      },
-      {
-        "deputy_id": "1153",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1153"
-      },
-      {
-        "deputy_id": "1153",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1153"
-      },
-      {
-        "deputy_id": "1153",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1153"
-      },
-      {
-        "deputy_id": "1108",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1108"
-      },
-      {
-        "deputy_id": "1232",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1232"
-      },
-      {
-        "deputy_id": "1232",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1232"
-      },
-      {
-        "deputy_id": "1232",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1232"
-      },
-      {
-        "deputy_id": "1201",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1201"
-      },
-      {
-        "deputy_id": "1201",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1201"
-      },
-      {
-        "deputy_id": "1226",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1226"
-      },
-      {
-        "deputy_id": "1201",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1201"
-      },
-      {
-        "deputy_id": "1226",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1226"
-      },
-      {
-        "deputy_id": "1226",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1226"
-      },
-      {
-        "deputy_id": "1172",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1172"
-      },
-      {
-        "deputy_id": "1172",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1172"
-      },
-      {
-        "deputy_id": "1219",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1219"
-      },
-      {
-        "deputy_id": "1219",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1219"
-      },
-      {
-        "deputy_id": "1172",
-        "category": "external_advisories",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1172"
-      },
-      {
-        "deputy_id": "1261",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1261"
-      },
-      {
-        "deputy_id": "1261",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1261"
-      },
-      {
-        "deputy_id": "1261",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1261"
-      },
-      {
-        "deputy_id": "1219",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1219"
-      },
-      {
-        "deputy_id": "1220",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1220"
-      },
-      {
-        "deputy_id": "1220",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1220"
-      },
-      {
-        "deputy_id": "1220",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1220"
-      },
-      {
-        "deputy_id": "1038",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1038"
-      },
-      {
-        "deputy_id": "1038",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1038"
-      },
-      {
-        "deputy_id": "1038",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1038"
-      },
-      {
-        "deputy_id": "1209",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1209"
-      },
-      {
-        "deputy_id": "1209",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1209"
-      },
-      {
-        "deputy_id": "1209",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1209"
-      },
-      {
-        "deputy_id": "1249",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1249"
-      },
-      {
-        "deputy_id": "1249",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1249"
-      },
-      {
-        "deputy_id": "1249",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1249"
-      },
-      {
-        "deputy_id": "843",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=843"
-      },
-      {
-        "deputy_id": "843",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=843"
-      },
-      {
-        "deputy_id": "843",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=843"
-      },
-      {
-        "deputy_id": "1140",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1140"
-      },
-      {
-        "deputy_id": "1140",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1140"
-      },
-      {
-        "deputy_id": "1140",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1140"
-      },
-      {
-        "deputy_id": "1056",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1056"
-      },
-      {
-        "deputy_id": "1056",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1056"
-      },
-      {
-        "deputy_id": "1056",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1056"
-      },
-      {
-        "deputy_id": "1105",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1105"
-      },
-      {
-        "deputy_id": "1105",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1105"
-      },
-      {
-        "deputy_id": "1228",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1228"
-      },
-      {
-        "deputy_id": "1105",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1105"
-      },
-      {
-        "deputy_id": "1228",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1228"
-      },
-      {
-        "deputy_id": "1228",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1228"
-      },
-      {
-        "deputy_id": "1013",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1013"
-      },
-      {
-        "deputy_id": "1013",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1013"
-      },
-      {
-        "deputy_id": "1013",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1013"
-      },
-      {
-        "deputy_id": "1230",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1230"
-      },
-      {
-        "deputy_id": "1230",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1230"
-      },
-      {
-        "deputy_id": "1244",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1244"
-      },
-      {
-        "deputy_id": "1244",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1244"
-      },
-      {
-        "deputy_id": "1230",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1230"
-      },
-      {
-        "deputy_id": "1244",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1244"
-      },
-      {
-        "deputy_id": "1178",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1178"
-      },
-      {
-        "deputy_id": "1178",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1178"
-      },
-      {
-        "deputy_id": "1178",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1178"
-      },
-      {
-        "deputy_id": "1131",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1131"
-      },
-      {
-        "deputy_id": "1131",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1131"
-      },
-      {
-        "deputy_id": "1257",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1257"
-      },
-      {
-        "deputy_id": "1131",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1131"
-      },
-      {
-        "deputy_id": "1257",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1257"
-      },
-      {
-        "deputy_id": "1257",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1257"
-      },
-      {
-        "deputy_id": "1222",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1222"
-      },
-      {
-        "deputy_id": "1222",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1222"
-      },
-      {
-        "deputy_id": "1222",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1222"
-      },
-      {
-        "deputy_id": "803",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=803"
-      },
-      {
-        "deputy_id": "803",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=803"
-      },
-      {
-        "deputy_id": "1110",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1110"
-      },
-      {
-        "deputy_id": "803",
-        "category": "flights",
-        "reason": "La fuente oficial rechazó la consulta (403) en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=803"
-      },
-      {
-        "deputy_id": "1245",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1245"
-      },
-      {
-        "deputy_id": "1245",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1245"
-      },
-      {
-        "deputy_id": "1245",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1245"
-      },
-      {
-        "deputy_id": "1110",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1110"
-      },
-      {
-        "deputy_id": "1110",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1110"
-      },
-      {
-        "deputy_id": "1148",
-        "category": "operational_expenses",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/gastosoperacionales.aspx?prmId=1148"
-      },
-      {
-        "deputy_id": "1148",
-        "category": "external_advisories",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/asesoriaexterna.aspx?prmId=1148"
-      },
-      {
-        "deputy_id": "1148",
-        "category": "flights",
-        "reason": "La fuente oficial no respondió después de 2 intentos en https://www.camara.cl/diputados/detalle/pasajesaereos.aspx?prmId=1148"
-      }
-    ]
   }
 }

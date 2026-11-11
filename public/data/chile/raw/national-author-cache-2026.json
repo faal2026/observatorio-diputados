@@ -6184,6 +6184,1603 @@
         ],
         "authors_text": "0 1224 Cristian Mella Andaur 0 1246 José Antonio Rivas Villalobos 0 1206 Carolina Cucumides Calderón 0 1250 Bernardo Salinas Maya 0 1195 Carlos Carvajal Gallardo 0 1241 Patricio Pinilla Valencia",
         "offices": []
+      },
+      "19456": {
+        "author_ids": [
+          "1132",
+          "1157",
+          "1219",
+          "1201",
+          "1203"
+        ],
+        "authors_text": "0 1132 Jorge Guzmán Zepeda 0 1157 Marlene Pérez Cartes 0 1219 Tomás Kast Sommerhoff 0 1201 Flor Contreras Vivallo 0 1203 Sebastián Cristoffanini Jaraquemada",
+        "offices": []
+      },
+      "19500": {
+        "author_ids": [
+          "872",
+          "986",
+          "1013",
+          "1102",
+          "1141",
+          "1182"
+        ],
+        "authors_text": "0 872 Jaime Mulet Martínez 0 986 Marcela Hernando Pérez 0 1013 Alejandro Bernales Maldonado 0 1102 Roberto Arroyo Muñoz 0 1141 Luis Malla Valenzuela 0 1182 Sebastián Videla Castillo",
+        "offices": []
+      },
+      "19499": {
+        "author_ids": [
+          "1258",
+          "1244",
+          "1262",
+          "1253",
+          "1225"
+        ],
+        "authors_text": "0 1258 Guillermo Valdés Carmona 0 1244 Claudia Reyes Larenas 0 1262 Diego Vergara Rodríguez 0 1253 Fernando Ugarte Tejeda 0 1225 Cristian Menchaca Pinochet",
+        "offices": []
+      },
+      "19457": {
+        "author_ids": [
+          "1132",
+          "1157",
+          "1219",
+          "1201",
+          "1195",
+          "1203"
+        ],
+        "authors_text": "0 1132 Jorge Guzmán Zepeda 0 1157 Marlene Pérez Cartes 0 1219 Tomás Kast Sommerhoff 0 1201 Flor Contreras Vivallo 0 1195 Carlos Carvajal Gallardo 0 1203 Sebastián Cristoffanini Jaraquemada",
+        "offices": []
+      },
+      "19427": {
+        "author_ids": [
+          "1021",
+          "1025",
+          "1102",
+          "1140",
+          "1240",
+          "1201"
+        ],
+        "authors_text": "0 1021 Andrés Celis Montt 0 1025 Catalina Del Real Mihovilovic 0 1102 Roberto Arroyo Muñoz 0 1140 Daniel Lilayu Vivanco 0 1240 Zandra Parisi Fernández 0 1201 Flor Contreras Vivallo",
+        "offices": []
+      },
+      "19502": {
+        "author_ids": [],
+        "authors_text": "0 1120 Manuel José Ossandón Irarrázabal 0 1330 Iván Flores García 0 1337 Paulina Núñez Urrutia 0 1344 Matías Walker Prieto 0 1450 Paulina Vodanovic Rojas",
+        "offices": []
+      },
+      "19494": {
+        "author_ids": [
+          "1059",
+          "1074",
+          "1116",
+          "1141",
+          "1216",
+          "1258",
+          "1200",
+          "1255",
+          "1217",
+          "1190"
+        ],
+        "authors_text": "0 1059 Ximena Ossandón Irarrázabal 0 1074 Marisela Santibáñez Novoa 0 1116 Felipe Camaño Cárdenas 0 1141 Luis Malla Valenzuela 0 1216 Stephanie Jéldrez Ortiz 0 1258 Guillermo Valdés Carmona 0 1200 Cristian Contreras Radovic 0 1255 Eileen Urqueta Rojas 0 1217 Pier Karlezi Hazleby 0 1190 Enrique Bassaletti Riess",
+        "offices": []
+      },
+      "19519": {
+        "author_ids": [
+          "1197",
+          "1242",
+          "1261"
+        ],
+        "authors_text": "0 1197 Carlos Chandía Alarcón 0 1242 Rodrigo Ramírez Parra 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19518": {
+        "author_ids": [
+          "843",
+          "815",
+          "915",
+          "1233"
+        ],
+        "authors_text": "0 843 René Manuel García García 0 815 Sergio Bobadilla Muñoz 0 915 Germán Verdugo Soto 0 1233 Ricardo Neumann Bertín",
+        "offices": []
+      },
+      "19434": {
+        "author_ids": [
+          "1176"
+        ],
+        "authors_text": "0 1176 Hotuiti Teao Drago",
+        "offices": []
+      },
+      "19414": {
+        "author_ids": [],
+        "authors_text": "0 1326 Juan Luis Castro González 0 1333 Sebastián Keitel Bianchi 0 1337 Paulina Núñez Urrutia 0 1450 Paulina Vodanovic Rojas",
+        "offices": []
+      },
+      "19551": {
+        "author_ids": [
+          "1140",
+          "1157",
+          "1166",
+          "1183",
+          "1202",
+          "1251",
+          "1249",
+          "1231",
+          "1257"
+        ],
+        "authors_text": "0 1140 Daniel Lilayu Vivanco 0 1157 Marlene Pérez Cartes 0 1166 Natalia Romero Talguia 0 1183 Flor Weisse Novoa 0 1202 Eduardo Cretton Rebolledo 0 1251 Macarena Santelices Cañas 0 1249 Omar Sabat Guzmán 0 1231 Ximena Naranjo Pinto 0 1257 Alejandra Valdebenito Torres",
+        "offices": []
+      },
+      "19426": {
+        "author_ids": [
+          "1259",
+          "1236",
+          "1255",
+          "1201",
+          "1230",
+          "1239",
+          "1193"
+        ],
+        "authors_text": "0 1259 Juan Marcelo Valenzuela Henríquez 0 1236 Paula Olmos Contreras 0 1255 Eileen Urqueta Rojas 0 1201 Flor Contreras Vivallo 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19463": {
+        "author_ids": [
+          "1025",
+          "1262",
+          "1248",
+          "1245",
+          "1251",
+          "1225"
+        ],
+        "authors_text": "0 1025 Catalina Del Real Mihovilovic 0 1262 Diego Vergara Rodríguez 0 1248 Felipe Ross Correa 0 1245 Alejandro Riquelme Ducci 0 1251 Macarena Santelices Cañas 0 1225 Cristian Menchaca Pinochet",
+        "offices": []
+      },
+      "19550": {
+        "author_ids": [
+          "1100",
+          "1131",
+          "1104",
+          "1259",
+          "1191",
+          "1190"
+        ],
+        "authors_text": "0 1100 Cristián Araya Lerdo de Tejada 0 1131 Mauro González Villarroel 0 1104 Chiara Barchiesi Chávez 0 1259 Juan Marcelo Valenzuela Henríquez 0 1191 Valentina Becerra Peña 0 1190 Enrique Bassaletti Riess",
+        "offices": []
+      },
+      "19488": {
+        "author_ids": [],
+        "authors_text": "0 1110 Pedro Araya Guerrero 0 1324 Karim Bianchi Retamales 0 1330 Iván Flores García 0 1512 Andrés Longton Herrera 0 1515 Arturo Squella Ovalle",
+        "offices": []
+      },
+      "19556": {
+        "author_ids": [
+          "803",
+          "1105",
+          "1175",
+          "1230"
+        ],
+        "authors_text": "0 803 René Alinco Bustos 0 1105 Héctor Barría Angulo 0 1175 Cristián Tapia Ramos 0 1230 Alex Nahuelquin Nahuelquin",
+        "offices": []
+      },
+      "19465": {
+        "author_ids": [
+          "815",
+          "1009",
+          "1065",
+          "1140",
+          "1157",
+          "1202",
+          "1199",
+          "1233",
+          "1249",
+          "1234"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz 0 1009 Jorge Alessandri Vergara 0 1065 Guillermo Ramírez Diez 0 1140 Daniel Lilayu Vivanco 0 1157 Marlene Pérez Cartes 0 1202 Eduardo Cretton Rebolledo 0 1199 Jaime Coloma Álamos 0 1233 Ricardo Neumann Bertín 0 1249 Omar Sabat Guzmán 0 1234 Mario Olavarría Rodríguez",
+        "offices": []
+      },
+      "19464": {
+        "author_ids": [
+          "815",
+          "1143",
+          "1202"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz 0 1143 Cristóbal Martínez Ramírez 0 1202 Eduardo Cretton Rebolledo",
+        "offices": []
+      },
+      "19554": {
+        "author_ids": [
+          "1100",
+          "1104",
+          "1216",
+          "1228",
+          "1200",
+          "1223",
+          "1190"
+        ],
+        "authors_text": "0 1100 Cristián Araya Lerdo de Tejada 0 1104 Chiara Barchiesi Chávez 0 1216 Stephanie Jéldrez Ortiz 0 1228 Paulina Muñoz Minte 0 1200 Cristian Contreras Radovic 0 1223 Hans Marowski Cuevas 0 1190 Enrique Bassaletti Riess",
+        "offices": []
+      },
+      "19520": {
+        "author_ids": [
+          "1180",
+          "1102",
+          "1243",
+          "1240",
+          "1236",
+          "1201",
+          "1230",
+          "1239",
+          "1193",
+          "1192"
+        ],
+        "authors_text": "0 1180 Consuelo Veloso Ávila 0 1102 Roberto Arroyo Muñoz 0 1243 Tamara Ramírez Ramírez 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1201 Flor Contreras Vivallo 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19521": {
+        "author_ids": [
+          "1197",
+          "1242",
+          "1261"
+        ],
+        "authors_text": "0 1197 Carlos Chandía Alarcón 0 1242 Rodrigo Ramírez Parra 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19415": {
+        "author_ids": [],
+        "authors_text": "0 1222 Francisco Huenchumilla Jaramillo 0 1509 Diego Ibáñez Cotroneo 0 1514 Beatriz Sánchez Muñoz",
+        "offices": []
+      },
+      "19537": {
+        "author_ids": [],
+        "authors_text": "0 1115 Alfonso De Urresti Longton 0 1326 Juan Luis Castro González 0 1450 Paulina Vodanovic Rojas 0 1500 Danisa Astudillo Peiretti 0 1507 Daniella Cicardini Milla",
+        "offices": []
+      },
+      "19444": {
+        "author_ids": [],
+        "authors_text": "0 1222 Francisco Huenchumilla Jaramillo 0 1341 Alejandra Sepúlveda Orbenes 0 1513 Vlado Mirosevic Verdugo",
+        "offices": []
+      },
+      "19493": {
+        "author_ids": [
+          "986",
+          "1074",
+          "1013",
+          "1100",
+          "1141",
+          "1182",
+          "1224",
+          "1195",
+          "1193"
+        ],
+        "authors_text": "0 986 Marcela Hernando Pérez 0 1074 Marisela Santibáñez Novoa 0 1013 Alejandro Bernales Maldonado 0 1100 Cristián Araya Lerdo de Tejada 0 1141 Luis Malla Valenzuela 0 1182 Sebastián Videla Castillo 0 1224 Cristian Mella Andaur 0 1195 Carlos Carvajal Gallardo 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19545": {
+        "author_ids": [
+          "1086",
+          "1148",
+          "1107",
+          "1128",
+          "1222",
+          "1246",
+          "1240",
+          "1189",
+          "1210",
+          "1206"
+        ],
+        "authors_text": "0 1086 Gonzalo Winter Etcheberry 0 1148 Javiera Morales Alvarado 0 1107 María Francisca Bello Campos 0 1128 Ana María Gazmuri Vieira 0 1222 Andrea Macías Palma 0 1246 José Antonio Rivas Villalobos 0 1240 Zandra Parisi Fernández 0 1189 Jaime Bassa Mercado 0 1210 Gustavo Gatica Villarroel 0 1206 Carolina Cucumides Calderón",
+        "offices": []
+      },
+      "19546": {
+        "author_ids": [
+          "1061",
+          "1077",
+          "1099",
+          "1110",
+          "1175",
+          "1178",
+          "1226",
+          "1205",
+          "1264",
+          "1195"
+        ],
+        "authors_text": "0 1061 Andrea Parra Sauterel 0 1077 Raúl Soto Mardones 0 1099 Jaime Araya Guerrero 0 1110 Carlos Bianchi Chelech 0 1175 Cristián Tapia Ramos 0 1178 Héctor Ulloa Aguilera 0 1226 José Montalva Feuerhake 0 1205 Carlos Cuadrado Prats 0 1264 Fernando Zamorano Peralta 0 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "19511": {
+        "author_ids": [
+          "1230",
+          "1192"
+        ],
+        "authors_text": "0 1230 Alex Nahuelquin Nahuelquin 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19512": {
+        "author_ids": [
+          "1039",
+          "1102",
+          "1259",
+          "1243",
+          "1258",
+          "1240",
+          "1236",
+          "1255",
+          "1239",
+          "1193"
+        ],
+        "authors_text": "0 1039 Pamela Jiles Moreno 0 1102 Roberto Arroyo Muñoz 0 1259 Juan Marcelo Valenzuela Henríquez 0 1243 Tamara Ramírez Ramírez 0 1258 Guillermo Valdés Carmona 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1255 Eileen Urqueta Rojas 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19435": {
+        "author_ids": [
+          "1104",
+          "1228",
+          "1244",
+          "1233",
+          "1220"
+        ],
+        "authors_text": "0 1104 Chiara Barchiesi Chávez 0 1228 Paulina Muñoz Minte 0 1244 Claudia Reyes Larenas 0 1233 Ricardo Neumann Bertín 0 1220 Leandro Kunstmann Collado",
+        "offices": []
+      },
+      "19437": {
+        "author_ids": [
+          "1246"
+        ],
+        "authors_text": "0 1246 José Antonio Rivas Villalobos",
+        "offices": []
+      },
+      "19548": {
+        "author_ids": [
+          "1054",
+          "1240",
+          "1236",
+          "1201",
+          "1239",
+          "1193"
+        ],
+        "authors_text": "0 1054 Francesca Muñoz González 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1201 Flor Contreras Vivallo 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19547": {
+        "author_ids": [
+          "803",
+          "986",
+          "1105",
+          "1258",
+          "1255",
+          "1194",
+          "1254"
+        ],
+        "authors_text": "0 803 René Alinco Bustos 0 986 Marcela Hernando Pérez 0 1105 Héctor Barría Angulo 0 1258 Guillermo Valdés Carmona 0 1255 Eileen Urqueta Rojas 0 1194 Daniel Bustos Leal 0 1254 Ignacio Urcullú Clèment-Lund",
+        "offices": []
+      },
+      "19428": {
+        "author_ids": [
+          "1060",
+          "1150",
+          "1215",
+          "1202",
+          "1251",
+          "1225",
+          "1230",
+          "1261",
+          "1193"
+        ],
+        "authors_text": "0 1060 Luis Pardo Sáinz 0 1150 Benjamín Moreno Bascur 0 1215 Álvaro Jofré Cáceres 0 1202 Eduardo Cretton Rebolledo 0 1251 Macarena Santelices Cañas 0 1225 Cristian Menchaca Pinochet 0 1230 Alex Nahuelquin Nahuelquin 0 1261 Daniel Valenzuela Salazar 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19454": {
+        "author_ids": [
+          "1133",
+          "1104",
+          "1187",
+          "1216",
+          "1254",
+          "1220"
+        ],
+        "authors_text": "0 1133 Juan Irarrázaval Rossel 0 1104 Chiara Barchiesi Chávez 0 1187 Carlo Arqueros Pizarro 0 1216 Stephanie Jéldrez Ortiz 0 1254 Ignacio Urcullú Clèment-Lund 0 1220 Leandro Kunstmann Collado",
+        "offices": []
+      },
+      "19539": {
+        "author_ids": [
+          "1087",
+          "1105",
+          "1122",
+          "1178",
+          "1224",
+          "1243",
+          "1205",
+          "1241",
+          "1204"
+        ],
+        "authors_text": "0 1087 Gael Yeomans Araya 0 1105 Héctor Barría Angulo 0 1122 Luis Alberto Cuello Peña y Lillo 0 1178 Héctor Ulloa Aguilera 0 1224 Cristian Mella Andaur 0 1243 Tamara Ramírez Ramírez 0 1205 Carlos Cuadrado Prats 0 1241 Patricio Pinilla Valencia 0 1204 Francisco Crisóstomo Llanos",
+        "offices": []
+      },
+      "19524": {
+        "author_ids": [
+          "1017",
+          "1104",
+          "1244",
+          "1248",
+          "1235",
+          "1245",
+          "1220"
+        ],
+        "authors_text": "0 1017 Álvaro Carter Fernández 0 1104 Chiara Barchiesi Chávez 0 1244 Claudia Reyes Larenas 0 1248 Felipe Ross Correa 0 1235 Javier Olivares Avendaño 0 1245 Alejandro Riquelme Ducci 0 1220 Leandro Kunstmann Collado",
+        "offices": []
+      },
+      "19477": {
+        "author_ids": [
+          "1009",
+          "1166",
+          "1174",
+          "1176",
+          "1183",
+          "1202",
+          "1199",
+          "1231",
+          "1234",
+          "1257"
+        ],
+        "authors_text": "0 1009 Jorge Alessandri Vergara 0 1166 Natalia Romero Talguia 0 1174 Marco Antonio Sulantay Olivares 0 1176 Hotuiti Teao Drago 0 1183 Flor Weisse Novoa 0 1202 Eduardo Cretton Rebolledo 0 1199 Jaime Coloma Álamos 0 1231 Ximena Naranjo Pinto 0 1234 Mario Olavarría Rodríguez 0 1257 Alejandra Valdebenito Torres",
+        "offices": []
+      },
+      "19449": {
+        "author_ids": [],
+        "authors_text": "0 1324 Karim Bianchi Retamales",
+        "offices": []
+      },
+      "19455": {
+        "author_ids": [
+          "843",
+          "1215",
+          "1261"
+        ],
+        "authors_text": "0 843 René Manuel García García 0 1215 Álvaro Jofré Cáceres 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19458": {
+        "author_ids": [
+          "1177",
+          "1114",
+          "1213"
+        ],
+        "authors_text": "0 1177 Carolina Tello Rojas 0 1114 Félix Bugueño Sotelo 0 1213 Irací Hassler Jacob",
+        "offices": []
+      },
+      "19460": {
+        "author_ids": [
+          "1044",
+          "1015",
+          "1148",
+          "1099",
+          "1127",
+          "1189",
+          "1256",
+          "1250",
+          "1241",
+          "1188"
+        ],
+        "authors_text": "0 1044 Raúl Leiva Carvajal 0 1015 Jorge Brito Hasbún 0 1148 Javiera Morales Alvarado 0 1099 Jaime Araya Guerrero 0 1127 Lorena Fries Monleón 0 1189 Jaime Bassa Mercado 0 1256 Tatiana Urrutia Herrera 0 1250 Bernardo Salinas Maya 0 1241 Patricio Pinilla Valencia 0 1188 Marcos Barraza Gómez",
+        "offices": []
+      },
+      "19472": {
+        "author_ids": [
+          "872",
+          "986",
+          "1044",
+          "1099",
+          "1180",
+          "1116",
+          "1243",
+          "1256",
+          "1213"
+        ],
+        "authors_text": "0 872 Jaime Mulet Martínez 0 986 Marcela Hernando Pérez 0 1044 Raúl Leiva Carvajal 0 1099 Jaime Araya Guerrero 0 1180 Consuelo Veloso Ávila 0 1116 Felipe Camaño Cárdenas 0 1243 Tamara Ramírez Ramírez 0 1256 Tatiana Urrutia Herrera 0 1213 Irací Hassler Jacob",
+        "offices": []
+      },
+      "19459": {
+        "author_ids": [
+          "1116",
+          "1141",
+          "1243",
+          "1211",
+          "1210",
+          "1256",
+          "1255",
+          "1213",
+          "1204",
+          "1186"
+        ],
+        "authors_text": "0 1116 Felipe Camaño Cárdenas 0 1141 Luis Malla Valenzuela 0 1243 Tamara Ramírez Ramírez 0 1211 Sofía González Cortés 0 1210 Gustavo Gatica Villarroel 0 1256 Tatiana Urrutia Herrera 0 1255 Eileen Urqueta Rojas 0 1213 Irací Hassler Jacob 0 1204 Francisco Crisóstomo Llanos 0 1186 Ignacio Achurra Díaz",
+        "offices": []
+      },
+      "19441": {
+        "author_ids": [
+          "1044",
+          "1056",
+          "1038",
+          "1181",
+          "1142",
+          "1222",
+          "1246",
+          "1260",
+          "1206",
+          "1204"
+        ],
+        "authors_text": "0 1044 Raúl Leiva Carvajal 0 1056 Emilia Nuyado Ancapichun 0 1038 Marcos Ilabaca Cerda 0 1181 Nelson Venegas Salazar 0 1142 Daniel Manouchehri Lobos 0 1222 Andrea Macías Palma 0 1246 José Antonio Rivas Villalobos 0 1260 César Valenzuela Maass 0 1206 Carolina Cucumides Calderón 0 1204 Francisco Crisóstomo Llanos",
+        "offices": []
+      },
+      "19442": {
+        "author_ids": [
+          "1056",
+          "1108",
+          "1206",
+          "1229",
+          "1225",
+          "1204"
+        ],
+        "authors_text": "0 1056 Emilia Nuyado Ancapichun 0 1108 Juan Carlos Beltrán Silva 0 1206 Carolina Cucumides Calderón 0 1229 Javier Muñoz Riquelme 0 1225 Cristian Menchaca Pinochet 0 1204 Francisco Crisóstomo Llanos",
+        "offices": []
+      },
+      "19544": {
+        "author_ids": [
+          "1012",
+          "1056",
+          "1087",
+          "1122",
+          "1141",
+          "1211",
+          "1210",
+          "1256",
+          "1255",
+          "1241"
+        ],
+        "authors_text": "0 1012 Boris Barrera Moreno 0 1056 Emilia Nuyado Ancapichun 0 1087 Gael Yeomans Araya 0 1122 Luis Alberto Cuello Peña y Lillo 0 1141 Luis Malla Valenzuela 0 1211 Sofía González Cortés 0 1210 Gustavo Gatica Villarroel 0 1256 Tatiana Urrutia Herrera 0 1255 Eileen Urqueta Rojas 0 1241 Patricio Pinilla Valencia",
+        "offices": []
+      },
+      "19552": {
+        "author_ids": [
+          "986",
+          "1013",
+          "1102",
+          "1141",
+          "1182",
+          "1209"
+        ],
+        "authors_text": "0 986 Marcela Hernando Pérez 0 1013 Alejandro Bernales Maldonado 0 1102 Roberto Arroyo Muñoz 0 1141 Luis Malla Valenzuela 0 1182 Sebastián Videla Castillo 0 1209 Matías Fernández Hartwig",
+        "offices": []
+      },
+      "19466": {
+        "author_ids": [
+          "1009",
+          "1143",
+          "1140",
+          "1174",
+          "1176",
+          "1183",
+          "1202",
+          "1233",
+          "1231",
+          "1234"
+        ],
+        "authors_text": "0 1009 Jorge Alessandri Vergara 0 1143 Cristóbal Martínez Ramírez 0 1140 Daniel Lilayu Vivanco 0 1174 Marco Antonio Sulantay Olivares 0 1176 Hotuiti Teao Drago 0 1183 Flor Weisse Novoa 0 1202 Eduardo Cretton Rebolledo 0 1233 Ricardo Neumann Bertín 0 1231 Ximena Naranjo Pinto 0 1234 Mario Olavarría Rodríguez",
+        "offices": []
+      },
+      "19484": {
+        "author_ids": [
+          "815"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz",
+        "offices": []
+      },
+      "19516": {
+        "author_ids": [
+          "1059",
+          "1028",
+          "1087",
+          "1099",
+          "1180",
+          "1142",
+          "1209",
+          "1240",
+          "1231",
+          "1239"
+        ],
+        "authors_text": "0 1059 Ximena Ossandón Irarrázabal 0 1028 Eduardo Durán Salinas 0 1087 Gael Yeomans Araya 0 1099 Jaime Araya Guerrero 0 1180 Consuelo Veloso Ávila 0 1142 Daniel Manouchehri Lobos 0 1209 Matías Fernández Hartwig 0 1240 Zandra Parisi Fernández 0 1231 Ximena Naranjo Pinto 0 1239 Fabián Ossandón Briceño",
+        "offices": []
+      },
+      "19439": {
+        "author_ids": [
+          "1128"
+        ],
+        "authors_text": "0 1128 Ana María Gazmuri Vieira",
+        "offices": []
+      },
+      "19430": {
+        "author_ids": [
+          "1236",
+          "1195"
+        ],
+        "authors_text": "0 1236 Paula Olmos Contreras 0 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "19553": {
+        "author_ids": [],
+        "authors_text": "0 1117 Iván Moreira Barros 0 1340 Gustavo Sanhueza Dueñas 0 1342 Enrique Van Rysselberghe Herrera",
+        "offices": []
+      },
+      "19468": {
+        "author_ids": [
+          "1059",
+          "1028",
+          "1075",
+          "1108",
+          "1131",
+          "1132",
+          "1237",
+          "1197",
+          "1227",
+          "1261"
+        ],
+        "authors_text": "0 1059 Ximena Ossandón Irarrázabal 0 1028 Eduardo Durán Salinas 0 1075 Diego Schalper Sepúlveda 0 1108 Juan Carlos Beltrán Silva 0 1131 Mauro González Villarroel 0 1132 Jorge Guzmán Zepeda 0 1237 Francisco Orrego Gutiérrez 0 1197 Carlos Chandía Alarcón 0 1227 Claudia Mora Vega 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19514": {
+        "author_ids": [
+          "1102",
+          "1255",
+          "1230",
+          "1239",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1255 Eileen Urqueta Rojas 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19538": {
+        "author_ids": [],
+        "authors_text": "0 1320 Loreto Carvajal Ambiado 0 1337 Paulina Núñez Urrutia 0 1339 Gastón Saavedra Chandía 0 1342 Enrique Van Rysselberghe Herrera 0 1508 Camila Flores Oporto",
+        "offices": []
+      },
+      "19470": {
+        "author_ids": [
+          "1054",
+          "1119",
+          "1219",
+          "1193"
+        ],
+        "authors_text": "0 1054 Francesca Muñoz González 0 1119 Sara Concha Smith 0 1219 Tomás Kast Sommerhoff 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19523": {
+        "author_ids": [
+          "1056",
+          "1073",
+          "1074",
+          "1159",
+          "1180",
+          "1117",
+          "1122",
+          "1173",
+          "1210"
+        ],
+        "authors_text": "0 1056 Emilia Nuyado Ancapichun 0 1073 Juan Santana Castillo 0 1074 Marisela Santibáñez Novoa 0 1159 Lorena Pizarro Sierra 0 1180 Consuelo Veloso Ávila 0 1117 Nathalie Castillo Rojas 0 1122 Luis Alberto Cuello Peña y Lillo 0 1173 Daniela Serrano Salazar 0 1210 Gustavo Gatica Villarroel",
+        "offices": []
+      },
+      "19417": {
+        "author_ids": [],
+        "authors_text": "0 1326 Juan Luis Castro González 0 1332 María José Gatica Bertin 0 1336 Daniel Núñez Arancibia 0 1450 Paulina Vodanovic Rojas",
+        "offices": []
+      },
+      "19431": {
+        "author_ids": [
+          "1056",
+          "1102",
+          "1141",
+          "1236",
+          "1201",
+          "1230",
+          "1193",
+          "1192"
+        ],
+        "authors_text": "0 1056 Emilia Nuyado Ancapichun 0 1102 Roberto Arroyo Muñoz 0 1141 Luis Malla Valenzuela 0 1236 Paula Olmos Contreras 0 1201 Flor Contreras Vivallo 0 1230 Alex Nahuelquin Nahuelquin 0 1193 Patricio Briones Moller 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19461": {
+        "author_ids": [
+          "1102"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz",
+        "offices": []
+      },
+      "19451": {
+        "author_ids": [
+          "1015",
+          "1087",
+          "1148",
+          "1180",
+          "1171",
+          "1209",
+          "1189",
+          "1256",
+          "1252",
+          "1186"
+        ],
+        "authors_text": "0 1015 Jorge Brito Hasbún 0 1087 Gael Yeomans Araya 0 1148 Javiera Morales Alvarado 0 1180 Consuelo Veloso Ávila 0 1171 Emilia Schneider Videla 0 1209 Matías Fernández Hartwig 0 1189 Jaime Bassa Mercado 0 1256 Tatiana Urrutia Herrera 0 1252 Constanza Schonhaut Soto 0 1186 Ignacio Achurra Díaz",
+        "offices": []
+      },
+      "19526": {
+        "author_ids": [
+          "1102",
+          "1243",
+          "1258",
+          "1240",
+          "1236",
+          "1255",
+          "1201",
+          "1239",
+          "1193",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1243 Tamara Ramírez Ramírez 0 1258 Guillermo Valdés Carmona 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1255 Eileen Urqueta Rojas 0 1201 Flor Contreras Vivallo 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19474": {
+        "author_ids": [
+          "1150",
+          "1244",
+          "1232",
+          "1225"
+        ],
+        "authors_text": "0 1150 Benjamín Moreno Bascur 0 1244 Claudia Reyes Larenas 0 1232 Cristian Neira Martínez 0 1225 Cristian Menchaca Pinochet",
+        "offices": []
+      },
+      "19517": {
+        "author_ids": [
+          "1060",
+          "1075",
+          "1099",
+          "1100",
+          "1131",
+          "1202",
+          "1237",
+          "1227",
+          "1190"
+        ],
+        "authors_text": "0 1060 Luis Pardo Sáinz 0 1075 Diego Schalper Sepúlveda 0 1099 Jaime Araya Guerrero 0 1100 Cristián Araya Lerdo de Tejada 0 1131 Mauro González Villarroel 0 1202 Eduardo Cretton Rebolledo 0 1237 Francisco Orrego Gutiérrez 0 1227 Claudia Mora Vega 0 1190 Enrique Bassaletti Riess",
+        "offices": []
+      },
+      "19481": {
+        "author_ids": [
+          "1114",
+          "1141",
+          "1175",
+          "1255",
+          "1264",
+          "1219",
+          "1195"
+        ],
+        "authors_text": "0 1114 Félix Bugueño Sotelo 0 1141 Luis Malla Valenzuela 0 1175 Cristián Tapia Ramos 0 1255 Eileen Urqueta Rojas 0 1264 Fernando Zamorano Peralta 0 1219 Tomás Kast Sommerhoff 0 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "19530": {
+        "author_ids": [
+          "1104",
+          "1244",
+          "1237",
+          "1232",
+          "1263",
+          "1191",
+          "1190",
+          "1203"
+        ],
+        "authors_text": "0 1104 Chiara Barchiesi Chávez 0 1244 Claudia Reyes Larenas 0 1237 Francisco Orrego Gutiérrez 0 1232 Cristian Neira Martínez 0 1263 Sebastián Zamora Soto 0 1191 Valentina Becerra Peña 0 1190 Enrique Bassaletti Riess 0 1203 Sebastián Cristoffanini Jaraquemada",
+        "offices": []
+      },
+      "19531": {
+        "author_ids": [
+          "1102",
+          "1258",
+          "1230",
+          "1239"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1258 Guillermo Valdés Carmona 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño",
+        "offices": []
+      },
+      "19421": {
+        "author_ids": [
+          "1146"
+        ],
+        "authors_text": "0 1146 José Carlos Meza Pereira",
+        "offices": []
+      },
+      "19424": {
+        "author_ids": [
+          "915",
+          "1054",
+          "1119",
+          "1216",
+          "1237",
+          "1233"
+        ],
+        "authors_text": "0 915 Germán Verdugo Soto 0 1054 Francesca Muñoz González 0 1119 Sara Concha Smith 0 1216 Stephanie Jéldrez Ortiz 0 1237 Francisco Orrego Gutiérrez 0 1233 Ricardo Neumann Bertín",
+        "offices": []
+      },
+      "19423": {
+        "author_ids": [
+          "1082",
+          "1102",
+          "1107",
+          "1224",
+          "1240",
+          "1251",
+          "1230",
+          "1192"
+        ],
+        "authors_text": "0 1082 Cristóbal Urruticoechea Ríos 0 1102 Roberto Arroyo Muñoz 0 1107 María Francisca Bello Campos 0 1224 Cristian Mella Andaur 0 1240 Zandra Parisi Fernández 0 1251 Macarena Santelices Cañas 0 1230 Alex Nahuelquin Nahuelquin 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19432": {
+        "author_ids": [
+          "986",
+          "1056",
+          "1073",
+          "1128",
+          "1178",
+          "1222",
+          "1256",
+          "1213",
+          "1204"
+        ],
+        "authors_text": "0 986 Marcela Hernando Pérez 0 1056 Emilia Nuyado Ancapichun 0 1073 Juan Santana Castillo 0 1128 Ana María Gazmuri Vieira 0 1178 Héctor Ulloa Aguilera 0 1222 Andrea Macías Palma 0 1256 Tatiana Urrutia Herrera 0 1213 Irací Hassler Jacob 0 1204 Francisco Crisóstomo Llanos",
+        "offices": []
+      },
+      "19467": {
+        "author_ids": [
+          "1087",
+          "1177",
+          "1107",
+          "1171",
+          "1189",
+          "1256",
+          "1206",
+          "1252",
+          "1213",
+          "1186"
+        ],
+        "authors_text": "0 1087 Gael Yeomans Araya 0 1177 Carolina Tello Rojas 0 1107 María Francisca Bello Campos 0 1171 Emilia Schneider Videla 0 1189 Jaime Bassa Mercado 0 1256 Tatiana Urrutia Herrera 0 1206 Carolina Cucumides Calderón 0 1252 Constanza Schonhaut Soto 0 1213 Irací Hassler Jacob 0 1186 Ignacio Achurra Díaz",
+        "offices": []
+      },
+      "19504": {
+        "author_ids": [],
+        "authors_text": "0 1215 Yasna Provoste Campillay 0 1222 Francisco Huenchumilla Jaramillo 0 1326 Juan Luis Castro González 0 1336 Daniel Núñez Arancibia 0 1516 Renzo Trisotti Martínez",
+        "offices": []
+      },
+      "19528": {
+        "author_ids": [
+          "1039",
+          "1102",
+          "1243",
+          "1240",
+          "1235",
+          "1255",
+          "1201",
+          "1230",
+          "1239",
+          "1193"
+        ],
+        "authors_text": "0 1039 Pamela Jiles Moreno 0 1102 Roberto Arroyo Muñoz 0 1243 Tamara Ramírez Ramírez 0 1240 Zandra Parisi Fernández 0 1235 Javier Olivares Avendaño 0 1255 Eileen Urqueta Rojas 0 1201 Flor Contreras Vivallo 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19429": {
+        "author_ids": [
+          "1102",
+          "1224",
+          "1251",
+          "1230",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1224 Cristian Mella Andaur 0 1251 Macarena Santelices Cañas 0 1230 Alex Nahuelquin Nahuelquin 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19535": {
+        "author_ids": [],
+        "authors_text": "0 1335 Javier Macaya Danús 0 1337 Paulina Núñez Urrutia 0 1450 Paulina Vodanovic Rojas 0 1505 Rodolfo Carter Fernández",
+        "offices": []
+      },
+      "19492": {
+        "author_ids": [
+          "1234"
+        ],
+        "authors_text": "0 1234 Mario Olavarría Rodríguez",
+        "offices": []
+      },
+      "19555": {
+        "author_ids": [
+          "872",
+          "1178",
+          "1240",
+          "1226",
+          "1212",
+          "1241"
+        ],
+        "authors_text": "0 872 Jaime Mulet Martínez 0 1178 Héctor Ulloa Aguilera 0 1240 Zandra Parisi Fernández 0 1226 José Montalva Feuerhake 0 1212 Erich Grohs Marín 0 1241 Patricio Pinilla Valencia",
+        "offices": []
+      },
+      "19448": {
+        "author_ids": [],
+        "authors_text": "0 1330 Iván Flores García 0 1332 María José Gatica Bertin 0 1337 Paulina Núñez Urrutia 0 1450 Paulina Vodanovic Rojas 0 1513 Vlado Mirosevic Verdugo",
+        "offices": []
+      },
+      "19419": {
+        "author_ids": [
+          "1087",
+          "1128",
+          "1182",
+          "1246",
+          "1189",
+          "1210",
+          "1207",
+          "1252",
+          "1213"
+        ],
+        "authors_text": "0 1087 Gael Yeomans Araya 0 1128 Ana María Gazmuri Vieira 0 1182 Sebastián Videla Castillo 0 1246 José Antonio Rivas Villalobos 0 1189 Jaime Bassa Mercado 0 1210 Gustavo Gatica Villarroel 0 1207 Valentina Cáceres Monsálvez 0 1252 Constanza Schonhaut Soto 0 1213 Irací Hassler Jacob",
+        "offices": []
+      },
+      "19490": {
+        "author_ids": [
+          "815",
+          "1059",
+          "1062",
+          "1128",
+          "1178",
+          "1240",
+          "1226",
+          "1232",
+          "1256",
+          "1195"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz 0 1059 Ximena Ossandón Irarrázabal 0 1062 Joanna Pérez Olea 0 1128 Ana María Gazmuri Vieira 0 1178 Héctor Ulloa Aguilera 0 1240 Zandra Parisi Fernández 0 1226 José Montalva Feuerhake 0 1232 Cristian Neira Martínez 0 1256 Tatiana Urrutia Herrera 0 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "19475": {
+        "author_ids": [
+          "1150",
+          "1262",
+          "1232",
+          "1217",
+          "1234",
+          "1225",
+          "1191"
+        ],
+        "authors_text": "0 1150 Benjamín Moreno Bascur 0 1262 Diego Vergara Rodríguez 0 1232 Cristian Neira Martínez 0 1217 Pier Karlezi Hazleby 0 1234 Mario Olavarría Rodríguez 0 1225 Cristian Menchaca Pinochet 0 1191 Valentina Becerra Peña",
+        "offices": []
+      },
+      "19491": {
+        "author_ids": [
+          "815",
+          "915",
+          "1082",
+          "1259",
+          "1228",
+          "1227",
+          "1217",
+          "1223",
+          "1190"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz 0 915 Germán Verdugo Soto 0 1082 Cristóbal Urruticoechea Ríos 0 1259 Juan Marcelo Valenzuela Henríquez 0 1228 Paulina Muñoz Minte 0 1227 Claudia Mora Vega 0 1217 Pier Karlezi Hazleby 0 1223 Hans Marowski Cuevas 0 1190 Enrique Bassaletti Riess",
+        "offices": []
+      },
+      "19507": {
+        "author_ids": [
+          "1056",
+          "1105",
+          "1211",
+          "1258",
+          "1255",
+          "1229",
+          "1194",
+          "1225",
+          "1254",
+          "1220"
+        ],
+        "authors_text": "0 1056 Emilia Nuyado Ancapichun 0 1105 Héctor Barría Angulo 0 1211 Sofía González Cortés 0 1258 Guillermo Valdés Carmona 0 1255 Eileen Urqueta Rojas 0 1229 Javier Muñoz Riquelme 0 1194 Daniel Bustos Leal 0 1225 Cristian Menchaca Pinochet 0 1254 Ignacio Urcullú Clèment-Lund 0 1220 Leandro Kunstmann Collado",
+        "offices": []
+      },
+      "19508": {
+        "author_ids": [
+          "843",
+          "1225",
+          "1242",
+          "1261"
+        ],
+        "authors_text": "0 843 René Manuel García García 0 1225 Cristian Menchaca Pinochet 0 1242 Rodrigo Ramírez Parra 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19509": {
+        "author_ids": [
+          "1102",
+          "1259",
+          "1243",
+          "1258",
+          "1240",
+          "1236",
+          "1201",
+          "1230",
+          "1239",
+          "1193"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1259 Juan Marcelo Valenzuela Henríquez 0 1243 Tamara Ramírez Ramírez 0 1258 Guillermo Valdés Carmona 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1201 Flor Contreras Vivallo 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19510": {
+        "author_ids": [
+          "1228",
+          "1215",
+          "1237",
+          "1242",
+          "1261"
+        ],
+        "authors_text": "0 1228 Paulina Muñoz Minte 0 1215 Álvaro Jofré Cáceres 0 1237 Francisco Orrego Gutiérrez 0 1242 Rodrigo Ramírez Parra 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19513": {
+        "author_ids": [
+          "1102",
+          "1255",
+          "1230",
+          "1239",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1255 Eileen Urqueta Rojas 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19525": {
+        "author_ids": [
+          "986",
+          "1116",
+          "1224",
+          "1208",
+          "1241",
+          "1213"
+        ],
+        "authors_text": "0 986 Marcela Hernando Pérez 0 1116 Felipe Camaño Cárdenas 0 1224 Cristian Mella Andaur 0 1208 Jorge Díaz Ibarra 0 1241 Patricio Pinilla Valencia 0 1213 Irací Hassler Jacob",
+        "offices": []
+      },
+      "19527": {
+        "author_ids": [
+          "1102",
+          "1230",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1230 Alex Nahuelquin Nahuelquin 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19529": {
+        "author_ids": [
+          "1039",
+          "1243",
+          "1258",
+          "1240",
+          "1236",
+          "1255",
+          "1201",
+          "1230",
+          "1239",
+          "1193"
+        ],
+        "authors_text": "0 1039 Pamela Jiles Moreno 0 1243 Tamara Ramírez Ramírez 0 1258 Guillermo Valdés Carmona 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1255 Eileen Urqueta Rojas 0 1201 Flor Contreras Vivallo 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19558": {
+        "author_ids": [],
+        "authors_text": "0 1320 Loreto Carvajal Ambiado 0 1329 Fidel Espinoza Sandoval 0 1509 Diego Ibáñez Cotroneo 0 1514 Beatriz Sánchez Muñoz",
+        "offices": []
+      },
+      "19476": {
+        "author_ids": [
+          "1102",
+          "1259",
+          "1243",
+          "1258",
+          "1240",
+          "1236",
+          "1255",
+          "1230",
+          "1239",
+          "1193"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1259 Juan Marcelo Valenzuela Henríquez 0 1243 Tamara Ramírez Ramírez 0 1258 Guillermo Valdés Carmona 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1255 Eileen Urqueta Rojas 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19501": {
+        "author_ids": [
+          "1061",
+          "1077",
+          "1099",
+          "1110",
+          "1175",
+          "1178",
+          "1226",
+          "1205",
+          "1264",
+          "1195"
+        ],
+        "authors_text": "0 1061 Andrea Parra Sauterel 0 1077 Raúl Soto Mardones 0 1099 Jaime Araya Guerrero 0 1110 Carlos Bianchi Chelech 0 1175 Cristián Tapia Ramos 0 1178 Héctor Ulloa Aguilera 0 1226 José Montalva Feuerhake 0 1205 Carlos Cuadrado Prats 0 1264 Fernando Zamorano Peralta 0 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "19540": {
+        "author_ids": [
+          "986",
+          "1013",
+          "1128",
+          "1141",
+          "1182",
+          "1264"
+        ],
+        "authors_text": "0 986 Marcela Hernando Pérez 0 1013 Alejandro Bernales Maldonado 0 1128 Ana María Gazmuri Vieira 0 1141 Luis Malla Valenzuela 0 1182 Sebastián Videla Castillo 0 1264 Fernando Zamorano Peralta",
+        "offices": []
+      },
+      "19542": {
+        "author_ids": [
+          "1228",
+          "1215",
+          "1212",
+          "1261"
+        ],
+        "authors_text": "0 1228 Paulina Muñoz Minte 0 1215 Álvaro Jofré Cáceres 0 1212 Erich Grohs Marín 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19543": {
+        "author_ids": [
+          "915",
+          "1228",
+          "1215",
+          "1233",
+          "1217",
+          "1223"
+        ],
+        "authors_text": "0 915 Germán Verdugo Soto 0 1228 Paulina Muñoz Minte 0 1215 Álvaro Jofré Cáceres 0 1233 Ricardo Neumann Bertín 0 1217 Pier Karlezi Hazleby 0 1223 Hans Marowski Cuevas",
+        "offices": []
+      },
+      "19440": {
+        "author_ids": [
+          "843",
+          "1261"
+        ],
+        "authors_text": "0 843 René Manuel García García 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19450": {
+        "author_ids": [
+          "1105",
+          "1224",
+          "1246",
+          "1226",
+          "1208",
+          "1241"
+        ],
+        "authors_text": "0 1105 Héctor Barría Angulo 0 1224 Cristian Mella Andaur 0 1246 José Antonio Rivas Villalobos 0 1226 José Montalva Feuerhake 0 1208 Jorge Díaz Ibarra 0 1241 Patricio Pinilla Valencia",
+        "offices": []
+      },
+      "19557": {
+        "author_ids": [
+          "1073",
+          "1180",
+          "1122",
+          "1222",
+          "1195"
+        ],
+        "authors_text": "0 1073 Juan Santana Castillo 0 1180 Consuelo Veloso Ávila 0 1122 Luis Alberto Cuello Peña y Lillo 0 1222 Andrea Macías Palma 0 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "19420": {
+        "author_ids": [
+          "1061",
+          "1062",
+          "1177",
+          "1248",
+          "1260",
+          "1227",
+          "1196",
+          "1234"
+        ],
+        "authors_text": "0 1061 Andrea Parra Sauterel 0 1062 Joanna Pérez Olea 0 1177 Carolina Tello Rojas 0 1248 Felipe Ross Correa 0 1260 César Valenzuela Maass 0 1227 Claudia Mora Vega 0 1196 Priscilla Castillo Gerli 0 1234 Mario Olavarría Rodríguez",
+        "offices": []
+      },
+      "19422": {
+        "author_ids": [
+          "1187",
+          "1246",
+          "1236",
+          "1208",
+          "1207",
+          "1212",
+          "1261"
+        ],
+        "authors_text": "0 1187 Carlo Arqueros Pizarro 0 1246 José Antonio Rivas Villalobos 0 1236 Paula Olmos Contreras 0 1208 Jorge Díaz Ibarra 0 1207 Valentina Cáceres Monsálvez 0 1212 Erich Grohs Marín 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19447": {
+        "author_ids": [],
+        "authors_text": "0 1117 Iván Moreira Barros 0 1330 Iván Flores García 0 1337 Paulina Núñez Urrutia 0 1344 Matías Walker Prieto 0 1518 Cristian Vial Maceratta",
+        "offices": []
+      },
+      "19453": {
+        "author_ids": [
+          "815",
+          "915",
+          "1202",
+          "1240",
+          "1214",
+          "1237",
+          "1233",
+          "1198",
+          "1257"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz 0 915 Germán Verdugo Soto 0 1202 Eduardo Cretton Rebolledo 0 1240 Zandra Parisi Fernández 0 1214 Constanza Hube Portus 0 1237 Francisco Orrego Gutiérrez 0 1233 Ricardo Neumann Bertín 0 1198 Paz Charpentier Rajcevich 0 1257 Alejandra Valdebenito Torres",
+        "offices": []
+      },
+      "19495": {
+        "author_ids": [
+          "1102",
+          "1243",
+          "1258",
+          "1236",
+          "1255",
+          "1239",
+          "1193",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1243 Tamara Ramírez Ramírez 0 1258 Guillermo Valdés Carmona 0 1236 Paula Olmos Contreras 0 1255 Eileen Urqueta Rojas 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19497": {
+        "author_ids": [
+          "1074",
+          "1159",
+          "1127",
+          "1209",
+          "1238",
+          "1211",
+          "1189",
+          "1205",
+          "1260"
+        ],
+        "authors_text": "0 1074 Marisela Santibáñez Novoa 0 1159 Lorena Pizarro Sierra 0 1127 Lorena Fries Monleón 0 1209 Matías Fernández Hartwig 0 1238 Álvaro Ortiz Vera 0 1211 Sofía González Cortés 0 1189 Jaime Bassa Mercado 0 1205 Carlos Cuadrado Prats 0 1260 César Valenzuela Maass",
+        "offices": []
+      },
+      "19498": {
+        "author_ids": [
+          "1102",
+          "1240",
+          "1236",
+          "1235",
+          "1230",
+          "1239",
+          "1193",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1235 Javier Olivares Avendaño 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19506": {
+        "author_ids": [
+          "1025",
+          "1251"
+        ],
+        "authors_text": "0 1025 Catalina Del Real Mihovilovic 0 1251 Macarena Santelices Cañas",
+        "offices": []
+      },
+      "19443": {
+        "author_ids": [
+          "843",
+          "1215",
+          "1261"
+        ],
+        "authors_text": "0 843 René Manuel García García 0 1215 Álvaro Jofré Cáceres 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19559": {
+        "author_ids": [],
+        "authors_text": "0 1341 Alejandra Sepúlveda Orbenes 0 1343 Esteban Velásquez Núñez",
+        "offices": []
+      },
+      "19445": {
+        "author_ids": [],
+        "authors_text": "0 1115 Alfonso De Urresti Longton 0 1326 Juan Luis Castro González 0 1339 Gastón Saavedra Chandía 0 1450 Paulina Vodanovic Rojas 0 1507 Daniella Cicardini Milla",
+        "offices": []
+      },
+      "19469": {
+        "author_ids": [
+          "1258",
+          "1200"
+        ],
+        "authors_text": "0 1258 Guillermo Valdés Carmona 0 1200 Cristian Contreras Radovic",
+        "offices": []
+      },
+      "19496": {
+        "author_ids": [
+          "915",
+          "1122",
+          "1170",
+          "1202",
+          "1226",
+          "1237",
+          "1198",
+          "1260",
+          "1241"
+        ],
+        "authors_text": "0 915 Germán Verdugo Soto 0 1122 Luis Alberto Cuello Peña y Lillo 0 1170 Luis Sánchez Ossa 0 1202 Eduardo Cretton Rebolledo 0 1226 José Montalva Feuerhake 0 1237 Francisco Orrego Gutiérrez 0 1198 Paz Charpentier Rajcevich 0 1260 César Valenzuela Maass 0 1241 Patricio Pinilla Valencia",
+        "offices": []
+      },
+      "19541": {
+        "author_ids": [
+          "1228",
+          "1215",
+          "1212",
+          "1261"
+        ],
+        "authors_text": "0 1228 Paulina Muñoz Minte 0 1215 Álvaro Jofré Cáceres 0 1212 Erich Grohs Marín 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19418": {
+        "author_ids": [
+          "1105",
+          "1180",
+          "1100",
+          "1116",
+          "1104",
+          "1224",
+          "1246",
+          "1208",
+          "1241"
+        ],
+        "authors_text": "0 1105 Héctor Barría Angulo 0 1180 Consuelo Veloso Ávila 0 1100 Cristián Araya Lerdo de Tejada 0 1116 Felipe Camaño Cárdenas 0 1104 Chiara Barchiesi Chávez 0 1224 Cristian Mella Andaur 0 1246 José Antonio Rivas Villalobos 0 1208 Jorge Díaz Ibarra 0 1241 Patricio Pinilla Valencia",
+        "offices": []
+      },
+      "19471": {
+        "author_ids": [
+          "1217",
+          "1223"
+        ],
+        "authors_text": "0 1217 Pier Karlezi Hazleby 0 1223 Hans Marowski Cuevas",
+        "offices": []
+      },
+      "19485": {
+        "author_ids": [
+          "815",
+          "1009",
+          "1065",
+          "1143",
+          "1140",
+          "1174",
+          "1202",
+          "1199",
+          "1249"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz 0 1009 Jorge Alessandri Vergara 0 1065 Guillermo Ramírez Diez 0 1143 Cristóbal Martínez Ramírez 0 1140 Daniel Lilayu Vivanco 0 1174 Marco Antonio Sulantay Olivares 0 1202 Eduardo Cretton Rebolledo 0 1199 Jaime Coloma Álamos 0 1249 Omar Sabat Guzmán",
+        "offices": []
+      },
+      "19473": {
+        "author_ids": [
+          "1102",
+          "1255",
+          "1201",
+          "1230",
+          "1239",
+          "1192"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1255 Eileen Urqueta Rojas 0 1201 Flor Contreras Vivallo 0 1230 Alex Nahuelquin Nahuelquin 0 1239 Fabián Ossandón Briceño 0 1192 Lilian Betancurt Delgado",
+        "offices": []
+      },
+      "19505": {
+        "author_ids": [],
+        "authors_text": "0 1337 Paulina Núñez Urrutia 0 1341 Alejandra Sepúlveda Orbenes 0 1343 Esteban Velásquez Núñez",
+        "offices": []
+      },
+      "19549": {
+        "author_ids": [],
+        "authors_text": "0 1110 Pedro Araya Guerrero 0 1324 Karim Bianchi Retamales 0 1330 Iván Flores García 0 1512 Andrés Longton Herrera 0 1515 Arturo Squella Ovalle",
+        "offices": []
+      },
+      "19462": {
+        "author_ids": [
+          "1021",
+          "1059",
+          "1061",
+          "1062",
+          "1028",
+          "1166",
+          "1227",
+          "1234"
+        ],
+        "authors_text": "0 1021 Andrés Celis Montt 0 1059 Ximena Ossandón Irarrázabal 0 1061 Andrea Parra Sauterel 0 1062 Joanna Pérez Olea 0 1028 Eduardo Durán Salinas 0 1166 Natalia Romero Talguia 0 1227 Claudia Mora Vega 0 1234 Mario Olavarría Rodríguez",
+        "offices": []
+      },
+      "19478": {
+        "author_ids": [
+          "1017",
+          "1075",
+          "1100",
+          "1150",
+          "1259",
+          "1235",
+          "1227",
+          "1201",
+          "1193"
+        ],
+        "authors_text": "0 1017 Álvaro Carter Fernández 0 1075 Diego Schalper Sepúlveda 0 1100 Cristián Araya Lerdo de Tejada 0 1150 Benjamín Moreno Bascur 0 1259 Juan Marcelo Valenzuela Henríquez 0 1235 Javier Olivares Avendaño 0 1227 Claudia Mora Vega 0 1201 Flor Contreras Vivallo 0 1193 Patricio Briones Moller",
+        "offices": []
+      },
+      "19489": {
+        "author_ids": [],
+        "authors_text": "0 1344 Matías Walker Prieto",
+        "offices": []
+      },
+      "19436": {
+        "author_ids": [
+          "986",
+          "1180",
+          "1177",
+          "1127",
+          "1209",
+          "1189",
+          "1260",
+          "1195"
+        ],
+        "authors_text": "0 986 Marcela Hernando Pérez 0 1180 Consuelo Veloso Ávila 0 1177 Carolina Tello Rojas 0 1127 Lorena Fries Monleón 0 1209 Matías Fernández Hartwig 0 1189 Jaime Bassa Mercado 0 1260 César Valenzuela Maass 0 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "19479": {
+        "author_ids": [
+          "815",
+          "1143",
+          "1140",
+          "1157",
+          "1183",
+          "1202",
+          "1233",
+          "1231",
+          "1234"
+        ],
+        "authors_text": "0 815 Sergio Bobadilla Muñoz 0 1143 Cristóbal Martínez Ramírez 0 1140 Daniel Lilayu Vivanco 0 1157 Marlene Pérez Cartes 0 1183 Flor Weisse Novoa 0 1202 Eduardo Cretton Rebolledo 0 1233 Ricardo Neumann Bertín 0 1231 Ximena Naranjo Pinto 0 1234 Mario Olavarría Rodríguez",
+        "offices": []
+      },
+      "19480": {
+        "author_ids": [
+          "1056",
+          "1073",
+          "1142",
+          "1222",
+          "1210",
+          "1260",
+          "1204"
+        ],
+        "authors_text": "0 1056 Emilia Nuyado Ancapichun 0 1073 Juan Santana Castillo 0 1142 Daniel Manouchehri Lobos 0 1222 Andrea Macías Palma 0 1210 Gustavo Gatica Villarroel 0 1260 César Valenzuela Maass 0 1204 Francisco Crisóstomo Llanos",
+        "offices": []
+      },
+      "19534": {
+        "author_ids": [],
+        "authors_text": "0 1510 Vanessa Kaiser Barents-Von Hohenhagen",
+        "offices": []
+      },
+      "19433": {
+        "author_ids": [
+          "1015",
+          "1117"
+        ],
+        "authors_text": "0 1015 Jorge Brito Hasbún 0 1117 Nathalie Castillo Rojas",
+        "offices": []
+      },
+      "19482": {
+        "author_ids": [
+          "1239"
+        ],
+        "authors_text": "0 1239 Fabián Ossandón Briceño",
+        "offices": []
+      },
+      "19483": {
+        "author_ids": [
+          "1228",
+          "1215",
+          "1261"
+        ],
+        "authors_text": "0 1228 Paulina Muñoz Minte 0 1215 Álvaro Jofré Cáceres 0 1261 Daniel Valenzuela Salazar",
+        "offices": []
+      },
+      "19533": {
+        "author_ids": [],
+        "authors_text": "0 1343 Esteban Velásquez Núñez",
+        "offices": []
+      },
+      "19452": {
+        "author_ids": [
+          "1102",
+          "1224",
+          "1240",
+          "1236",
+          "1251",
+          "1264",
+          "1239",
+          "1193",
+          "1257"
+        ],
+        "authors_text": "0 1102 Roberto Arroyo Muñoz 0 1224 Cristian Mella Andaur 0 1240 Zandra Parisi Fernández 0 1236 Paula Olmos Contreras 0 1251 Macarena Santelices Cañas 0 1264 Fernando Zamorano Peralta 0 1239 Fabián Ossandón Briceño 0 1193 Patricio Briones Moller 0 1257 Alejandra Valdebenito Torres",
+        "offices": []
+      },
+      "19515": {
+        "author_ids": [
+          "1105",
+          "1116",
+          "1224",
+          "1229",
+          "1196",
+          "1241"
+        ],
+        "authors_text": "0 1105 Héctor Barría Angulo 0 1116 Felipe Camaño Cárdenas 0 1224 Cristian Mella Andaur 0 1229 Javier Muñoz Riquelme 0 1196 Priscilla Castillo Gerli 0 1241 Patricio Pinilla Valencia",
+        "offices": []
+      },
+      "19522": {
+        "author_ids": [
+          "1021",
+          "1114",
+          "1107",
+          "1128",
+          "1104",
+          "1209",
+          "1224",
+          "1246",
+          "1240"
+        ],
+        "authors_text": "0 1021 Andrés Celis Montt 0 1114 Félix Bugueño Sotelo 0 1107 María Francisca Bello Campos 0 1128 Ana María Gazmuri Vieira 0 1104 Chiara Barchiesi Chávez 0 1209 Matías Fernández Hartwig 0 1224 Cristian Mella Andaur 0 1246 José Antonio Rivas Villalobos 0 1240 Zandra Parisi Fernández",
+        "offices": []
+      },
+      "19438": {
+        "author_ids": [
+          "1056",
+          "1059",
+          "1117",
+          "1132",
+          "1141",
+          "1176",
+          "1240",
+          "1189",
+          "1196"
+        ],
+        "authors_text": "0 1056 Emilia Nuyado Ancapichun 0 1059 Ximena Ossandón Irarrázabal 0 1117 Nathalie Castillo Rojas 0 1132 Jorge Guzmán Zepeda 0 1141 Luis Malla Valenzuela 0 1176 Hotuiti Teao Drago 0 1240 Zandra Parisi Fernández 0 1189 Jaime Bassa Mercado 0 1196 Priscilla Castillo Gerli",
+        "offices": []
+      },
+      "19532": {
+        "author_ids": [
+          "1073",
+          "1074",
+          "1099",
+          "1159",
+          "1177",
+          "1173",
+          "1224",
+          "1252",
+          "1213",
+          "1188"
+        ],
+        "authors_text": "0 1073 Juan Santana Castillo 0 1074 Marisela Santibáñez Novoa 0 1099 Jaime Araya Guerrero 0 1159 Lorena Pizarro Sierra 0 1177 Carolina Tello Rojas 0 1173 Daniela Serrano Salazar 0 1224 Cristian Mella Andaur 0 1252 Constanza Schonhaut Soto 0 1213 Irací Hassler Jacob 0 1188 Marcos Barraza Gómez",
+        "offices": []
+      },
+      "19536": {
+        "author_ids": [],
+        "authors_text": "0 1117 Iván Moreira Barros 0 1330 Iván Flores García 0 1337 Paulina Núñez Urrutia 0 1339 Gastón Saavedra Chandía 0 1344 Matías Walker Prieto",
+        "offices": []
+      },
+      "19416": {
+        "author_ids": [],
+        "authors_text": "0 1222 Francisco Huenchumilla Jaramillo 0 1341 Alejandra Sepúlveda Orbenes 0 1343 Esteban Velásquez Núñez",
+        "offices": []
+      },
+      "19446": {
+        "author_ids": [],
+        "authors_text": "0 1330 Iván Flores García 0 1337 Paulina Núñez Urrutia 0 1339 Gastón Saavedra Chandía 0 1344 Matías Walker Prieto 0 1518 Cristian Vial Maceratta",
+        "offices": []
       }
     },
     "agreements": {},
@@ -9918,6 +11515,472 @@
           "1159"
         ],
         "authors_text": "6 1117 Nathalie Castillo Rojas 9 1211 Sofía González Cortés 7 1122 Luis Alberto Cuello Peña y Lillo 4 1188 Marcos Barraza Gómez 8 1210 Gustavo Gatica Villarroel 5 1012 Boris Barrera Moreno 1 1213 Irací Hassler Jacob 3 1128 Ana María Gazmuri Vieira 2 1173 Daniela Serrano Salazar 10 1159 Lorena Pizarro Sierra",
+        "offices": []
+      },
+      "9118": {
+        "author_ids": [
+          "1122",
+          "1188",
+          "1128",
+          "1173"
+        ],
+        "authors_text": "1 1122 Luis Alberto Cuello Peña y Lillo 4 1188 Marcos Barraza Gómez 3 1128 Ana María Gazmuri Vieira 2 1173 Daniela Serrano Salazar",
+        "offices": []
+      },
+      "9129": {
+        "author_ids": [
+          "1104",
+          "1170",
+          "1190",
+          "1247",
+          "1100",
+          "1191",
+          "1225"
+        ],
+        "authors_text": "10 1104 Chiara Barchiesi Chávez 5 1170 Luis Sánchez Ossa 2 1190 Enrique Bassaletti Riess 8 1247 Javiera Rodríguez Pascual 1 1100 Cristián Araya Lerdo de Tejada 9 1191 Valentina Becerra Peña 3 1225 Cristian Menchaca Pinochet",
+        "offices": []
+      },
+      "9130": {
+        "author_ids": [
+          "1153"
+        ],
+        "authors_text": "1 1153 Coca Ericka Ñanco Vásquez",
+        "offices": []
+      },
+      "9126": {
+        "author_ids": [
+          "1212",
+          "1250",
+          "1117",
+          "1142",
+          "1259",
+          "1256",
+          "1241",
+          "1202",
+          "1261",
+          "1195"
+        ],
+        "authors_text": "5 1212 Erich Grohs Marín 1 1250 Bernardo Salinas Maya 2 1117 Nathalie Castillo Rojas 3 1142 Daniel Manouchehri Lobos 9 1259 Juan Marcelo Valenzuela Henríquez 4 1256 Tatiana Urrutia Herrera 7 1241 Patricio Pinilla Valencia 10 1202 Eduardo Cretton Rebolledo 6 1261 Daniel Valenzuela Salazar 8 1195 Carlos Carvajal Gallardo",
+        "offices": []
+      },
+      "9128": {
+        "author_ids": [
+          "1255",
+          "1259",
+          "1243",
+          "1240",
+          "1102",
+          "1193",
+          "1192",
+          "1201",
+          "1230",
+          "1236"
+        ],
+        "authors_text": "8 1255 Eileen Urqueta Rojas 3 1259 Juan Marcelo Valenzuela Henríquez 4 1243 Tamara Ramírez Ramírez 1 1240 Zandra Parisi Fernández 10 1102 Roberto Arroyo Muñoz 6 1193 Patricio Briones Moller 5 1192 Lilian Betancurt Delgado 7 1201 Flor Contreras Vivallo 2 1230 Alex Nahuelquin Nahuelquin 9 1236 Paula Olmos Contreras",
+        "offices": []
+      },
+      "9100": {
+        "author_ids": [
+          "1205",
+          "1226"
+        ],
+        "authors_text": "1 1205 Carlos Cuadrado Prats 2 1226 José Montalva Feuerhake",
+        "offices": []
+      },
+      "9104": {
+        "author_ids": [
+          "1165",
+          "1025",
+          "1248",
+          "1133",
+          "1203",
+          "1150",
+          "1244",
+          "1245",
+          "1216"
+        ],
+        "authors_text": "2 1165 Agustín Romero Leiva 3 1025 Catalina Del Real Mihovilovic 4 1248 Felipe Ross Correa 1 1133 Juan Irarrázaval Rossel 8 1203 Sebastián Cristoffanini Jaraquemada 9 1150 Benjamín Moreno Bascur 7 1244 Claudia Reyes Larenas 6 1245 Alejandro Riquelme Ducci 10 1216 Stephanie Jéldrez Ortiz",
+        "offices": []
+      },
+      "9125": {
+        "author_ids": [
+          "1243"
+        ],
+        "authors_text": "1 1243 Tamara Ramírez Ramírez",
+        "offices": []
+      },
+      "9103": {
+        "author_ids": [
+          "1255",
+          "1211",
+          "1128",
+          "1056",
+          "1141",
+          "1208"
+        ],
+        "authors_text": "12 1255 Eileen Urqueta Rojas 6 1211 Sofía González Cortés 5 1128 Ana María Gazmuri Vieira 11 1056 Emilia Nuyado Ancapichun 1 1141 Luis Malla Valenzuela 4 1208 Jorge Díaz Ibarra",
+        "offices": []
+      },
+      "9131": {
+        "author_ids": [
+          "1240"
+        ],
+        "authors_text": "1 1240 Zandra Parisi Fernández",
+        "offices": []
+      },
+      "9101": {
+        "author_ids": [
+          "1116"
+        ],
+        "authors_text": "1 1116 Felipe Camaño Cárdenas",
+        "offices": []
+      },
+      "9105": {
+        "author_ids": [
+          "1177",
+          "1107",
+          "1256",
+          "1086",
+          "1171",
+          "1087",
+          "1207",
+          "1114",
+          "1180",
+          "1153"
+        ],
+        "authors_text": "1 1177 Carolina Tello Rojas 6 1107 María Francisca Bello Campos 5 1256 Tatiana Urrutia Herrera 3 1086 Gonzalo Winter Etcheberry 2 1171 Emilia Schneider Videla 9 1087 Gael Yeomans Araya 7 1207 Valentina Cáceres Monsálvez 8 1114 Félix Bugueño Sotelo 4 1180 Consuelo Veloso Ávila 10 1153 Coca Ericka Ñanco Vásquez",
+        "offices": [
+          {
+            "id": "6212",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9127": {
+        "author_ids": [
+          "1174",
+          "1176",
+          "1234",
+          "1199",
+          "1233",
+          "1183",
+          "1202",
+          "1249",
+          "1257",
+          "1231"
+        ],
+        "authors_text": "8 1174 Marco Antonio Sulantay Olivares 9 1176 Hotuiti Teao Drago 7 1234 Mario Olavarría Rodríguez 3 1199 Jaime Coloma Álamos 6 1233 Ricardo Neumann Bertín 11 1183 Flor Weisse Novoa 4 1202 Eduardo Cretton Rebolledo 1 1249 Omar Sabat Guzmán 10 1257 Alejandra Valdebenito Torres 5 1231 Ximena Naranjo Pinto",
+        "offices": []
+      },
+      "9117": {
+        "author_ids": [
+          "1188",
+          "1128",
+          "1173"
+        ],
+        "authors_text": "1 1188 Marcos Barraza Gómez 3 1128 Ana María Gazmuri Vieira 2 1173 Daniela Serrano Salazar",
+        "offices": [
+          {
+            "id": "6229",
+            "date": "2026-11-05T00:00:00"
+          }
+        ]
+      },
+      "9102": {
+        "author_ids": [
+          "1224",
+          "1229",
+          "1196",
+          "1116",
+          "1238",
+          "1241",
+          "1105",
+          "1208",
+          "872"
+        ],
+        "authors_text": "8 1224 Cristian Mella Andaur 7 1229 Javier Muñoz Riquelme 1 1196 Priscilla Castillo Gerli 3 1116 Felipe Camaño Cárdenas 9 1238 Álvaro Ortiz Vera 6 1241 Patricio Pinilla Valencia 2 1105 Héctor Barría Angulo 4 1208 Jorge Díaz Ibarra 5 872 Jaime Mulet Martínez",
+        "offices": []
+      },
+      "9119": {
+        "author_ids": [
+          "1104",
+          "1263",
+          "1146",
+          "1247",
+          "1218",
+          "1133",
+          "1150",
+          "1198",
+          "1244",
+          "1216"
+        ],
+        "authors_text": "10 1104 Chiara Barchiesi Chávez 6 1263 Sebastián Zamora Soto 7 1146 José Carlos Meza Pereira 4 1247 Javiera Rodríguez Pascual 2 1218 José Antonio Kast Adriasola 5 1133 Juan Irarrázaval Rossel 1 1150 Benjamín Moreno Bascur 3 1198 Paz Charpentier Rajcevich 9 1244 Claudia Reyes Larenas 8 1216 Stephanie Jéldrez Ortiz",
+        "offices": [
+          {
+            "id": "6215",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9122": {
+        "author_ids": [
+          "1171",
+          "1173",
+          "1044",
+          "1141",
+          "1208",
+          "1175"
+        ],
+        "authors_text": "2 1171 Emilia Schneider Videla 5 1173 Daniela Serrano Salazar 4 1044 Raúl Leiva Carvajal 6 1141 Luis Malla Valenzuela 3 1208 Jorge Díaz Ibarra 1 1175 Cristián Tapia Ramos",
+        "offices": [
+          {
+            "id": "6217",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9120": {
+        "author_ids": [
+          "1234",
+          "1199",
+          "1166",
+          "1143",
+          "1157",
+          "1183",
+          "1202",
+          "1249",
+          "1257"
+        ],
+        "authors_text": "6 1234 Mario Olavarría Rodríguez 7 1199 Jaime Coloma Álamos 3 1166 Natalia Romero Talguia 5 1143 Cristóbal Martínez Ramírez 1 1157 Marlene Pérez Cartes 4 1183 Flor Weisse Novoa 9 1202 Eduardo Cretton Rebolledo 8 1249 Omar Sabat Guzmán 2 1257 Alejandra Valdebenito Torres",
+        "offices": [
+          {
+            "id": "6216",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9110": {
+        "author_ids": [
+          "1224",
+          "1229",
+          "1196",
+          "1116",
+          "1238",
+          "1241",
+          "1105",
+          "1208"
+        ],
+        "authors_text": "2 1224 Cristian Mella Andaur 3 1229 Javier Muñoz Riquelme 4 1196 Priscilla Castillo Gerli 5 1116 Felipe Camaño Cárdenas 6 1238 Álvaro Ortiz Vera 7 1241 Patricio Pinilla Valencia 8 1105 Héctor Barría Angulo 1 1208 Jorge Díaz Ibarra",
+        "offices": [
+          {
+            "id": "6203",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9108": {
+        "author_ids": [
+          "1104",
+          "1221",
+          "1170",
+          "1218",
+          "1253",
+          "1203",
+          "1150",
+          "1232",
+          "1244",
+          "1216"
+        ],
+        "authors_text": "3 1104 Chiara Barchiesi Chávez 9 1221 Benjamín Lorca Inzunza 2 1170 Luis Sánchez Ossa 8 1218 José Antonio Kast Adriasola 6 1253 Fernando Ugarte Tejeda 10 1203 Sebastián Cristoffanini Jaraquemada 1 1150 Benjamín Moreno Bascur 7 1232 Cristian Neira Martínez 5 1244 Claudia Reyes Larenas 4 1216 Stephanie Jéldrez Ortiz",
+        "offices": [
+          {
+            "id": "6202",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9123": {
+        "author_ids": [
+          "1060",
+          "1237",
+          "1075",
+          "1227",
+          "1059",
+          "1132",
+          "1197",
+          "1108"
+        ],
+        "authors_text": "5 1060 Luis Pardo Sáinz 3 1237 Francisco Orrego Gutiérrez 1 1075 Diego Schalper Sepúlveda 8 1227 Claudia Mora Vega 4 1059 Ximena Ossandón Irarrázabal 7 1132 Jorge Guzmán Zepeda 6 1197 Carlos Chandía Alarcón 2 1108 Juan Carlos Beltrán Silva",
+        "offices": [
+          {
+            "id": "6218",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9112": {
+        "author_ids": [
+          "1212",
+          "1217",
+          "1223",
+          "1082",
+          "1228"
+        ],
+        "authors_text": "4 1212 Erich Grohs Marín 2 1217 Pier Karlezi Hazleby 1 1223 Hans Marowski Cuevas 5 1082 Cristóbal Urruticoechea Ríos 3 1228 Paulina Muñoz Minte",
+        "offices": [
+          {
+            "id": "6205",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9111": {
+        "author_ids": [
+          "1255",
+          "1235",
+          "1243",
+          "1258",
+          "1193",
+          "1192",
+          "1201",
+          "1230",
+          "1239",
+          "1236"
+        ],
+        "authors_text": "10 1255 Eileen Urqueta Rojas 7 1235 Javier Olivares Avendaño 1 1243 Tamara Ramírez Ramírez 6 1258 Guillermo Valdés Carmona 3 1193 Patricio Briones Moller 4 1192 Lilian Betancurt Delgado 2 1201 Flor Contreras Vivallo 5 1230 Alex Nahuelquin Nahuelquin 9 1239 Fabián Ossandón Briceño 8 1236 Paula Olmos Contreras",
+        "offices": [
+          {
+            "id": "6204",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9115": {
+        "author_ids": [
+          "1142",
+          "1260",
+          "1044",
+          "1206",
+          "1204"
+        ],
+        "authors_text": "3 1142 Daniel Manouchehri Lobos 5 1260 César Valenzuela Maass 1 1044 Raúl Leiva Carvajal 2 1206 Carolina Cucumides Calderón 4 1204 Francisco Crisóstomo Llanos",
+        "offices": [
+          {
+            "id": "6207",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9114": {
+        "author_ids": [
+          "1177",
+          "1015",
+          "1086",
+          "1171",
+          "1127",
+          "1252",
+          "1087",
+          "1207",
+          "1180",
+          "1209"
+        ],
+        "authors_text": "2 1177 Carolina Tello Rojas 5 1015 Jorge Brito Hasbún 10 1086 Gonzalo Winter Etcheberry 1 1171 Emilia Schneider Videla 9 1127 Lorena Fries Monleón 4 1252 Constanza Schonhaut Soto 8 1087 Gael Yeomans Araya 7 1207 Valentina Cáceres Monsálvez 6 1180 Consuelo Veloso Ávila 3 1209 Matías Fernández Hartwig",
+        "offices": [
+          {
+            "id": "6206",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9121": {
+        "author_ids": [
+          "1259",
+          "1243",
+          "1240",
+          "1258",
+          "1102",
+          "1193",
+          "1192",
+          "1230",
+          "1239",
+          "1236"
+        ],
+        "authors_text": "1 1259 Juan Marcelo Valenzuela Henríquez 6 1243 Tamara Ramírez Ramírez 10 1240 Zandra Parisi Fernández 11 1258 Guillermo Valdés Carmona 4 1102 Roberto Arroyo Muñoz 8 1193 Patricio Briones Moller 9 1192 Lilian Betancurt Delgado 5 1230 Alex Nahuelquin Nahuelquin 3 1239 Fabián Ossandón Briceño 2 1236 Paula Olmos Contreras",
+        "offices": [
+          {
+            "id": "6219",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9113": {
+        "author_ids": [
+          "1205",
+          "1077",
+          "1264",
+          "1061",
+          "1226",
+          "1178",
+          "1110",
+          "1195",
+          "1099",
+          "1175"
+        ],
+        "authors_text": "8 1205 Carlos Cuadrado Prats 4 1077 Raúl Soto Mardones 2 1264 Fernando Zamorano Peralta 10 1061 Andrea Parra Sauterel 9 1226 José Montalva Feuerhake 3 1178 Héctor Ulloa Aguilera 6 1110 Carlos Bianchi Chelech 7 1195 Carlos Carvajal Gallardo 5 1099 Jaime Araya Guerrero 1 1175 Cristián Tapia Ramos",
+        "offices": [
+          {
+            "id": "6209",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9109": {
+        "author_ids": [
+          "1074",
+          "1250",
+          "1122",
+          "1188",
+          "1210",
+          "1012",
+          "1213",
+          "1128",
+          "1173",
+          "1159"
+        ],
+        "authors_text": "12 1074 Marisela Santibáñez Novoa 11 1250 Bernardo Salinas Maya 1 1122 Luis Alberto Cuello Peña y Lillo 4 1188 Marcos Barraza Gómez 7 1210 Gustavo Gatica Villarroel 5 1012 Boris Barrera Moreno 9 1213 Irací Hassler Jacob 3 1128 Ana María Gazmuri Vieira 2 1173 Daniela Serrano Salazar 10 1159 Lorena Pizarro Sierra",
+        "offices": [
+          {
+            "id": "6208",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9116": {
+        "author_ids": [
+          "1237",
+          "1075",
+          "1227",
+          "1062",
+          "1108",
+          "843",
+          "1219",
+          "1261"
+        ],
+        "authors_text": "2 1237 Francisco Orrego Gutiérrez 1 1075 Diego Schalper Sepúlveda 3 1227 Claudia Mora Vega 4 1062 Joanna Pérez Olea 7 1108 Juan Carlos Beltrán Silva 6 843 René Manuel García García 5 1219 Tomás Kast Sommerhoff 8 1261 Daniel Valenzuela Salazar",
+        "offices": [
+          {
+            "id": "6210",
+            "date": "2026-10-28T00:00:00"
+          }
+        ]
+      },
+      "9124": {
+        "author_ids": [
+          "1217",
+          "1223",
+          "1228"
+        ],
+        "authors_text": "2 1217 Pier Karlezi Hazleby 1 1223 Hans Marowski Cuevas 3 1228 Paulina Muñoz Minte",
         "offices": []
       }
     }
